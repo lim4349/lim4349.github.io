@@ -31,6 +31,7 @@ jobs:
         with:
           ruby-version: 3.2
           bundler-cache: true
+          bundler-cache-clean: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -38,6 +39,7 @@ jobs:
       - name: Build with Jekyll
         run: |
           echo "Installing dependencies..."
+          bundle lock --add-platform x86_64-linux
           bundle install
           echo "Building Jekyll site..."
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --verbose
