@@ -69,6 +69,11 @@
       "body-max-line-length": [
         0,
         "always"
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "lower-case"
       ]
     }
   },
