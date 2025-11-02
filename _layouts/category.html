@@ -12,13 +12,75 @@ layout: page
     <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
   </h1>
 
-  <ul class="content ps-0">
+  {% comment %}Daily Papers 카테고리일 때 특별 레이아웃 적용{% endcomment %}
+  {% assign category_name = page.title | default: page.category | default: page.name %}
+  {% if category_name == 'Daily Papers' or category_name contains 'Daily Papers' or page.title == 'Daily Papers' %}
+    {% assign monthly_posts = '' | split: '' %}
+    {% assign daily_posts = '' | split: '' %}
+    
     {% for post in page.posts %}
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="dash flex-grow-1"></span>
-        {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
-      </li>
+      {% if post.categories[1] == '월간' %}
+        {% assign monthly_posts = monthly_posts | push: post %}
+      {% elsif post.categories[1] == '일간' %}
+        {% assign daily_posts = daily_posts | push: post %}
+      {% else %}
+        {% assign daily_posts = daily_posts | push: post %}
+      {% endif %}
     {% endfor %}
-  </ul>
+
+    {% comment %}월간 요약 섹션{% endcomment %}
+    {% if monthly_posts.size > 0 %}
+      <div class="monthly-section mb-4">
+        <h2 class="ps-lg-2 mt-4 mb-3">
+          <i class="fas fa-calendar-alt fa-fw text-muted"></i>
+          월간 요약
+          <span class="lead text-muted ps-2 small">{{ monthly_posts.size }}</span>
+        </h2>
+        <ul class="content ps-0">
+          {% assign sorted_monthly = monthly_posts | sort: 'date' | reverse %}
+          {% for post in sorted_monthly %}
+            <li class="d-flex justify-content-between px-md-3">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span class="dash flex-grow-1"></span>
+              {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% comment %}일간 목록 섹션{% endcomment %}
+    {% if daily_posts.size > 0 %}
+      <div class="daily-section">
+        <h2 class="ps-lg-2 mt-4 mb-3">
+          <i class="fas fa-calendar-day fa-fw text-muted"></i>
+          일간 목록
+          <span class="lead text-muted ps-2 small">{{ daily_posts.size }}</span>
+        </h2>
+        <ul class="content ps-0">
+          {% assign sorted_daily = daily_posts | sort: 'date' | reverse %}
+          {% for post in sorted_daily %}
+            <li class="d-flex justify-content-between px-md-3">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span class="dash flex-grow-1"></span>
+              {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+  {% else %}
+    {% comment %}다른 카테고리는 기본 레이아웃{% endcomment %}
+    <ul class="content ps-0">
+      {% assign sorted_posts = page.posts | sort: 'date' | reverse %}
+      {% for post in sorted_posts %}
+        <li class="d-flex justify-content-between px-md-3">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="dash flex-grow-1"></span>
+          {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </div>
