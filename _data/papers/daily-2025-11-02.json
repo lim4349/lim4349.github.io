@@ -1,0 +1,117 @@
+{
+  "date": "2025-11-02",
+  "crawled_at": "2025-11-02T14:06:01.364244",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "Emu3.5: Native Multimodal Models are World Learners",
+      "url": "https://huggingface.co/papers/2510.26583",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 904,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26583",
+      "code_link": "https://github.com/baaivision/Emu3.5",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "Kimi Linear: An Expressive, Efficient Attention Architecture",
+      "url": "https://huggingface.co/papers/2510.26692",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 825,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26692",
+      "code_link": "https://github.com/MoonshotAI/Kimi-Linear",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "The End of Manual Decoding: Towards Truly End-to-End Language Models",
+      "url": "https://huggingface.co/papers/2510.26697",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 98,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26697",
+      "code_link": "https://github.com/Zacks917/AutoDeco",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "Remote Labor Index: Measuring AI Automation of Remote Work",
+      "url": "https://huggingface.co/papers/2510.26787",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 47,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26787",
+      "code_link": "",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "Can Agent Conquer Web? Exploring the Frontiers of ChatGPT Atlas Agent in\n  Web Games",
+      "url": "https://huggingface.co/papers/2510.26298",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 42,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26298",
+      "code_link": "https://atlas-game-eval.github.io/",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "OmniX: From Unified Panoramic Generation and Perception to\n  Graphics-Ready 3D Scenes",
+      "url": "https://huggingface.co/papers/2510.26800",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 33,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26800",
+      "code_link": "https://yukun-huang.github.io/OmniX/",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "AMO-Bench: Large Language Models Still Struggle in High School Math\n  Competitions",
+      "url": "https://huggingface.co/papers/2510.26768",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 30,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26768",
+      "code_link": "https://amo-bench.github.io/",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "Are Video Models Ready as Zero-Shot Reasoners? An Empirical Study with\n  the MME-CoF Benchmark",
+      "url": "https://huggingface.co/papers/2510.26802",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 29,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26802",
+      "code_link": "https://video-cof.github.io/",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "Magentic Marketplace: An Open-Source Environment for Studying Agentic\n  Markets",
+      "url": "https://huggingface.co/papers/2510.25779",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 16,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.25779",
+      "code_link": "https://github.com/microsoft/multi-agent-marketplace",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    },
+    {
+      "title": "FullPart: Generating each 3D Part at Full Resolution",
+      "url": "https://huggingface.co/papers/2510.26140",
+      "published": "2025-11-02T14:05:48.711046",
+      "likes": 13,
+      "abstract": "Join the discussion on this paper page",
+      "paper_link": "https://arxiv.org/abs/2510.26140",
+      "code_link": "https://fullpart3d.github.io/",
+      "tags": [],
+      "description": "Join the discussion on this paper page"
+    }
+  ]
+}
