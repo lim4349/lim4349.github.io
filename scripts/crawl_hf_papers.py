@@ -33,7 +33,12 @@ class HFDailyPapersCrawler:
         # Hugging Face Daily Papers 관련 URL들
         self.base_url = "https://huggingface.co"
         self.papers_url = "https://huggingface.co/papers"
-        self.rss_url = "https://huggingface.co/blog/tags/papers/rss.xml"
+        # 여러 RSS 피드 URL 시도
+        self.rss_urls = [
+            "https://huggingface.co/blog/tags/papers/rss.xml",
+            "https://huggingface.co/blog/rss.xml",  # 전체 블로그 RSS
+        ]
+        self.rss_url = self.rss_urls[0]  # 기본값
     
     def fetch_daily_papers(self, target_date: Optional[datetime] = None) -> List[Dict]:
         """
@@ -53,15 +58,25 @@ class HFDailyPapersCrawler:
         try:
             # RSS 피드에서 오늘 날짜의 논문 가져오기
             if feedparser is not None:
-                papers.extend(self._fetch_from_rss(target_date))
+                rss_papers = self._fetch_from_rss(target_date)
+                papers.extend(rss_papers)
+                print(f"RSS 피드에서 {len(rss_papers)}개 논문 발견")
+            else:
+                print("⚠️ feedparser가 설치되지 않았습니다. RSS 피드를 사용할 수 없습니다.")
         except Exception as e:
             print(f"RSS 피드 가져오기 실패: {e}")
+            import traceback
+            traceback.print_exc()
         
         # 웹 페이지에서도 시도
         try:
-            papers.extend(self._fetch_daily_from_web(target_date))
+            web_papers = self._fetch_daily_from_web(target_date)
+            papers.extend(web_papers)
+            print(f"웹 스크래핑에서 {len(web_papers)}개 논문 발견")
         except Exception as e:
             print(f"웹 스크래핑 실패: {e}")
+            import traceback
+            traceback.print_exc()
         
         # 각 논문의 상세 정보 가져오기 (Abstract 포함)
         enriched_papers = []
@@ -95,20 +110,65 @@ class HFDailyPapersCrawler:
             return []
         
         papers = []
-        feed = feedparser.parse(self.rss_url)
+        feed = None
+        
+        # 여러 RSS URL 시도
+        for rss_url in self.rss_urls:
+            try:
+                print(f"RSS 피드 가져오기 시도: {rss_url}")
+                feed = feedparser.parse(rss_url)
+                
+                if not feed.entries:
+                    print(f"⚠️ RSS 피드에 항목이 없습니다: {rss_url}")
+                    print(f"   피드 상태: {feed.get('status', 'unknown')}")
+                    continue
+                
+                print(f"✅ RSS 피드에서 총 {len(feed.entries)}개 항목 발견: {rss_url}")
+                break  # 성공한 RSS 피드 사용
+                
+            except Exception as e:
+                print(f"⚠️ RSS 피드 실패 ({rss_url}): {e}")
+                continue
+        
+        # feed가 없으면 반환
+        if not feed or not feed.entries:
+            print("⚠️ 사용 가능한 RSS 피드가 없습니다.")
+            return papers
         
         target_date_str = target_date.strftime('%Y-%m-%d')
+        yesterday = (target_date - timedelta(days=1)).strftime('%Y-%m-%d')
         
-        for entry in feed.entries:
+        # 최신 항목들 확인 (날짜 매칭이 실패해도 최신 항목 사용)
+        checked_count = 0
+        for entry in feed.entries[:30]:  # 최신 30개 확인
+            checked_count += 1
             entry_date_str = entry.get('published', '')
-            # 날짜 추출 (대략적인 매칭)
-            if target_date_str in entry_date_str or self._is_same_date(entry_date_str, target_date):
+            
+            # 날짜 매칭 (오늘 또는 어제)
+            if (target_date_str in entry_date_str or 
+                yesterday in entry_date_str or 
+                self._is_same_date(entry_date_str, target_date) or
+                self._is_same_date(entry_date_str, target_date - timedelta(days=1))):
                 paper = {
                     'title': entry.get('title', ''),
                     'url': entry.get('link', ''),
                     'published': entry.get('published', ''),
                     'summary': entry.get('summary', ''),
                     'likes': 0  # RSS에서는 좋아요 수를 가져올 수 없음
+                }
+                papers.append(paper)
+                print(f"  - 매칭된 논문: {paper['title'][:50]}...")
+        
+        # 날짜 매칭이 실패했으면 최신 10개 사용
+        if not papers and checked_count > 0:
+            print("⚠️ 날짜 매칭 실패, 최신 항목 사용")
+            for entry in feed.entries[:10]:
+                paper = {
+                    'title': entry.get('title', ''),
+                    'url': entry.get('link', ''),
+                    'published': entry.get('published', datetime.utcnow().isoformat()),
+                    'summary': entry.get('summary', ''),
+                    'likes': 0
                 }
                 papers.append(paper)
         
@@ -119,11 +179,9 @@ class HFDailyPapersCrawler:
         papers = []
         
         # Hugging Face Papers 페이지 구조에 맞게 조정 필요
-        # 여러 방법 시도
+        # 실제 Papers 페이지 URL 사용
         urls_to_try = [
-            f"{self.papers_url}",
-            f"{self.papers_url}/today",
-            f"{self.base_url}/spaces?sort=likes&direction=desc"
+            f"{self.papers_url}",  # 메인 papers 페이지
         ]
         
         for url in urls_to_try:

@@ -1,16 +1,31 @@
-# Set default behavior to automatically normalize line endings.
+# Auto detect text files and perform LF normalization
 * text=auto
 
-# Force bash scripts to always use LF line endings so that if a repo is accessed
-# in Unix via a file share from Windows, the scripts will work.
+# Force LF line endings for specific file types
+*.py text eol=lf
 *.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.rb text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.xml text eol=lf
+*.rb text eol=lf
 
-# Force batch scripts to always use CRLF line endings so that if a repo is accessed
-# in Windows via a file share from Linux, the scripts will work.
-*.{cmd,[cC][mM][dD]} text eol=crlf
-*.{bat,[bB][aA][tT]} text eol=crlf
-
-# Denote all files that are truly binary and should not be modified.
+# Binary files
 *.png binary
 *.jpg binary
+*.jpeg binary
+*.gif binary
 *.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
