@@ -56,7 +56,9 @@ jobs:
           git config --local user.name "GitHub Action"
           # 새로 생성되거나 수정된 파일 모두 추가
           git add _posts/ _data/papers/ || true
-          git commit -m "🤖 Auto-update: Hugging Face Daily Papers [$(date +'%Y-%m-%d %H:%M:%S')]" || exit 0
+          # Conventional Commits 형식 준수 (commitlint 규칙)
+          DATE_STR=$(date +'%Y-%m-%d')
+          git commit -m "chore: auto-update Hugging Face Daily Papers [$DATE_STR]" || exit 0
           git push
 
 
