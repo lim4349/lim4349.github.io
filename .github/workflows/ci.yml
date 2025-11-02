@@ -12,6 +12,8 @@ on:
       - "docs/**"
       - README.md
       - LICENSE
+      - "_posts/**"
+      - "_data/papers/**"
   pull_request:
     paths-ignore:
       - ".github/**"

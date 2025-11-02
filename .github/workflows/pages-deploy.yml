@@ -10,6 +10,8 @@ on:
       - README.md
       - LICENSE
       - .github/workflows/crawl-papers.yml
+      - .github/workflows/ci.yml
+      - .github/workflows/commitlint.yml
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
