@@ -265,40 +265,100 @@ class HFDailyPapersCrawler:
             # Abstract/Description 추출
             abstract = paper.get('abstract', '')
             
-            # Abstract 추출 - 다양한 선택자 시도
+            # Abstract 추출 - 더 구체적인 선택자 시도
             abstract_candidates = []
-            selectors = [
-                ('div', {'class': re.compile(r'prose|markdown|content|description', re.I)}),
-                ('section', {'class': re.compile(r'abstract|description|content', re.I)}),
-                ('main', {}),
-                ('article', {}),
-            ]
             
-            for tag, attrs in selectors:
-                for elem in soup.find_all(tag, attrs):
-                    text = elem.get_text(strip=True)
-                    if (text and 100 <= len(text) <= 2000 and
-                        'Join the discussion' not in text and
-                        'Subscribe' not in text and
-                        'Get trending papers' not in text):
+            # 1. 명시적인 abstract/summary 섹션 찾기
+            for selector in [
+                'div[class*="abstract"]',
+                'div[class*="summary"]',
+                'section[class*="abstract"]',
+                'section[class*="summary"]',
+                'p[class*="abstract"]',
+                'p[class*="summary"]',
+            ]:
+                for elem in soup.select(selector):
+                    text = elem.get_text(separator=' ', strip=True)
+                    if text and 100 <= len(text) <= 2000:
                         abstract_candidates.append(text)
             
-            if abstract_candidates:
-                abstract = max(abstract_candidates, key=len)
+            # 2. main/article에서 첫 번째 긴 문단 찾기
+            for container in soup.find_all(['main', 'article']):
+                paragraphs = container.find_all(['p', 'div'], limit=10)
+                for p in paragraphs:
+                    text = p.get_text(separator=' ', strip=True)
+                    # Abstract는 보통 긴 문단이고, 버튼/링크 텍스트가 아님
+                    if (text and 150 <= len(text) <= 2000 and
+                        'Join the discussion' not in text and
+                        'Subscribe' not in text and
+                        'Get trending papers' not in text and
+                        'on this paper page' not in text and
+                        not text.startswith('http') and
+                        len(text.split()) >= 20):  # 최소 20단어
+                        abstract_candidates.append(text)
+                        break  # 첫 번째 긴 문단만 사용
             
-            # 메타 태그 시도
+            # 3. 가장 적합한 후보 선택
+            if abstract_candidates:
+                # 필터링: 불필요한 텍스트 제거
+                filtered = []
+                unwanted_phrases = [
+                    'Join the discussion',
+                    'on this paper page',
+                    'Subscribe',
+                    'Get trending papers',
+                    'View on',
+                    'Download',
+                    'Like',
+                    'Share',
+                ]
+                
+                for candidate in abstract_candidates:
+                    # 각 불필요한 구문이 포함되어 있는지 체크
+                    has_unwanted = any(phrase.lower() in candidate.lower() for phrase in unwanted_phrases)
+                    if not has_unwanted and len(candidate) >= 100:
+                        filtered.append(candidate)
+                
+                if filtered:
+                    # 가장 긴 텍스트 선택 (더 자세한 Abstract일 가능성)
+                    abstract = max(filtered, key=len)
+                elif abstract_candidates:
+                    # 필터링 후보가 없으면 원본 후보 중에서 가장 긴 것 선택
+                    abstract = max(abstract_candidates, key=len)
+                    # 불필요한 부분 제거
+                    for unwanted in unwanted_phrases:
+                        if unwanted.lower() in abstract.lower():
+                            parts = re.split(re.escape(unwanted), abstract, flags=re.I)
+                            if parts:
+                                abstract = parts[0].strip()
+                                break
+            
+            # 4. 메타 태그 시도 (마지막 수단)
             if not abstract or len(abstract) < 50:
                 for meta in soup.find_all('meta', attrs={'name': ['description'], 'property': ['og:description']}):
-                    desc = meta.get('content', '')
-                    if desc and len(desc) >= 50:
+                    desc = meta.get('content', '').strip()
+                    if (desc and len(desc) >= 100 and
+                        'Join the discussion' not in desc and
+                        'on this paper page' not in desc):
                         abstract = desc
                         break
             
-            # 정리
+            # 5. 최종 정리
             if abstract:
-                for unwanted in ['Join the discussion', 'Subscribe', 'Get trending papers']:
-                    abstract = abstract.split(unwanted)[0].strip()
-                if len(abstract) < 50:
+                # 불필요한 구문 제거
+                unwanted_patterns = [
+                    r'Join the discussion.*?$',
+                    r'on this paper page.*?$',
+                    r'Subscribe.*?$',
+                    r'Get trending papers.*?$',
+                ]
+                for pattern in unwanted_patterns:
+                    abstract = re.sub(pattern, '', abstract, flags=re.I).strip()
+                
+                # 너무 짧거나 불필요한 텍스트 제거
+                if (len(abstract) < 50 or
+                    abstract.lower() in ['join the discussion', 'subscribe', 'get trending papers'] or
+                    'on this paper page' in abstract.lower()):
                     abstract = ''
             
             # 좋아요 수, 논문 링크, 코드 링크, 태그 추출
@@ -548,16 +608,31 @@ class HFDailyPapersCrawler:
                 # 새로 크롤링한 논문 URL 목록
                 new_urls = {paper.get('url', '') for paper in papers if paper.get('url')}
                 
-                # 내용이 같으면 업데이트하지 않음
-                if existing_urls == new_urls and not force_update:
+                # Abstract도 비교하여 변경사항 확인
+                existing_has_bad_abstract = 'Abstract: Join the discussion on this paper page' in existing_content
+                new_has_good_abstract = any(
+                    paper.get('abstract', '') and 
+                    len(paper.get('abstract', '')) > 50 and
+                    'Join the discussion' not in paper.get('abstract', '') and
+                    'on this paper page' not in paper.get('abstract', '')
+                    for paper in papers
+                )
+                
+                # URL이 같고 Abstract가 개선되지 않았으면 업데이트하지 않음
+                if existing_urls == new_urls and not new_has_good_abstract and not force_update:
                     print(f"이미 존재하는 일간 요약: {filename} (내용 동일, 업데이트 스킵)")
                     return None
                 
-                if existing_urls == new_urls and force_update:
+                # URL이 같고 Abstract가 개선되지 않았고 force_update여도 스킵
+                if existing_urls == new_urls and not new_has_good_abstract and force_update:
                     print(f"기존 파일 내용과 동일: {filename} (업데이트 스킵)")
                     return None
                 
-                print(f"기존 파일 내용과 다름: {filename} (업데이트)")
+                # Abstract 개선이 있으면 업데이트
+                if existing_urls == new_urls and existing_has_bad_abstract and new_has_good_abstract:
+                    print(f"기존 파일 Abstract 개선 필요: {filename} (업데이트)")
+                elif existing_urls != new_urls:
+                    print(f"기존 파일 내용과 다름: {filename} (업데이트)")
             except Exception as e:
                 print(f"기존 파일 확인 오류: {e}, 새로 생성합니다.")
         
