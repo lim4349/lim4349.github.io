@@ -78,22 +78,10 @@ class HFDailyPapersCrawler:
             import traceback
             traceback.print_exc()
         
-        # 각 논문의 상세 정보 가져오기 (Abstract 포함)
-        enriched_papers = []
-        for paper in papers:
-            try:
-                enriched = self._enrich_paper_details(paper)
-                enriched_papers.append(enriched)
-                # 요청 간 딜레이 (서버 부하 방지)
-                time.sleep(1)
-            except Exception as e:
-                print(f"상세 정보 가져오기 실패 ({paper.get('url', 'unknown')}): {e}")
-                enriched_papers.append(paper)
-        
         # 중복 제거 (URL 기준)
         seen_urls = set()
         unique_papers = []
-        for paper in enriched_papers:
+        for paper in papers:
             url = paper.get('url', '')
             if url and url not in seen_urls:
                 seen_urls.add(url)
@@ -102,7 +90,29 @@ class HFDailyPapersCrawler:
         # 좋아요 수로 정렬 (내림차순)
         unique_papers.sort(key=lambda x: x.get('likes', 0), reverse=True)
         
-        return unique_papers
+        # 상위 10개만 선택
+        top_papers = unique_papers[:10]
+        print(f"\n[선택] 총 {len(unique_papers)}개 중 상위 10개 선택")
+        
+        # 상위 10개만 상세 정보 가져오기 (Abstract 포함)
+        enriched_papers = []
+        for i, paper in enumerate(top_papers, 1):
+            try:
+                print(f"  [{i}/10] 상세 정보 수집 중: {paper.get('title', 'Unknown')[:50]}...")
+                enriched = self._enrich_paper_details(paper)
+                enriched_papers.append(enriched)
+                # 요청 간 딜레이 (서버 부하 방지)
+                time.sleep(1)
+            except Exception as e:
+                print(f"  상세 정보 가져오기 실패 ({paper.get('url', 'unknown')}): {e}")
+                enriched_papers.append(paper)
+        
+        # 최종 정렬 (좋아요 수로)
+        enriched_papers.sort(key=lambda x: x.get('likes', 0), reverse=True)
+        
+        print(f"\n[완료] 최종 {len(enriched_papers)}개 논문 수집 완료")
+        
+        return enriched_papers
     
     def _fetch_from_rss(self, target_date: datetime) -> List[Dict]:
         """RSS 피드에서 특정 날짜의 논문 정보 가져오기"""
@@ -178,17 +188,21 @@ class HFDailyPapersCrawler:
         """웹 페이지에서 일일 논문 목록 가져오기"""
         papers = []
         
-        # 올바른 URL 형식: /papers/date/YYYY-MM-DD
+        # 올바른 URL 형식: https://huggingface.co/papers/date/YYYY-MM-DD
+        # 실제 예시: https://huggingface.co/papers/date/2025-10-31
         date_str = target_date.strftime('%Y-%m-%d')
         url = f"{self.papers_url}/date/{date_str}"
         
-        print(f"웹 페이지 크롤링 시도: {url}")
+        print(f"\n[웹 크롤링] 올바른 URL 형식 사용:")
+        print(f"  URL: {url}")
+        print(f"  형식: /papers/date/{date_str}")
         
         try:
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             }
             response = requests.get(url, timeout=30, headers=headers)
+            print(f"  상태 코드: {response.status_code}")
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
@@ -527,7 +541,7 @@ class HFDailyPapersCrawler:
         # 좋아요 수별로 정렬된 목록
         content += "## 📊 좋아요 순위\n\n"
         
-        for i, paper in enumerate(papers[:20], 1):  # Top 20
+        for i, paper in enumerate(papers[:10], 1):  # Top 10
             likes = paper.get('likes', 0)
             title = paper.get('title', 'Untitled')
             url = paper.get('url', '#')
