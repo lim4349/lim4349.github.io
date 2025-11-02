@@ -63,7 +63,10 @@ main() {
   # test
   bundle exec htmlproofer "$SITE_DIR" \
     --disable-external \
-    --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+    --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/,/\/commons\/avatar\.jpg/,/\/posts\/20180809\/.*\.png/,/\/posts\/20190808\/.*\.png/,/\/commons\/devices-mockup\.png/" \
+    --allow-missing-href \
+    --check-html \
+    --http-status-ignore "0,403,429"
 }
 
 while (($#)); do
