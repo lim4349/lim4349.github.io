@@ -49,6 +49,17 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
       
+      - name: Get current branch
+        id: get-branch
+        run: |
+          BRANCH=$(git branch --show-current)
+          if [ -z "$BRANCH" ]; then
+            # 기본 브랜치 확인 (main 또는 master)
+            BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "main")
+          fi
+          echo "branch=${BRANCH}" >> $GITHUB_OUTPUT
+          echo "현재 브랜치: ${BRANCH}"
+      
       - name: Commit and push changes
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
@@ -60,7 +71,10 @@ jobs:
           # subject는 소문자로만 작성 (subject-case: lowercase 규칙 준수)
           DATE_STR=$(date +'%Y-%m-%d')
           git commit -m "chore(daily-papers): update papers ${DATE_STR}" --no-verify || exit 0
-          git push
+          # 명시적으로 현재 브랜치에 푸시 (배포 워크플로우 트리거용)
+          BRANCH_NAME="${{ steps.get-branch.outputs.branch }}"
+          echo "브랜치 ${BRANCH_NAME}에 푸시 중..."
+          git push origin HEAD:${BRANCH_NAME}
 
 
 

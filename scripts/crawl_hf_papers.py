@@ -178,54 +178,107 @@ class HFDailyPapersCrawler:
         """웹 페이지에서 일일 논문 목록 가져오기"""
         papers = []
         
-        # Hugging Face Papers 페이지 구조에 맞게 조정 필요
-        # 실제 Papers 페이지 URL 사용
-        urls_to_try = [
-            f"{self.papers_url}",  # 메인 papers 페이지
-        ]
+        # 올바른 URL 형식: /papers/date/YYYY-MM-DD
+        date_str = target_date.strftime('%Y-%m-%d')
+        url = f"{self.papers_url}/date/{date_str}"
         
-        for url in urls_to_try:
-            try:
-                response = requests.get(url, timeout=30)
-                response.raise_for_status()
-                soup = BeautifulSoup(response.content, 'html.parser')
-                
-                # 논문 카드 찾기 (구조는 실제 페이지에 맞게 조정 필요)
-                paper_elements = soup.find_all(['article', 'div'], class_=re.compile(r'paper|card|item', re.I))
-                
-                if not paper_elements:
-                    # 대안: 링크 패턴으로 찾기
-                    paper_links = soup.find_all('a', href=re.compile(r'/papers/[^/]+$'))
-                    for link in paper_links:
-                        paper_url = link.get('href', '')
-                        if not paper_url.startswith('http'):
-                            paper_url = self.base_url + paper_url
-                        
-                        # 좋아요 수 추출 시도
-                        likes = 0
-                        like_elem = link.find_next(['span', 'div'], class_=re.compile(r'like|favorite|star', re.I))
-                        if like_elem:
-                            like_text = like_elem.get_text(strip=True)
-                            like_match = re.search(r'(\d+)', like_text)
-                            if like_match:
-                                likes = int(like_match.group(1))
-                        
-                        title = link.get_text(strip=True) or link.get('title', '')
-                        
-                        if paper_url and title:
-                            papers.append({
-                                'title': title,
-                                'url': paper_url,
-                                'published': target_date.isoformat(),
-                                'likes': likes
-                            })
-                
-                if papers:
-                    break
+        print(f"웹 페이지 크롤링 시도: {url}")
+        
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.get(url, timeout=30, headers=headers)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # 논문 항목 찾기 (h3 태그로 제목 찾기)
+            # 구조: h3 > a (제목 링크), 좋아요 수는 같은 레벨에 있음
+            paper_headings = soup.find_all('h3')
+            
+            if not paper_headings:
+                print("⚠️ h3 태그를 찾을 수 없습니다. 페이지 구조 확인 필요")
+                # 대안: 모든 링크에서 papers 링크 찾기
+                all_links = soup.find_all('a', href=re.compile(r'/papers/[^/]+$'))
+                print(f"  대안: {len(all_links)}개 papers 링크 발견")
+            
+            for heading in paper_headings:
+                try:
+                    # 제목 링크 찾기
+                    title_link = heading.find('a')
+                    if not title_link:
+                        continue
                     
-            except Exception as e:
-                print(f"URL 시도 실패 ({url}): {e}")
-                continue
+                    title = title_link.get_text(strip=True)
+                    if not title:
+                        continue
+                    
+                    paper_url = title_link.get('href', '')
+                    
+                    if not paper_url.startswith('http'):
+                        if paper_url.startswith('/'):
+                            paper_url = self.base_url + paper_url
+                        else:
+                            paper_url = f"{self.base_url}/papers/{paper_url}"
+                    
+                    # 좋아요 수 찾기 - h3의 부모 요소에서 찾기
+                    likes = 0
+                    parent = heading.parent
+                    if parent:
+                        # 부모 요소의 텍스트에서 숫자 찾기
+                        parent_text = parent.get_text()
+                        # 좋아요 수는 보통 큰 숫자이고, h3 근처에 있음
+                        # 형식: "97\n" 또는 " 97 " 같은 패턴
+                        numbers = re.findall(r'\b(\d+)\b', parent_text)
+                        
+                        # h3 다음에 나오는 숫자가 좋아요 수일 가능성이 높음
+                        # 또는 h3 앞에 있는 큰 숫자
+                        if numbers:
+                            # 첫 번째 큰 숫자 (10 이상)를 좋아요 수로 추정
+                            for num_str in numbers:
+                                try:
+                                    num = int(num_str)
+                                    if num >= 10:  # 좋아요는 보통 10 이상
+                                        likes = num
+                                        break
+                                except (ValueError, TypeError):
+                                    pass
+                        
+                        # h3의 다음 형제 요소 확인
+                        if likes == 0:
+                            current = heading.next_sibling
+                            checked = 0
+                            while current and checked < 3:
+                                if hasattr(current, 'get_text'):
+                                    text = current.get_text(strip=True)
+                                    like_match = re.search(r'^(\d+)$', text)
+                                    if like_match:
+                                        num = int(like_match.group(1))
+                                        if num >= 10:
+                                            likes = num
+                                            break
+                                current = getattr(current, 'next_sibling', None)
+                                checked += 1
+                    
+                    if title and paper_url:
+                        papers.append({
+                            'title': title,
+                            'url': paper_url,
+                            'published': target_date.isoformat(),
+                            'likes': likes
+                        })
+                        print(f"  - 발견: {title[:50]}... (👍 {likes})")
+                        
+                except Exception as e:
+                    print(f"  논문 파싱 오류: {e}")
+                    continue
+            
+            print(f"웹 페이지에서 {len(papers)}개 논문 발견")
+                    
+        except Exception as e:
+            print(f"웹 페이지 크롤링 실패: {e}")
+            import traceback
+            traceback.print_exc()
         
         return papers
     
