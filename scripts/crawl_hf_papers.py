@@ -303,32 +303,102 @@ class HFDailyPapersCrawler:
             return paper
         
         try:
-            response = requests.get(url, timeout=30)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.get(url, timeout=30, headers=headers)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
             # Abstract/Description 추출
             abstract = paper.get('abstract', '')
             
-            # 다양한 패턴으로 Abstract 찾기
+            # Hugging Face Papers 페이지 구조에 맞춘 Abstract 추출
+            # 1. 먼저 명확한 abstract 섹션 찾기
+            abstract_candidates = []
+            
+            # Hugging Face Papers 페이지의 실제 구조를 고려한 선택자
+            # 페이지에는 보통 논문 설명/요약이 특정 div나 section에 있음
             abstract_selectors = [
-                ('div', {'class': re.compile(r'abstract|description|summary', re.I)}),
-                ('p', {'class': re.compile(r'abstract|description|summary', re.I)}),
-                ('section', {'class': re.compile(r'abstract|description|summary', re.I)}),
+                # prose나 markdown 클래스는 보통 본문 내용
+                ('div', {'class': re.compile(r'prose|markdown|content|description|summary', re.I)}),
+                ('section', {'class': re.compile(r'abstract|description|summary|content', re.I)}),
+                ('div', {'id': re.compile(r'abstract|description|summary|content', re.I)}),
+                # paragraph 태그들
+                ('p', {'class': re.compile(r'abstract|description|summary|content', re.I)}),
+                # main content 영역
+                ('main', {}),
+                ('article', {}),
+                # 일반적인 content div
+                ('div', {'class': re.compile(r'text|body|main', re.I)}),
             ]
             
             for tag, attrs in abstract_selectors:
-                elem = soup.find(tag, attrs)
-                if elem:
-                    abstract = elem.get_text(strip=True)
-                    if abstract:
-                        break
+                elems = soup.find_all(tag, attrs)
+                for elem in elems:
+                    text = elem.get_text(strip=True)
+                    # "Join the discussion", "Subscribe" 등 불필요한 텍스트 제외
+                    if (text and len(text) > 100 and 
+                        'Join the discussion' not in text and
+                        'Subscribe' not in text and
+                        'Get trending papers' not in text and
+                        'byAK' not in text):
+                        abstract_candidates.append(text)
             
-            # 메타 설명도 시도
-            if not abstract:
+            # 가장 긴 텍스트가 abstract일 가능성이 높음 (단, 너무 긴 것은 제외)
+            if abstract_candidates:
+                # 100자 이상 2000자 이하의 텍스트 선호
+                valid_candidates = [c for c in abstract_candidates if 100 <= len(c) <= 2000]
+                if valid_candidates:
+                    abstract = max(valid_candidates, key=len)
+                elif abstract_candidates:
+                    abstract = max(abstract_candidates, key=len)
+            
+            # 2. 특정 구조에서 찾기 (h2 또는 h3 다음의 텍스트)
+            if not abstract or len(abstract) < 50:
+                headings = soup.find_all(['h2', 'h3'])
+                for heading in headings:
+                    heading_text = heading.get_text(strip=True).lower()
+                    if 'abstract' in heading_text or 'summary' in heading_text:
+                        # 다음 형제 요소 찾기
+                        next_elem = heading.find_next_sibling(['p', 'div', 'section'])
+                        if next_elem:
+                            text = next_elem.get_text(strip=True)
+                            if text and len(text) > 50:
+                                abstract = text
+                                break
+            
+            # 3. 메타 설명 시도
+            if not abstract or len(abstract) < 50:
                 meta_desc = soup.find('meta', attrs={'name': 'description'})
                 if meta_desc:
-                    abstract = meta_desc.get('content', '')
+                    desc = meta_desc.get('content', '')
+                    if desc and len(desc) > 50:
+                        abstract = desc
+            
+            # 4. Open Graph description 시도
+            if not abstract or len(abstract) < 50:
+                og_desc = soup.find('meta', attrs={'property': 'og:description'})
+                if og_desc:
+                    desc = og_desc.get('content', '')
+                    if desc and len(desc) > 50:
+                        abstract = desc
+            
+            # Abstract 정리 (불필요한 텍스트 제거)
+            if abstract:
+                # "Join the discussion" 같은 텍스트 제거
+                abstract = abstract.split('Join the discussion')[0].strip()
+                abstract = abstract.split('Subscribe')[0].strip()
+                abstract = abstract.split('Get trending papers')[0].strip()
+                # 너무 짧거나 의미 없는 텍스트 제거
+                if len(abstract) < 50:
+                    abstract = ''
+            
+            # Abstract 추출 결과 로깅
+            if abstract and len(abstract) >= 50:
+                print(f"    ✓ Abstract 추출 성공 ({len(abstract)}자): {abstract[:100]}...")
+            else:
+                print(f"    ⚠ Abstract 추출 실패 또는 너무 짧음")
             
             # 좋아요 수 추출 (상세 페이지에서)
             likes = paper.get('likes', 0)
