@@ -5,6 +5,9 @@ on:
     branches:
       - master
       - "hotfix/*"
+    paths-ignore:
+      - "_posts/**"
+      - "_data/papers/**"
   pull_request:
 
 jobs:
