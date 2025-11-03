@@ -155,6 +155,44 @@ class HFDailyPapersCrawler:
         
         return papers
     
+    def check_date_has_papers(self, target_date: datetime) -> bool:
+        """
+        특정 날짜에 논문이 있는지 확인
+        
+        Args:
+            target_date: 확인할 날짜
+            
+        Returns:
+            논문이 있으면 True, 없으면 False
+        """
+        date_str = target_date.strftime('%Y-%m-%d')
+        url = f"{self.papers_url}/date/{date_str}"
+        
+        try:
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, timeout=30, headers=headers)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # 페이지의 날짜 제목 확인 (h1 또는 특정 클래스)
+            # 페이지에 날짜가 표시되고 논문 항목이 있으면 True
+            paper_headings = soup.find_all('h3')
+            
+            # 논문 제목이 있는지 확인 (최소 1개 이상)
+            if paper_headings:
+                # 실제로 논문 제목인지 확인 (너무 짧거나 특정 패턴이면 제외)
+                valid_headings = [
+                    h for h in paper_headings 
+                    if h.find('a') and len(h.get_text(strip=True)) > 10
+                ]
+                if len(valid_headings) >= 1:
+                    return True
+            
+            return False
+        except Exception as e:
+            print(f"날짜 확인 실패 ({url}): {e}")
+            return False
+    
     def _fetch_daily_from_web(self, target_date: datetime) -> List[Dict]:
         """웹 페이지에서 일일 논문 목록 가져오기"""
         papers = []
@@ -619,7 +657,7 @@ class HFDailyPapersCrawler:
         print(f"월간 요약 생성: {filename}")
         return summary
     
-    def create_daily_summary_post(self, papers: List[Dict], target_date: Optional[datetime] = None, force_update: bool = False) -> Optional[str]:
+    def create_daily_summary_post(self, papers: List[Dict], target_date: Optional[datetime] = None, force_update: bool = True) -> Optional[str]:
         """
         일간 요약 포스트 생성
         
@@ -648,9 +686,11 @@ class HFDailyPapersCrawler:
         filename = f"{filename_date}-daily-papers-summary.md"
         filepath = self.posts_dir / filename
         
-        # 기존 파일이 있으면 내용 비교
-        if filepath.exists():
-            # 기존 파일의 논문 URL 목록 추출
+        # force_update가 True면 무조건 덮어쓰기 (좋아요 수 업데이트용)
+        if force_update and filepath.exists():
+            print(f"기존 파일 강제 업데이트: {filename} (좋아요 수 등 업데이트)")
+        elif filepath.exists():
+            # 기존 파일이 있고 force_update가 False일 때만 내용 비교하여 스킵 여부 결정
             try:
                 existing_content = filepath.read_text(encoding='utf-8')
                 # 기존 파일에서 논문 URL 추출
@@ -669,13 +709,8 @@ class HFDailyPapersCrawler:
                 )
                 
                 # URL이 같고 Abstract가 개선되지 않았으면 업데이트하지 않음
-                if existing_urls == new_urls and not new_has_good_abstract and not force_update:
+                if existing_urls == new_urls and not new_has_good_abstract:
                     print(f"이미 존재하는 일간 요약: {filename} (내용 동일, 업데이트 스킵)")
-                    return None
-                
-                # URL이 같고 Abstract가 개선되지 않았고 force_update여도 스킵
-                if existing_urls == new_urls and not new_has_good_abstract and force_update:
-                    print(f"기존 파일 내용과 동일: {filename} (업데이트 스킵)")
                     return None
                 
                 # Abstract 개선이 있으면 업데이트
@@ -824,24 +859,44 @@ def main():
     
     crawler = HFDailyPapersCrawler()
     
-    # 현재 UTC 시간 기준으로 크롤링 날짜 결정
-    # UTC 01:00 (KST 10:00)에는 어제 날짜의 논문 크롤링
-    # 그 이후에는 오늘 날짜 크롤링
+    # 오늘 날짜로 크롤링 (UTC 기준)
     now_utc = datetime.utcnow()
     now_kst = now_utc + timedelta(hours=9)
+    target_date = now_utc
     
-    # UTC 01:00-02:00 사이 (또는 KST 10:00-11:00 사이)에는 어제 날짜 사용
-    # 스케줄 크롤링이 UTC 01:00에 실행되므로 어제 날짜 논문을 크롤링
-    if 1 <= now_utc.hour < 2:
-        # UTC 01:00-02:00 사이에는 어제 날짜로 크롤링
-        target_date = now_utc - timedelta(days=1)
-        print(f"\n[시간대 체크] UTC 01:00-02:00 구간이므로 어제 날짜로 크롤링합니다.")
-    else:
-        # 그 외에는 오늘 날짜로 크롤링
-        target_date = now_utc
+    print(f"\n현재 시간: UTC {now_utc.strftime('%Y-%m-%d %H:%M')}, KST {now_kst.strftime('%Y-%m-%d %H:%M')}")
+    print(f"크롤링 대상 날짜: {target_date.strftime('%Y-%m-%d')}")
     
-    print(f"\n크롤링 대상 날짜: {target_date.strftime('%Y-%m-%d')} (UTC: {now_utc.strftime('%Y-%m-%d %H:%M')}, KST: {now_kst.strftime('%Y-%m-%d %H:%M')})")
+    # 1단계: 크롤링 시간대 확인
+    is_morning_crawl = 1 <= now_utc.hour < 12  # UTC 01:00-12:00 (KST 10:00-21:00)
+    is_evening_crawl = 13 <= now_utc.hour < 14  # UTC 13:00-14:00 (KST 22:00-23:00)
     
+    # 2단계: 오늘 날짜 페이지에 논문이 있는지 확인
+    print(f"\n[1단계] 오늘 날짜 페이지 확인 중: {target_date.strftime('%Y-%m-%d')}")
+    has_papers = crawler.check_date_has_papers(target_date)
+    
+    if not has_papers:
+        if is_morning_crawl:
+            print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없습니다.")
+            print("   페이지가 아직 갱신되지 않았거나 주말/공휴일일 수 있습니다.")
+            print("   크롤링을 중단합니다. 오후 10시에 다시 확인합니다.")
+            print("\n" + "=" * 50)
+            print("크롤링 완료: 논문 없음 (스킵)")
+            print("=" * 50)
+            return
+        else:
+            # 오후 크롤링인데도 논문이 없으면 (주말/공휴일 등)
+            print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없습니다.")
+            print("   주말/공휴일이거나 페이지가 갱신되지 않았을 수 있습니다.")
+            print("   크롤링을 중단합니다.")
+            print("\n" + "=" * 50)
+            print("크롤링 완료: 논문 없음 (스킵)")
+            print("=" * 50)
+            return
+    
+    print(f"✅ 오늘 날짜에 논문이 있습니다. 크롤링을 시작합니다.")
+    
+    # 3단계: 논문 크롤링
     papers = crawler.fetch_daily_papers(target_date)
     
     print(f"\n총 {len(papers)}개의 논문을 찾았습니다.\n")
@@ -861,28 +916,43 @@ def main():
         title = paper.get('title', 'Unknown')[:60]
         print(f"  {i}. 👍 {likes} - {title}")
     
+    # 4단계: 크롤링 시간대에 따라 업데이트 방식 결정
+    # 오전 크롤링(UTC 01:00, KST 10:00): 새 파일 생성
+    # 오후 크롤링(UTC 13:00, KST 22:00): 기존 파일이 있으면 덮어쓰기, 없으면 새로 생성 (좋아요 수 업데이트)
+    if is_evening_crawl:
+        print(f"\n[오후 크롤링] 오전에 스킵되었어도 페이지가 갱신되었으면 새로 생성하거나 업데이트합니다.")
+        print(f"   기존 파일이 있으면 좋아요 수 업데이트를 위해 덮어쓰기합니다.")
+        force_update = True
+    else:
+        print(f"\n[오전 크롤링] 새 논문 크롤링 및 파일 생성/업데이트합니다.")
+        force_update = False
+    
     # 논문이 있을 때만 데이터 저장 및 포스트 생성
     crawler.save_daily_data(papers, target_date)
-    post_path = crawler.create_daily_summary_post(papers, target_date, force_update=False)
+    post_path = crawler.create_daily_summary_post(papers, target_date, force_update=force_update)
     if post_path:
-        print(f"✅ 일간 요약 포스트 생성/업데이트: {post_path}")
+        if force_update:
+            print(f"✅ 일간 요약 포스트 업데이트 (좋아요 수 반영): {post_path}")
+        else:
+            print(f"✅ 일간 요약 포스트 생성/업데이트: {post_path}")
     else:
-        print("ℹ️ 일간 요약 포스트 업데이트 없음 (내용 동일 또는 이미 존재)")
+        print("ℹ️ 일간 요약 포스트 업데이트 없음")
     
-    # 월간 요약 생성 (이번 달)
-    try:
-        current_year = target_date.year
-        current_month = target_date.month
-        summary = crawler.generate_monthly_summary(current_year, current_month)
-        # 월간 요약은 논문이 있을 때만 생성
-        if summary['total_papers'] > 0:
-            monthly_post_path = crawler.create_monthly_summary_post(summary, force_update=False)
-            if monthly_post_path:
-                print(f"✅ 월간 요약 포스트 생성/업데이트: {monthly_post_path}")
-            else:
-                print("ℹ️ 월간 요약 포스트 업데이트 없음 (내용 동일 또는 이미 존재)")
-    except Exception as e:
-        print(f"⚠️ 월간 요약 생성 실패: {e}")
+    # 월간 요약 생성 (이번 달) - 오전 크롤링에서만
+    if is_morning_crawl:
+        try:
+            current_year = target_date.year
+            current_month = target_date.month
+            summary = crawler.generate_monthly_summary(current_year, current_month)
+            # 월간 요약은 논문이 있을 때만 생성
+            if summary['total_papers'] > 0:
+                monthly_post_path = crawler.create_monthly_summary_post(summary, force_update=False)
+                if monthly_post_path:
+                    print(f"✅ 월간 요약 포스트 생성/업데이트: {monthly_post_path}")
+                else:
+                    print("ℹ️ 월간 요약 포스트 업데이트 없음 (내용 동일 또는 이미 존재)")
+        except Exception as e:
+            print(f"⚠️ 월간 요약 생성 실패: {e}")
     
     print("\n" + "=" * 50)
     print(f"크롤링 완료: {len(papers)}개의 논문을 처리했습니다.")
