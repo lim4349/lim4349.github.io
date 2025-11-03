@@ -600,7 +600,7 @@ class HFDailyPapersCrawler:
         # 통계
         total_papers = len(all_papers)
         total_likes = sum(p.get('likes', 0) for p in all_papers)
-        top_papers = all_papers[:10]  # Top 10
+        top_papers = all_papers[:20]  # Top 20
         
         # 태그별 통계
         tag_stats = defaultdict(int)
@@ -744,8 +744,7 @@ class HFDailyPapersCrawler:
             if paper.get('paper_link'):
                 content += f"   - [논문 링크]({paper['paper_link']})\n"
             if paper.get('abstract'):
-                abstract = paper['abstract'][:200] + "..." if len(paper['abstract']) > 200 else paper['abstract']
-                content += f"   - Abstract: {abstract}\n"
+                content += f"   - Abstract: {paper['abstract']}\n"
             content += "\n"
         
         # Front Matter + Content
@@ -823,12 +822,17 @@ class HFDailyPapersCrawler:
         content += f"- **총 좋아요 수**: {summary['total_likes']:,}\n"
         content += f"- **평균 좋아요 수**: {summary['average_likes']:.2f}\n"
         content += f"- **수집 일수**: {summary['days_crawled']}일\n\n"
-        content += "## 🔥 가장 인기 있는 논문 Top 10\n\n"
+        content += "## 🔥 가장 인기 있는 논문 Top 20\n\n"
         
         if summary['top_papers']:
             for i, paper in enumerate(summary['top_papers'], 1):
                 content += f"{i}. **{paper.get('title', 'Untitled')}** - 👍 {paper.get('likes', 0)}\n"
-                content += f"   - [HF 페이지]({paper.get('url', '#')})\n\n"
+                content += f"   - [HF 페이지]({paper.get('url', '#')})\n"
+                if paper.get('paper_link'):
+                    content += f"   - [논문 링크]({paper['paper_link']})\n"
+                if paper.get('abstract'):
+                    content += f"   - Abstract: {paper['abstract']}\n"
+                content += "\n"
         else:
             content += "이번 달에 수집된 논문이 없습니다.\n\n"
         
@@ -938,12 +942,23 @@ def main():
     else:
         print("ℹ️ 일간 요약 포스트 업데이트 없음")
     
-    # 월간 요약 생성 (이번 달) - 오전 크롤링에서만
-    if is_morning_crawl:
+    # 월간 요약 생성 (이전 달) - 매월 1일에만 실행
+    # 오늘이 매월 1일이면 이전 달의 월간 요약 생성
+    is_first_of_month = target_date.day == 1
+    
+    if is_first_of_month and is_morning_crawl:
         try:
-            current_year = target_date.year
-            current_month = target_date.month
-            summary = crawler.generate_monthly_summary(current_year, current_month)
+            # 이전 달 계산
+            if target_date.month == 1:
+                # 1월이면 작년 12월
+                prev_year = target_date.year - 1
+                prev_month = 12
+            else:
+                prev_year = target_date.year
+                prev_month = target_date.month - 1
+            
+            print(f"\n[월간 요약] 이전 달({prev_year}년 {prev_month}월) 월간 요약 생성 중...")
+            summary = crawler.generate_monthly_summary(prev_year, prev_month)
             # 월간 요약은 논문이 있을 때만 생성
             if summary['total_papers'] > 0:
                 monthly_post_path = crawler.create_monthly_summary_post(summary, force_update=False)
@@ -951,8 +966,14 @@ def main():
                     print(f"✅ 월간 요약 포스트 생성/업데이트: {monthly_post_path}")
                 else:
                     print("ℹ️ 월간 요약 포스트 업데이트 없음 (내용 동일 또는 이미 존재)")
+            else:
+                print(f"⚠️ {prev_year}년 {prev_month}월에 수집된 논문이 없습니다.")
         except Exception as e:
             print(f"⚠️ 월간 요약 생성 실패: {e}")
+    elif is_first_of_month:
+        print(f"\n[월간 요약] 오늘은 {target_date.day}일이지만 오후 크롤링이므로 월간 요약을 생성하지 않습니다.")
+    else:
+        print(f"\n[월간 요약] 오늘은 {target_date.day}일이므로 월간 요약을 생성하지 않습니다. (매월 1일에만 생성)")
     
     print("\n" + "=" * 50)
     print(f"크롤링 완료: {len(papers)}개의 논문을 처리했습니다.")
