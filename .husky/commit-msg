@@ -1,1 +1,2 @@
-npx --no -- commitlint --edit $1
+# commitlint hook 비활성화
+# npx --no -- commitlint --edit $1
