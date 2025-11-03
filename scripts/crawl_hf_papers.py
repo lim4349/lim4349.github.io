@@ -824,9 +824,23 @@ def main():
     
     crawler = HFDailyPapersCrawler()
     
-    # 오늘 날짜의 논문 가져오기
-    target_date = datetime.utcnow()
-    print(f"\n크롤링 대상 날짜: {target_date.strftime('%Y-%m-%d')}")
+    # 현재 UTC 시간 기준으로 크롤링 날짜 결정
+    # UTC 01:00 (KST 10:00)에는 어제 날짜의 논문 크롤링
+    # 그 이후에는 오늘 날짜 크롤링
+    now_utc = datetime.utcnow()
+    now_kst = now_utc + timedelta(hours=9)
+    
+    # UTC 01:00-02:00 사이 (또는 KST 10:00-11:00 사이)에는 어제 날짜 사용
+    # 스케줄 크롤링이 UTC 01:00에 실행되므로 어제 날짜 논문을 크롤링
+    if 1 <= now_utc.hour < 2:
+        # UTC 01:00-02:00 사이에는 어제 날짜로 크롤링
+        target_date = now_utc - timedelta(days=1)
+        print(f"\n[시간대 체크] UTC 01:00-02:00 구간이므로 어제 날짜로 크롤링합니다.")
+    else:
+        # 그 외에는 오늘 날짜로 크롤링
+        target_date = now_utc
+    
+    print(f"\n크롤링 대상 날짜: {target_date.strftime('%Y-%m-%d')} (UTC: {now_utc.strftime('%Y-%m-%d %H:%M')}, KST: {now_kst.strftime('%Y-%m-%d %H:%M')})")
     
     papers = crawler.fetch_daily_papers(target_date)
     
