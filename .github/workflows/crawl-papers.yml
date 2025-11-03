@@ -25,6 +25,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          ref: ${{ github.ref }}
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -65,16 +66,40 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # 현재 브랜치 확인 및 설정
+          BRANCH_NAME="${{ steps.get-branch.outputs.branch }}"
+          echo "현재 브랜치: ${BRANCH_NAME}"
+          
+          # 원격 브랜치 추적 설정
+          git branch --set-upstream-to=origin/${BRANCH_NAME} ${BRANCH_NAME} || true
+          
+          # 원격 변경사항 가져오기 및 병합 (충돌 시 자동 해결)
+          echo "원격 변경사항 가져오기..."
+          git fetch origin ${BRANCH_NAME}
+          git pull origin ${BRANCH_NAME} --no-edit --no-rebase || {
+            echo "병합 충돌 발생, rebase 시도..."
+            git pull origin ${BRANCH_NAME} --rebase --no-edit || {
+              echo "Rebase 실패, 수동 해결 필요"
+              exit 1
+            }
+          }
+          
           # 새로 생성되거나 수정된 파일 모두 추가
           git add _posts/ _data/papers/ || true
+          
           # Conventional Commits 형식 준수 (commitlint 규칙)
           # subject는 소문자로만 작성 (subject-case: lowercase 규칙 준수)
           DATE_STR=$(date +'%Y-%m-%d')
           git commit -m "chore(daily-papers): update papers ${DATE_STR}" --no-verify || exit 0
-          # 명시적으로 현재 브랜치에 푸시 (배포 워크플로우 트리거용)
-          BRANCH_NAME="${{ steps.get-branch.outputs.branch }}"
+          
+          # 명시적으로 현재 브랜치에 푸시
           echo "브랜치 ${BRANCH_NAME}에 푸시 중..."
-          git push origin HEAD:${BRANCH_NAME}
+          git push origin ${BRANCH_NAME} || {
+            echo "Push 실패, 다시 시도..."
+            git pull origin ${BRANCH_NAME} --rebase
+            git push origin ${BRANCH_NAME}
+          }
 
 
 

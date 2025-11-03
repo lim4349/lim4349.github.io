@@ -262,88 +262,165 @@ class HFDailyPapersCrawler:
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # Abstract/Description 추출
+            # 좋아요 수, 논문 링크, 코드 링크, 태그 추출
+            likes = paper.get('likes', 0)
+            for elem in soup.find_all(['span', 'div', 'button'], class_=re.compile(r'like|favorite', re.I)):
+                match = re.search(r'(\d+)', elem.get_text(strip=True))
+                if match:
+                    likes = max(likes, int(match.group(1)))
+            
+            title = paper.get('title', '')
+            if not title:
+                h1 = soup.find('h1') or soup.find('title')
+                if h1:
+                    title = h1.get_text(strip=True)
+            
+            paper_link = paper.get('paper_link', '')
+            # arXiv, PDF, DOI 링크 찾기
+            for link in soup.find_all('a', href=True):
+                href = link.get('href', '')
+                # arXiv 링크 (abs/, pdf/, e-print 등)
+                if re.search(r'arxiv\.org|arxiv\.org/abs/|arxiv\.org/pdf/', href, re.I):
+                    paper_link = href
+                    if not paper_link.startswith('http'):
+                        # 상대 경로 처리
+                        if href.startswith('/abs/') or href.startswith('/pdf/'):
+                            paper_link = 'https://arxiv.org' + href
+                        elif href.startswith('/'):
+                            paper_link = 'https://arxiv.org/abs/' + href.lstrip('/')
+                    break
+                # PDF 링크
+                elif re.search(r'\.pdf$', href, re.I) and not paper_link:
+                    paper_link = href
+                    if not paper_link.startswith('http'):
+                        paper_link = self.base_url + paper_link if paper_link.startswith('/') else href
+                # DOI 링크
+                elif re.search(r'doi\.org|doi:', href, re.I) and not paper_link:
+                    paper_link = href
+                    if not paper_link.startswith('http'):
+                        paper_link = 'https://doi.org' + href if href.startswith('/') else href
+            
+            code_link = paper.get('code_link', '')
+            for link in soup.find_all('a', href=re.compile(r'(github|gitlab)', re.I)):
+                code_link = link.get('href', '')
+                break
+            
+            tags = paper.get('tags', [])
+            if not tags:
+                tags = [tag.get_text(strip=True) for tag in soup.find_all(['a', 'span'], class_=re.compile(r'tag', re.I))[:10]]
+            
+            # Abstract 추출: 논문 링크(paper_link)에서 먼저 시도
             abstract = paper.get('abstract', '')
             
-            # Abstract 추출 - 더 구체적인 선택자 시도
-            abstract_candidates = []
+            # 1. 논문 링크(arXiv 등)에서 Abstract 추출 시도
+            if paper_link:
+                try:
+                    paper_response = requests.get(paper_link, timeout=30, headers=headers)
+                    paper_response.raise_for_status()
+                    paper_soup = BeautifulSoup(paper_response.content, 'html.parser')
+                    
+                    # arXiv 페이지의 Abstract 추출
+                    # arXiv는 보통 <blockquote class="abstract"> 또는 <div class="abstract"> 사용
+                    abstract_elem = None
+                    
+                    # arXiv 형식 1: blockquote.abstract
+                    abstract_elem = paper_soup.find('blockquote', class_='abstract')
+                    if not abstract_elem:
+                        # arXiv 형식 2: div.abstract
+                        abstract_elem = paper_soup.find('div', class_='abstract')
+                    if not abstract_elem:
+                        # arXiv 형식 3: span.abstract-text
+                        abstract_elem = paper_soup.find('span', class_='abstract-text')
+                    if not abstract_elem:
+                        # arXiv 형식 4: class에 abstract 포함
+                        abstract_elem = paper_soup.find(class_=re.compile(r'abstract', re.I))
+                    
+                    if abstract_elem:
+                        abstract_text = abstract_elem.get_text(separator=' ', strip=True)
+                        # "Abstract:" 같은 레이블 제거
+                        abstract_text = re.sub(r'^Abstract\s*:?\s*', '', abstract_text, flags=re.I)
+                        # "arXiv:" 같은 접두사 제거
+                        abstract_text = re.sub(r'^arXiv\s*:?\s*\d+\.\d+\s*', '', abstract_text, flags=re.I)
+                        if len(abstract_text) >= 50:
+                            abstract = abstract_text.strip()
+                            print(f"    ✅ 논문 페이지에서 Abstract 추출 성공 ({len(abstract)}자)")
+                except Exception as e:
+                    print(f"    ⚠️ 논문 페이지 접근 실패 ({paper_link}): {e}")
             
-            # 1. 명시적인 abstract/summary 섹션 찾기
-            for selector in [
-                'div[class*="abstract"]',
-                'div[class*="summary"]',
-                'section[class*="abstract"]',
-                'section[class*="summary"]',
-                'p[class*="abstract"]',
-                'p[class*="summary"]',
-            ]:
-                for elem in soup.select(selector):
-                    text = elem.get_text(separator=' ', strip=True)
-                    if text and 100 <= len(text) <= 2000:
-                        abstract_candidates.append(text)
-            
-            # 2. main/article에서 첫 번째 긴 문단 찾기
-            for container in soup.find_all(['main', 'article']):
-                paragraphs = container.find_all(['p', 'div'], limit=10)
-                for p in paragraphs:
-                    text = p.get_text(separator=' ', strip=True)
-                    # Abstract는 보통 긴 문단이고, 버튼/링크 텍스트가 아님
-                    if (text and 150 <= len(text) <= 2000 and
-                        'Join the discussion' not in text and
-                        'Subscribe' not in text and
-                        'Get trending papers' not in text and
-                        'on this paper page' not in text and
-                        not text.startswith('http') and
-                        len(text.split()) >= 20):  # 최소 20단어
-                        abstract_candidates.append(text)
-                        break  # 첫 번째 긴 문단만 사용
-            
-            # 3. 가장 적합한 후보 선택
-            if abstract_candidates:
-                # 필터링: 불필요한 텍스트 제거
-                filtered = []
-                unwanted_phrases = [
-                    'Join the discussion',
-                    'on this paper page',
-                    'Subscribe',
-                    'Get trending papers',
-                    'View on',
-                    'Download',
-                    'Like',
-                    'Share',
-                ]
-                
-                for candidate in abstract_candidates:
-                    # 각 불필요한 구문이 포함되어 있는지 체크
-                    has_unwanted = any(phrase.lower() in candidate.lower() for phrase in unwanted_phrases)
-                    if not has_unwanted and len(candidate) >= 100:
-                        filtered.append(candidate)
-                
-                if filtered:
-                    # 가장 긴 텍스트 선택 (더 자세한 Abstract일 가능성)
-                    abstract = max(filtered, key=len)
-                elif abstract_candidates:
-                    # 필터링 후보가 없으면 원본 후보 중에서 가장 긴 것 선택
-                    abstract = max(abstract_candidates, key=len)
-                    # 불필요한 부분 제거
-                    for unwanted in unwanted_phrases:
-                        if unwanted.lower() in abstract.lower():
-                            parts = re.split(re.escape(unwanted), abstract, flags=re.I)
-                            if parts:
-                                abstract = parts[0].strip()
-                                break
-            
-            # 4. 메타 태그 시도 (마지막 수단)
+            # 2. 논문 링크에서 추출 실패 시 Hugging Face 페이지에서 시도
             if not abstract or len(abstract) < 50:
-                for meta in soup.find_all('meta', attrs={'name': ['description'], 'property': ['og:description']}):
-                    desc = meta.get('content', '').strip()
-                    if (desc and len(desc) >= 100 and
-                        'Join the discussion' not in desc and
-                        'on this paper page' not in desc):
-                        abstract = desc
-                        break
+                abstract_candidates = []
+                
+                # 명시적인 abstract/summary 섹션 찾기
+                for selector in [
+                    'div[class*="abstract"]',
+                    'div[class*="summary"]',
+                    'section[class*="abstract"]',
+                    'section[class*="summary"]',
+                    'p[class*="abstract"]',
+                    'p[class*="summary"]',
+                ]:
+                    for elem in soup.select(selector):
+                        text = elem.get_text(separator=' ', strip=True)
+                        if text and 100 <= len(text) <= 2000:
+                            abstract_candidates.append(text)
+                
+                # main/article에서 첫 번째 긴 문단 찾기
+                for container in soup.find_all(['main', 'article']):
+                    paragraphs = container.find_all(['p', 'div'], limit=10)
+                    for p in paragraphs:
+                        text = p.get_text(separator=' ', strip=True)
+                        if (text and 150 <= len(text) <= 2000 and
+                            'Join the discussion' not in text and
+                            'Subscribe' not in text and
+                            'Get trending papers' not in text and
+                            'on this paper page' not in text and
+                            not text.startswith('http') and
+                            len(text.split()) >= 20):
+                            abstract_candidates.append(text)
+                            break
+                
+                # 가장 적합한 후보 선택
+                if abstract_candidates:
+                    filtered = []
+                    unwanted_phrases = [
+                        'Join the discussion',
+                        'on this paper page',
+                        'Subscribe',
+                        'Get trending papers',
+                        'View on',
+                        'Download',
+                        'Like',
+                        'Share',
+                    ]
+                    
+                    for candidate in abstract_candidates:
+                        has_unwanted = any(phrase.lower() in candidate.lower() for phrase in unwanted_phrases)
+                        if not has_unwanted and len(candidate) >= 100:
+                            filtered.append(candidate)
+                    
+                    if filtered:
+                        abstract = max(filtered, key=len)
+                    elif abstract_candidates:
+                        abstract = max(abstract_candidates, key=len)
+                        for unwanted in unwanted_phrases:
+                            if unwanted.lower() in abstract.lower():
+                                parts = re.split(re.escape(unwanted), abstract, flags=re.I)
+                                if parts:
+                                    abstract = parts[0].strip()
+                                    break
+                
+                # 메타 태그 시도 (마지막 수단)
+                if not abstract or len(abstract) < 50:
+                    for meta in soup.find_all('meta', attrs={'name': ['description'], 'property': ['og:description']}):
+                        desc = meta.get('content', '').strip()
+                        if (desc and len(desc) >= 100 and
+                            'Join the discussion' not in desc and
+                            'on this paper page' not in desc):
+                            abstract = desc
+                            break
             
-            # 5. 최종 정리
+            # 3. 최종 정리
             if abstract:
                 # 불필요한 구문 제거
                 unwanted_patterns = [
@@ -360,33 +437,6 @@ class HFDailyPapersCrawler:
                     abstract.lower() in ['join the discussion', 'subscribe', 'get trending papers'] or
                     'on this paper page' in abstract.lower()):
                     abstract = ''
-            
-            # 좋아요 수, 논문 링크, 코드 링크, 태그 추출
-            likes = paper.get('likes', 0)
-            for elem in soup.find_all(['span', 'div', 'button'], class_=re.compile(r'like|favorite', re.I)):
-                match = re.search(r'(\d+)', elem.get_text(strip=True))
-                if match:
-                    likes = max(likes, int(match.group(1)))
-            
-            title = paper.get('title', '')
-            if not title:
-                h1 = soup.find('h1') or soup.find('title')
-                if h1:
-                    title = h1.get_text(strip=True)
-            
-            paper_link = paper.get('paper_link', '')
-            for link in soup.find_all('a', href=re.compile(r'(arxiv|pdf|doi)', re.I)):
-                paper_link = link.get('href', '')
-                break
-            
-            code_link = paper.get('code_link', '')
-            for link in soup.find_all('a', href=re.compile(r'(github|gitlab)', re.I)):
-                code_link = link.get('href', '')
-                break
-            
-            tags = paper.get('tags', [])
-            if not tags:
-                tags = [tag.get_text(strip=True) for tag in soup.find_all(['a', 'span'], class_=re.compile(r'tag', re.I))[:10]]
             
             # 업데이트된 정보 반환
             paper.update({
