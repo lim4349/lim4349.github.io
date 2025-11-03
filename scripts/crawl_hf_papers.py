@@ -271,12 +271,75 @@ class HFDailyPapersCrawler:
                                 current = getattr(current, 'next_sibling', None)
                                 checked += 1
                     
+                    # 기관 정보 추출 - h3 다음에 오는 텍스트에서 찾기
+                    institution = ''
+                    if parent:
+                        # h3 다음에 오는 모든 형제 요소 확인
+                        current = heading.next_sibling
+                        checked = 0
+                        while current and checked < 10:
+                            if hasattr(current, 'get_text'):
+                                text = current.get_text(strip=True)
+                                # 기관명은 보통 텍스트이고, 링크나 특정 구조를 가짐
+                                # "ByteDance-Seed ByteDance Seed" 같은 패턴
+                                if text and len(text) > 2 and len(text) < 200:
+                                    # 숫자나 특수 문자만 있는 것은 제외
+                                    if not re.match(r'^[\d\s\-]+$', text):
+                                        # 링크나 텍스트 노드에서 추출
+                                        if hasattr(current, 'find'):
+                                            # 링크 안의 텍스트 추출
+                                            link = current.find('a')
+                                            if link:
+                                                link_text = link.get_text(strip=True)
+                                                if link_text and len(link_text) > 2:
+                                                    institution = link_text
+                                                    break
+                                            else:
+                                                # 일반 텍스트 노드
+                                                institution = text
+                                                break
+                                        else:
+                                            institution = text
+                                            break
+                            current = getattr(current, 'next_sibling', None)
+                            checked += 1
+                        
+                        # 부모 요소에서 기관 관련 링크나 텍스트 찾기
+                        if not institution:
+                            # a 태그 중 href에 특정 패턴이 있는 것 찾기 (org, company 등)
+                            for link in parent.find_all('a', href=True):
+                                href = link.get('href', '')
+                                link_text = link.get_text(strip=True)
+                                # 기관 페이지 링크 패턴이나 텍스트가 있는 경우
+                                if (link_text and len(link_text) > 2 and len(link_text) < 200 and
+                                    ('/org/' in href or '/company/' in href or 
+                                     not href.startswith('/papers/') and not href.startswith('#'))):
+                                    institution = link_text
+                                    break
+                            
+                            # 부모 요소의 전체 텍스트에서 기관명 패턴 찾기
+                            if not institution:
+                                parent_text = parent.get_text(separator=' ', strip=True)
+                                # 제목과 좋아요 수 사이의 텍스트에서 기관명 찾기
+                                lines = parent_text.split('\n')
+                                for line in lines:
+                                    line = line.strip()
+                                    # 제목이 아닌 긴 텍스트 라인 찾기
+                                    if (line and len(line) > 3 and len(line) < 200 and 
+                                        title.lower() not in line.lower() and
+                                        not re.match(r'^[\d\s]+$', line)):
+                                        # 링크나 특수 문자가 아닌 일반 텍스트인 경우
+                                        if not line.startswith('http') and not line.startswith('/'):
+                                            institution = line
+                                            break
+                    
                     if title and paper_url:
                         papers.append({
                             'title': title,
                             'url': paper_url,
                             'published': target_date.isoformat(),
-                            'likes': likes
+                            'likes': likes,
+                            'institution': institution
                         })
                 except Exception:
                     continue
@@ -346,6 +409,9 @@ class HFDailyPapersCrawler:
             tags = paper.get('tags', [])
             if not tags:
                 tags = [tag.get_text(strip=True) for tag in soup.find_all(['a', 'span'], class_=re.compile(r'tag', re.I))[:10]]
+            
+            # 기관 정보는 목록 페이지에서만 추출 (상세 페이지에서는 찾지 않음)
+            institution = paper.get('institution', '')
             
             # Abstract 추출: 논문 링크(paper_link)에서 먼저 시도
             abstract = paper.get('abstract', '')
@@ -476,6 +542,7 @@ class HFDailyPapersCrawler:
                     'on this paper page' in abstract.lower()):
                     abstract = ''
             
+            
             # 업데이트된 정보 반환
             paper.update({
                 'title': title,
@@ -484,6 +551,7 @@ class HFDailyPapersCrawler:
                 'paper_link': paper_link,
                 'code_link': code_link,
                 'tags': tags,
+                'institution': institution,
                 'description': abstract[:500] if abstract else ''  # 요약
             })
             
@@ -740,6 +808,8 @@ class HFDailyPapersCrawler:
         
         for i, paper in enumerate(papers, 1):
             content += f"{i}. **{paper.get('title', 'Untitled')}** - 👍 {paper.get('likes', 0)}\n"
+            if paper.get('institution'):
+                content += f"   - 기관: {paper['institution']}\n"
             content += f"   - [HF 페이지]({paper.get('url', '#')})\n"
             if paper.get('paper_link'):
                 content += f"   - [논문 링크]({paper['paper_link']})\n"
@@ -827,6 +897,8 @@ class HFDailyPapersCrawler:
         if summary['top_papers']:
             for i, paper in enumerate(summary['top_papers'], 1):
                 content += f"{i}. **{paper.get('title', 'Untitled')}** - 👍 {paper.get('likes', 0)}\n"
+                if paper.get('institution'):
+                    content += f"   - 기관: {paper['institution']}\n"
                 content += f"   - [HF 페이지]({paper.get('url', '#')})\n"
                 if paper.get('paper_link'):
                     content += f"   - [논문 링크]({paper['paper_link']})\n"
