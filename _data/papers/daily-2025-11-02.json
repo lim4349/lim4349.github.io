@@ -11,8 +11,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26583",
       "code_link": "https://github.com/baaivision/Emu3.5",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "Kimi Linear: An Expressive, Efficient Attention Architecture",
@@ -22,8 +21,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26692",
       "code_link": "https://github.com/MoonshotAI/Kimi-Linear",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "The End of Manual Decoding: Towards Truly End-to-End Language Models",
@@ -33,8 +31,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26697",
       "code_link": "https://github.com/Zacks917/AutoDeco",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "Remote Labor Index: Measuring AI Automation of Remote Work",
@@ -44,8 +41,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26787",
       "code_link": "",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "Can Agent Conquer Web? Exploring the Frontiers of ChatGPT Atlas Agent in\n  Web Games",
@@ -55,8 +51,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26298",
       "code_link": "https://atlas-game-eval.github.io/",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "OmniX: From Unified Panoramic Generation and Perception to\n  Graphics-Ready 3D Scenes",
@@ -66,8 +61,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26800",
       "code_link": "https://yukun-huang.github.io/OmniX/",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "AMO-Bench: Large Language Models Still Struggle in High School Math\n  Competitions",
@@ -77,8 +71,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26768",
       "code_link": "https://amo-bench.github.io/",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "Are Video Models Ready as Zero-Shot Reasoners? An Empirical Study with\n  the MME-CoF Benchmark",
@@ -88,8 +81,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26802",
       "code_link": "https://video-cof.github.io/",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "Magentic Marketplace: An Open-Source Environment for Studying Agentic\n  Markets",
@@ -99,8 +91,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.25779",
       "code_link": "https://github.com/microsoft/multi-agent-marketplace",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     },
     {
       "title": "FullPart: Generating each 3D Part at Full Resolution",
@@ -110,8 +101,7 @@
       "abstract": "Join the discussion on this paper page",
       "paper_link": "https://arxiv.org/abs/2510.26140",
       "code_link": "https://fullpart3d.github.io/",
-      "tags": [],
-      "description": "Join the discussion on this paper page"
+      "tags": []
     }
   ]
 }

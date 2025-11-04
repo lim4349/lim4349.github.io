@@ -38,7 +38,27 @@ class HFDailyPapersCrawler:
             "https://huggingface.co/blog/tags/papers/rss.xml",
             "https://huggingface.co/blog/rss.xml",  # 전체 블로그 RSS
         ]
-        self.rss_url = self.rss_urls[0]  # 기본값
+        
+        # 공통 HTTP 헤더
+        self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+        
+        # Abstract 추출 시 제외할 불필요한 구문들
+        self.unwanted_phrases = [
+            'Join the discussion',
+            'on this paper page',
+            'Subscribe',
+            'Get trending papers',
+            'View on',
+            'Download',
+            'Like',
+            'Share',
+        ]
+        self.unwanted_patterns = [
+            r'Join the discussion.*?$',
+            r'on this paper page.*?$',
+            r'Subscribe.*?$',
+            r'Get trending papers.*?$',
+        ]
     
     def fetch_daily_papers(self, target_date: Optional[datetime] = None) -> List[Dict]:
         """
@@ -97,8 +117,7 @@ class HFDailyPapersCrawler:
                 print(f"  상세 정보 가져오기 실패 ({paper.get('url', 'unknown')}): {e}")
                 enriched_papers.append(paper)
         
-        # 최종 정렬 (좋아요 수로)
-        enriched_papers.sort(key=lambda x: x.get('likes', 0), reverse=True)
+        # enriched_papers는 이미 likes 기준으로 정렬된 순서이므로 재정렬 불필요
         
         print(f"\n[완료] 최종 {len(enriched_papers)}개 논문 수집 완료")
         
@@ -169,8 +188,7 @@ class HFDailyPapersCrawler:
         url = f"{self.papers_url}/date/{date_str}"
         
         try:
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-            response = requests.get(url, timeout=30, headers=headers)
+            response = requests.get(url, timeout=30, headers=self.headers)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
@@ -203,15 +221,13 @@ class HFDailyPapersCrawler:
         url = f"{self.papers_url}/date/{date_str}"
         
         try:
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-            response = requests.get(url, timeout=30, headers=headers)
+            response = requests.get(url, timeout=30, headers=self.headers)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
             # 논문 항목 찾기 (h3 태그로 제목 찾기)
             # 구조: h3 > a (제목 링크), 좋아요 수는 같은 레벨에 있음
             paper_headings = soup.find_all('h3')
-            
             
             for heading in paper_headings:
                 try:
@@ -225,12 +241,9 @@ class HFDailyPapersCrawler:
                         continue
                     
                     paper_url = title_link.get('href', '')
-                    
-                    if not paper_url.startswith('http'):
-                        if paper_url.startswith('/'):
-                            paper_url = self.base_url + paper_url
-                        else:
-                            paper_url = f"{self.base_url}/papers/{paper_url}"
+                    # 상대 경로를 절대 경로로 변환
+                    if paper_url and not paper_url.startswith('http'):
+                        paper_url = self.base_url + paper_url if paper_url.startswith('/') else f"{self.base_url}/papers/{paper_url}"
                     
                     # 좋아요 수 찾기 - h3의 부모 요소에서 찾기
                     likes = 0
@@ -356,10 +369,7 @@ class HFDailyPapersCrawler:
             return paper
         
         try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
-            response = requests.get(url, timeout=30, headers=headers)
+            response = requests.get(url, timeout=30, headers=self.headers)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
@@ -419,25 +429,16 @@ class HFDailyPapersCrawler:
             # 1. 논문 링크(arXiv 등)에서 Abstract 추출 시도
             if paper_link:
                 try:
-                    paper_response = requests.get(paper_link, timeout=30, headers=headers)
+                    paper_response = requests.get(paper_link, timeout=30, headers=self.headers)
                     paper_response.raise_for_status()
                     paper_soup = BeautifulSoup(paper_response.content, 'html.parser')
                     
                     # arXiv 페이지의 Abstract 추출
-                    # arXiv는 보통 <blockquote class="abstract"> 또는 <div class="abstract"> 사용
-                    abstract_elem = None
-                    
-                    # arXiv 형식 1: blockquote.abstract
-                    abstract_elem = paper_soup.find('blockquote', class_='abstract')
-                    if not abstract_elem:
-                        # arXiv 형식 2: div.abstract
-                        abstract_elem = paper_soup.find('div', class_='abstract')
-                    if not abstract_elem:
-                        # arXiv 형식 3: span.abstract-text
-                        abstract_elem = paper_soup.find('span', class_='abstract-text')
-                    if not abstract_elem:
-                        # arXiv 형식 4: class에 abstract 포함
-                        abstract_elem = paper_soup.find(class_=re.compile(r'abstract', re.I))
+                    # 여러 형식 시도: blockquote.abstract, div.abstract, span.abstract-text, 또는 class에 abstract 포함
+                    abstract_elem = (paper_soup.find('blockquote', class_='abstract') or
+                                   paper_soup.find('div', class_='abstract') or
+                                   paper_soup.find('span', class_='abstract-text') or
+                                   paper_soup.find(class_=re.compile(r'abstract', re.I)))
                     
                     if abstract_elem:
                         abstract_text = abstract_elem.get_text(separator=' ', strip=True)
@@ -486,28 +487,16 @@ class HFDailyPapersCrawler:
                 
                 # 가장 적합한 후보 선택
                 if abstract_candidates:
-                    filtered = []
-                    unwanted_phrases = [
-                        'Join the discussion',
-                        'on this paper page',
-                        'Subscribe',
-                        'Get trending papers',
-                        'View on',
-                        'Download',
-                        'Like',
-                        'Share',
-                    ]
-                    
-                    for candidate in abstract_candidates:
-                        has_unwanted = any(phrase.lower() in candidate.lower() for phrase in unwanted_phrases)
-                        if not has_unwanted and len(candidate) >= 100:
-                            filtered.append(candidate)
+                    filtered = [c for c in abstract_candidates
+                               if len(c) >= 100 and not any(
+                                   phrase.lower() in c.lower() for phrase in self.unwanted_phrases
+                               )]
                     
                     if filtered:
                         abstract = max(filtered, key=len)
                     elif abstract_candidates:
                         abstract = max(abstract_candidates, key=len)
-                        for unwanted in unwanted_phrases:
+                        for unwanted in self.unwanted_phrases:
                             if unwanted.lower() in abstract.lower():
                                 parts = re.split(re.escape(unwanted), abstract, flags=re.I)
                                 if parts:
@@ -527,13 +516,7 @@ class HFDailyPapersCrawler:
             # 3. 최종 정리
             if abstract:
                 # 불필요한 구문 제거
-                unwanted_patterns = [
-                    r'Join the discussion.*?$',
-                    r'on this paper page.*?$',
-                    r'Subscribe.*?$',
-                    r'Get trending papers.*?$',
-                ]
-                for pattern in unwanted_patterns:
+                for pattern in self.unwanted_patterns:
                     abstract = re.sub(pattern, '', abstract, flags=re.I).strip()
                 
                 # 너무 짧거나 불필요한 텍스트 제거
@@ -541,7 +524,6 @@ class HFDailyPapersCrawler:
                     abstract.lower() in ['join the discussion', 'subscribe', 'get trending papers'] or
                     'on this paper page' in abstract.lower()):
                     abstract = ''
-            
             
             # 업데이트된 정보 반환
             paper.update({
@@ -551,14 +533,21 @@ class HFDailyPapersCrawler:
                 'paper_link': paper_link,
                 'code_link': code_link,
                 'tags': tags,
-                'institution': institution,
-                'description': abstract[:500] if abstract else ''  # 요약
+                'institution': institution
             })
             
         except Exception:
             pass
         
         return paper
+    
+    def _generate_yaml_header(self, front_matter: Dict) -> str:
+        """Front Matter를 YAML 헤더 문자열로 변환"""
+        yaml_header = "---\n"
+        for key, value in front_matter.items():
+            yaml_header += f"{key}: {value}\n" if not isinstance(value, list) else f"{key}: {value}\n"
+        yaml_header += "---\n\n"
+        return yaml_header
     
     def _is_same_date(self, date_str: str, target_date: datetime) -> bool:
         """날짜 문자열이 target_date와 같은 날인지 확인"""
@@ -847,11 +836,7 @@ class HFDailyPapersCrawler:
             content += "\n"
         
         # Front Matter + Content
-        yaml_header = "---\n"
-        for key, value in front_matter.items():
-            yaml_header += f"{key}: {value}\n" if not isinstance(value, list) else f"{key}: {value}\n"
-        yaml_header += "---\n\n"
-        full_content = yaml_header + content
+        full_content = self._generate_yaml_header(front_matter) + content
         
         filepath.write_text(full_content, encoding='utf-8')
         print(f"일간 요약 포스트 저장: {filename}")
@@ -944,11 +929,7 @@ class HFDailyPapersCrawler:
             content += "\n"
         
         # Front Matter + Content
-        yaml_header = "---\n"
-        for key, value in front_matter.items():
-            yaml_header += f"{key}: {value}\n" if not isinstance(value, list) else f"{key}: {value}\n"
-        yaml_header += "---\n\n"
-        full_content = yaml_header + content
+        full_content = self._generate_yaml_header(front_matter) + content
         
         filepath.write_text(full_content, encoding='utf-8')
         print(f"월간 요약 포스트 저장: {filename}")
