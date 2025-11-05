@@ -117,9 +117,11 @@ class HFDailyPapersCrawler:
                 print(f"  상세 정보 가져오기 실패 ({paper.get('url', 'unknown')}): {e}")
                 enriched_papers.append(paper)
         
-        # enriched_papers는 이미 likes 기준으로 정렬된 순서이므로 재정렬 불필요
+        # 상세 정보 수집 후 좋아요 수가 업데이트되었을 수 있으므로 재정렬
+        enriched_papers.sort(key=lambda x: x.get('likes', 0), reverse=True)
         
         print(f"\n[완료] 최종 {len(enriched_papers)}개 논문 수집 완료")
+        print("[정렬] 좋아요 수 기준으로 재정렬 완료")
         
         return enriched_papers
     
@@ -245,44 +247,112 @@ class HFDailyPapersCrawler:
                     if paper_url and not paper_url.startswith('http'):
                         paper_url = self.base_url + paper_url if paper_url.startswith('/') else f"{self.base_url}/papers/{paper_url}"
                     
-                    # 좋아요 수 찾기 - h3의 부모 요소에서 찾기
+                    # 좋아요 수 찾기 - 여러 방법 시도
                     likes = 0
                     parent = heading.parent
                     if parent:
-                        # 부모 요소의 텍스트에서 숫자 찾기
-                        parent_text = parent.get_text()
-                        # 좋아요 수는 보통 큰 숫자이고, h3 근처에 있음
-                        # 형식: "97\n" 또는 " 97 " 같은 패턴
-                        numbers = re.findall(r'\b(\d+)\b', parent_text)
+                        # 방법 1: 좋아요 관련 버튼/스팬 찾기
+                        for elem in parent.find_all(['button', 'span', 'div', 'a'], 
+                                                    class_=re.compile(r'like|favorite|heart|thumb', re.I)):
+                            text = elem.get_text(strip=True)
+                            match = re.search(r'(\d+)', text)
+                            if match:
+                                num = int(match.group(1))
+                                if num > likes:
+                                    likes = num
                         
-                        # h3 다음에 나오는 숫자가 좋아요 수일 가능성이 높음
-                        # 또는 h3 앞에 있는 큰 숫자
-                        if numbers:
-                            # 첫 번째 큰 숫자 (10 이상)를 좋아요 수로 추정
-                            for num_str in numbers:
-                                try:
-                                    num = int(num_str)
-                                    if num >= 10:  # 좋아요는 보통 10 이상
-                                        likes = num
-                                        break
-                                except (ValueError, TypeError):
-                                    pass
+                        # 방법 2: aria-label에서 찾기
+                        for elem in parent.find_all(['button', 'span', 'div'], 
+                                                   attrs={'aria-label': re.compile(r'like|favorite', re.I)}):
+                            aria_label = elem.get('aria-label', '')
+                            match = re.search(r'(\d+)', aria_label)
+                            if match:
+                                num = int(match.group(1))
+                                if num > likes:
+                                    likes = num
                         
-                        # h3의 다음 형제 요소 확인
+                        # 방법 3: data 속성에서 찾기
+                        for elem in parent.find_all(attrs={'data-count': True}):
+                            try:
+                                num = int(elem.get('data-count', 0))
+                                if num > likes:
+                                    likes = num
+                            except (ValueError, TypeError):
+                                pass
+                        
+                        # 방법 4: 부모 요소의 텍스트에서 숫자 패턴 찾기 (좋아요 관련 패턴)
+                        parent_text = parent.get_text(separator=' ')
+                        # "X likes", "👍 X" 같은 패턴 찾기
+                        like_patterns = [
+                            r'(\d+)\s*like',
+                            r'👍\s*(\d+)',
+                            r'(\d+)\s*❤',
+                            r'(\d+)\s*favorite',
+                        ]
+                        for pattern in like_patterns:
+                            matches = re.findall(pattern, parent_text, re.I)
+                            if matches:
+                                for match_str in matches:
+                                    try:
+                                        num = int(match_str)
+                                        if num > likes:
+                                            likes = num
+                                    except (ValueError, TypeError):
+                                        pass
+                        
+                        # 방법 5: h3의 형제 요소에서 숫자 찾기 (마지막 수단)
                         if likes == 0:
                             current = heading.next_sibling
                             checked = 0
-                            while current and checked < 3:
+                            while current and checked < 5:
                                 if hasattr(current, 'get_text'):
                                     text = current.get_text(strip=True)
+                                    # 숫자만 있는 텍스트 찾기 (하지만 author 수와 혼동하지 않도록 주의)
                                     like_match = re.search(r'^(\d+)$', text)
                                     if like_match:
                                         num = int(like_match.group(1))
-                                        if num >= 10:
+                                        # 1 이상이고 1000 미만인 경우만 좋아요 수로 추정
+                                        # (author 수는 보통 더 크거나 작을 수 있음)
+                                        if 1 <= num < 1000:
                                             likes = num
                                             break
+                                elif hasattr(current, 'find'):
+                                    # 요소 안에서 좋아요 관련 찾기
+                                    for elem in current.find_all(['button', 'span'], 
+                                                                class_=re.compile(r'like|favorite', re.I)):
+                                        text = elem.get_text(strip=True)
+                                        match = re.search(r'(\d+)', text)
+                                        if match:
+                                            num = int(match.group(1))
+                                            if num > likes:
+                                                likes = num
                                 current = getattr(current, 'next_sibling', None)
                                 checked += 1
+                        
+                        # 방법 6: 좋아요 수가 여전히 0인 경우 부모 요소의 전체 텍스트에서 패턴 찾기
+                        if likes == 0:
+                            parent_text = parent.get_text(separator=' ')
+                            like_patterns = [
+                                r'(\d+)\s*like',
+                                r'👍\s*(\d+)',
+                                r'(\d+)\s*❤',
+                                r'like\s*[:\-]?\s*(\d+)',
+                                r'favorite\s*[:\-]?\s*(\d+)',
+                            ]
+                            for pattern in like_patterns:
+                                matches = re.findall(pattern, parent_text, re.I)
+                                if matches:
+                                    for match_str in matches:
+                                        try:
+                                            num = int(match_str)
+                                            # author 수와 혼동하지 않도록 적절한 범위 체크
+                                            if 1 <= num < 10000:
+                                                likes = num
+                                                break
+                                        except (ValueError, TypeError):
+                                            pass
+                                    if likes > 0:
+                                        break
                     
                     # 기관 정보 추출 - h3 다음에 오는 텍스트에서 찾기
                     institution = ''
@@ -373,12 +443,80 @@ class HFDailyPapersCrawler:
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # 좋아요 수, 논문 링크, 코드 링크, 태그 추출
+            # 좋아요 수 추출 - 여러 방법 시도
             likes = paper.get('likes', 0)
-            for elem in soup.find_all(['span', 'div', 'button'], class_=re.compile(r'like|favorite', re.I)):
-                match = re.search(r'(\d+)', elem.get_text(strip=True))
+            original_likes = likes
+            
+            # 방법 1: 버튼이나 스팬에서 좋아요 관련 텍스트 찾기
+            for elem in soup.find_all(['span', 'div', 'button', 'a'], 
+                                     class_=re.compile(r'like|favorite|heart|thumb', re.I)):
+                text = elem.get_text(strip=True)
+                match = re.search(r'(\d+)', text)
                 if match:
-                    likes = max(likes, int(match.group(1)))
+                    num = int(match.group(1))
+                    if num > likes:
+                        likes = num
+            
+            # 방법 2: aria-label이나 title 속성에서 찾기
+            for elem in soup.find_all(['button', 'span', 'div'], 
+                                     attrs={'aria-label': re.compile(r'like|favorite', re.I)}):
+                aria_label = elem.get('aria-label', '')
+                match = re.search(r'(\d+)', aria_label)
+                if match:
+                    num = int(match.group(1))
+                    if num > likes:
+                        likes = num
+            
+            # 방법 3: data 속성에서 찾기
+            for elem in soup.find_all(attrs={'data-count': True}):
+                try:
+                    num = int(elem.get('data-count', 0))
+                    if num > likes:
+                        likes = num
+                except (ValueError, TypeError):
+                    pass
+            
+            # 방법 4: 특정 패턴의 텍스트 찾기 (예: "97 likes", "👍 97" 등)
+            for elem in soup.find_all(['span', 'div', 'button']):
+                text = elem.get_text(strip=True)
+                # "X likes", "👍 X", "X ❤️" 같은 패턴
+                patterns = [
+                    r'(\d+)\s*like',
+                    r'👍\s*(\d+)',
+                    r'(\d+)\s*❤',
+                    r'(\d+)\s*favorite',
+                ]
+                for pattern in patterns:
+                    match = re.search(pattern, text, re.I)
+                    if match:
+                        num = int(match.group(1))
+                        if num > likes:
+                            likes = num
+                            break
+            
+            # 방법 5: 좋아요 수가 0이거나 업데이트되지 않았을 때 더 적극적으로 찾기
+            if likes == 0 or likes == original_likes:
+                # 전체 페이지에서 좋아요 관련 숫자 찾기
+                page_text = soup.get_text(separator=' ')
+                # 좋아요 관련 키워드 근처의 숫자 찾기
+                like_patterns = [
+                    r'(\d+)\s*like',
+                    r'👍\s*(\d+)',
+                    r'(\d+)\s*❤',
+                    r'like\s*[:\-]?\s*(\d+)',
+                    r'favorite\s*[:\-]?\s*(\d+)',
+                ]
+                for pattern in like_patterns:
+                    matches = re.findall(pattern, page_text, re.I)
+                    if matches:
+                        for match_str in matches:
+                            try:
+                                num = int(match_str)
+                                # 너무 큰 숫자(1000 이상)는 제외 (페이지 번호 등일 수 있음)
+                                if num > likes and num < 10000:
+                                    likes = num
+                            except (ValueError, TypeError):
+                                pass
             
             title = paper.get('title', '')
             if not title:
@@ -966,8 +1104,9 @@ def main():
         return
     
     # 1단계: 크롤링 시간대 확인
-    is_morning_crawl = 1 <= now_utc.hour < 12  # UTC 01:00-12:00 (KST 10:00-21:00)
-    is_evening_crawl = 13 <= now_utc.hour < 14  # UTC 13:00-14:00 (KST 22:00-23:00)
+    # 오전 11시 (KST) = UTC 02:00, 오후 11시 (KST) = UTC 14:00
+    is_morning_crawl = 2 <= now_utc.hour < 3  # UTC 02:00-03:00 (KST 11:00-12:00)
+    is_evening_crawl = 14 <= now_utc.hour < 15  # UTC 14:00-15:00 (KST 23:00-24:00)
     
     # 2단계: 오늘 날짜 페이지에 논문이 있는지 확인
     print(f"\n[1단계] 오늘 날짜 페이지 확인 중: {target_date.strftime('%Y-%m-%d')}")
@@ -980,7 +1119,7 @@ def main():
         if is_morning_crawl:
             print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없습니다.")
             print("   페이지가 아직 갱신되지 않았을 수 있습니다.")
-            print("   크롤링을 중단합니다. 오후 10시에 다시 확인합니다.")
+            print("   크롤링을 중단합니다. 오후 11시에 다시 확인합니다.")
             print("\n" + "=" * 50)
             print("크롤링 완료: 논문 없음 (스킵)")
             print("=" * 50)
@@ -1029,8 +1168,8 @@ def main():
         print(f"  {i}. 👍 {likes} - {title}")
     
     # 4단계: 크롤링 시간대에 따라 업데이트 방식 결정
-    # 오전 크롤링(UTC 01:00, KST 10:00): 새 파일 생성 (기존 파일과 비교하여 변경사항이 있을 때만 업데이트)
-    # 오후 크롤링(UTC 13:00, KST 22:00): 기존 파일이 있으면 좋아요 수 업데이트를 위해 덮어쓰기
+    # 오전 크롤링(UTC 02:00, KST 11:00): 새 파일 생성 (기존 파일과 비교하여 변경사항이 있을 때만 업데이트)
+    # 오후 크롤링(UTC 14:00, KST 23:00): 기존 파일이 있으면 좋아요 수 업데이트를 위해 덮어쓰기
     if is_evening_crawl:
         if existing_post:
             print("\n[오후 크롤링] 기존 포스트 파일이 존재합니다.")

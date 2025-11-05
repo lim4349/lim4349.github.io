@@ -1,107 +1,41 @@
 name: Crawl Hugging Face Daily Papers
 
 on:
-  # 스케줄 실행 (하루 2회)
-  # 1. 오전 크롤링: UTC 01:00 (KST 10:00) - 당일 논문이 있으면 크롤링
-  # 2. 오후 크롤링: UTC 13:00 (KST 22:00) - 좋아요 수 업데이트를 위해 재크롤링
   schedule:
-    - cron: '0 1 * * *'  # UTC 01:00 = KST 10:00 (오전 크롤링)
-    - cron: '0 13 * * *'  # UTC 13:00 = KST 22:00 (오후 크롤링 - 좋아요 수 업데이트)
-  # 수동 실행 가능
-  workflow_dispatch:
-  # main 브랜치에 push 시에도 실행 (선택사항)
-  # push:
-  #   branches:
-  #     - main
+    # 오전 11시 (KST) = UTC 02:00
+    - cron: '0 2 * * *'
+    # 오후 11시 (KST) = UTC 14:00
+    - cron: '0 14 * * *'
+  workflow_dispatch:  # 수동 실행 가능
 
 jobs:
-  crawl-and-update:
+  crawl:
     runs-on: ubuntu-latest
     
-    permissions:
-      contents: write  # 파일 커밋 권한 필요
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-          ref: ${{ github.ref }}
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      
-      - name: Run crawler
-        run: |
-          python scripts/crawl_hf_papers.py
-      
-      - name: Check for changes
-        id: verify-changed-files
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Get current branch
-        id: get-branch
-        run: |
-          BRANCH=$(git branch --show-current)
-          if [ -z "$BRANCH" ]; then
-            # 기본 브랜치 확인 (main 또는 master)
-            BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "main")
-          fi
-          echo "branch=${BRANCH}" >> $GITHUB_OUTPUT
-          echo "현재 브랜치: ${BRANCH}"
-      
-      - name: Commit and push changes
-        if: steps.verify-changed-files.outputs.changed == 'true'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          # 현재 브랜치 확인 및 설정
-          BRANCH_NAME="${{ steps.get-branch.outputs.branch }}"
-          echo "현재 브랜치: ${BRANCH_NAME}"
-          
-          # 원격 브랜치 추적 설정
-          git branch --set-upstream-to=origin/${BRANCH_NAME} ${BRANCH_NAME} || true
-          
-          # 원격 변경사항 가져오기 및 병합 (충돌 시 자동 해결)
-          echo "원격 변경사항 가져오기..."
-          git fetch origin ${BRANCH_NAME}
-          git pull origin ${BRANCH_NAME} --no-edit --no-rebase || {
-            echo "병합 충돌 발생, rebase 시도..."
-            git pull origin ${BRANCH_NAME} --rebase --no-edit || {
-              echo "Rebase 실패, 수동 해결 필요"
-              exit 1
-            }
-          }
-          
-          # 새로 생성되거나 수정된 파일 모두 추가
-          git add _posts/ _data/papers/ || true
-          
-          # Conventional Commits 형식 준수 (commitlint 규칙)
-          # subject는 소문자로만 작성 (subject-case: lowercase 규칙 준수)
-          DATE_STR=$(date +'%Y-%m-%d')
-          git commit -m "chore(daily-papers): update papers ${DATE_STR}" --no-verify || exit 0
-          
-          # 명시적으로 현재 브랜치에 푸시
-          echo "브랜치 ${BRANCH_NAME}에 푸시 중..."
-          git push origin ${BRANCH_NAME} || {
-            echo "Push 실패, 다시 시도..."
-            git pull origin ${BRANCH_NAME} --rebase
-            git push origin ${BRANCH_NAME}
-          }
-
-
-
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run crawler
+      run: |
+        python scripts/crawl_hf_papers.py
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add _posts/ _data/papers/
+        git diff --staged --quiet || git commit -m "Auto-update: Daily papers summary $(date +'%Y-%m-%d %H:%M')"
+        git push
