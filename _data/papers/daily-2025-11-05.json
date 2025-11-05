@@ -1,0 +1,117 @@
+{
+  "date": "2025-11-05",
+  "crawled_at": "2025-11-05T02:28:41.181207",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "LongCat-Flash-Omni Technical Report",
+      "url": "https://huggingface.co/papers/2511.00279",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 132,
+      "institution": "·132 authors",
+      "abstract": "We introduce LongCat-Flash-Omni, a state-of-the-art open-source omni-modal model with 560 billion parameters, excelling at real-time audio-visual interaction. By adopting a curriculum-inspired progressive training strategy that transitions from simpler to increasingly complex modality sequence modeling tasks, LongCat-Flash-Omni attains comprehensive multimodal capabilities while maintaining strong unimodal capability. Building upon LongCat-Flash, which adopts a high-performance Shortcut-connected Mixture-of-Experts (MoE) architecture with zero-computation experts, LongCat-Flash-Omni integrates efficient multimodal perception and speech reconstruction modules. Despite its immense size of 560B parameters (with 27B activated), LongCat-Flash-Omni achieves low-latency real-time audio-visual interaction. For training infrastructure, we developed a modality-decoupled parallelism scheme specifically designed to manage the data and model heterogeneity inherent in large-scale multimodal training. This innovative approach demonstrates exceptional efficiency by sustaining over 90% of the throughput achieved by text-only training. Extensive evaluations show that LongCat-Flash-Omni achieves state-of-the-art performance on omni-modal benchmarks among open-source models. Furthermore, it delivers highly competitive results across a wide range of modality-specific tasks, including text, image, and video understanding, as well as audio understanding and generation. We provide a comprehensive overview of the model architecture design, training procedures, and data strategies, and open-source the model to foster future research and development in the community.",
+      "paper_link": "https://arxiv.org/abs/2511.00279",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "World Simulation with Video Foundation Models for Physical AI",
+      "url": "https://huggingface.co/papers/2511.00062",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 89,
+      "institution": "·89 authors",
+      "abstract": "We introduce [Cosmos-Predict2.5], the latest generation of the Cosmos World Foundation Models for Physical AI. Built on a flow-based architecture, [Cosmos-Predict2.5] unifies Text2World, Image2World, and Video2World generation in a single model and leverages [Cosmos-Reason1], a Physical AI vision-language model, to provide richer text grounding and finer control of world simulation. Trained on 200M curated video clips and refined with reinforcement learning-based post-training, [Cosmos-Predict2.5] achieves substantial improvements over [Cosmos-Predict1] in video quality and instruction alignment, with models released at 2B and 14B scales. These capabilities enable more reliable synthetic data generation, policy evaluation, and closed-loop simulation for robotics and autonomous systems. We further extend the family with [Cosmos-Transfer2.5], a control-net style framework for Sim2Real and Real2Real world translation. Despite being 3.5$\\times$ smaller than [Cosmos-Transfer1], it delivers higher fidelity and robust long-horizon video generation. Together, these advances establish [Cosmos-Predict2.5] and [Cosmos-Transfer2.5] as versatile tools for scaling embodied intelligence. To accelerate research and deployment in Physical AI, we release source code, pretrained checkpoints, and curated benchmarks under the NVIDIA Open Model License at this https URL and this https URL . We hope these open resources lower the barrier to adoption and foster innovation in building the next generation of embodied intelligence.",
+      "paper_link": "https://arxiv.org/abs/2511.00062",
+      "code_link": "https://github.com/nvidia-cosmos/cosmos-predict2.5",
+      "tags": []
+    },
+    {
+      "title": "PHUMA: Physically-Grounded Humanoid Locomotion Dataset",
+      "url": "https://huggingface.co/papers/2510.26236",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 85,
+      "institution": "DAVIAN Robotics",
+      "abstract": "Motion imitation is a promising approach for humanoid locomotion, enabling agents to acquire humanlike behaviors. Existing methods typically rely on high-quality motion capture datasets such as AMASS, but these are scarce and expensive, limiting scalability and diversity. Recent studies attempt to scale data collection by converting large-scale internet videos, exemplified by Humanoid-X. However, they often introduce physical artifacts such as floating, penetration, and foot skating, which hinder stable imitation. In response, we introduce PHUMA, a Physically-grounded HUMAnoid locomotion dataset that leverages human video at scale, while addressing physical artifacts through careful data curation and physics-constrained retargeting. PHUMA enforces joint limits, ensures ground contact, and eliminates foot skating, producing motions that are both large-scale and physically reliable. We evaluated PHUMA in two sets of conditions: (i) imitation of unseen motion from self-recorded test videos and (ii) path following with pelvis-only guidance. In both cases, PHUMA-trained policies outperform Humanoid-X and AMASS, achieving significant gains in imitating diverse motions. The code is available at this https URL .",
+      "paper_link": "https://arxiv.org/abs/2510.26236",
+      "code_link": "https://davian-robotics.github.io/PHUMA/",
+      "tags": []
+    },
+    {
+      "title": "Trove: A Flexible Toolkit for Dense Retrieval",
+      "url": "https://huggingface.co/papers/2511.01857",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 35,
+      "institution": "Bats Research",
+      "abstract": "We introduce Trove, an easy-to-use open-source retrieval toolkit that simplifies research experiments without sacrificing flexibility or speed. For the first time, we introduce efficient data management features that load and process (filter, select, transform, and combine) retrieval datasets on the fly, with just a few lines of code. This gives users the flexibility to easily experiment with different dataset configurations without the need to compute and store multiple copies of large datasets. Trove is highly customizable: in addition to many built-in options, it allows users to freely modify existing components or replace them entirely with user-defined objects. It also provides a low-code and unified pipeline for evaluation and hard negative mining, which supports multi-node execution without any code changes. Trove's data management features reduce memory consumption by a factor of 2.6. Moreover, Trove's easy-to-use inference pipeline incurs no overhead, and inference times decrease linearly with the number of available nodes. Most importantly, we demonstrate how Trove simplifies retrieval experiments and allows for arbitrary customizations, thus facilitating exploratory research.",
+      "paper_link": "https://arxiv.org/abs/2511.01857",
+      "code_link": "https://github.com/BatsResearch/trove",
+      "tags": []
+    },
+    {
+      "title": "UniREditBench: A Unified Reasoning-based Image Editing Benchmark",
+      "url": "https://huggingface.co/papers/2511.01295",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 27,
+      "institution": "Fudan University",
+      "abstract": "Recent advances in multi-modal generative models have driven substantial improvements in image editing. However, current generative models still struggle with handling diverse and complex image editing tasks that require implicit reasoning, underscoring the need for a comprehensive benchmark to systematically assess their performance across various reasoning scenarios. Existing benchmarks primarily focus on single-object attribute transformation in realistic scenarios, which, while effective, encounter two key challenges: (1) they largely overlook multi-object interactions as well as game-world scenarios that involve human-defined rules, which are common in real-life applications; (2) they only rely on textual references to evaluate the generated images, potentially leading to systematic misjudgments, especially in complex reasoning scenarios. To this end, this work proposes UniREditBench, a unified benchmark for reasoning-based image editing evaluation. It comprises 2,700 meticulously curated samples, covering both real- and game-world scenarios across 8 primary dimensions and 18 sub-dimensions. To improve evaluation reliability, we introduce multimodal dual-reference evaluation, providing both textual and ground-truth image references for each sample assessment. Furthermore, we design an automated multi-scenario data synthesis pipeline and construct UniREdit-Data-100K, a large-scale synthetic dataset with high-quality chain-of-thought (CoT) reasoning annotations. We fine-tune Bagel on this dataset and develop UniREdit-Bagel, demonstrating substantial improvements in both in-domain and out-of-distribution settings. Through thorough benchmarking of both open-source and closed-source image editing models, we reveal their strengths and weaknesses across various aspects.",
+      "paper_link": "https://arxiv.org/abs/2511.01295",
+      "code_link": "https://maplebb.github.io/UniREditBench/",
+      "tags": []
+    },
+    {
+      "title": "Towards Robust Mathematical Reasoning",
+      "url": "https://huggingface.co/papers/2511.01846",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 20,
+      "institution": "·20 authors",
+      "abstract": "Finding the right north-star metrics is highly critical for advancing the mathematical reasoning capabilities of foundation models, especially given that existing evaluations are either too easy or only focus on getting correct short answers. To address these issues, we present IMO-Bench, a suite of advanced reasoning benchmarks, vetted by a panel of top specialists and that specifically targets the level of the International Mathematical Olympiad (IMO), the most prestigious venue for young mathematicians. IMO-AnswerBench first tests models on 400 diverse Olympiad problems with verifiable short answers. IMO-Proof Bench is the next-level evaluation for proof-writing capabilities, which includes both basic and advanced IMO level problems as well as detailed grading guidelines to facilitate automatic grading. These benchmarks played a crucial role in our historic achievement of the gold-level performance at IMO 2025 with Gemini Deep Think (Luong and Lockhart, 2025). Our model achieved 80.0% on IMO-AnswerBench and 65.7% on the advanced IMO-Proof Bench, surpassing the best non-Gemini models by large margins of 6.9% and 42.4% respectively. We also showed that autograders built with Gemini reasoning correlate well with human evaluations and construct IMO-GradingBench, with 1000 human gradings on proofs, to enable further progress in automatic evaluation of long-form answers. We hope that IMO-Bench will help the community towards advancing robust mathematical reasoning and release it at this https URL .",
+      "paper_link": "https://arxiv.org/abs/2511.01846",
+      "code_link": "https://imobench.github.io/",
+      "tags": []
+    },
+    {
+      "title": "Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete\n  Denoising Diffusion Process",
+      "url": "https://huggingface.co/papers/2511.01718",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 20,
+      "institution": "HKUSTGZ",
+      "abstract": "Vision-language-action (VLA) models aim to understand natural language instructions and visual observations and to execute corresponding actions as an embodied agent. Recent work integrates future images into the understanding-acting loop, yielding unified VLAs that jointly understand, generate, and act -- reading text and images and producing future images and actions. However, these models either rely on external experts for modality unification or treat image generation and action prediction as separate processes, limiting the benefits of direct synergy between these tasks. Our core philosophy is to optimize generation and action jointly through a synchronous denoising process, where the iterative refinement enables actions to evolve from initialization, under constant and sufficient visual guidance. We ground this philosophy in our proposed Unified Diffusion VLA and Joint Discrete Denoising Diffusion Process (JD3P), which is a joint diffusion process that integrates multiple modalities into a single denoising trajectory to serve as the key mechanism enabling understanding, generation, and acting to be intrinsically synergistic. Our model and theory are built on a unified tokenized space of all modalities and a hybrid attention mechanism. We further propose a two-stage training pipeline and several inference-time techniques that optimize performance and efficiency. Our approach achieves state-of-the-art performance on benchmarks such as CALVIN, LIBERO, and SimplerEnv with 4$\\times$ faster inference than autoregressive methods, and we demonstrate its effectiveness through in-depth analysis and real-world evaluations. Our project page is available at this https URL .",
+      "paper_link": "https://arxiv.org/abs/2511.01718",
+      "code_link": "https://irpn-eai.github.io/UD-VLA.github.io/",
+      "tags": []
+    },
+    {
+      "title": "TIR-Bench: A Comprehensive Benchmark for Agentic Thinking-with-Images\n  Reasoning",
+      "url": "https://huggingface.co/papers/2511.01833",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 14,
+      "institution": "·9 authors",
+      "abstract": "The frontier of visual reasoning is shifting toward models like OpenAI o3, which can intelligently create and operate tools to transform images for problem-solving, also known as thinking-\\textit{with}-images in chain-of-thought. Yet existing benchmarks fail to fully capture this advanced capability. Even Visual Search, the most common benchmark for current thinking-\\textit{with}-images methods, tests only basic operations such as localization and cropping, offering little insight into more complex, dynamic, and tool-dependent reasoning. We introduce \\textbf{TIR-Bench}, a comprehensive benchmark for evaluating agentic thinking-with-images across 13 diverse tasks, each requiring novel tool use for image processing and manipulation in chain-of-thought. We evaluate 22 multimodal large language models (MLLMs), from leading open-sourced and proprietary models to those with explicit tool-use augmentation. Results show that TIR-Bench is universally challenging, and strong performance requires genuine thinking-with-images capabilities. Finally, we present a pilot study comparing direct versus agentic fine-tuning.",
+      "paper_link": "https://arxiv.org/abs/2511.01833",
+      "code_link": "https://github.com/agents-x-project/TIR-Bench",
+      "tags": []
+    },
+    {
+      "title": "Actial: Activate Spatial Reasoning Ability of Multimodal Large Language\n  Models",
+      "url": "https://huggingface.co/papers/2511.01618",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 14,
+      "institution": "·14 authors",
+      "abstract": "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved 2D visual understanding, prompting interest in their application to complex 3D reasoning tasks. However, it remains unclear whether these models can effectively capture the detailed spatial information required for robust real-world performance, especially cross-view consistency, a key requirement for accurate 3D reasoning. Considering this issue, we introduce Viewpoint Learning, a task designed to evaluate and improve the spatial reasoning capabilities of MLLMs. We present the Viewpoint-100K dataset, consisting of 100K object-centric image pairs with diverse viewpoints and corresponding question-answer pairs. Our approach employs a two-stage fine-tuning strategy: first, foundational knowledge is injected to the baseline MLLM via Supervised Fine-Tuning (SFT) on Viewpoint-100K, resulting in significant improvements across multiple tasks; second, generalization is enhanced through Reinforcement Learning using the Group Relative Policy Optimization (GRPO) algorithm on a broader set of questions. Additionally, we introduce a hybrid cold-start initialization method designed to simultaneously learn viewpoint representations and maintain coherent reasoning thinking. Experimental results show that our approach significantly activates the spatial reasoning ability of MLLM, improving performance on both in-domain and out-of-domain reasoning tasks. Our findings highlight the value of developing foundational spatial skills in MLLMs, supporting future progress in robotics, autonomous systems, and 3D scene understanding.",
+      "paper_link": "https://arxiv.org/abs/2511.01618",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "ToolScope: An Agentic Framework for Vision-Guided and Long-Horizon Tool\n  Use",
+      "url": "https://huggingface.co/papers/2510.27363",
+      "published": "2025-11-05T02:28:25.636115",
+      "likes": 13,
+      "institution": "·3 authors",
+      "abstract": "Recently, large language models (LLMs) have demonstrated remarkable problem-solving capabilities by autonomously integrating with external tools for collaborative reasoning. However, due to the inherently complex and diverse nature of multimodal information, enabling multimodal large language models (MLLMs) to flexibly and efficiently utilize external tools during reasoning remains an underexplored challenge. In this work, we introduce ToolScope, an agentic framework designed to unify global planning with local multimodal perception, adopting a specialized Perceive tool to mitigates visual context degradation in long-horizon VQA task. ToolScope comprises three primary components: the Global Navigator, the Agentic Executor, and the Response Synthesizer. The Global Navigator functions as a \"telescope\", offering high-level strategic guidance. The Agentic Executor operates iteratively to augment MLLM with local perception through the integration of external tools-Search, Code, and Perceive. Finally, the Response Synthesizer consolidates and organizes the reasoning process into a coherent, user-friendly output. We evaluate ToolScope on four VQA benchmarks across diverse domains, including VQA 2.0, ScienceQA, MAT-Search and MathVista. It demonstrates strong generalization capabilities, achieving an average performance improvement of up to +6.69% across all datasets.",
+      "paper_link": "https://arxiv.org/abs/2510.27363",
+      "code_link": "https://github.com/dengmengjie/ToolScope",
+      "tags": []
+    }
+  ]
+}
