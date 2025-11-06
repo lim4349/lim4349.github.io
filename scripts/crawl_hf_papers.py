@@ -247,13 +247,21 @@ class HFDailyPapersCrawler:
                     if paper_url and not paper_url.startswith('http'):
                         paper_url = self.base_url + paper_url if paper_url.startswith('/') else f"{self.base_url}/papers/{paper_url}"
                     
-                    # 좋아요 수 찾기 - 여러 방법 시도
+                    # 좋아요 수 찾기 - 여러 방법 시도 (더 적극적으로)
                     likes = 0
                     parent = heading.parent
+                    
+                    # 논문 항목의 전체 컨테이너 찾기 (더 넓은 범위)
+                    container = parent
                     if parent:
-                        # 방법 1: 좋아요 관련 버튼/스팬 찾기
-                        for elem in parent.find_all(['button', 'span', 'div', 'a'], 
-                                                    class_=re.compile(r'like|favorite|heart|thumb', re.I)):
+                        # 상위 컨테이너도 확인
+                        grandparent = parent.parent
+                        if grandparent:
+                            container = grandparent
+                    
+                    if container:
+                        # 방법 1: data-testid, data-id 등 특정 속성 찾기
+                        for elem in container.find_all(attrs={'data-testid': re.compile(r'like|favorite|heart|thumb', re.I)}):
                             text = elem.get_text(strip=True)
                             match = re.search(r'(\d+)', text)
                             if match:
@@ -261,9 +269,25 @@ class HFDailyPapersCrawler:
                                 if num > likes:
                                     likes = num
                         
-                        # 방법 2: aria-label에서 찾기
-                        for elem in parent.find_all(['button', 'span', 'div'], 
-                                                   attrs={'aria-label': re.compile(r'like|favorite', re.I)}):
+                        # 방법 2: 좋아요 관련 버튼/스팬 찾기 (더 구체적으로)
+                        like_selectors = [
+                            {'tag': 'button', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                            {'tag': 'span', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                            {'tag': 'div', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                            {'tag': 'a', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                        ]
+                        for selector in like_selectors:
+                            for elem in container.find_all(selector['tag'], class_=selector['class']):
+                                text = elem.get_text(strip=True)
+                                match = re.search(r'(\d+)', text)
+                                if match:
+                                    num = int(match.group(1))
+                                    if num > likes:
+                                        likes = num
+                        
+                        # 방법 3: aria-label에서 찾기
+                        for elem in container.find_all(['button', 'span', 'div', 'a'], 
+                                                       attrs={'aria-label': re.compile(r'like|favorite', re.I)}):
                             aria_label = elem.get('aria-label', '')
                             match = re.search(r'(\d+)', aria_label)
                             if match:
@@ -271,48 +295,57 @@ class HFDailyPapersCrawler:
                                 if num > likes:
                                     likes = num
                         
-                        # 방법 3: data 속성에서 찾기
-                        for elem in parent.find_all(attrs={'data-count': True}):
-                            try:
-                                num = int(elem.get('data-count', 0))
-                                if num > likes:
-                                    likes = num
-                            except (ValueError, TypeError):
-                                pass
+                        # 방법 4: data 속성에서 찾기 (여러 속성 시도)
+                        for attr_name in ['data-count', 'data-value', 'data-likes', 'data-favorites']:
+                            for elem in container.find_all(attrs={attr_name: True}):
+                                try:
+                                    num = int(elem.get(attr_name, 0))
+                                    if num > likes:
+                                        likes = num
+                                except (ValueError, TypeError):
+                                    pass
                         
-                        # 방법 4: 부모 요소의 텍스트에서 숫자 패턴 찾기 (좋아요 관련 패턴)
-                        parent_text = parent.get_text(separator=' ')
+                        # 방법 5: 컨테이너의 텍스트에서 숫자 패턴 찾기 (좋아요 관련 패턴)
+                        container_text = container.get_text(separator=' ')
                         # "X likes", "👍 X" 같은 패턴 찾기
                         like_patterns = [
                             r'(\d+)\s*like',
                             r'👍\s*(\d+)',
                             r'(\d+)\s*❤',
                             r'(\d+)\s*favorite',
+                            r'like\s*[:\-]?\s*(\d+)',
+                            r'favorite\s*[:\-]?\s*(\d+)',
                         ]
                         for pattern in like_patterns:
-                            matches = re.findall(pattern, parent_text, re.I)
+                            matches = re.findall(pattern, container_text, re.I)
                             if matches:
                                 for match_str in matches:
                                     try:
                                         num = int(match_str)
-                                        if num > likes:
+                                        # 합리적인 범위 체크
+                                        if num > likes and 1 <= num < 100000:
                                             likes = num
                                     except (ValueError, TypeError):
                                         pass
                         
-                        # 방법 5: h3의 형제 요소에서 숫자 찾기 (마지막 수단)
+                        # 방법 6: h3의 형제 요소에서 숫자 찾기
                         if likes == 0:
                             current = heading.next_sibling
                             checked = 0
-                            while current and checked < 5:
+                            while current and checked < 10:  # 더 많이 확인
                                 if hasattr(current, 'get_text'):
                                     text = current.get_text(strip=True)
-                                    # 숫자만 있는 텍스트 찾기 (하지만 author 수와 혼동하지 않도록 주의)
-                                    like_match = re.search(r'^(\d+)$', text)
+                                    # 좋아요 관련 패턴이 있는 숫자 찾기
+                                    like_match = re.search(r'(\d+)\s*(like|favorite|❤|👍)', text, re.I)
                                     if like_match:
                                         num = int(like_match.group(1))
-                                        # 1 이상이고 1000 미만인 경우만 좋아요 수로 추정
-                                        # (author 수는 보통 더 크거나 작을 수 있음)
+                                        if 1 <= num < 10000:
+                                            likes = num
+                                            break
+                                    # 숫자만 있는 경우 (더 보수적으로)
+                                    elif re.match(r'^\d+$', text):
+                                        num = int(text)
+                                        # 작은 숫자만 (1-1000) 좋아요 수로 추정
                                         if 1 <= num < 1000:
                                             likes = num
                                             break
@@ -329,30 +362,29 @@ class HFDailyPapersCrawler:
                                 current = getattr(current, 'next_sibling', None)
                                 checked += 1
                         
-                        # 방법 6: 좋아요 수가 여전히 0인 경우 부모 요소의 전체 텍스트에서 패턴 찾기
+                        # 방법 7: 부모 요소의 전체 텍스트에서 더 적극적으로 패턴 찾기
                         if likes == 0:
-                            parent_text = parent.get_text(separator=' ')
-                            like_patterns = [
-                                r'(\d+)\s*like',
-                                r'👍\s*(\d+)',
-                                r'(\d+)\s*❤',
-                                r'like\s*[:\-]?\s*(\d+)',
-                                r'favorite\s*[:\-]?\s*(\d+)',
-                            ]
-                            for pattern in like_patterns:
-                                matches = re.findall(pattern, parent_text, re.I)
-                                if matches:
-                                    for match_str in matches:
-                                        try:
-                                            num = int(match_str)
-                                            # author 수와 혼동하지 않도록 적절한 범위 체크
-                                            if 1 <= num < 10000:
-                                                likes = num
-                                                break
-                                        except (ValueError, TypeError):
-                                            pass
-                                    if likes > 0:
-                                        break
+                            parent_text = container.get_text(separator=' ')
+                            # 숫자만 있는 패턴도 시도 (하지만 더 신중하게)
+                            all_numbers = re.findall(r'\b(\d+)\b', parent_text)
+                            for num_str in all_numbers:
+                                try:
+                                    num = int(num_str)
+                                    # 합리적인 범위 내에서만 (1-10000)
+                                    # author 수와 혼동하지 않도록 주의
+                                    if 1 <= num < 10000:
+                                        # 좋아요 관련 키워드 근처에 있는지 확인
+                                        num_idx = parent_text.find(num_str)
+                                        nearby_text = parent_text[max(0, num_idx-20):num_idx+30].lower()
+                                        if any(term in nearby_text for term in ['like', 'favorite', 'heart', 'thumb', '👍', '❤']):
+                                            likes = num
+                                            break
+                                except (ValueError, TypeError):
+                                    pass
+                    
+                    # 좋아요 수를 찾지 못한 경우 로그
+                    if likes == 0:
+                        print(f"    ⚠️ 목록 페이지에서 좋아요 수를 찾지 못했습니다: {title[:50]}")
                     
                     # 기관 정보 추출 - h3 다음에 오는 텍스트에서 찾기
                     institution = ''
@@ -447,9 +479,43 @@ class HFDailyPapersCrawler:
             likes = paper.get('likes', 0)
             original_likes = likes
             
-            # 방법 1: 버튼이나 스팬에서 좋아요 관련 텍스트 찾기
-            for elem in soup.find_all(['span', 'div', 'button', 'a'], 
-                                     class_=re.compile(r'like|favorite|heart|thumb', re.I)):
+            # 방법 0: script 태그 내 JSON 데이터에서 찾기 (가장 확실한 방법)
+            for script in soup.find_all('script', type='application/json'):
+                try:
+                    script_data = json.loads(script.string)
+                    # 재귀적으로 좋아요 수 찾기
+                    def find_likes_in_dict(obj, path=""):
+                        if isinstance(obj, dict):
+                            for key, value in obj.items():
+                                new_path = f"{path}.{key}" if path else key
+                                # 좋아요 관련 키 찾기
+                                if any(term in key.lower() for term in ['like', 'favorite', 'heart', 'thumb', 'star', 'reaction']):
+                                    if isinstance(value, (int, str)):
+                                        try:
+                                            num = int(value)
+                                            if num > 0:
+                                                return num
+                                        except:
+                                            pass
+                                result = find_likes_in_dict(value, new_path)
+                                if result:
+                                    return result
+                        elif isinstance(obj, list):
+                            for i, item in enumerate(obj):
+                                result = find_likes_in_dict(item, f"{path}[{i}]")
+                                if result:
+                                    return result
+                        return None
+                    
+                    script_likes = find_likes_in_dict(script_data)
+                    if script_likes and script_likes > likes:
+                        likes = script_likes
+                        print(f"    ✅ Script 태그에서 좋아요 수 발견: {likes}")
+                except (json.JSONDecodeError, AttributeError, TypeError):
+                    pass
+            
+            # 방법 1: data-testid, data-id 등 특정 속성 찾기
+            for elem in soup.find_all(attrs={'data-testid': re.compile(r'like|favorite|heart|thumb', re.I)}):
                 text = elem.get_text(strip=True)
                 match = re.search(r'(\d+)', text)
                 if match:
@@ -457,8 +523,24 @@ class HFDailyPapersCrawler:
                     if num > likes:
                         likes = num
             
-            # 방법 2: aria-label이나 title 속성에서 찾기
-            for elem in soup.find_all(['button', 'span', 'div'], 
+            # 방법 2: 버튼이나 스팬에서 좋아요 관련 텍스트 찾기 (더 구체적인 선택자)
+            like_selectors = [
+                {'tag': 'button', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                {'tag': 'span', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                {'tag': 'div', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+                {'tag': 'a', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
+            ]
+            for selector in like_selectors:
+                for elem in soup.find_all(selector['tag'], class_=selector['class']):
+                    text = elem.get_text(strip=True)
+                    match = re.search(r'(\d+)', text)
+                    if match:
+                        num = int(match.group(1))
+                        if num > likes:
+                            likes = num
+            
+            # 방법 3: aria-label이나 title 속성에서 찾기
+            for elem in soup.find_all(['button', 'span', 'div', 'a'], 
                                      attrs={'aria-label': re.compile(r'like|favorite', re.I)}):
                 aria_label = elem.get('aria-label', '')
                 match = re.search(r'(\d+)', aria_label)
@@ -467,38 +549,41 @@ class HFDailyPapersCrawler:
                     if num > likes:
                         likes = num
             
-            # 방법 3: data 속성에서 찾기
-            for elem in soup.find_all(attrs={'data-count': True}):
-                try:
-                    num = int(elem.get('data-count', 0))
-                    if num > likes:
-                        likes = num
-                except (ValueError, TypeError):
-                    pass
+            # 방법 4: data 속성에서 찾기 (data-count, data-value 등)
+            for attr_name in ['data-count', 'data-value', 'data-likes', 'data-favorites']:
+                for elem in soup.find_all(attrs={attr_name: True}):
+                    try:
+                        num = int(elem.get(attr_name, 0))
+                        if num > likes:
+                            likes = num
+                    except (ValueError, TypeError):
+                        pass
             
-            # 방법 4: 특정 패턴의 텍스트 찾기 (예: "97 likes", "👍 97" 등)
-            for elem in soup.find_all(['span', 'div', 'button']):
+            # 방법 5: 특정 패턴의 텍스트 찾기 (더 포괄적으로)
+            for elem in soup.find_all(['span', 'div', 'button', 'a']):
                 text = elem.get_text(strip=True)
-                # "X likes", "👍 X", "X ❤️" 같은 패턴
+                # 다양한 패턴 시도
                 patterns = [
                     r'(\d+)\s*like',
                     r'👍\s*(\d+)',
                     r'(\d+)\s*❤',
                     r'(\d+)\s*favorite',
+                    r'(\d+)\s*star',
+                    r'like\s*[:\-]?\s*(\d+)',
+                    r'favorite\s*[:\-]?\s*(\d+)',
                 ]
                 for pattern in patterns:
                     match = re.search(pattern, text, re.I)
                     if match:
                         num = int(match.group(1))
-                        if num > likes:
+                        if num > likes and num < 100000:  # 합리적인 범위
                             likes = num
                             break
             
-            # 방법 5: 좋아요 수가 0이거나 업데이트되지 않았을 때 더 적극적으로 찾기
+            # 방법 6: 좋아요 수가 0이거나 업데이트되지 않았을 때 더 적극적으로 찾기
             if likes == 0 or likes == original_likes:
-                # 전체 페이지에서 좋아요 관련 숫자 찾기
+                # 전체 페이지 텍스트에서 좋아요 관련 패턴 찾기
                 page_text = soup.get_text(separator=' ')
-                # 좋아요 관련 키워드 근처의 숫자 찾기
                 like_patterns = [
                     r'(\d+)\s*like',
                     r'👍\s*(\d+)',
@@ -512,11 +597,17 @@ class HFDailyPapersCrawler:
                         for match_str in matches:
                             try:
                                 num = int(match_str)
-                                # 너무 큰 숫자(1000 이상)는 제외 (페이지 번호 등일 수 있음)
-                                if num > likes and num < 10000:
+                                # 합리적인 범위 내에서만
+                                if num > likes and 1 <= num < 100000:
                                     likes = num
                             except (ValueError, TypeError):
                                 pass
+            
+            # 좋아요 수가 업데이트되었는지 확인
+            if likes != original_likes:
+                print(f"    ✅ 좋아요 수 업데이트: {original_likes} -> {likes}")
+            elif likes == 0:
+                print(f"    ⚠️ 좋아요 수를 찾지 못했습니다 ({url})")
             
             title = paper.get('title', '')
             if not title:
