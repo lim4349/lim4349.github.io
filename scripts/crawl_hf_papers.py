@@ -260,6 +260,27 @@ class HFDailyPapersCrawler:
                             container = grandparent
                     
                     if container:
+                        # 방법 0: leading-none 클래스를 가진 div에서 찾기 (가장 확실한 방법)
+                        # leading-none 클래스가 포함된 div 찾기
+                        for elem in container.find_all('div'):
+                            classes = elem.get('class', [])
+                            if isinstance(classes, list):
+                                classes_str = ' '.join(classes)
+                            else:
+                                classes_str = str(classes)
+                            
+                            if 'leading-none' in classes_str:
+                                text = elem.get_text(strip=True)
+                                # 숫자만 추출 (좋아요 수) - 공백 제거 후 숫자만 있는지 확인
+                                text_clean = text.strip()
+                                if text_clean.isdigit():
+                                    num = int(text_clean)
+                                    # 합리적인 범위 체크 (1-100000)
+                                    if 1 <= num <= 100000 and num > likes:
+                                        likes = num
+                                        print(f"    ✅ leading-none에서 좋아요 수 발견: {likes}")
+                                        break  # 첫 번째 유효한 값을 찾으면 중단
+                        
                         # 방법 1: data-testid, data-id 등 특정 속성 찾기
                         for elem in container.find_all(attrs={'data-testid': re.compile(r'like|favorite|heart|thumb', re.I)}):
                             text = elem.get_text(strip=True)
@@ -479,7 +500,27 @@ class HFDailyPapersCrawler:
             likes = paper.get('likes', 0)
             original_likes = likes
             
-            # 방법 0: script 태그 내 JSON 데이터에서 찾기 (가장 확실한 방법)
+            # 방법 0-1: leading-none 클래스를 가진 div에서 찾기 (가장 확실한 방법)
+            for elem in soup.find_all('div'):
+                classes = elem.get('class', [])
+                if isinstance(classes, list):
+                    classes_str = ' '.join(classes)
+                else:
+                    classes_str = str(classes)
+                
+                if 'leading-none' in classes_str:
+                    text = elem.get_text(strip=True)
+                    # 숫자만 추출 (좋아요 수) - 공백 제거 후 숫자만 있는지 확인
+                    text_clean = text.strip()
+                    if text_clean.isdigit():
+                        num = int(text_clean)
+                        # 합리적인 범위 체크 (1-100000)
+                        if 1 <= num <= 100000 and num > likes:
+                            likes = num
+                            print(f"    ✅ leading-none에서 좋아요 수 발견: {likes}")
+                            break  # 첫 번째 유효한 값을 찾으면 중단
+            
+            # 방법 0-2: script 태그 내 JSON 데이터에서 찾기
             for script in soup.find_all('script', type='application/json'):
                 try:
                     script_data = json.loads(script.string)
