@@ -227,223 +227,124 @@ class HFDailyPapersCrawler:
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # 논문 항목 찾기 (h3 태그로 제목 찾기)
-            # 구조: h3 > a (제목 링크), 좋아요 수는 같은 레벨에 있음
-            paper_headings = soup.find_all('h3')
+            # 논문 항목 찾기: div.flex.w-full.gap-6 컨테이너에서 각 논문 찾기
+            # 구조: div class="flex w-full gap-6" > 각 논문 항목
+            # 각 논문 항목 안에서 div.leading-none을 찾아서 좋아요 수 추출
+            paper_containers = soup.find_all('div', class_=re.compile(r'flex\s+w-full\s+gap-6|flex\s+w-full|w-full\s+gap-6', re.I))
             
-            for heading in paper_headings:
+            # 정확한 클래스 매칭 시도
+            if not paper_containers:
+                # 클래스가 리스트로 저장된 경우를 위해 정확히 매칭
+                for div in soup.find_all('div'):
+                    classes = div.get('class', [])
+                    if isinstance(classes, list):
+                        classes_str = ' '.join(classes)
+                    else:
+                        classes_str = str(classes)
+                    # "flex w-full gap-6" 패턴 확인
+                    if 'flex' in classes_str and 'w-full' in classes_str and 'gap-6' in classes_str:
+                        paper_containers.append(div)
+            
+            for container in paper_containers:
                 try:
-                    # 제목 링크 찾기
-                    title_link = heading.find('a')
-                    if not title_link:
+                    # 각 논문 항목에서 제목 링크 찾기 (h3 > a 또는 다른 구조)
+                    title_link = None
+                    title = ''
+                    
+                    # h3 태그에서 제목 찾기
+                    heading = container.find('h3')
+                    if heading:
+                        title_link = heading.find('a')
+                        if title_link:
+                            title = title_link.get_text(strip=True)
+                            paper_url = title_link.get('href', '')
+                    else:
+                        # h3가 없으면 다른 방법으로 제목 찾기
+                        title_link = container.find('a', href=re.compile(r'/papers/'))
+                        if title_link:
+                            title = title_link.get_text(strip=True)
+                            paper_url = title_link.get('href', '')
+                    
+                    if not title or not title_link:
                         continue
                     
-                    title = title_link.get_text(strip=True)
-                    if not title:
-                        continue
-                    
-                    paper_url = title_link.get('href', '')
                     # 상대 경로를 절대 경로로 변환
                     if paper_url and not paper_url.startswith('http'):
                         paper_url = self.base_url + paper_url if paper_url.startswith('/') else f"{self.base_url}/papers/{paper_url}"
                     
-                    # 좋아요 수 찾기 - 여러 방법 시도 (더 적극적으로)
+                    # 좋아요 수 찾기: div.leading-none에서 찾기
                     likes = 0
-                    parent = heading.parent
                     
-                    # 논문 항목의 전체 컨테이너 찾기 (더 넓은 범위)
-                    container = parent
-                    if parent:
-                        # 상위 컨테이너도 확인
-                        grandparent = parent.parent
-                        if grandparent:
-                            container = grandparent
-                    
-                    if container:
-                        # 방법 0: leading-none 클래스를 가진 div에서 찾기 (가장 확실한 방법)
-                        # leading-none 클래스가 포함된 div 찾기
-                        for elem in container.find_all('div'):
-                            classes = elem.get('class', [])
-                            if isinstance(classes, list):
-                                classes_str = ' '.join(classes)
-                            else:
-                                classes_str = str(classes)
-                            
-                            if 'leading-none' in classes_str:
-                                text = elem.get_text(strip=True)
-                                # 숫자만 추출 (좋아요 수) - 공백 제거 후 숫자만 있는지 확인
-                                text_clean = text.strip()
-                                if text_clean.isdigit():
-                                    num = int(text_clean)
-                                    # 합리적인 범위 체크 (1-100000)
-                                    if 1 <= num <= 100000 and num > likes:
-                                        likes = num
-                                        print(f"    ✅ leading-none에서 좋아요 수 발견: {likes}")
-                                        break  # 첫 번째 유효한 값을 찾으면 중단
+                    # 방법 0: div.leading-none 클래스를 가진 div에서 찾기 (가장 확실한 방법)
+                    # 상위 클래스 "flex flex-wrap items-center gap-2.5 pt-1 z-1 lg:sticky lg:top-8" 안에서 찾기
+                    for elem in container.find_all('div'):
+                        classes = elem.get('class', [])
+                        if isinstance(classes, list):
+                            classes_str = ' '.join(classes)
+                        else:
+                            classes_str = str(classes)
                         
-                        # 방법 1: data-testid, data-id 등 특정 속성 찾기
-                        for elem in container.find_all(attrs={'data-testid': re.compile(r'like|favorite|heart|thumb', re.I)}):
+                        # leading-none 클래스가 있는 div 찾기
+                        if 'leading-none' in classes_str:
                             text = elem.get_text(strip=True)
-                            match = re.search(r'(\d+)', text)
-                            if match:
-                                num = int(match.group(1))
-                                if num > likes:
+                            # 숫자만 추출 (좋아요 수) - 공백 제거 후 숫자만 있는지 확인
+                            text_clean = text.strip()
+                            if text_clean.isdigit():
+                                num = int(text_clean)
+                                # 합리적인 범위 체크 (1-100000)
+                                if 1 <= num <= 100000:
                                     likes = num
-                        
-                        # 방법 2: 좋아요 관련 버튼/스팬 찾기 (더 구체적으로)
-                        like_selectors = [
-                            {'tag': 'button', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
-                            {'tag': 'span', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
-                            {'tag': 'div', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
-                            {'tag': 'a', 'class': re.compile(r'like|favorite|heart|thumb', re.I)},
-                        ]
-                        for selector in like_selectors:
-                            for elem in container.find_all(selector['tag'], class_=selector['class']):
-                                text = elem.get_text(strip=True)
-                                match = re.search(r'(\d+)', text)
-                                if match:
-                                    num = int(match.group(1))
-                                    if num > likes:
-                                        likes = num
-                        
-                        # 방법 3: aria-label에서 찾기
-                        for elem in container.find_all(['button', 'span', 'div', 'a'], 
-                                                       attrs={'aria-label': re.compile(r'like|favorite', re.I)}):
-                            aria_label = elem.get('aria-label', '')
-                            match = re.search(r'(\d+)', aria_label)
-                            if match:
-                                num = int(match.group(1))
-                                if num > likes:
-                                    likes = num
-                        
-                        # 방법 4: data 속성에서 찾기 (여러 속성 시도)
-                        for attr_name in ['data-count', 'data-value', 'data-likes', 'data-favorites']:
-                            for elem in container.find_all(attrs={attr_name: True}):
-                                try:
-                                    num = int(elem.get(attr_name, 0))
-                                    if num > likes:
-                                        likes = num
-                                except (ValueError, TypeError):
-                                    pass
-                        
-                        # 방법 5: 컨테이너의 텍스트에서 숫자 패턴 찾기 (좋아요 관련 패턴)
-                        container_text = container.get_text(separator=' ')
-                        # "X likes", "👍 X" 같은 패턴 찾기
-                        like_patterns = [
-                            r'(\d+)\s*like',
-                            r'👍\s*(\d+)',
-                            r'(\d+)\s*❤',
-                            r'(\d+)\s*favorite',
-                            r'like\s*[:\-]?\s*(\d+)',
-                            r'favorite\s*[:\-]?\s*(\d+)',
-                        ]
-                        for pattern in like_patterns:
-                            matches = re.findall(pattern, container_text, re.I)
-                            if matches:
-                                for match_str in matches:
-                                    try:
-                                        num = int(match_str)
-                                        # 합리적인 범위 체크
-                                        if num > likes and 1 <= num < 100000:
-                                            likes = num
-                                    except (ValueError, TypeError):
-                                        pass
-                        
-                        # 방법 6: h3의 형제 요소에서 숫자 찾기
-                        if likes == 0:
+                                    print(f"    ✅ leading-none에서 좋아요 수 발견: {likes}")
+                                    break  # 첫 번째 유효한 값을 찾으면 중단
+                    
+                    # 좋아요 수를 찾지 못한 경우 로그 및 디버깅
+                    if likes == 0:
+                        print(f"    ⚠️ 목록 페이지에서 좋아요 수를 찾지 못했습니다: {title[:50]}")
+                        # 디버깅: leading-none div가 있는지 확인
+                        leading_none_divs = container.find_all('div', class_=re.compile(r'leading-none', re.I))
+                        print(f"    🔍 디버깅: leading-none div {len(leading_none_divs)}개 발견")
+                        if leading_none_divs:
+                            for div in leading_none_divs[:3]:  # 처음 3개만
+                                print(f"    🔍 예시: {div.get_text(strip=True)[:50]}")
+                    
+                    # 기관 정보 추출 - container에서 찾기
+                    institution = ''
+                    if container:
+                        # h3 다음에 오는 모든 형제 요소 확인
+                        if heading:
                             current = heading.next_sibling
                             checked = 0
-                            while current and checked < 10:  # 더 많이 확인
+                            while current and checked < 10:
                                 if hasattr(current, 'get_text'):
                                     text = current.get_text(strip=True)
-                                    # 좋아요 관련 패턴이 있는 숫자 찾기
-                                    like_match = re.search(r'(\d+)\s*(like|favorite|❤|👍)', text, re.I)
-                                    if like_match:
-                                        num = int(like_match.group(1))
-                                        if 1 <= num < 10000:
-                                            likes = num
-                                            break
-                                    # 숫자만 있는 경우 (더 보수적으로)
-                                    elif re.match(r'^\d+$', text):
-                                        num = int(text)
-                                        # 작은 숫자만 (1-1000) 좋아요 수로 추정
-                                        if 1 <= num < 1000:
-                                            likes = num
-                                            break
-                                elif hasattr(current, 'find'):
-                                    # 요소 안에서 좋아요 관련 찾기
-                                    for elem in current.find_all(['button', 'span'], 
-                                                                class_=re.compile(r'like|favorite', re.I)):
-                                        text = elem.get_text(strip=True)
-                                        match = re.search(r'(\d+)', text)
-                                        if match:
-                                            num = int(match.group(1))
-                                            if num > likes:
-                                                likes = num
+                                    # 기관명은 보통 텍스트이고, 링크나 특정 구조를 가짐
+                                    # "ByteDance-Seed ByteDance Seed" 같은 패턴
+                                    if text and len(text) > 2 and len(text) < 200:
+                                        # 숫자나 특수 문자만 있는 것은 제외
+                                        if not re.match(r'^[\d\s\-]+$', text):
+                                            # 링크나 텍스트 노드에서 추출
+                                            if hasattr(current, 'find'):
+                                                # 링크 안의 텍스트 추출
+                                                link = current.find('a')
+                                                if link:
+                                                    link_text = link.get_text(strip=True)
+                                                    if link_text and len(link_text) > 2:
+                                                        institution = link_text
+                                                        break
+                                                else:
+                                                    # 일반 텍스트 노드
+                                                    institution = text
+                                                    break
+                                            else:
+                                                institution = text
+                                                break
                                 current = getattr(current, 'next_sibling', None)
                                 checked += 1
                         
-                        # 방법 7: 부모 요소의 전체 텍스트에서 더 적극적으로 패턴 찾기
-                        if likes == 0:
-                            parent_text = container.get_text(separator=' ')
-                            # 숫자만 있는 패턴도 시도 (하지만 더 신중하게)
-                            all_numbers = re.findall(r'\b(\d+)\b', parent_text)
-                            for num_str in all_numbers:
-                                try:
-                                    num = int(num_str)
-                                    # 합리적인 범위 내에서만 (1-10000)
-                                    # author 수와 혼동하지 않도록 주의
-                                    if 1 <= num < 10000:
-                                        # 좋아요 관련 키워드 근처에 있는지 확인
-                                        num_idx = parent_text.find(num_str)
-                                        nearby_text = parent_text[max(0, num_idx-20):num_idx+30].lower()
-                                        if any(term in nearby_text for term in ['like', 'favorite', 'heart', 'thumb', '👍', '❤']):
-                                            likes = num
-                                            break
-                                except (ValueError, TypeError):
-                                    pass
-                    
-                    # 좋아요 수를 찾지 못한 경우 로그
-                    if likes == 0:
-                        print(f"    ⚠️ 목록 페이지에서 좋아요 수를 찾지 못했습니다: {title[:50]}")
-                    
-                    # 기관 정보 추출 - h3 다음에 오는 텍스트에서 찾기
-                    institution = ''
-                    if parent:
-                        # h3 다음에 오는 모든 형제 요소 확인
-                        current = heading.next_sibling
-                        checked = 0
-                        while current and checked < 10:
-                            if hasattr(current, 'get_text'):
-                                text = current.get_text(strip=True)
-                                # 기관명은 보통 텍스트이고, 링크나 특정 구조를 가짐
-                                # "ByteDance-Seed ByteDance Seed" 같은 패턴
-                                if text and len(text) > 2 and len(text) < 200:
-                                    # 숫자나 특수 문자만 있는 것은 제외
-                                    if not re.match(r'^[\d\s\-]+$', text):
-                                        # 링크나 텍스트 노드에서 추출
-                                        if hasattr(current, 'find'):
-                                            # 링크 안의 텍스트 추출
-                                            link = current.find('a')
-                                            if link:
-                                                link_text = link.get_text(strip=True)
-                                                if link_text and len(link_text) > 2:
-                                                    institution = link_text
-                                                    break
-                                            else:
-                                                # 일반 텍스트 노드
-                                                institution = text
-                                                break
-                                        else:
-                                            institution = text
-                                            break
-                            current = getattr(current, 'next_sibling', None)
-                            checked += 1
-                        
-                        # 부모 요소에서 기관 관련 링크나 텍스트 찾기
+                        # container 요소에서 기관 관련 링크나 텍스트 찾기
                         if not institution:
                             # a 태그 중 href에 특정 패턴이 있는 것 찾기 (org, company 등)
-                            for link in parent.find_all('a', href=True):
+                            for link in container.find_all('a', href=True):
                                 href = link.get('href', '')
                                 link_text = link.get_text(strip=True)
                                 # 기관 페이지 링크 패턴이나 텍스트가 있는 경우
@@ -453,11 +354,11 @@ class HFDailyPapersCrawler:
                                     institution = link_text
                                     break
                             
-                            # 부모 요소의 전체 텍스트에서 기관명 패턴 찾기
+                            # container 요소의 전체 텍스트에서 기관명 패턴 찾기
                             if not institution:
-                                parent_text = parent.get_text(separator=' ', strip=True)
+                                container_text = container.get_text(separator=' ', strip=True)
                                 # 제목과 좋아요 수 사이의 텍스트에서 기관명 찾기
-                                lines = parent_text.split('\n')
+                                lines = container_text.split('\n')
                                 for line in lines:
                                     line = line.strip()
                                     # 제목이 아닌 긴 텍스트 라인 찾기
