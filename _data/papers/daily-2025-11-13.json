@@ -1,0 +1,117 @@
+{
+  "date": "2025-11-13",
+  "crawled_at": "2025-11-13T03:09:02.832429",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "KLASS: KL-Guided Fast Inference in Masked Diffusion Models",
+      "url": "https://huggingface.co/papers/2511.05664",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 88,
+      "institution": "KAIST AI",
+      "abstract": "Masked diffusion models have demonstrated competitive results on various tasks including language generation. However, due to its iterative refinement process, the inference is often bottlenecked by slow and static sampling speed. To overcome this problem, we introduce `KL-Adaptive Stability Sampling' (KLASS), a fast yet effective sampling method that exploits token-level KL divergence to identify stable, high-confidence predictions. By unmasking multiple tokens in each iteration without any additional model training, our approach speeds up generation significantly while maintaining sample quality. On reasoning benchmarks, KLASS achieves up to $2.78\\times$ wall-clock speedups while improving performance over standard greedy decoding, attaining state-of-the-art results among diffusion-based samplers. We further validate KLASS across diverse domains, including text, image, and molecular generation, showing its effectiveness as a broadly applicable sampler across different models.",
+      "paper_link": "https://arxiv.org/abs/2511.05664",
+      "code_link": "https://github.com/shkim0116/KLASS",
+      "tags": []
+    },
+    {
+      "title": "Grounding Computer Use Agents on Human Demonstrations",
+      "url": "https://huggingface.co/papers/2511.07332",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 80,
+      "institution": "ServiceNow",
+      "abstract": "Building reliable computer-use agents requires grounding: accurately connecting natural language instructions to the correct on-screen elements. While large datasets exist for web and mobile interactions, high-quality resources for desktop environments are limited. To address this gap, we introduce GroundCUA, a large-scale desktop grounding dataset built from expert human demonstrations. It covers 87 applications across 12 categories and includes 56K screenshots, with every on-screen element carefully annotated for a total of over 3.56M human-verified annotations. From these demonstrations, we generate diverse instructions that capture a wide range of real-world tasks, providing high-quality data for model training. Using GroundCUA, we develop the GroundNext family of models that map instructions to their target UI elements. At both 3B and 7B scales, GroundNext achieves state-of-the-art results across five benchmarks using supervised fine-tuning, while requiring less than one-tenth the training data of prior work. Reinforcement learning post-training further improves performance, and when evaluated in an agentic setting on the OSWorld benchmark using o3 as planner, GroundNext attains comparable or superior results to models trained with substantially more data,. These results demonstrate the critical role of high-quality, expert-driven datasets in advancing general-purpose computer-use agents.",
+      "paper_link": "https://arxiv.org/abs/2511.07332",
+      "code_link": "https://groundcua.github.io/",
+      "tags": []
+    },
+    {
+      "title": "Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model\n  Reasoning Ability in VibeThinker-1.5B",
+      "url": "https://huggingface.co/papers/2511.06221",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 62,
+      "institution": "WeiboAI",
+      "abstract": "Challenging the prevailing consensus that small models inherently lack robust reasoning, this report introduces VibeThinker-1.5B, a 1.5B-parameter dense model developed via our Spectrum-to-Signal Principle (SSP). This challenges the prevailing approach of scaling model parameters to enhance capabilities, as seen in models like DeepSeek R1 (671B) and Kimi k2 (>1T). The SSP framework first employs a Two-Stage Diversity-Exploring Distillation (SFT) to generate a broad spectrum of solutions, followed by MaxEnt-Guided Policy Optimization (RL) to amplify the correct signal. With a total training cost of only $7,800, VibeThinker-1.5B demonstrates superior reasoning capabilities compared to closed-source models like Magistral Medium and Claude Opus 4, and performs on par with open-source models like GPT OSS-20B Medium. Remarkably, it surpasses the 400x larger DeepSeek R1 on three math benchmarks: AIME24 (80.3 vs. 79.8), AIME25 (74.4 vs. 70.0), and HMMT25 (50.4 vs. 41.7). This is a substantial improvement over its base model (6.7, 4.3, and 0.6, respectively). On LiveCodeBench V6, it scores 51.1, outperforming Magistral Medium's 50.3 and its base model's 0.0. These findings demonstrate that small models can achieve reasoning capabilities comparable to large models, drastically reducing training and inference costs and thereby democratizing advanced AI research.",
+      "paper_link": "https://arxiv.org/abs/2511.06221",
+      "code_link": "https://github.com/WeiboAI/VibeThinker",
+      "tags": []
+    },
+    {
+      "title": "Adaptive Multi-Agent Response Refinement in Conversational Systems",
+      "url": "https://huggingface.co/papers/2511.08319",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 34,
+      "institution": "Amazon",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable success in conversational systems by generating human-like responses. However, they can fall short, especially when required to account for personalization or specific knowledge. In real-life settings, it is impractical to rely on users to detect these errors and request a new response. One way to address this problem is to refine the response before returning it to the user. While existing approaches focus on refining responses within a single LLM, this method struggles to consider diverse aspects needed for effective conversations. In this work, we propose refining responses through a multi-agent framework, where each agent is assigned a specific role for each aspect. We focus on three key aspects crucial to conversational quality: factuality, personalization, and coherence. Each agent is responsible for reviewing and refining one of these aspects, and their feedback is then merged to improve the overall response. To enhance collaboration among them, we introduce a dynamic communication strategy. Instead of following a fixed sequence of agents, our approach adaptively selects and coordinates the most relevant agents based on the specific requirements of each query. We validate our framework on challenging conversational datasets, demonstrating that ours significantly outperforms relevant baselines, particularly in tasks involving knowledge or user's persona, or both.",
+      "paper_link": "https://arxiv.org/abs/2511.08319",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "Wasm: A Pipeline for Constructing Structured Arabic Interleaved\n  Multimodal Corpora",
+      "url": "https://huggingface.co/papers/2511.07080",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 30,
+      "institution": "·7 authors",
+      "abstract": "The performance of large language models (LLMs) and large multimodal models (LMMs) depends heavily on the quality and scale of their pre-training datasets. Recent research shows that large multimodal models trained on natural documents where images and text are interleaved outperform those trained only on image-text pairs across a wide range of benchmarks, leveraging advanced pre- trained models to enforce semantic alignment, image-sequence consistency, and textual coherence. For Arabic, however, the lack of high-quality multimodal datasets that preserve document structure has limited progress. In this paper, we present our pipeline Wasm for processing the Common Crawl dataset to create a new Arabic multimodal dataset that uniquely provides markdown output. Unlike existing Arabic corpora that focus solely on text extraction, our approach preserves the structural integrity of web content while maintaining flexibility for both text-only and multimodal pre-training scenarios. We provide a comprehensive comparative analysis of our data processing pipeline against those used for major existing datasets, highlighting the convergences in filtering strategies and justifying our specific design choices. To support future research, we publicly release a representative dataset dump along with the multimodal processing pipeline for Arabic.",
+      "paper_link": "https://arxiv.org/abs/2511.07080",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "VideoSSR: Video Self-Supervised Reinforcement Learning",
+      "url": "https://huggingface.co/papers/2511.06281",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 14,
+      "institution": "shanghai ailab",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has substantially advanced the video understanding capabilities of Multimodal Large Language Models (MLLMs). However, the rapid progress of MLLMs is outpacing the complexity of existing video datasets, while the manual annotation of new, high-quality data remains prohibitively expensive. This work investigates a pivotal question: Can the rich, intrinsic information within videos be harnessed to self-generate high-quality, verifiable training data? To investigate this, we introduce three self-supervised pretext tasks: Anomaly Grounding, Object Counting, and Temporal Jigsaw. We construct the Video Intrinsic Understanding Benchmark (VIUBench) to validate their difficulty, revealing that current state-of-the-art MLLMs struggle significantly on these tasks. Building upon these pretext tasks, we develop the VideoSSR-30K dataset and propose VideoSSR, a novel video self-supervised reinforcement learning framework for RLVR. Extensive experiments across 17 benchmarks, spanning four major video domains (General Video QA, Long Video QA, Temporal Grounding, and Complex Reasoning), demonstrate that VideoSSR consistently enhances model performance, yielding an average improvement of over 5\\%. These results establish VideoSSR as a potent foundational framework for developing more advanced video understanding in MLLMs. The code is available at this https URL .",
+      "paper_link": "https://arxiv.org/abs/2511.06281",
+      "code_link": "https://github.com/lcqysl/VideoSSR",
+      "tags": []
+    },
+    {
+      "title": "Beyond English: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs",
+      "url": "https://huggingface.co/papers/2511.07003",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 10,
+      "institution": "NiuTrans",
+      "abstract": "Large language models have significantly advanced Multilingual Machine Translation (MMT), yet the broad language coverage, consistent translation quality, and English-centric bias remain open challenges. To address these challenges, we introduce \\textbf{LMT}, a suite of \\textbf{L}arge-scale \\textbf{M}ultilingual \\textbf{T}ranslation models centered on both Chinese and English, covering 60 languages and 234 translation directions. During development, we identify a previously overlooked phenomenon of \\textbf{directional degeneration}, where symmetric multi-way fine-tuning data overemphasize reverse directions (X $\\to$ En/Zh), leading to excessive many-to-one mappings and degraded translation quality. We propose \\textbf{Strategic Downsampling}, a simple yet effective method to mitigate this degeneration. In addition, we design \\textbf{Parallel Multilingual Prompting (PMP)}, which leverages typologically related auxiliary languages to enhance cross-lingual transfer. Through rigorous data curation and refined adaptation strategies, LMT achieves SOTA performance among models of comparable language coverage, with our 4B model (LMT-60-4B) surpassing the much larger Aya-101-13B and NLLB-54B models by a substantial margin. We release LMT in four sizes (0.6B/1.7B/4B/8B) to catalyze future research and provide strong baselines for inclusive, scalable, and high-quality MMT \\footnote{\\href{ this https URL }{ this https URL }}.",
+      "paper_link": "https://arxiv.org/abs/2511.07003",
+      "code_link": "https://github.com/NiuTrans/LMT",
+      "tags": []
+    },
+    {
+      "title": "The Path Not Taken: RLVR Provably Learns Off the Principals",
+      "url": "https://huggingface.co/papers/2511.08567",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 8,
+      "institution": "AI at Meta",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) reliably improves the reasoning performance of large language models, yet it appears to modify only a small fraction of parameters. We revisit this paradox and show that sparsity is a surface artifact of a model-conditioned optimization bias: for a fixed pretrained model, updates consistently localize to preferred parameter regions, highly consistent across runs and largely invariant to datasets and RL recipes. We mechanistically explain these dynamics with a Three-Gate Theory: Gate I (KL Anchor) imposes a KL-constrained update; Gate II (Model Geometry) steers the step off principal directions into low-curvature, spectrum-preserving subspaces; and Gate III (Precision) hides micro-updates in non-preferred regions, making the off-principal bias appear as sparsity. We then validate this theory and, for the first time, provide a parameter-level characterization of RLVR's learning dynamics: RLVR learns off principal directions in weight space, achieving gains via minimal spectral drift, reduced principal-subspace rotation, and off-principal update alignment. In contrast, SFT targets principal weights, distorts the spectrum, and even lags RLVR. Together, these results provide the first parameter-space account of RLVR's training dynamics, revealing clear regularities in how parameters evolve. Crucially, we show that RL operates in a distinct optimization regime from SFT, so directly adapting SFT-era parameter-efficient fine-tuning (PEFT) methods can be flawed, as evidenced by our case studies on advanced sparse fine-tuning and LoRA variants. We hope this work charts a path toward a white-box understanding of RLVR and the design of geometry-aware, RLVR-native learning algorithms, rather than repurposed SFT-era heuristics.",
+      "paper_link": "https://arxiv.org/abs/2511.08567",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces",
+      "url": "https://huggingface.co/papers/2511.07587",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 6,
+      "institution": "·5 authors",
+      "abstract": "Large Language Models (LLMs) face fundamental challenges in long-context reasoning: many documents exceed their finite context windows, while performance on texts that do fit degrades with sequence length, necessitating their augmentation with external memory frameworks. Current solutions, which have evolved from retrieval using semantic embeddings to more sophisticated structured knowledge graphs representations for improved sense-making and associativity, are tailored for fact-based retrieval and fail to build the space-time-anchored narrative representations required for tracking entities through episodic events. To bridge this gap, we propose the \\textbf{Generative Semantic Workspace} (GSW), a neuro-inspired generative memory framework that builds structured, interpretable representations of evolving situations, enabling LLMs to reason over evolving roles, actions, and spatiotemporal contexts. Our framework comprises an \\textit{Operator}, which maps incoming observations to intermediate semantic structures, and a \\textit{Reconciler}, which integrates these into a persistent workspace that enforces temporal, spatial, and logical coherence. On the Episodic Memory Benchmark (EpBench) \\cite{huet_episodic_2025} comprising corpora ranging from 100k to 1M tokens in length, GSW outperforms existing RAG based baselines by up to \\textbf{20\\%}. Furthermore, GSW is highly efficient, reducing query-time context tokens by \\textbf{51\\%} compared to the next most token-efficient baseline, reducing inference time costs considerably. More broadly, GSW offers a concrete blueprint for endowing LLMs with human-like episodic memory, paving the way for more capable agents that can reason over long horizons.",
+      "paper_link": "https://arxiv.org/abs/2511.07587",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "DynaAct: Large Language Model Reasoning with Dynamic Action Spaces",
+      "url": "https://huggingface.co/papers/2511.08043",
+      "published": "2025-11-13T03:08:47.418442",
+      "likes": 3,
+      "institution": "·5 authors",
+      "abstract": "In modern sequential decision-making systems, the construction of an optimal candidate action space is critical to efficient inference. However, existing approaches either rely on manually defined action spaces that lack scalability or utilize unstructured spaces that render exhaustive search computationally prohibitive. In this paper, we propose a novel framework named \\textsc{DynaAct} for automatically constructing a compact action space to enhance sequential reasoning in complex problem-solving scenarios. Our method first estimates a proxy for the complete action space by extracting general sketches observed in a corpus covering diverse complex reasoning problems using large language models. We then formulate a submodular function that jointly evaluates candidate actions based on their utility to the current state and their diversity, and employ a greedy algorithm to select an optimal candidate set. Extensive experiments on six diverse standard benchmarks demonstrate that our approach significantly improves overall performance, while maintaining efficient inference without introducing substantial latency. The implementation is available at this https URL .",
+      "paper_link": "https://arxiv.org/abs/2511.08043",
+      "code_link": "https://github.com/zhaoxlpku/DynaAct",
+      "tags": []
+    }
+  ]
+}
