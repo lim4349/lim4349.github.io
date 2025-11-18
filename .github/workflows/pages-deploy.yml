@@ -15,6 +15,7 @@ on:
       - ".github/**"
       - "!.github/workflows/pages-deploy.yml"
       # 크롤러 생성 파일만 변경 시에는 CI와 Commitlint는 스킵됨
+      # 중요: _posts/와 _data/papers/는 paths-ignore에 없으므로 배포가 트리거됨
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

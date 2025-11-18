@@ -1141,16 +1141,18 @@ def main():
     is_morning_crawl = 2 <= now_utc.hour < 3  # UTC 02:00-03:00 (KST 11:00-12:00)
     is_evening_crawl = 14 <= now_utc.hour < 15  # UTC 14:00-15:00 (KST 23:00-24:00)
     
-    # 2단계: 오늘 날짜 페이지에 논문이 있는지 확인
+    # 2단계: 오늘 날짜 페이지에 논문이 있는지 확인 (참고용)
     print(f"\n[1단계] 오늘 날짜 페이지 확인 중: {target_date.strftime('%Y-%m-%d')}")
     has_papers = crawler.check_date_has_papers(target_date)
     
     # 3단계: 기존 포스트 파일 확인 (오후 크롤링 시)
     existing_post = crawler.has_existing_post(target_date) if is_evening_crawl else False
     
+    # check_date_has_papers가 False여도 실제 크롤링을 시도 (페이지 구조 변경 대응)
+    # 단, 오전 크롤링이고 논문이 없고 기존 포스트도 없으면 스킵
     if not has_papers:
-        if is_morning_crawl:
-            print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없습니다.")
+        if is_morning_crawl and not existing_post:
+            print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없는 것으로 보입니다.")
             print("   페이지가 아직 갱신되지 않았을 수 있습니다.")
             print("   크롤링을 중단합니다. 오후 11시에 다시 확인합니다.")
             print("\n" + "=" * 50)
@@ -1158,36 +1160,27 @@ def main():
             print("=" * 50)
             return
         else:
-            # 오후 크롤링인데도 논문이 없고, 기존 포스트도 없으면 완전 스킵
-            if not existing_post:
-                print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없습니다.")
-                print("   오전에도 크롤링되지 않았고, 논문도 없습니다.")
-                print("   크롤링을 중단합니다.")
-                print("\n" + "=" * 50)
-                print("크롤링 완료: 논문 없음 (스킵)")
-                print("=" * 50)
-                return
-            else:
-                # 오후 크롤링: 기존 포스트는 있지만 현재 논문이 없는 경우
-                # (좋아요 수 업데이트는 불가능하므로 스킵)
-                print(f"⚠️ 오늘 날짜 ({target_date.strftime('%Y-%m-%d')})에 논문이 없습니다.")
-                print("   기존 포스트가 있지만 현재 논문이 없어 업데이트할 내용이 없습니다.")
-                print("   크롤링을 중단합니다.")
-                print("\n" + "=" * 50)
-                print("크롤링 완료: 업데이트할 내용 없음 (스킵)")
-                print("=" * 50)
-                return
+            # 오후 크롤링이거나 기존 포스트가 있으면 실제 크롤링 시도
+            print("⚠️ 날짜 페이지 확인 결과 논문이 없는 것으로 보이지만, 실제 크롤링을 시도합니다.")
     
-    print("✅ 오늘 날짜에 논문이 있습니다. 크롤링을 시작합니다.")
+    if has_papers:
+        print("✅ 오늘 날짜에 논문이 있는 것으로 확인되었습니다.")
+    else:
+        print("⚠️ 날짜 페이지 확인 실패 또는 논문 없음, 하지만 크롤링을 시도합니다.")
+    
+    print("크롤링을 시작합니다.")
     
     # 3단계: 논문 크롤링
     papers = crawler.fetch_daily_papers(target_date)
     
     print(f"\n총 {len(papers)}개의 논문을 찾았습니다.\n")
     
-    # 논문이 없으면 종료
+    # 논문이 없으면 종료 (하지만 로그는 남김)
     if not papers:
         print("⚠️ 논문이 0개입니다. 크롤링을 중단합니다.")
+        print(f"   날짜: {target_date.strftime('%Y-%m-%d')}")
+        print(f"   시간: UTC {now_utc.strftime('%Y-%m-%d %H:%M')}, KST {now_kst.strftime('%Y-%m-%d %H:%M')}")
+        print("   이는 정상일 수 있습니다 (Hugging Face에 해당 날짜 논문이 없을 수 있음).")
         print("\n" + "=" * 50)
         print("크롤링 완료: 0개의 논문을 처리했습니다.")
         print("=" * 50)

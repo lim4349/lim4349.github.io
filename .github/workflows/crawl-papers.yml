@@ -8,6 +8,9 @@ on:
     - cron: '0 14 * * *'
   workflow_dispatch:  # 수동 실행 가능
 
+permissions:
+  contents: write  # 커밋 및 푸시를 위한 권한
+
 jobs:
   crawl:
     runs-on: ubuntu-latest
@@ -17,6 +20,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0  # 전체 히스토리 가져오기
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -37,5 +41,27 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add _posts/ _data/papers/
-        git diff --staged --quiet || git commit -m "Auto-update: Daily papers summary $(date +'%Y-%m-%d %H:%M')"
-        git push
+        # 변경사항이 있을 때만 커밋 및 푸시
+        if ! git diff --staged --quiet; then
+          echo "변경사항이 있습니다. 커밋 및 푸시를 시도합니다..."
+          git commit -m "Auto-update: Daily papers summary $(date +'%Y-%m-%d %H:%M')" || exit 1
+          # 푸시 재시도 로직 (최대 3회)
+          max_retries=3
+          retry_count=0
+          while [ $retry_count -lt $max_retries ]; do
+            if git push; then
+              echo "✅ 변경사항이 커밋되고 푸시되었습니다."
+              echo "📦 배포 워크플로우가 자동으로 트리거됩니다."
+              echo "   GitHub Actions에서 'Build and Deploy Pages' 워크플로우 실행을 확인하세요."
+              exit 0
+            else
+              retry_count=$((retry_count + 1))
+              echo "⚠️ 푸시 실패 (시도 $retry_count/$max_retries). 5초 후 재시도..."
+              sleep 5
+            fi
+          done
+          echo "❌ 푸시 실패: 최대 재시도 횟수 초과"
+          exit 1
+        else
+          echo "ℹ️ 변경사항이 없어 커밋하지 않습니다."
+        fi
