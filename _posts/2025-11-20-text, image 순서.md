@@ -40,15 +40,11 @@ Hugging Face에 명시된 예시 코드는 이미지 → 텍스트 순서로 되
 Test 1 Analysis (with system prompt):
   Instruction: Close the file explorer
   Response: ## Code:
-```python
-pyautogui.click(x=1424, y=264)
-```
+  pyautogui.click(x=1424, y=264)
 
   Instruction: Open Recycle Bin
   Response: ## Code:
-```python
-pyautogui.click(x=39, y=146)
-```
+  pyautogui.click(x=39, y=146)
 ```
 
 좌표가 정확하게 출력되며, 각 명령어에 따라 다른 좌표를 반환합니다.
@@ -59,15 +55,11 @@ pyautogui.click(x=39, y=146)
 Test 1 Analysis (with system prompt):
   Instruction: Close the file explorer
   Response: ## Code:
-```python
-pyautogui.click(x=377, y=823)
-```
+  pyautogui.click(x=377, y=823)
 
   Instruction: Open Recycle Bin
   Response: ## Code:
-```python
-pyautogui.click(x=375, y=823)
-```
+  pyautogui.click(x=375, y=823)
 ```
 
 모든 명령어에 대해 거의 동일한 좌표만 출력되며, 입력 텍스트를 변경해도 좌표가 변하지 않습니다.
