@@ -54,11 +54,13 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: lts/*
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Build Assets
-        run: |
-          npm install
-          npm run build
+        run: npm run build
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
