@@ -1,0 +1,26 @@
+---
+title: Hugging Face Daily Papers - 2025-11-28
+date: 2025-11-28 09:15:00 +0900
+categories: ['Daily Papers', '일간']
+tags: ['huggingface', 'papers', 'daily', 'ai']
+author: lim4349
+---
+
+# Hugging Face Daily Papers - 2025-11-28
+
+총 **2개**의 논문이 수집되었습니다.
+
+## 📊 좋아요 순위
+
+1. **MIRA: Multimodal Iterative Reasoning Agent for Image Editing** - 👍 4
+   - 기관: ·3 authors
+   - [HF 페이지](https://huggingface.co/papers/2511.21087)
+   - [논문 링크](https://arxiv.org/abs/2511.21087)
+   - Abstract: Instruction-guided image editing offers an intuitive way for users to edit images with natural language. However, diffusion-based editing models often struggle to accurately interpret complex user instructions, especially those involving compositional relationships, contextual cues, or referring expressions, leading to edits that drift semantically or fail to reflect the intended changes. We tackle this problem by proposing MIRA (Multimodal Iterative Reasoning Agent), a lightweight, plug-and-play multimodal reasoning agent that performs editing through an iterative perception-reasoning-action loop, effectively simulating multi-turn human-model interaction processes. Instead of issuing a single prompt or static plan, MIRA predicts atomic edit instructions step by step, using visual feedback to make its decisions. Our 150K multimodal tool-use dataset, MIRA-Editing, combined with a two-stage SFT + GRPO training pipeline, enables MIRA to perform reasoning and editing over complex editing instructions. When paired with open-source image editing models such as Flux.1-Kontext, Step1X-Edit, and Qwen-Image-Edit, MIRA significantly improves both semantic consistency and perceptual quality, achieving performance comparable to or exceeding proprietary systems such as GPT-Image and Nano-Banana.
+
+2. **Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following** - 👍 2
+   - 기관: University of Maryland College Park
+   - [HF 페이지](https://huggingface.co/papers/2511.21662)
+   - [논문 링크](https://arxiv.org/abs/2511.21662)
+   - Abstract: Large multimodal models (LMMs) are increasingly adopted as judges in multimodal evaluation systems due to their strong instruction following and consistency with human preferences. However, their ability to follow diverse, fine-grained evaluation criteria remains underexplored. We develop Multi-Crit, a benchmark for evaluating multimodal judges on their capacity to follow pluralistic criteria and produce reliable criterion-level judgments. Covering both open-ended generation and verifiable reasoning tasks, Multi-Crit is built through a rigorous data curation pipeline that gathers challenging response pairs with multi-criterion human annotations. It further introduces three novel metrics for systematically assessing pluralistic adherence, criterion-switching flexibility, and the ability to recognize criterion-level preference conflicts. Comprehensive analysis of 25 LMMs reveals that 1) proprietary models still struggle to maintain consistent adherence to pluralistic criteria--especially in open-ended evaluation; 2) open-source models lag further behind in flexibly following diverse criteria; and 3) critic fine-tuning with holistic judgment signals enhances visual grounding but fails to generalize to pluralistic criterion-level judgment. Additional analyses on reasoning fine-tuning, test-time scaling, and boundary consistency between open-source and proprietary models further probe the limits of current multimodal judges. As a pioneering study, Multi-Crit lays the foundation for building reliable and steerable multimodal AI evaluation.
+
