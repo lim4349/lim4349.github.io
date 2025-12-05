@@ -40,11 +40,25 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        
+        # 변경된 파일 확인
+        echo "=== 변경된 파일 확인 ==="
+        git status
+        
+        # _posts/와 _data/papers/ 디렉토리의 변경사항 추가
         git add _posts/ _data/papers/
+        
+        # 추가된 파일 확인
+        echo "=== 스테이징된 파일 확인 ==="
+        git diff --staged --name-only
+        
         # 변경사항이 있을 때만 커밋 및 푸시
         if ! git diff --staged --quiet; then
-          echo "변경사항이 있습니다. 커밋 및 푸시를 시도합니다..."
-          git commit -m "Auto-update: Daily papers summary $(date +'%Y-%m-%d %H:%M')" || exit 1
+          echo "✅ 변경사항이 있습니다. 커밋 및 푸시를 시도합니다..."
+          COMMIT_MSG="Auto-update: Daily papers summary $(date +'%Y-%m-%d %H:%M')"
+          echo "커밋 메시지: $COMMIT_MSG"
+          git commit -m "$COMMIT_MSG" || exit 1
+          
           # 푸시 재시도 로직 (최대 3회)
           max_retries=3
           retry_count=0
@@ -64,4 +78,5 @@ jobs:
           exit 1
         else
           echo "ℹ️ 변경사항이 없어 커밋하지 않습니다."
+          echo "   (이미 최신 상태이거나 크롤링 결과가 동일할 수 있습니다)"
         fi

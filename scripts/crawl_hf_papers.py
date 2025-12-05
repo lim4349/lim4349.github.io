@@ -453,7 +453,7 @@ class HFDailyPapersCrawler:
                     if script_likes and script_likes > likes:
                         likes = script_likes
                         print(f"    ✅ Script 태그에서 좋아요 수 발견: {likes}")
-                except (json.JSONDecodeError, AttributeError, TypeError):
+                except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
                     pass
             
             # 방법 1: data-testid, data-id 등 특정 속성 찾기
@@ -782,20 +782,26 @@ class HFDailyPapersCrawler:
         filename = f"daily-{date_str}.json"
         filepath = self.data_dir / filename
         
-        # 기존 파일이 있으면 내용 비교
+        # 기존 파일이 있으면 내용 비교 (URL + 좋아요 수)
         if filepath.exists():
             try:
                 with open(filepath, 'r', encoding='utf-8') as f:
                     existing_data = json.load(f)
-                    existing_urls = {p.get('url', '') for p in existing_data.get('papers', [])}
-                    new_urls = {p.get('url', '') for p in papers if p.get('url')}
+                    existing_papers = existing_data.get('papers', [])
                     
-                    # 내용이 같으면 저장하지 않음
-                    if existing_urls == new_urls:
-                        print(f"기존 데이터와 동일: {filename} (저장 스킵)")
+                    # URL과 좋아요 수를 모두 비교
+                    existing_dict = {(p.get('url', ''), p.get('likes', 0)) for p in existing_papers}
+                    new_dict = {(p.get('url', ''), p.get('likes', 0)) for p in papers if p.get('url')}
+                    
+                    # 내용이 완전히 같으면 저장하지 않음 (URL과 좋아요 수 모두 동일)
+                    if existing_dict == new_dict and len(existing_papers) == len(papers):
+                        print(f"기존 데이터와 동일 (URL + 좋아요 수): {filename} (저장 스킵)")
                         return None
-            except Exception:
-                pass
+                    else:
+                        # 좋아요 수가 업데이트되었거나 논문이 추가/변경된 경우
+                        print(f"데이터 변경 감지: {filename} (저장)")
+            except Exception as e:
+                print(f"기존 파일 읽기 오류: {e}, 새로 저장합니다.")
         
         data = {
             'date': date_str,
@@ -965,10 +971,33 @@ class HFDailyPapersCrawler:
                     for paper in papers
                 )
                 
-                # URL이 같고 Abstract가 개선되지 않았으면 업데이트하지 않음
-                if existing_urls == new_urls and not new_has_good_abstract:
+                # URL과 좋아요 수를 모두 비교
+                existing_likes = {}
+                for url in existing_urls:
+                    # 기존 파일에서 좋아요 수 추출
+                    like_match = re.search(rf'{re.escape(url)}[^\n]*👍\s*(\d+)', existing_content)
+                    if like_match:
+                        existing_likes[url] = int(like_match.group(1))
+                
+                new_likes = {paper.get('url', ''): paper.get('likes', 0) for paper in papers if paper.get('url')}
+                
+                # 좋아요 수가 변경되었는지 확인
+                likes_changed = False
+                for url in new_urls:
+                    if url in existing_likes and url in new_likes:
+                        if existing_likes[url] != new_likes[url]:
+                            likes_changed = True
+                            print(f"좋아요 수 변경 감지: {url} - {existing_likes[url]} -> {new_likes[url]}")
+                            break
+                
+                # URL이 같고 Abstract가 개선되지 않고 좋아요 수도 변경되지 않았으면 업데이트하지 않음
+                if existing_urls == new_urls and not new_has_good_abstract and not likes_changed:
                     print(f"이미 존재하는 일간 요약: {filename} (내용 동일, 업데이트 스킵)")
                     return None
+                
+                # 좋아요 수가 변경되었으면 업데이트
+                if likes_changed:
+                    print(f"좋아요 수 업데이트 필요: {filename} (업데이트)")
                 
                 # Abstract 개선이 있으면 업데이트
                 if existing_urls == new_urls and existing_has_bad_abstract and new_has_good_abstract:
