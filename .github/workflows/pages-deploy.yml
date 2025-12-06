@@ -66,6 +66,17 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Debug - Check built posts
+        run: |
+          echo "=== 빌드된 포스트 확인 ==="
+          find "_site${{ steps.pages.outputs.base_path }}" -type d -name "posts" | head -1 | xargs -I {} find {} -name "*.html" | head -10
+          echo ""
+          echo "=== 최근 포스트 파일 확인 ==="
+          ls -la "_posts/" | tail -5
+          echo ""
+          echo "=== 빌드된 포스트 개수 ==="
+          find "_site${{ steps.pages.outputs.base_path }}" -path "*/posts/*.html" | wc -l
+
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
