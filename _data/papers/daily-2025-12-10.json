@@ -1,0 +1,51 @@
+{
+  "date": "2025-12-10",
+  "crawled_at": "2025-12-10T03:16:08.511696",
+  "total_papers": 4,
+  "papers": [
+    {
+      "title": "Wan-Move: Motion-controllable Video Generation via Latent Trajectory Guidance",
+      "url": "https://huggingface.co/papers/2512.08765",
+      "published": "2025-12-10T03:16:02.345945",
+      "likes": 16,
+      "institution": "TongyiLab",
+      "abstract": "We present Wan-Move, a simple and scalable framework that brings motion control to video generative models. Existing motion-controllable methods typically suffer from coarse control granularity and limited scalability, leaving their outputs insufficient for practical use. We narrow this gap by achieving precise and high-quality motion control. Our core idea is to directly make the original condition features motion-aware for guiding video synthesis. To this end, we first represent object motions with dense point trajectories, allowing fine-grained control over the scene. We then project these trajectories into latent space and propagate the first frame's features along each trajectory, producing an aligned spatiotemporal feature map that tells how each scene element should move. This feature map serves as the updated latent condition, which is naturally integrated into the off-the-shelf image-to-video model, e.g., Wan-I2V-14B, as motion guidance without any architecture change. It removes the need for auxiliary motion encoders and makes fine-tuning base models easily scalable. Through scaled training, Wan-Move generates 5-second, 480p videos whose motion controllability rivals Kling 1.5 Pro's commercial Motion Brush, as indicated by user studies. To support comprehensive evaluation, we further design MoveBench, a rigorously curated benchmark featuring diverse content categories and hybrid-verified annotations. It is distinguished by larger data volume, longer video durations, and high-quality motion annotations. Extensive experiments on MoveBench and the public dataset consistently show Wan-Move's superior motion quality. Code, models, and benchmark data are made publicly available.",
+      "paper_link": "https://arxiv.org/abs/2512.08765",
+      "code_link": "https://github.com/ali-vilab/Wan-Move",
+      "tags": []
+    },
+    {
+      "title": "TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models",
+      "url": "https://huggingface.co/papers/2512.08153",
+      "published": "2025-12-10T03:16:02.345945",
+      "likes": 1,
+      "institution": "·2 authors",
+      "abstract": "Reinforcement learning (RL) post-training is crucial for aligning generative models with human preferences, but its prohibitive computational cost remains a major barrier to widespread adoption. We introduce \\textbf{TreeGRPO}, a novel RL framework that dramatically improves training efficiency by recasting the denoising process as a search tree. From shared initial noise samples, TreeGRPO strategically branches to generate multiple candidate trajectories while efficiently reusing their common prefixes. This tree-structured approach delivers three key advantages: (1) \\emph{High sample efficiency}, achieving better performance under same training samples (2) \\emph{Fine-grained credit assignment} via reward backpropagation that computes step-specific advantages, overcoming the uniform credit assignment limitation of trajectory-based methods, and (3) \\emph{Amortized computation} where multi-child branching enables multiple policy updates per forward pass. Extensive experiments on both diffusion and flow-based models demonstrate that TreeGRPO achieves \\textbf{2.4$\\times$ faster training} while establishing a superior Pareto frontier in the efficiency-reward trade-off space. Our method consistently outperforms GRPO baselines across multiple benchmarks and reward models, providing a scalable and effective pathway for RL-based visual generative model alignment. The project website is available at this http URL .",
+      "paper_link": "https://arxiv.org/abs/2512.08153",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "EcomBench: Towards Holistic Evaluation of Foundation Agents in E-commerce",
+      "url": "https://huggingface.co/papers/2512.08868",
+      "published": "2025-12-10T03:16:02.345945",
+      "likes": 0,
+      "institution": "TongyiLab",
+      "abstract": "Foundation agents have rapidly advanced in their ability to reason and interact with real environments, making the evaluation of their core capabilities increasingly important. While many benchmarks have been developed to assess agent performance, most concentrate on academic settings or artificially designed scenarios while overlooking the challenges that arise in real applications. To address this issue, we focus on a highly practical real-world setting, the e-commerce domain, which involves a large volume of diverse user interactions, dynamic market conditions, and tasks directly tied to real decision-making processes. To this end, we introduce EcomBench, a holistic E-commerce Benchmark designed to evaluate agent performance in realistic e-commerce environments. EcomBench is built from genuine user demands embedded in leading global e-commerce ecosystems and is carefully curated and annotated through human experts to ensure clarity, accuracy, and domain relevance. It covers multiple task categories within e-commerce scenarios and defines three difficulty levels that evaluate agents on key capabilities such as deep information retrieval, multi-step reasoning, and cross-source knowledge integration. By grounding evaluation in real e-commerce contexts, EcomBench provides a rigorous and dynamic testbed for measuring the practical capabilities of agents in modern e-commerce.",
+      "paper_link": "https://arxiv.org/abs/2512.08868",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels",
+      "url": "https://huggingface.co/papers/2512.08358",
+      "published": "2025-12-10T03:16:02.345945",
+      "likes": 0,
+      "institution": "·9 authors",
+      "abstract": "Monocular 3D tracking aims to capture the long-term motion of pixels in 3D space from a single monocular video and has witnessed rapid progress in recent years. However, we argue that the existing monocular 3D tracking methods still fall short in separating the camera motion from foreground dynamic motion and cannot densely track newly emerging dynamic subjects in the videos. To address these two limitations, we propose TrackingWorld, a novel pipeline for dense 3D tracking of almost all pixels within a world-centric 3D coordinate system. First, we introduce a tracking upsampler that efficiently lifts the arbitrary sparse 2D tracks into dense 2D tracks. Then, to generalize the current tracking methods to newly emerging objects, we apply the upsampler to all frames and reduce the redundancy of 2D tracks by eliminating the tracks in overlapped regions. Finally, we present an efficient optimization-based framework to back-project dense 2D tracks into world-centric 3D trajectories by estimating the camera poses and the 3D coordinates of these 2D tracks. Extensive evaluations on both synthetic and real-world datasets demonstrate that our system achieves accurate and dense 3D tracking in a world-centric coordinate frame.",
+      "paper_link": "https://arxiv.org/abs/2512.08358",
+      "code_link": "https://igl-hkust.github.io/TrackingWorld.github.io/",
+      "tags": []
+    }
+  ]
+}
