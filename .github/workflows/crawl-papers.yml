@@ -21,7 +21,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0  # 전체 히스토리 가져오기
-        ref: main  # 명시적으로 main 브랜치 체크아웃
+        ref: master  # 명시적으로 master 브랜치 체크아웃
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -66,10 +66,10 @@ jobs:
           
           # main 또는 master 브랜치 확인 및 설정
           if [ "$CURRENT_BRANCH" != "main" ] && [ "$CURRENT_BRANCH" != "master" ]; then
-            echo "⚠️ 현재 브랜치가 main/master가 아닙니다. main 브랜치로 전환합니다."
+            echo "⚠️ 현재 브랜치가 main/master가 아닙니다. master 브랜치로 전환합니다."
             # 변경사항을 stash하고 브랜치 전환
             git stash
-            if git checkout main 2>/dev/null || git checkout master 2>/dev/null; then
+            if git checkout master 2>/dev/null || git checkout main 2>/dev/null; then
               CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
               echo "브랜치 변경됨: $CURRENT_BRANCH"
               # stash된 변경사항 복원
