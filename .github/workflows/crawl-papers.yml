@@ -21,6 +21,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0  # 전체 히스토리 가져오기
+        ref: refs/heads/master  # 명시적으로 master 브랜치 체크아웃
     
     - name: Set up Python
       uses: actions/setup-python@v5
