@@ -21,7 +21,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0  # 전체 히스토리 가져오기
-        ref: master  # master 브랜치 명시적 지정
+        ref: refs/heads/master  # master 브랜치 명시적 지정
     
     - name: Set up Python
       uses: actions/setup-python@v5
