@@ -17,15 +17,6 @@ on:
       # 크롤러 생성 파일만 변경 시에는 CI와 Commitlint는 스킵됨
       # 중요: _posts/와 _data/papers/는 paths-ignore에 없으므로 배포가 트리거됨
 
-  # 크롤러 워크플로우 완료 후 자동 배포
-  workflow_run:
-    workflows: ["Crawl Hugging Face Daily Papers"]
-    types:
-      - completed
-    branches:
-      - main
-      - master
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -42,11 +33,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 모든 트리거 이벤트에서 실행 (push, workflow_run 성공, workflow_dispatch)
-    if: |
-      github.event_name == 'push' ||
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
 
     steps:
       - name: Checkout
@@ -80,32 +66,22 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
-      - name: Debug - Check built site
+      - name: Debug - Check built posts
         run: |
-          echo "=== 이벤트 정보 ==="
-          echo "Event: ${{ github.event_name }}"
-          echo "Ref: ${{ github.ref }}"
-          echo "SHA: ${{ github.sha }}"
-          echo "Base path: ${{ steps.pages.outputs.base_path }}"
-          echo ""
-          echo "=== 빌드된 사이트 구조 확인 ==="
-          ls -la "_site${{ steps.pages.outputs.base_path }}" | head -20
-          echo ""
           echo "=== 빌드된 포스트 확인 ==="
-          find "_site${{ steps.pages.outputs.base_path }}" -type d -name "posts" | head -1 | xargs -I {} find {} -name "*.html" 2>/dev/null | head -10 || echo "포스트 디렉토리를 찾을 수 없습니다."
+          find "_site${{ steps.pages.outputs.base_path }}" -type d -name "posts" | head -1 | xargs -I {} find {} -name "*.html" | head -10
           echo ""
           echo "=== 최근 포스트 파일 확인 ==="
-          ls -la "_posts/" | tail -5 || echo "_posts 디렉토리가 없습니다."
+          ls -la "_posts/" | tail -5
           echo ""
           echo "=== 빌드된 포스트 개수 ==="
-          find "_site${{ steps.pages.outputs.base_path }}" -path "*/posts/*.html" 2>/dev/null | wc -l || echo "0"
+          find "_site${{ steps.pages.outputs.base_path }}" -path "*/posts/*.html" | wc -l
 
       - name: Test site
-        continue-on-error: true  # 테스트 실패해도 배포는 계속
         run: |
           bundle exec htmlproofer _site \
             --disable-external \
-            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/,/\/commons\/avatar\.jpg/,/\/posts\/20180809\/.*\.png/,/\/posts\/20190808\/.*\.png/,/\/commons\/devices-mockup\.png/" || echo "⚠️ HTML 검증에서 일부 경고가 발생했지만 배포는 계속됩니다."
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/,/\/commons\/avatar\.jpg/,/\/posts\/20180809\/.*\.png/,/\/posts\/20190808\/.*\.png/,/\/commons\/devices-mockup\.png/"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
