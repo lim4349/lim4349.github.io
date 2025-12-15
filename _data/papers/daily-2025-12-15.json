@@ -1,0 +1,95 @@
+{
+  "date": "2025-12-15",
+  "crawled_at": "2025-12-15T03:22:46.521913",
+  "total_papers": 8,
+  "papers": [
+    {
+      "title": "DentalGPT: Incentivizing Multimodal Complex Reasoning in Dentistry",
+      "url": "https://huggingface.co/papers/2512.11558",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 23,
+      "institution": "·24 authors",
+      "abstract": "Reliable interpretation of multimodal data in dentistry is essential for automated oral healthcare, yet current multimodal large language models (MLLMs) struggle to capture fine-grained dental visual details and lack sufficient reasoning ability for precise diagnosis. To address these limitations, we present DentalGPT, a specialized dental MLLM developed through high-quality domain knowledge injection and reinforcement learning. Specifically, the largest annotated multimodal dataset for dentistry to date was constructed by aggregating over 120k dental images paired with detailed descriptions that highlight diagnostically relevant visual features, making it the multimodal dataset with the most extensive collection of dental images to date. Training on this dataset significantly enhances the MLLM's visual understanding of dental conditions, while the subsequent reinforcement learning stage further strengthens its capability for multimodal complex reasoning. Comprehensive evaluations on intraoral and panoramic benchmarks, along with dental subsets of medical VQA benchmarks, show that DentalGPT achieves superior performance in disease classification and dental VQA tasks, outperforming many state-of-the-art MLLMs despite having only 7B parameters. These results demonstrate that high-quality dental data combined with staged adaptation provides an effective pathway for building capable and domain-specialized dental MLLMs.",
+      "paper_link": "https://arxiv.org/abs/2512.11558",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "SVG-T2I: Scaling Up Text-to-Image Latent Diffusion Model Without Variational Autoencoder",
+      "url": "https://huggingface.co/papers/2512.11749",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 8,
+      "institution": "Kling Team",
+      "abstract": "Visual generation grounded in Visual Foundation Model (VFM) representations offers a highly promising unified pathway for integrating visual understanding, perception, and generation. Despite this potential, training large-scale text-to-image diffusion models entirely within the VFM representation space remains largely unexplored. To bridge this gap, we scale the SVG (Self-supervised representations for Visual Generation) framework, proposing SVG-T2I to support high-quality text-to-image synthesis directly in the VFM feature domain. By leveraging a standard text-to-image diffusion pipeline, SVG-T2I achieves competitive performance, reaching 0.75 on GenEval and 85.78 on DPG-Bench. This performance validates the intrinsic representational power of VFMs for generative tasks. We fully open-source the project, including the autoencoder and generation model, together with their training, inference, evaluation pipelines, and pre-trained weights, to facilitate further research in representation-driven visual generation.",
+      "paper_link": "https://arxiv.org/abs/2512.11749",
+      "code_link": "https://github.com/KlingTeam/SVG-T2I",
+      "tags": []
+    },
+    {
+      "title": "V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties",
+      "url": "https://huggingface.co/papers/2512.11799",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 2,
+      "institution": "Adobe",
+      "abstract": "Large-scale video generation models have shown remarkable potential in modeling photorealistic appearance and lighting interactions in real-world scenes. However, a closed-loop framework that jointly understands intrinsic scene properties (e.g., albedo, normal, material, and irradiance), leverages them for video synthesis, and supports editable intrinsic representations remains unexplored. We present V-RGBX, the first end-to-end framework for intrinsic-aware video editing. V-RGBX unifies three key capabilities: (1) video inverse rendering into intrinsic channels, (2) photorealistic video synthesis from these intrinsic representations, and (3) keyframe-based video editing conditioned on intrinsic channels. At the core of V-RGBX is an interleaved conditioning mechanism that enables intuitive, physically grounded video editing through user-selected keyframes, supporting flexible manipulation of any intrinsic modality. Extensive qualitative and quantitative results show that V-RGBX produces temporally consistent, photorealistic videos while propagating keyframe edits across sequences in a physically plausible manner. We demonstrate its effectiveness in diverse applications, including object appearance editing and scene-level relighting, surpassing the performance of prior methods.",
+      "paper_link": "https://arxiv.org/abs/2512.11799",
+      "code_link": "https://aleafy.github.io/vrgbx/",
+      "tags": []
+    },
+    {
+      "title": "Exploring MLLM-Diffusion Information Transfer with MetaCanvas",
+      "url": "https://huggingface.co/papers/2512.11464",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 1,
+      "institution": "Meta Research",
+      "abstract": "Multimodal learning has rapidly advanced visual understanding, largely via multimodal large language models (MLLMs) that use powerful LLMs as cognitive cores. In visual generation, however, these powerful core models are typically reduced to global text encoders for diffusion models, leaving most of their reasoning and planning ability unused. This creates a gap: current multimodal LLMs can parse complex layouts, attributes, and knowledge-intensive scenes, yet struggle to generate images or videos with equally precise and structured control. We propose MetaCanvas, a lightweight framework that lets MLLMs reason and plan directly in spatial and spatiotemporal latent spaces and interface tightly with diffusion generators. We empirically implement MetaCanvas on three different diffusion backbones and evaluate it across six tasks, including text-to-image generation, text/image-to-video generation, image/video editing, and in-context video generation, each requiring precise layouts, robust attribute binding, and reasoning-intensive control. MetaCanvas consistently outperforms global-conditioning baselines, suggesting that treating MLLMs as latent-space planners is a promising direction for narrowing the gap between multimodal understanding and generation.",
+      "paper_link": "https://arxiv.org/abs/2512.11464",
+      "code_link": "",
+      "tags": []
+    },
+    {
+      "title": "Structure From Tracking: Distilling Structure-Preserving Motion for Video Generation",
+      "url": "https://huggingface.co/papers/2512.11792",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 0,
+      "institution": "·7 authors",
+      "abstract": "Reality is a dance between rigid constraints and deformable structures. For video models, that means generating motion that preserves fidelity as well as structure. Despite progress in diffusion models, producing realistic structure-preserving motion remains challenging, especially for articulated and deformable objects such as humans and animals. Scaling training data alone, so far, has failed to resolve physically implausible transitions. Existing approaches rely on conditioning with noisy motion representations, such as optical flow or skeletons extracted using an external imperfect model. To address these challenges, we introduce an algorithm to distill structure-preserving motion priors from an autoregressive video tracking model (SAM2) into a bidirectional video diffusion model (CogVideoX). With our method, we train SAM2VideoX, which contains two innovations: (1) a bidirectional feature fusion module that extracts global structure-preserving motion priors from a recurrent model like SAM2; (2) a Local Gram Flow loss that aligns how local features move together. Experiments on VBench and in human studies show that SAM2VideoX delivers consistent gains (+2.60\\% on VBench, 21-22\\% lower FVD, and 71.4\\% human preference) over prior baselines. Specifically, on VBench, we achieve 95.51\\%, surpassing REPA (92.91\\%) by 2.60\\%, and reduce FVD to 360.57, a 21.20\\% and 22.46\\% improvement over REPA- and LoRA-finetuning, respectively. The project website can be found at this https URL .",
+      "paper_link": "https://arxiv.org/abs/2512.11792",
+      "code_link": "https://sam2videox.github.io/",
+      "tags": []
+    },
+    {
+      "title": "The N-Body Problem: Parallel Execution from Single-Person Egocentric Video",
+      "url": "https://huggingface.co/papers/2512.11393",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 0,
+      "institution": "·4 authors",
+      "abstract": "Humans can intuitively parallelise complex activities, but can a model learn this from observing a single person? Given one egocentric video, we introduce the N-Body Problem: how N individuals, can hypothetically perform the same set of tasks observed in this video. The goal is to maximise speed-up, but naive assignment of video segments to individuals often violates real-world constraints, leading to physically impossible scenarios like two people using the same object or occupying the same space. To address this, we formalise the N-Body Problem and propose a suite of metrics to evaluate both performance (speed-up, task coverage) and feasibility (spatial collisions, object conflicts and causal constraints). We then introduce a structured prompting strategy that guides a Vision-Language Model (VLM) to reason about the 3D environment, object usage, and temporal dependencies to produce a viable parallel execution. On 100 videos from EPIC-Kitchens and HD-EPIC, our method for N = 2 boosts action coverage by 45% over a baseline prompt for Gemini 2.5 Pro, while simultaneously slashing collision rates, object and causal conflicts by 55%, 45% and 55% respectively.",
+      "paper_link": "https://arxiv.org/abs/2512.11393",
+      "code_link": "https://zhifanzhu.github.io/ego-nbody/",
+      "tags": []
+    },
+    {
+      "title": "PersonaLive! Expressive Portrait Image Animation for Live Streaming",
+      "url": "https://huggingface.co/papers/2512.11253",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 0,
+      "institution": "·5 authors",
+      "abstract": "Current diffusion-based portrait animation models predominantly focus on enhancing visual quality and expression realism, while overlooking generation latency and real-time performance, which restricts their application range in the live streaming scenario. We propose PersonaLive, a novel diffusion-based framework towards streaming real-time portrait animation with multi-stage training recipes. Specifically, we first adopt hybrid implicit signals, namely implicit facial representations and 3D implicit keypoints, to achieve expressive image-level motion control. Then, a fewer-step appearance distillation strategy is proposed to eliminate appearance redundancy in the denoising process, greatly improving inference efficiency. Finally, we introduce an autoregressive micro-chunk streaming generation paradigm equipped with a sliding training strategy and a historical keyframe mechanism to enable low-latency and stable long-term video generation. Extensive experiments demonstrate that PersonaLive achieves state-of-the-art performance with up to 7-22x speedup over prior diffusion-based portrait animation models.",
+      "paper_link": "https://arxiv.org/abs/2512.11253",
+      "code_link": "https://github.com/GVCLab/PersonaLive",
+      "tags": []
+    },
+    {
+      "title": "Task adaptation of Vision-Language-Action model: 1st Place Solution for the 2025 BEHAVIOR Challenge",
+      "url": "https://huggingface.co/papers/2512.06951",
+      "published": "2025-12-15T03:22:35.483917",
+      "likes": 0,
+      "institution": "·3 authors",
+      "abstract": "We present a vision-action policy that won 1st place in the 2025 BEHAVIOR Challenge - a large-scale benchmark featuring 50 diverse long-horizon household tasks in photo-realistic simulation, requiring bimanual manipulation, navigation, and context-aware decision making. Building on the Pi0.5 architecture, we introduce several innovations. Our primary contribution is correlated noise for flow matching, which improves training efficiency and enables correlation-aware inpainting for smooth action sequences. We also apply learnable mixed-layer attention and System 2 stage tracking for ambiguity resolution. Training employs multi-sample flow matching to reduce variance, while inference uses action compression and challenge-specific correction rules. Our approach achieves 26% q-score across all 50 tasks on both public and private leaderboards.",
+      "paper_link": "https://arxiv.org/abs/2512.06951",
+      "code_link": "https://github.com/IliaLarchenko/behavior-1k-solution",
+      "tags": []
+    }
+  ]
+}
