@@ -19,7 +19,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PAT_TOKEN }}
         fetch-depth: 0  # 전체 히스토리 가져오기
         ref: refs/heads/master  # master 브랜치 명시적 지정
     
