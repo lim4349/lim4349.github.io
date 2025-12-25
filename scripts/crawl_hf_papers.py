@@ -442,7 +442,8 @@ class HFDailyPapersCrawler:
         kst_date = target_date + timedelta(hours=9)
         post_date = kst_date.replace(hour=9, minute=15, second=0, microsecond=0)
         filename_date = target_date.strftime("%Y-%m-%d")
-        filename = f"{filename_date}-daily-papers-summary.md"
+        unique_id = int(target_date.timestamp())
+        filename = f"{filename_date}-daily-papers-{unique_id}.md"
         filepath = self.posts_dir / filename
 
         # 기존 파일 확인

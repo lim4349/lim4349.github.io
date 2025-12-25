@@ -1,8 +1,10 @@
 ---
-title: AttributeError: 'OpenCUAForConditionalGeneration' object has no attribute '_supports_sdpa'
+title: "AttributeError: OpenCUAForConditionalGeneration object has no attribute _supports_sdpa"
 date: 2025-11-03 09:15:00 +0900
-categories: ['정리']
-tags: ['ai']
+categories:
+  - 정리
+tags:
+  - ai
 author: lim4349
 ---
 
