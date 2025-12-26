@@ -6,7 +6,6 @@ name: CI
       - master
     paths-ignore:
       - ".github/**"
-      - "!.github/workflows/ci.yml"
       - .gitignore
       - "docs/**"
       - README.md
@@ -18,7 +17,6 @@ name: CI
   pull_request:
     paths-ignore:
       - ".github/**"
-      - "!.github/workflows/ci.yml"
       - .gitignore
       - "docs/**"
       - README.md
