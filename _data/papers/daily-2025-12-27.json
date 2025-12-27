@@ -1,22 +1,22 @@
 {
   "date": "2025-12-27",
-  "crawled_at": "2025-12-27T03:16:32.709977",
+  "crawled_at": "2025-12-27T14:20:11.314526",
   "total_papers": 7,
   "papers": [
     {
       "title": "Latent Implicit Visual Reasoning",
       "url": "https://huggingface.co/papers/2512.21218",
-      "published": "2025-12-27T03:16:23.007050",
-      "likes": 35,
-      "institution": "UC Berkeley2",
+      "published": "2025-12-27T14:20:01.264834",
+      "likes": 43,
+      "institution": "UC Berkeley3",
       "paper_link": "https://arxiv.org/abs/2512.21218",
       "abstract": "While Large Multimodal Models (LMMs) have made significant progress, they remain largely text-centric, relying on language as their core reasoning modality. As a result, they are limited in their ability to handle reasoning tasks that are predominantly visual. Recent approaches have sought to address this by supervising intermediate visual steps with helper images, depth maps, or image crops. However, these strategies impose restrictive priors on what \"useful\" visual abstractions look like, add heavy annotation costs, and struggle to generalize across tasks. To address this critical limitation, we propose a task-agnostic mechanism that trains LMMs to discover and use visual reasoning tokens without explicit supervision. These tokens attend globally and re-encode the image in a task-adaptive way, enabling the model to extract relevant visual information without hand-crafted supervision. Our approach outperforms direct fine-tuning and achieves state-of-the-art results on a diverse range of vision-centric tasks -- including those where intermediate abstractions are hard to specify -- while also generalizing to multi-task instruction tuning."
     },
     {
       "title": "Emergent temporal abstractions in autoregressive models enable hierarchical reinforcement learning",
       "url": "https://huggingface.co/papers/2512.20605",
-      "published": "2025-12-27T03:16:23.007050",
-      "likes": 26,
+      "published": "2025-12-27T14:20:01.264834",
+      "likes": 34,
       "institution": "Google2",
       "paper_link": "https://arxiv.org/abs/2512.20605",
       "abstract": "Large-scale autoregressive models pretrained on next-token prediction and finetuned with reinforcement learning (RL) have achieved unprecedented success on many problem domains. During RL, these models explore by generating new outputs, one token at a time. However, sampling actions token-by-token can result in highly inefficient learning, particularly when rewards are sparse. Here, we show that it is possible to overcome this problem by acting and exploring within the internal representations of an autoregressive model. Specifically, to discover temporally-abstract actions, we introduce a higher-order, non-causal sequence model whose outputs control the residual stream activations of a base autoregressive model. On grid world and MuJoCo-based tasks with hierarchical structure, we find that the higher-order model learns to compress long activation sequence chunks onto internal controllers. Critically, each controller executes a sequence of behaviorally meaningful actions that unfold over long timescales and are accompanied with a learned termination condition, such that composing multiple controllers over time leads to efficient exploration on novel tasks. We show that direct internal controller reinforcement, a process we term \"internal RL\", enables learning from sparse rewards in cases where standard RL finetuning fails. Our results demonstrate the benefits of latent action generation and reinforcement in autoregressive models, suggesting internal RL as a promising avenue for realizing hierarchical RL within foundation models."
@@ -24,9 +24,9 @@
     {
       "title": "Spatia: Video Generation with Updatable Spatial Memory",
       "url": "https://huggingface.co/papers/2512.15716",
-      "published": "2025-12-27T03:16:23.007050",
-      "likes": 15,
-      "institution": "The University of Sydney562",
+      "published": "2025-12-27T14:20:01.264834",
+      "likes": 18,
+      "institution": "The University of Sydney592",
       "paper_link": "https://arxiv.org/abs/2512.15716",
       "code_link": "https://zhaojingjing713.github.io/Spatia/",
       "abstract": "Existing video generation models struggle to maintain long-term spatial and temporal consistency due to the dense, high-dimensional nature of video signals. To overcome this limitation, we propose Spatia, a spatial memory-aware video generation framework that explicitly preserves a 3D scene point cloud as persistent spatial memory. Spatia iteratively generates video clips conditioned on this spatial memory and continuously updates it through visual SLAM. This dynamic-static disentanglement design enhances spatial consistency throughout the generation process while preserving the model's ability to produce realistic dynamic entities. Furthermore, Spatia enables applications such as explicit camera control and 3D-aware interactive editing, providing a geometrically grounded framework for scalable, memory-driven video generation."
@@ -34,9 +34,9 @@
     {
       "title": "Schoenfeld's Anatomy of Mathematical Reasoning by Language Models",
       "url": "https://huggingface.co/papers/2512.19995",
-      "published": "2025-12-27T03:16:23.007050",
-      "likes": 5,
-      "institution": "·5 authors63",
+      "published": "2025-12-27T14:20:01.264834",
+      "likes": 10,
+      "institution": "·5 authors93",
       "paper_link": "https://arxiv.org/abs/2512.19995",
       "code_link": "https://github.com/MingLiiii/ThinkARM",
       "abstract": "Large language models increasingly expose reasoning traces, yet their underlying cognitive structure and steps remain difficult to identify and analyze beyond surface-level statistics. We adopt Schoenfeld's Episode Theory as an inductive, intermediate-scale lens and introduce ThinkARM (Anatomy of Reasoning in Models), a scalable framework that explicitly abstracts reasoning traces into functional reasoning steps such as Analysis, Explore, Implement, Verify, etc. When applied to mathematical problem solving by diverse models, this abstraction reveals reproducible thinking dynamics and structural differences between reasoning and non-reasoning models, which are not apparent from token-level views. We further present two diagnostic case studies showing that exploration functions as a critical branching step associated with correctness, and that efficiency-oriented methods selectively suppress evaluative feedback steps rather than uniformly shortening responses. Together, our results demonstrate that episode-level representations make reasoning steps explicit, enabling systematic analysis of how reasoning is structured, stabilized, and altered in modern language models."
@@ -44,8 +44,8 @@
     {
       "title": "How Much 3D Do Video Foundation Models Encode?",
       "url": "https://huggingface.co/papers/2512.19949",
-      "published": "2025-12-27T03:16:23.007050",
-      "likes": 4,
+      "published": "2025-12-27T14:20:01.264834",
+      "likes": 6,
       "institution": "University of Illinois at Urbana-Champaign2",
       "paper_link": "https://arxiv.org/abs/2512.19949",
       "code_link": "https://vidfm-3d-probe.github.io/",
@@ -54,8 +54,8 @@
     {
       "title": "VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation",
       "url": "https://huggingface.co/papers/2512.19680",
-      "published": "2025-12-27T03:16:23.007050",
-      "likes": 3,
+      "published": "2025-12-27T14:20:01.264834",
+      "likes": 6,
       "institution": "·7 authors42",
       "paper_link": "https://arxiv.org/abs/2512.19680",
       "code_link": "https://lil-shake.github.io/va-pi.github.io/",
@@ -64,7 +64,7 @@
     {
       "title": "GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training",
       "url": "https://huggingface.co/papers/2512.13043",
-      "published": "2025-12-27T03:16:23.007050",
+      "published": "2025-12-27T14:20:01.264834",
       "likes": 3,
       "institution": "·7 authors2",
       "paper_link": "https://arxiv.org/abs/2512.13043",
