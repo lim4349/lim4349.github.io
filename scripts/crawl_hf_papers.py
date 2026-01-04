@@ -286,9 +286,7 @@ class HFDailyPapersCrawler:
     def has_existing_post(self, target_date: datetime) -> bool:
         """특정 날짜의 포스트 파일이 이미 존재하는지 확인"""
         date_str = target_date.strftime("%Y-%m-%d")
-        filename = f"{date_str}-daily-papers-summary.md"
-        filepath = self.posts_dir / filename
-        return filepath.exists()
+        return any(self.posts_dir.glob(f"{date_str}-daily-papers*.md"))
 
     def save_daily_data(
         self, papers: List[Dict], target_date: Optional[datetime] = None
@@ -442,9 +440,16 @@ class HFDailyPapersCrawler:
         kst_date = target_date + timedelta(hours=9)
         post_date = kst_date.replace(hour=9, minute=15, second=0, microsecond=0)
         filename_date = target_date.strftime("%Y-%m-%d")
-        unique_id = int(target_date.timestamp())
-        filename = f"{filename_date}-daily-papers-{unique_id}.md"
-        filepath = self.posts_dir / filename
+        existing_daily_posts = sorted(
+            self.posts_dir.glob(f"{filename_date}-daily-papers*.md"),
+            key=lambda p: p.stat().st_mtime,
+        )
+        filepath = (
+            max(existing_daily_posts, key=lambda p: p.stat().st_mtime)
+            if existing_daily_posts
+            else self.posts_dir / f"{filename_date}-daily-papers.md"
+        )
+        duplicates = [p for p in existing_daily_posts if p != filepath]
 
         # 기존 파일 확인
         if filepath.exists() and not force_update:
@@ -460,7 +465,13 @@ class HFDailyPapersCrawler:
                 }
 
                 if existing_urls == new_urls:
-                    print(f"기존 포스트 동일: {filename} (업데이트 스킵)")
+                    print(f"기존 포스트 동일: {filepath.name} (업데이트 스킵)")
+                    for old_path in duplicates:
+                        try:
+                            old_path.unlink()
+                            print(f"중복 포스트에서 삭제: {old_path.name}")
+                        except Exception:
+                            pass
                     return None
             except Exception:
                 pass
@@ -493,7 +504,14 @@ author: lim4349
             content += "\n"
 
         filepath.write_text(front_matter + content, encoding="utf-8")
-        print(f"포스트 저장: {filename}")
+        print(f"포스트 저장: {filepath.name}")
+
+        for old_path in duplicates:
+            try:
+                old_path.unlink()
+                print(f"중복 포스트에서 삭제: {old_path.name}")
+            except Exception:
+                pass
         return str(filepath)
 
     def create_monthly_summary_post(
