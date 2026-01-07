@@ -1,67 +1,105 @@
 {
   "date": "2026-01-07",
-  "crawled_at": "2026-01-07T03:22:04.534865",
-  "total_papers": 6,
+  "crawled_at": "2026-01-07T14:26:54.100002",
+  "total_papers": 10,
   "papers": [
     {
       "title": "InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields",
       "url": "https://huggingface.co/papers/2601.03252",
-      "published": "2026-01-07T03:21:56.499030",
-      "likes": 11,
-      "institution": "Zhejiang University4",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 67,
+      "institution": "Zhejiang University7",
       "paper_link": "https://arxiv.org/abs/2601.03252",
       "code_link": "https://zju3dv.github.io/InfiniDepth",
       "abstract": "Existing depth estimation methods are fundamentally limited to predicting depth on discrete image grids. Such representations restrict their scalability to arbitrary output resolutions and hinder the geometric detail recovery. This paper introduces InfiniDepth, which represents depth as neural implicit fields. Through a simple yet effective local implicit decoder, we can query depth at continuous 2D coordinates, enabling arbitrary-resolution and fine-grained depth estimation. To better assess our method's capabilities, we curate a high-quality 4K synthetic benchmark from five different games, spanning diverse scenes with rich geometric and appearance details. Extensive experiments demonstrate that InfiniDepth achieves state-of-the-art performance on both synthetic and real-world benchmarks across relative and metric depth estimation tasks, particularly excelling in fine-detail regions. It also benefits the task of novel view synthesis under large viewpoint shifts, producing high-quality results with fewer holes and artifacts."
     },
     {
+      "title": "MOSS Transcribe Diarize: Accurate Transcription with Speaker Diarization",
+      "url": "https://huggingface.co/papers/2601.01554",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 44,
+      "institution": "OpenMOSS2",
+      "paper_link": "https://arxiv.org/abs/2601.01554",
+      "abstract": "Speaker-Attributed, Time-Stamped Transcription (SATS) aims to transcribe what is said and to precisely determine the timing of each speaker, which is particularly valuable for meeting transcription. Existing SATS systems rarely adopt an end-to-end formulation and are further constrained by limited context windows, weak long-range speaker memory, and the inability to output timestamps. To address these limitations, we present MOSS Transcribe Diarize, a unified multimodal large language model that jointly performs Speaker-Attributed, Time-Stamped Transcription in an end-to-end paradigm. Trained on extensive real wild data and equipped with a 128k context window for up to 90-minute inputs, MOSS Transcribe Diarize scales well and generalizes robustly. Across comprehensive evaluations, it outperforms state-of-the-art commercial systems on multiple public and in-house benchmarks."
+    },
+    {
+      "title": "SciEvalKit: An Open-source Evaluation Toolkit for Scientific General Intelligence",
+      "url": "https://huggingface.co/papers/2512.22334",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 28,
+      "institution": "Intern Science551",
+      "paper_link": "https://arxiv.org/abs/2512.22334",
+      "code_link": "https://github.com/InternScience/SciEvalKit",
+      "abstract": "We introduce SciEvalKit, a unified benchmarking toolkit designed to evaluate AI models for science across a broad range of scientific disciplines and task capabilities. Unlike general-purpose evaluation platforms, SciEvalKit focuses on the core competencies of scientific intelligence, including Scientific Multimodal Perception, Scientific Multimodal Reasoning, Scientific Multimodal Understanding, Scientific Symbolic Reasoning, Scientific Code Generation, Science Hypothesis Generation and Scientific Knowledge Understanding. It supports six major scientific domains, spanning from physics and chemistry to astronomy and materials science. SciEvalKit builds a foundation of expert-grade scientific benchmarks, curated from real-world, domain-specific datasets, ensuring that tasks reflect authentic scientific challenges. The toolkit features a flexible, extensible evaluation pipeline that enables batch evaluation across models and datasets, supports custom model and dataset integration, and provides transparent, reproducible, and comparable results. By bridging capability-based evaluation and disciplinary diversity, SciEvalKit offers a standardized yet customizable infrastructure to benchmark the next generation of scientific foundation models and intelligent agents. The toolkit is open-sourced and actively maintained to foster community-driven development and progress in AI4Science."
+    },
+    {
       "title": "LTX-2: Efficient Joint Audio-Visual Foundation Model",
       "url": "https://huggingface.co/papers/2601.03233",
-      "published": "2026-01-07T03:21:56.499030",
-      "likes": 5,
-      "institution": "·29 authors",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 26,
+      "institution": "·29 authors738",
       "paper_link": "https://arxiv.org/abs/2601.03233",
       "code_link": "https://github.com/Lightricks/LTX-2",
       "abstract": "Recent text-to-video diffusion models can generate compelling video sequences, yet they remain silent -- missing the semantic, emotional, and atmospheric cues that audio provides. We introduce LTX-2, an open-source foundational model capable of generating high-quality, temporally synchronized audiovisual content in a unified manner. LTX-2 consists of an asymmetric dual-stream transformer with a 14B-parameter video stream and a 5B-parameter audio stream, coupled through bidirectional audio-video cross-attention layers with temporal positional embeddings and cross-modality AdaLN for shared timestep conditioning. This architecture enables efficient training and inference of a unified audiovisual model while allocating more capacity for video generation than audio generation. We employ a multilingual text encoder for broader prompt understanding and introduce a modality-aware classifier-free guidance (modality-CFG) mechanism for improved audiovisual alignment and controllability. Beyond generating speech, LTX-2 produces rich, coherent audio tracks that follow the characters, environment, style, and emotion of each scene -- complete with natural background and foley elements. In our evaluations, the model achieves state-of-the-art audiovisual quality and prompt adherence among open-source systems, while delivering results comparable to proprietary models at a fraction of their computational cost and inference time. All model weights and code are publicly released."
     },
     {
-      "title": "NitroGen: An Open Foundation Model for Generalist Gaming Agents",
-      "url": "https://huggingface.co/papers/2601.02427",
-      "published": "2026-01-07T03:21:56.499030",
-      "likes": 2,
-      "institution": "NVIDIA1",
-      "paper_link": "https://arxiv.org/abs/2601.02427",
-      "code_link": "https://github.com/MineDojo/NitroGen",
-      "abstract": "We introduce NitroGen, a vision-action foundation model for generalist gaming agents that is trained on 40,000 hours of gameplay videos across more than 1,000 games. We incorporate three key ingredients: 1) an internet-scale video-action dataset constructed by automatically extracting player actions from publicly available gameplay videos, 2) a multi-game benchmark environment that can measure cross-game generalization, and 3) a unified vision-action model trained with large-scale behavior cloning. NitroGen exhibits strong competence across diverse domains, including combat encounters in 3D action games, high-precision control in 2D platformers, and exploration in procedurally generated worlds. It transfers effectively to unseen games, achieving up to 52% relative improvement in task success rates over models trained from scratch. We release the dataset, evaluation suite, and model weights to advance research on generalist embodied agents."
-    },
-    {
-      "title": "X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework",
-      "url": "https://huggingface.co/papers/2601.03194",
-      "published": "2026-01-07T03:21:56.499030",
-      "likes": 1,
-      "institution": "·6 authors01",
-      "paper_link": "https://arxiv.org/abs/2601.03194",
-      "code_link": "https://github.com/ziarehman30/X-MuTeST",
-      "abstract": "Hate speech detection on social media faces challenges in both accuracy and explainability, especially for underexplored Indic languages. We propose a novel explainability-guided training framework, X-MuTeST (eXplainable Multilingual haTe Speech deTection), for hate speech detection that combines high-level semantic reasoning from large language models (LLMs) with traditional attention-enhancing techniques. We extend this research to Hindi and Telugu alongside English by providing benchmark human-annotated rationales for each word to justify the assigned class label. The X-MuTeST explainability method computes the difference between the prediction probabilities of the original text and those of unigrams, bigrams, and trigrams. Final explanations are computed as the union between LLM explanations and X-MuTeST explanations. We show that leveraging human rationales during training enhances both classification performance and explainability. Moreover, combining human rationales with our explainability method to refine the model attention yields further improvements. We evaluate explainability using Plausibility metrics such as Token-F1 and IOU-F1 and Faithfulness metrics such as Comprehensiveness and Sufficiency. By focusing on under-resourced languages, our work advances hate speech detection across diverse linguistic contexts. Our dataset includes token-level rationale annotations for 6,004 Hindi, 4,492 Telugu, and 6,334 English samples. Data and code are available on this https URL"
+      "title": "UniCorn: Towards Self-Improving Unified Multimodal Models through Self-Generated Supervision",
+      "url": "https://huggingface.co/papers/2601.03193",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 20,
+      "institution": "·12 authors202",
+      "paper_link": "https://arxiv.org/abs/2601.03193",
+      "code_link": "https://costaliya.github.io/UniCorn.github.io/",
+      "abstract": "While Unified Multimodal Models (UMMs) have achieved remarkable success in cross-modal comprehension, a significant gap persists in their ability to leverage such internal knowledge for high-quality generation. We formalize this discrepancy as Conduction Aphasia, a phenomenon where models accurately interpret multimodal inputs but struggle to translate that understanding into faithful and controllable synthesis. To address this, we propose UniCorn, a simple yet elegant self-improvement framework that eliminates the need for external data or teacher supervision. By partitioning a single UMM into three collaborative roles: Proposer, Solver, and Judge, UniCorn generates high-quality interactions via self-play and employs cognitive pattern reconstruction to distill latent understanding into explicit generative signals. To validate the restoration of multimodal coherence, we introduce UniCycle, a cycle-consistency benchmark based on a Text to Image to Text reconstruction loop. Extensive experiments demonstrate that UniCorn achieves comprehensive and substantial improvements over the base model across six general image generation benchmarks. Notably, it achieves SOTA performance on TIIF(73.8), DPG(86.8), CompBench(88.5), and UniCycle while further delivering substantial gains of +5.0 on WISE and +6.5 on OneIG. These results highlight that our method significantly enhances T2I generation while maintaining robust comprehension, demonstrating the scalability of fully self-supervised refinement for unified multimodal intelligence."
     },
     {
       "title": "DreamStyle: A Unified Framework for Video Stylization",
       "url": "https://huggingface.co/papers/2601.02785",
-      "published": "2026-01-07T03:21:56.499030",
-      "likes": 0,
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 17,
       "institution": "ByteDance1",
       "paper_link": "https://arxiv.org/abs/2601.02785",
       "code_link": "https://lemonsky1995.github.io/dreamstyle/",
       "abstract": "Video stylization, an important downstream task of video generation models, has not yet been thoroughly explored. Its input style conditions typically include text, style image, and stylized first frame. Each condition has a characteristic advantage: text is more flexible, style image provides a more accurate visual anchor, and stylized first frame makes long-video stylization feasible. However, existing methods are largely confined to a single type of style condition, which limits their scope of application. Additionally, their lack of high-quality datasets leads to style inconsistency and temporal flicker. To address these limitations, we introduce DreamStyle, a unified framework for video stylization, supporting (1) text-guided, (2) style-image-guided, and (3) first-frame-guided video stylization, accompanied by a well-designed data curation pipeline to acquire high-quality paired video data. DreamStyle is built on a vanilla Image-to-Video (I2V) model and trained using a Low-Rank Adaptation (LoRA) with token-specific up matrices that reduces the confusion among different condition tokens. Both qualitative and quantitative evaluations demonstrate that DreamStyle is competent in all three video stylization tasks, and outperforms the competitors in style consistency and video quality."
     },
     {
-      "title": "FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing",
-      "url": "https://huggingface.co/papers/2601.01720",
-      "published": "2026-01-07T03:21:56.499030",
-      "likes": 0,
-      "institution": "·9 authors1",
-      "paper_link": "https://arxiv.org/abs/2601.01720",
-      "code_link": "https://ffp-300k.github.io/",
-      "abstract": "First-Frame Propagation (FFP) offers a promising paradigm for controllable video editing, but existing methods are hampered by a reliance on cumbersome run-time guidance. We identify the root cause of this limitation as the inadequacy of current training datasets, which are often too short, low-resolution, and lack the task diversity required to teach robust temporal priors. To address this foundational data gap, we first introduce FFP-300K, a new large-scale dataset comprising 300K high-fidelity video pairs at 720p resolution and 81 frames in length, constructed via a principled two-track pipeline for diverse local and global edits. Building on this dataset, we propose a novel framework designed for true guidance-free FFP that resolves the critical tension between maintaining first-frame appearance and preserving source video motion. Architecturally, we introduce Adaptive Spatio-Temporal RoPE (AST-RoPE), which dynamically remaps positional encodings to disentangle appearance and motion references. At the objective level, we employ a self-distillation strategy where an identity propagation task acts as a powerful regularizer, ensuring long-term temporal stability and preventing semantic drift. Comprehensive experiments on the EditVerseBench benchmark demonstrate that our method significantly outperforming existing academic and commercial models by receiving about 0.2 PickScore and 0.3 VLM score improvement against these competitors."
+      "title": "MiMo-V2-Flash Technical Report",
+      "url": "https://huggingface.co/papers/2601.02780",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 16,
+      "institution": "Xiaomi MiMo953",
+      "paper_link": "https://arxiv.org/abs/2601.02780",
+      "code_link": "https://github.com/XiaomiMiMo/MiMo-V2-Flash",
+      "abstract": "We present MiMo-V2-Flash, a Mixture-of-Experts (MoE) model with 309B total parameters and 15B active parameters, designed for fast, strong reasoning and agentic capabilities. MiMo-V2-Flash adopts a hybrid attention architecture that interleaves Sliding Window Attention (SWA) with global attention, with a 128-token sliding window under a 5:1 hybrid ratio. The model is pre-trained on 27 trillion tokens with Multi-Token Prediction (MTP), employing a native 32k context length and subsequently extended to 256k. To efficiently scale post-training compute, MiMo-V2-Flash introduces a novel Multi-Teacher On-Policy Distillation (MOPD) paradigm. In this framework, domain-specialized teachers (e.g., trained via large-scale reinforcement learning) provide dense and token-level reward, enabling the student model to perfectly master teacher expertise. MiMo-V2-Flash rivals top-tier open-weight models such as DeepSeek-V3.2 and Kimi-K2, despite using only 1/2 and 1/3 of their total parameters, respectively. During inference, by repurposing MTP as a draft model for speculative decoding, MiMo-V2-Flash achieves up to 3.6 acceptance length and 2.6x decoding speedup with three MTP layers. We open-source both the model weights and the three-layer MTP weights to foster open research and community collaboration."
+    },
+    {
+      "title": "CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving",
+      "url": "https://huggingface.co/papers/2601.01874",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 16,
+      "institution": "·10 authors2",
+      "paper_link": "https://arxiv.org/abs/2601.01874",
+      "code_link": "https://shchen233.github.io/cogflow/",
+      "abstract": "Despite significant progress, multimodal large language models continue to struggle with visual mathematical problem solving. Some recent works recognize that visual perception is a bottleneck in visual mathematical reasoning, but their solutions are limited to improving the extraction and interpretation of visual inputs. Notably, they all ignore the key issue of whether the extracted visual cues are faithfully integrated and properly utilized in subsequent reasoning. Motivated by this, we present CogFlow, a novel cognitive-inspired three-stage framework that incorporates a knowledge internalization stage, explicitly simulating the hierarchical flow of human reasoning: perception$\\Rightarrow$internalization$\\Rightarrow$reasoning. Inline with this hierarchical flow, we holistically enhance all its stages. We devise Synergistic Visual Rewards to boost perception capabilities in parametric and semantic spaces, jointly improving visual information extraction from symbols and diagrams. To guarantee faithful integration of extracted visual cues into subsequent reasoning, we introduce a Knowledge Internalization Reward model in the internalization stage, bridging perception and reasoning. Moreover, we design a Visual-Gated Policy Optimization algorithm to further enforce the reasoning is grounded with the visual knowledge, preventing models seeking shortcuts that appear coherent but are visually ungrounded reasoning chains. Moreover, we contribute a new dataset MathCog for model training, which contains samples with over 120K high-quality perception-reasoning aligned annotations. Comprehensive experiments and analysis on commonly used visual mathematical reasoning benchmarks validate the superiority of the proposed CogFlow."
+    },
+    {
+      "title": "SOP: A Scalable Online Post-Training System for Vision-Language-Action Models",
+      "url": "https://huggingface.co/papers/2601.03044",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 15,
+      "institution": "AgiBot Research1",
+      "paper_link": "https://arxiv.org/abs/2601.03044",
+      "abstract": "Vision-language-action (VLA) models achieve strong generalization through large-scale pre-training, but real-world deployment requires expert-level task proficiency in addition to broad generality. Existing post-training approaches for VLA models are typically offline, single-robot, or task-specific, limiting effective on-policy adaptation and scalable learning from real-world interaction. We introduce a Scalable Online Post-training (SOP) system that enables online, distributed, multi-task post-training of generalist VLA models directly in the physical world. SOP tightly couples execution and learning through a closed-loop architecture in which a fleet of robots continuously streams on-policy experience and human intervention signals to a centralized cloud learner, and asynchronously receives updated policies. This design supports prompt on-policy correction, scales experience collection through parallel deployment, and preserves generality during adaptation. SOP is agnostic to the choice of post-training algorithm; we instantiate it with both interactive imitation learning (HG-DAgger) and reinforcement learning (RECAP). Across a range of real-world manipulation tasks including cloth folding, box assembly, and grocery restocking, we show that SOP substantially improves the performance of large pretrained VLA models while maintaining a single shared policy across tasks. Effective post-training can be achieved within hours of real-world interaction, and performance scales near-linearly with the number of robots in the fleet. These results suggest that tightly coupling online learning with fleet-scale deployment is instrumental to enabling efficient, reliable, and scalable post-training of generalist robot policies in the physical world."
+    },
+    {
+      "title": "NitroGen: An Open Foundation Model for Generalist Gaming Agents",
+      "url": "https://huggingface.co/papers/2601.02427",
+      "published": "2026-01-07T14:26:41.710875",
+      "likes": 15,
+      "institution": "NVIDIA1.44k1",
+      "paper_link": "https://arxiv.org/abs/2601.02427",
+      "code_link": "https://github.com/MineDojo/NitroGen",
+      "abstract": "We introduce NitroGen, a vision-action foundation model for generalist gaming agents that is trained on 40,000 hours of gameplay videos across more than 1,000 games. We incorporate three key ingredients: 1) an internet-scale video-action dataset constructed by automatically extracting player actions from publicly available gameplay videos, 2) a multi-game benchmark environment that can measure cross-game generalization, and 3) a unified vision-action model trained with large-scale behavior cloning. NitroGen exhibits strong competence across diverse domains, including combat encounters in 3D action games, high-precision control in 2D platformers, and exploration in procedurally generated worlds. It transfers effectively to unseen games, achieving up to 52% relative improvement in task success rates over models trained from scratch. We release the dataset, evaluation suite, and model weights to advance research on generalist embodied agents."
     }
   ]
 }
