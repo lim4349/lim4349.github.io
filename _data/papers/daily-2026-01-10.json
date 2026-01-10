@@ -1,14 +1,14 @@
 {
   "date": "2026-01-10",
-  "crawled_at": "2026-01-10T03:17:31.754460",
+  "crawled_at": "2026-01-10T14:21:21.254967",
   "total_papers": 10,
   "papers": [
     {
       "title": "GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization",
       "url": "https://huggingface.co/papers/2601.05242",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 98,
-      "institution": "NVIDIA646",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 113,
+      "institution": "NVIDIA826",
       "paper_link": "https://arxiv.org/abs/2601.05242",
       "code_link": "https://nvlabs.github.io/GDPO/",
       "abstract": "As language models become increasingly capable, users expect them to provide not only accurate responses but also behaviors aligned with diverse human preferences across a variety of scenarios. To achieve this, Reinforcement learning (RL) pipelines have begun incorporating multiple rewards, each capturing a distinct preference, to guide models toward these desired behaviors. However, recent work has defaulted to apply Group Relative Policy Optimization (GRPO) under multi-reward setting without examining its suitability. In this paper, we demonstrate that directly applying GRPO to normalize distinct rollout reward combinations causes them to collapse into identical advantage values, reducing the resolution of the training signal and resulting in suboptimal convergence and, in some cases, early training failure. We then introduce Group reward-Decoupled Normalization Policy Optimization (GDPO), a new policy optimization method to resolve these issues by decoupling the normalization of individual rewards, more faithfully preserving their relative differences and enabling more accurate multi-reward optimization, along with substantially improved training stability. We compare GDPO with GRPO across three tasks: tool calling, math reasoning, and coding reasoning, evaluating both correctness metrics (accuracy, bug ratio) and constraint adherence metrics (format, length). Across all settings, GDPO consistently outperforms GRPO, demonstrating its effectiveness and generalizability for multi-reward reinforcement learning optimization."
@@ -16,9 +16,9 @@
     {
       "title": "Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers",
       "url": "https://huggingface.co/papers/2601.04890",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 29,
-      "institution": "Technology Innovation Institute982",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 31,
+      "institution": "Technology Innovation Institute992",
       "paper_link": "https://arxiv.org/abs/2601.04890",
       "code_link": "https://tiiuae.github.io/Falcon-H1/",
       "abstract": "Applying weight decay (WD) to matrix layers is standard practice in large-language-model pretraining. Prior work suggests that stochastic gradient noise induces a Brownian-like expansion of the weight matrices W, whose growth is counteracted by WD, leading to a WD-noise equilibrium with a certain weight norm ||W||. In this work, we view the equilibrium norm as a harmful artifact of the training procedure, and address it by introducing learnable multipliers to learn the optimal scale. First, we attach a learnable scalar multiplier to W and confirm that the WD-noise equilibrium norm is suboptimal: the learned scale adapts to data and improves performance. We then argue that individual row and column norms are similarly constrained, and free their scale by introducing learnable per-row and per-column multipliers. Our method can be viewed as a learnable, more expressive generalization of muP multipliers. It outperforms a well-tuned muP baseline, reduces the computational overhead of multiplier tuning, and surfaces practical questions such as forward-pass symmetries and the width-scaling of the learned multipliers. Finally, we validate learnable multipliers with both Adam and Muon optimizers, where it shows improvement in downstream evaluations matching the improvement of the switching from Adam to Muon."
@@ -26,9 +26,9 @@
     {
       "title": "RL-AWB: Deep Reinforcement Learning for Auto White Balance Correction in Low-Light Night-time Scenes",
       "url": "https://huggingface.co/papers/2601.05249",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 26,
-      "institution": "·4 authors122",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 30,
+      "institution": "·4 authors142",
       "paper_link": "https://arxiv.org/abs/2601.05249",
       "code_link": "https://ntuneillee.github.io/research/rl-awb/",
       "abstract": "Nighttime color constancy remains a challenging problem in computational photography due to low-light noise and complex illumination conditions. We present RL-AWB, a novel framework combining statistical methods with deep reinforcement learning for nighttime white balance. Our method begins with a statistical algorithm tailored for nighttime scenes, integrating salient gray pixel detection with novel illumination estimation. Building on this foundation, we develop the first deep reinforcement learning approach for color constancy that leverages the statistical algorithm as its core, mimicking professional AWB tuning experts by dynamically optimizing parameters for each image. To facilitate cross-sensor evaluation, we introduce the first multi-sensor nighttime dataset. Experiment results demonstrate that our method achieves superior generalization capability across low-light and well-illuminated images. Project page: this https URL"
@@ -36,7 +36,7 @@
     {
       "title": "Token-Level LLM Collaboration via FusionRoute",
       "url": "https://huggingface.co/papers/2601.05106",
-      "published": "2026-01-10T03:17:18.210740",
+      "published": "2026-01-10T14:21:08.578599",
       "likes": 26,
       "institution": "·8 authors1",
       "paper_link": "https://arxiv.org/abs/2601.05106",
@@ -45,37 +45,37 @@
     {
       "title": "RelayLLM: Efficient Reasoning via Collaborative Decoding",
       "url": "https://huggingface.co/papers/2601.05167",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 21,
-      "institution": "·6 authors62",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 23,
+      "institution": "·6 authors92",
       "paper_link": "https://arxiv.org/abs/2601.05167",
       "code_link": "https://github.com/Chengsong-Huang/RelayLLM",
       "abstract": "Large Language Models (LLMs) for complex reasoning is often hindered by high computational costs and latency, while resource-efficient Small Language Models (SLMs) typically lack the necessary reasoning capacity. Existing collaborative approaches, such as cascading or routing, operate at a coarse granularity by offloading entire queries to LLMs, resulting in significant computational waste when the SLM is capable of handling the majority of reasoning steps. To address this, we propose RelayLLM, a novel framework for efficient reasoning via token-level collaborative decoding. Unlike routers, RelayLLM empowers the SLM to act as an active controller that dynamically invokes the LLM only for critical tokens via a special command, effectively \"relaying\" the generation process. We introduce a two-stage training framework, including warm-up and Group Relative Policy Optimization (GRPO) to teach the model to balance independence with strategic help-seeking. Empirical results across six benchmarks demonstrate that RelayLLM achieves an average accuracy of 49.52%, effectively bridging the performance gap between the two models. Notably, this is achieved by invoking the LLM for only 1.07% of the total generated tokens, offering a 98.2% cost reduction compared to performance-matched random routers."
     },
     {
-      "title": "AT^2PO: Agentic Turn-based Policy Optimization via Tree Search",
-      "url": "https://huggingface.co/papers/2601.04767",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 20,
-      "institution": "Tencent32",
-      "paper_link": "https://arxiv.org/abs/2601.04767",
-      "code_link": "https://github.com/zzfoutofspace/ATPO",
-      "abstract": "LLM agents have emerged as powerful systems for tackling multi-turn tasks by interleaving internal reasoning and external tool interactions. Agentic Reinforcement Learning has recently drawn significant research attention as a critical post-training paradigm to further refine these capabilities. In this paper, we present AT$^2$PO (Agentic Turn-based Policy Optimization via Tree Search), a unified framework for multi-turn agentic RL that addresses three core challenges: limited exploration diversity, sparse credit assignment, and misaligned policy optimization. AT$^2$PO introduces a turn-level tree structure that jointly enables Entropy-Guided Tree Expansion for strategic exploration and Turn-wise Credit Assignment for fine-grained reward propagation from sparse outcomes. Complementing this, we propose Agentic Turn-based Policy Optimization, a turn-level learning objective that aligns policy updates with the natural decision granularity of agentic interactions. ATPO is orthogonal to tree search and can be readily integrated into any multi-turn RL pipeline. Experiments across seven benchmarks demonstrate consistent improvements over the state-of-the-art baseline by up to 1.84 percentage points in average, with ablation studies validating the effectiveness of each component. Our code is available at this https URL ."
-    },
-    {
       "title": "RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation",
       "url": "https://huggingface.co/papers/2601.05241",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 19,
-      "institution": "·11 authors83",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 21,
+      "institution": "·11 authors113",
       "paper_link": "https://arxiv.org/abs/2601.05241",
       "code_link": "https://robovip.github.io/RoboVIP/",
       "abstract": "The diversity, quantity, and quality of manipulation data are critical for training effective robot policies. However, due to hardware and physical setup constraints, collecting large-scale real-world manipulation data remains difficult to scale across diverse environments. Recent work uses text-prompt conditioned image diffusion models to augment manipulation data by altering the backgrounds and tabletop objects in the visual observations. However, these approaches often overlook the practical need for multi-view and temporally coherent observations required by state-of-the-art policy models. Further, text prompts alone cannot reliably specify the scene setup. To provide the diffusion model with explicit visual guidance, we introduce visual identity prompting, which supplies exemplar images as conditioning inputs to guide the generation of the desired scene setup. To this end, we also build a scalable pipeline to curate a visual identity pool from large robotics datasets. Using our augmented manipulation data to train downstream vision-language-action and visuomotor policy models yields consistent performance gains in both simulation and real-robot settings."
     },
     {
+      "title": "AT^2PO: Agentic Turn-based Policy Optimization via Tree Search",
+      "url": "https://huggingface.co/papers/2601.04767",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 21,
+      "institution": "Tencent42",
+      "paper_link": "https://arxiv.org/abs/2601.04767",
+      "code_link": "https://github.com/zzfoutofspace/ATPO",
+      "abstract": "LLM agents have emerged as powerful systems for tackling multi-turn tasks by interleaving internal reasoning and external tool interactions. Agentic Reinforcement Learning has recently drawn significant research attention as a critical post-training paradigm to further refine these capabilities. In this paper, we present AT$^2$PO (Agentic Turn-based Policy Optimization via Tree Search), a unified framework for multi-turn agentic RL that addresses three core challenges: limited exploration diversity, sparse credit assignment, and misaligned policy optimization. AT$^2$PO introduces a turn-level tree structure that jointly enables Entropy-Guided Tree Expansion for strategic exploration and Turn-wise Credit Assignment for fine-grained reward propagation from sparse outcomes. Complementing this, we propose Agentic Turn-based Policy Optimization, a turn-level learning objective that aligns policy updates with the natural decision granularity of agentic interactions. ATPO is orthogonal to tree search and can be readily integrated into any multi-turn RL pipeline. Experiments across seven benchmarks demonstrate consistent improvements over the state-of-the-art baseline by up to 1.84 percentage points in average, with ablation studies validating the effectiveness of each component. Our code is available at this https URL ."
+    },
+    {
       "title": "Few Tokens Matter: Entropy Guided Attacks on Vision-Language Models",
       "url": "https://huggingface.co/papers/2512.21815",
-      "published": "2026-01-10T03:17:18.210740",
+      "published": "2026-01-10T14:21:08.578599",
       "likes": 17,
       "institution": "Australian National University2",
       "paper_link": "https://arxiv.org/abs/2512.21815",
@@ -84,9 +84,9 @@
     {
       "title": "VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice",
       "url": "https://huggingface.co/papers/2601.05175",
-      "published": "2026-01-10T03:17:18.210740",
-      "likes": 15,
-      "institution": "AI at Meta111",
+      "published": "2026-01-10T14:21:08.578599",
+      "likes": 16,
+      "institution": "AI at Meta161",
       "paper_link": "https://arxiv.org/abs/2601.05175",
       "code_link": "https://ivul-kaust.github.io/projects/videoauto-r1/",
       "abstract": "Chain-of-thought (CoT) reasoning has emerged as a powerful tool for multimodal large language models on video understanding tasks. However, its necessity and advantages over direct answering remain underexplored. In this paper, we first demonstrate that for RL-trained video models, direct answering often matches or even surpasses CoT performance, despite CoT producing step-by-step analyses at a higher computational cost. Motivated by this, we propose VideoAuto-R1, a video understanding framework that adopts a reason-when-necessary strategy. During training, our approach follows a Thinking Once, Answering Twice paradigm: the model first generates an initial answer, then performs reasoning, and finally outputs a reviewed answer. Both answers are supervised via verifiable rewards. During inference, the model uses the confidence score of the initial answer to determine whether to proceed with reasoning. Across video QA and grounding benchmarks, VideoAuto-R1 achieves state-of-the-art accuracy with significantly improved efficiency, reducing the average response length by ~3.3x, e.g., from 149 to just 44 tokens. Moreover, we observe a low rate of thinking-mode activation on perception-oriented tasks, but a higher rate on reasoning-intensive tasks. This suggests that explicit language-based reasoning is generally beneficial but not always necessary."
@@ -94,7 +94,7 @@
     {
       "title": "VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control",
       "url": "https://huggingface.co/papers/2601.05138",
-      "published": "2026-01-10T03:17:18.210740",
+      "published": "2026-01-10T14:21:08.578599",
       "likes": 11,
       "institution": "·6 authors2",
       "paper_link": "https://arxiv.org/abs/2601.05138",
