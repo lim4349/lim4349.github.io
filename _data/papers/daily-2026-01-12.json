@@ -1,0 +1,102 @@
+{
+  "date": "2026-01-12",
+  "crawled_at": "2026-01-12T03:29:49.491700",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards",
+      "url": "https://huggingface.co/papers/2601.06021",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 19,
+      "institution": "Z.ai31",
+      "paper_link": "https://arxiv.org/abs/2601.06021",
+      "code_link": "https://github.com/THUDM/CaRR",
+      "abstract": "Papers arxiv:2601.06021 Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards Published on Jan 9 · Submitted by Jiajie Zhang on Jan 12 #1 Paper of the day · Z.ai Upvote 19 +11 Authors: Jiajie Zhang , Xin Lv , Ling Feng , Lei Hou , Juanzi Li"
+    },
+    {
+      "title": "Orient Anything V2: Unifying Orientation and Rotation Understanding",
+      "url": "https://huggingface.co/papers/2601.05573",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 5,
+      "institution": "·8 authors251",
+      "paper_link": "https://arxiv.org/abs/2601.05573",
+      "code_link": "https://orient-anythingv2.github.io/",
+      "abstract": "Papers arxiv:2601.05573 Orient Anything V2: Unifying Orientation and Rotation Understanding Published on Jan 9 · Submitted by ZiangZhang on Jan 12 #2 Paper of the day Upvote 5 Authors: Zehan Wang , Ziang Zhang , Jiayang Xu , Jialei Wang , Tianyu Pang , Chao Du , HengShuang Zhao , Zhou Zhao"
+    },
+    {
+      "title": "EnvScaler: Scaling Tool-Interactive Environments for LLM Agent via Programmatic Synthesis",
+      "url": "https://huggingface.co/papers/2601.05808",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 4,
+      "institution": "·6 authors4",
+      "paper_link": "https://arxiv.org/abs/2601.05808",
+      "code_link": "https://github.com/RUC-NLPIR/EnvScaler",
+      "abstract": "Papers arxiv:2601.05808 EnvScaler: Scaling Tool-Interactive Environments for LLM Agent via Programmatic Synthesis Published on Jan 9 · Submitted by Ania Forge on Jan 12 #3 Paper of the day Upvote 4 Authors: Xiaoshuai Song , Haofei Chang , Guanting Dong , Yutao Zhu , Zhicheng Dou , Ji-Rong Wen"
+    },
+    {
+      "title": "VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction",
+      "url": "https://huggingface.co/papers/2601.05966",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 2,
+      "institution": "·7 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.05966",
+      "abstract": "Papers arxiv:2601.05966 VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction Published on Jan 9 · Submitted by taesiri on Jan 12 Upvote 2 Authors: Longbin Ji , Xiaoxiong Liu , Junyuan Shang , Shuohuan Wang , Yu Sun , Hua Wu , Haifeng Wang"
+    },
+    {
+      "title": "Goal Force: Teaching Video Models To Accomplish Physics-Conditioned Goals",
+      "url": "https://huggingface.co/papers/2601.05848",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 2,
+      "institution": "·9 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.05848",
+      "code_link": "https://goal-force.github.io/",
+      "abstract": "Papers arxiv:2601.05848 Goal Force: Teaching Video Models To Accomplish Physics-Conditioned Goals Published on Jan 9 · Submitted by taesiri on Jan 12 Upvote 2 Authors: Nate Gillman , Yinghua Zhou , Zitian Tang , Evan Luo , Arjan Chakravarthy , Daksh Aggarwal , Michael Freeman , Charles Herrmann , Chen Sun"
+    },
+    {
+      "title": "SmartSearch: Process Reward-Guided Query Refinement for Search Agents",
+      "url": "https://huggingface.co/papers/2601.04888",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 2,
+      "institution": "·3 authors81",
+      "paper_link": "https://arxiv.org/abs/2601.04888",
+      "code_link": "https://github.com/MYVAE/SmartSearch?tab=readme-ov-file",
+      "abstract": "Papers arxiv:2601.04888 SmartSearch: Process Reward-Guided Query Refinement for Search Agents Published on Jan 8 · Submitted by Rajkumar rawal on Jan 12 Upvote 2 Authors: Tongyu Wen , Guanting Dong , Zhicheng Dou"
+    },
+    {
+      "title": "DR-LoRA: Dynamic Rank LoRA for Mixture-of-Experts Adaptation",
+      "url": "https://huggingface.co/papers/2601.04823",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 1,
+      "institution": "·6 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.04823",
+      "abstract": "Papers arxiv:2601.04823 DR-LoRA: Dynamic Rank LoRA for Mixture-of-Experts Adaptation Published on Jan 8 · Submitted by Bo Li on Jan 12 Upvote 1 Authors: Guanzhi Deng , Bo Li , Ronghao Chen , Huacan Wang , Linqi Song , Lijie Wen"
+    },
+    {
+      "title": "IIB-LPO: Latent Policy Optimization via Iterative Information Bottleneck",
+      "url": "https://huggingface.co/papers/2601.05870",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 0,
+      "institution": "·11 authors",
+      "paper_link": "https://arxiv.org/abs/2601.05870",
+      "abstract": "Papers arxiv:2601.05870 IIB-LPO: Latent Policy Optimization via Iterative Information Bottleneck Published on Jan 9 · Submitted by taesiri on Jan 12 Upvote - Authors: Huilin Deng , Hongchen Luo , Yue Zhu , Long Li , Zhuoyue Chen , Xinghao Zhao , Ming Li , Jihai Zhang , Mengchang Wang , Yang Cao , Yu Kang"
+    },
+    {
+      "title": "GenCtrl -- A Formal Controllability Toolkit for Generative Models",
+      "url": "https://huggingface.co/papers/2601.05637",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 0,
+      "institution": "Apple",
+      "paper_link": "https://arxiv.org/abs/2601.05637",
+      "abstract": "Papers arxiv:2601.05637 GenCtrl -- A Formal Controllability Toolkit for Generative Models Published on Jan 9 · Submitted by taesiri on Jan 12 · Apple Upvote - Authors: Emily Cheng , Carmen Amo Alonso , Federico Danieli , Arno Blaas , Luca Zappella , Pau Rodriguez , Xavier Suau"
+    },
+    {
+      "title": "Over-Searching in Search-Augmented Large Language Models",
+      "url": "https://huggingface.co/papers/2601.05503",
+      "published": "2026-01-12T03:29:36.376771",
+      "likes": 0,
+      "institution": "Apple1",
+      "paper_link": "https://arxiv.org/abs/2601.05503",
+      "abstract": "Papers arxiv:2601.05503 Over-Searching in Search-Augmented Large Language Models Published on Jan 9 · Submitted by taesiri on Jan 12 · Apple Upvote - Authors: Roy Xie , Deepak Gopinath , David Qiu , Dong Lin , Haitian Sun , Saloni Potdar , Bhuwan Dhingra"
+    }
+  ]
+}
