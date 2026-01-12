@@ -12,63 +12,63 @@ author: lim4349
 
 ## 📊 좋아요 순위
 
-1. **Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards** - 👍 19
-   - 기관: Z.ai31
+1. **Thinking with Map: Reinforced Parallel Map-Augmented Agent for Geolocalization** - 👍 123
+   - 기관: alibaba-inc1023
+   - [HF 페이지](https://huggingface.co/papers/2601.05432)
+   - [논문 링크](https://arxiv.org/abs/2601.05432)
+   - Abstract: The image geolocalization task aims to predict the location where an image was taken anywhere on Earth using visual clues. Existing large vision-language model (LVLM) approaches leverage world knowledge, chain-of-thought reasoning, and agentic capabilities, but overlook a common strategy used by humans -- using maps. In this work, we first equip the model \textit{Thinking with Map} ability and formulate it as an agent-in-the-map loop. We develop a two-stage optimization scheme for it, including agentic reinforcement learning (RL) followed by parallel test-time scaling (TTS). The RL strengthens the agentic capability of model to improve sampling efficiency, and the parallel TTS enables the model to explore multiple candidate paths before making the final prediction, which is crucial for geolocalization. To evaluate our method on up-to-date and in-the-wild images, we further present MAPBench, a comprehensive geolocalization training and evaluation benchmark composed entirely of real-world images. Experimental results show that our method outperforms existing open- and closed-source models on most metrics, specifically improving Acc@500m from 8.0\% to 22.1\% compared to \textit{Gemini-3-Pro} with Google Search/Map grounded mode.
+
+2. **MMFormalizer: Multimodal Autoformalization in the Wild** - 👍 88
+   - 기관: ·14 authors1
+   - [HF 페이지](https://huggingface.co/papers/2601.03017)
+   - [논문 링크](https://arxiv.org/abs/2601.03017)
+   - Abstract: Autoformalization, which translates natural language mathematics into formal statements to enable machine reasoning, faces fundamental challenges in the wild due to the multimodal nature of the physical world, where physics requires inferring hidden constraints (e.g., mass or energy) from visual elements. To address this, we propose MMFormalizer, which extends autoformalization beyond text by integrating adaptive grounding with entities from real-world mathematical and physical domains. MMFormalizer recursively constructs formal propositions from perceptually grounded primitives through recursive grounding and axiom composition, with adaptive recursive termination ensuring that every abstraction is supported by visual evidence and anchored in dimensional or axiomatic grounding. We evaluate MMFormalizer on a new benchmark, PhyX-AF, comprising 115 curated samples from MathVerse, PhyX, Synthetic Geometry, and Analytic Geometry, covering diverse multimodal autoformalization tasks. Results show that frontier models such as GPT-5 and Gemini-3-Pro achieve the highest compile and semantic accuracy, with GPT-5 excelling in physical reasoning, while geometry remains the most challenging domain. Overall, MMFormalizer provides a scalable framework for unified multimodal autoformalization, bridging perception and formal reasoning. To the best of our knowledge, this is the first multimodal autoformalization method capable of handling classical mechanics (derived from the Hamiltonian), as well as relativity, quantum mechanics, and thermodynamics. More details are available on our project page: this http URL
+
+3. **The Molecular Structure of Thought: Mapping the Topology of Long Chain-of-Thought Reasoning** - 👍 34
+   - 기관: ByteDance1
+   - [HF 페이지](https://huggingface.co/papers/2601.06002)
+   - [논문 링크](https://arxiv.org/abs/2601.06002)
+   - Abstract: Large language models (LLMs) often fail to learn effective long chain-of-thought (Long CoT) reasoning from human or non-Long-CoT LLMs imitation. To understand this, we propose that effective and learnable Long CoT trajectories feature stable molecular-like structures in unified view, which are formed by three interaction types: Deep-Reasoning (covalent-like), Self-Reflection (hydrogen-bond-like), and Self-Exploration (van der Waals-like). Analysis of distilled trajectories reveals these structures emerge from Long CoT fine-tuning, not keyword imitation. We introduce Effective Semantic Isomers and show that only bonds promoting fast entropy convergence support stable Long CoT learning, while structural competition impairs training. Drawing on these findings, we present Mole-Syn, a distribution-transfer-graph method that guides synthesis of effective Long CoT structures, boosting performance and RL stability across benchmarks.
+
+4. **CaricatureGS: Exaggerating 3D Gaussian Splatting Faces With Gaussian Curvature** - 👍 30
+   - 기관: Technion Israel institute of technology1
+   - [HF 페이지](https://huggingface.co/papers/2601.03319)
+   - [논문 링크](https://arxiv.org/abs/2601.03319)
+   - Abstract: A photorealistic and controllable 3D caricaturization framework for faces is introduced. We start with an intrinsic Gaussian curvature-based surface exaggeration technique, which, when coupled with texture, tends to produce over-smoothed renders. To address this, we resort to 3D Gaussian Splatting (3DGS), which has recently been shown to produce realistic free-viewpoint avatars. Given a multiview sequence, we extract a FLAME mesh, solve a curvature-weighted Poisson equation, and obtain its exaggerated form. However, directly deforming the Gaussians yields poor results, necessitating the synthesis of pseudo-ground-truth caricature images by warping each frame to its exaggerated 2D representation using local affine transformations. We then devise a training scheme that alternates real and synthesized supervision, enabling a single Gaussian collection to represent both natural and exaggerated avatars. This scheme improves fidelity, supports local edits, and allows continuous control over the intensity of the caricature. In order to achieve real-time deformations, an efficient interpolation between the original and exaggerated surfaces is introduced. We further analyze and show that it has a bounded deviation from closed-form solutions. In both quantitative and qualitative evaluations, our results outperform prior work, delivering photorealistic, geometry-controlled caricature avatars.
+
+5. **Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards** - 👍 28
+   - 기관: Z.ai131
    - [HF 페이지](https://huggingface.co/papers/2601.06021)
    - [논문 링크](https://arxiv.org/abs/2601.06021)
-   - Abstract: Papers arxiv:2601.06021 Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards Published on Jan 9 · Submitted by Jiajie Zhang on Jan 12 #1 Paper of the day · Z.ai Upvote 19 +11 Authors: Jiajie Zhang , Xin Lv , Ling Feng , Lei Hou , Juanzi Li
+   - Abstract: Reinforcement learning (RL) has emerged as a critical technique for enhancing LLM-based deep search agents. However, existing approaches primarily rely on binary outcome rewards, which fail to capture the comprehensiveness and factuality of agents' reasoning process, and often lead to undesirable behaviors such as shortcut exploitation and hallucinations. To address these limitations, we propose \textbf{Citation-aware Rubric Rewards (CaRR)}, a fine-grained reward framework for deep search agents that emphasizes reasoning comprehensiveness, factual grounding, and evidence connectivity. CaRR decomposes complex questions into verifiable single-hop rubrics and requires agents to satisfy these rubrics by explicitly identifying hidden entities, supporting them with correct citations, and constructing complete evidence chains that link to the predicted answer. We further introduce \textbf{Citation-aware Group Relative Policy Optimization (C-GRPO)}, which combines CaRR and outcome rewards for training robust deep search agents. Experiments show that C-GRPO consistently outperforms standard outcome-based RL baselines across multiple deep search benchmarks. Our analysis also validates that C-GRPO effectively discourages shortcut exploitation, promotes comprehensive, evidence-grounded reasoning, and exhibits strong generalization to open-ended deep research tasks. Our code and data are available at this https URL .
 
-2. **Orient Anything V2: Unifying Orientation and Rotation Understanding** - 👍 5
-   - 기관: ·8 authors251
-   - [HF 페이지](https://huggingface.co/papers/2601.05573)
-   - [논문 링크](https://arxiv.org/abs/2601.05573)
-   - Abstract: Papers arxiv:2601.05573 Orient Anything V2: Unifying Orientation and Rotation Understanding Published on Jan 9 · Submitted by ZiangZhang on Jan 12 #2 Paper of the day Upvote 5 Authors: Zehan Wang , Ziang Zhang , Jiayang Xu , Jialei Wang , Tianyu Pang , Chao Du , HengShuang Zhao , Zhou Zhao
-
-3. **EnvScaler: Scaling Tool-Interactive Environments for LLM Agent via Programmatic Synthesis** - 👍 4
+6. **EnvScaler: Scaling Tool-Interactive Environments for LLM Agent via Programmatic Synthesis** - 👍 23
    - 기관: ·6 authors4
    - [HF 페이지](https://huggingface.co/papers/2601.05808)
    - [논문 링크](https://arxiv.org/abs/2601.05808)
-   - Abstract: Papers arxiv:2601.05808 EnvScaler: Scaling Tool-Interactive Environments for LLM Agent via Programmatic Synthesis Published on Jan 9 · Submitted by Ania Forge on Jan 12 #3 Paper of the day Upvote 4 Authors: Xiaoshuai Song , Haofei Chang , Guanting Dong , Yutao Zhu , Zhicheng Dou , Ji-Rong Wen
+   - Abstract: Large language models (LLMs) are expected to be trained to act as agents in various real-world environments, but this process relies on rich and varied tool-interaction sandboxes. However, access to real systems is often restricted; LLM-simulated environments are prone to hallucinations and inconsistencies; and manually built sandboxes are hard to scale. In this paper, we propose EnvScaler, an automated framework for scalable tool-interaction environments via programmatic synthesis. EnvScaler comprises two components. First, SkelBuilder constructs diverse environment skeletons through topic mining, logic modeling, and quality evaluation. Then, ScenGenerator generates multiple task scenarios and rule-based trajectory validation functions for each environment. With EnvScaler, we synthesize 191 environments and about 7K scenarios, and apply them to Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL) for Qwen3 series models. Results on three benchmarks show that EnvScaler significantly improves LLMs' ability to solve tasks in complex environments involving multi-turn, multi-tool interactions. We release our code and data at this https URL .
 
-4. **VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction** - 👍 2
+7. **Can We Predict Before Executing Machine Learning Agents?** - 👍 18
+   - 기관: Ant Group51
+   - [HF 페이지](https://huggingface.co/papers/2601.05930)
+   - [논문 링크](https://arxiv.org/abs/2601.05930)
+   - Abstract: Autonomous machine learning agents have revolutionized scientific discovery, yet they remain constrained by a Generate-Execute-Feedback paradigm. Previous approaches suffer from a severe Execution Bottleneck, as hypothesis evaluation relies strictly on expensive physical execution. To bypass these physical constraints, we internalize execution priors to substitute costly runtime checks with instantaneous predictive reasoning, drawing inspiration from World Models. In this work, we formalize the task of Data-centric Solution Preference and construct a comprehensive corpus of 18,438 pairwise comparisons. We demonstrate that LLMs exhibit significant predictive capabilities when primed with a Verified Data Analysis Report, achieving 61.5% accuracy and robust confidence calibration. Finally, we instantiate this framework in FOREAGENT, an agent that employs a Predict-then-Verify loop, achieving a 6x acceleration in convergence while surpassing execution-based baselines by +6%. Our code and dataset will be publicly available soon at this https URL .
+
+8. **AgentOCR: Reimagining Agent History via Optical Self-Compression** - 👍 17
+   - 기관: Nanyang Technological University1
+   - [HF 페이지](https://huggingface.co/papers/2601.04786)
+   - [논문 링크](https://arxiv.org/abs/2601.04786)
+   - Abstract: Recent advances in large language models (LLMs) enable agentic systems trained with reinforcement learning (RL) over multi-turn interaction trajectories, but practical deployment is bottlenecked by rapidly growing textual histories that inflate token budgets and memory usage. We introduce AgentOCR, a framework that exploits the superior information density of visual tokens by representing the accumulated observation-action history as a compact rendered image. To make multi-turn rollouts scalable, AgentOCR proposes segment optical caching. By decomposing history into hashable segments and maintaining a visual cache, this mechanism eliminates redundant re-rendering. Beyond fixed rendering, AgentOCR introduces agentic self-compression, where the agent actively emits a compression rate and is trained with compression-aware reward to adaptively balance task success and token efficiency. We conduct extensive experiments on challenging agentic benchmarks, ALFWorld and search-based QA. Remarkably, results demonstrate that AgentOCR preserves over 95\% of text-based agent performance while substantially reducing token consumption (>50\%), yielding consistent token and memory efficiency. Our further analysis validates a 20x rendering speedup from segment optical caching and the effective strategic balancing of self-compression.
+
+9. **Qwen3-VL-Embedding and Qwen3-VL-Reranker: A Unified Framework for State-of-the-Art Multimodal Retrieval and Ranking** - 👍 14
+   - 기관: Qwen6001
+   - [HF 페이지](https://huggingface.co/papers/2601.04720)
+   - [논문 링크](https://arxiv.org/abs/2601.04720)
+   - Abstract: In this report, we introduce the Qwen3-VL-Embedding and Qwen3-VL-Reranker model series, the latest extensions of the Qwen family built on the Qwen3-VL foundation model. Together, they provide an end-to-end pipeline for high-precision multimodal search by mapping diverse modalities, including text, images, document images, and video, into a unified representation space. The Qwen3-VL-Embedding model employs a multi-stage training paradigm, progressing from large-scale contrastive pre-training to reranking model distillation, to generate semantically rich high-dimensional vectors. It supports Matryoshka Representation Learning, enabling flexible embedding dimensions, and handles inputs up to 32k tokens. Complementing this, Qwen3-VL-Reranker performs fine-grained relevance estimation for query-document pairs using a cross-encoder architecture with cross-attention mechanisms. Both model series inherit the multilingual capabilities of Qwen3-VL, supporting more than 30 languages, and are released in $\textbf{2B}$ and $\textbf{8B}$ parameter sizes to accommodate diverse deployment requirements. Empirical evaluations demonstrate that the Qwen3-VL-Embedding series achieves state-of-the-art results across diverse multimodal embedding evaluation benchmarks. Specifically, Qwen3-VL-Embedding-8B attains an overall score of $\textbf{77.8}$ on MMEB-V2, ranking first among all models (as of January 8, 2025). This report presents the architecture, training methodology, and practical capabilities of the series, demonstrating their effectiveness on various multimodal retrieval tasks, including image-text retrieval, visual question answering, and video-text matching.
+
+10. **VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction** - 👍 12
    - 기관: ·7 authors1
    - [HF 페이지](https://huggingface.co/papers/2601.05966)
    - [논문 링크](https://arxiv.org/abs/2601.05966)
-   - Abstract: Papers arxiv:2601.05966 VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction Published on Jan 9 · Submitted by taesiri on Jan 12 Upvote 2 Authors: Longbin Ji , Xiaoxiong Liu , Junyuan Shang , Shuohuan Wang , Yu Sun , Hua Wu , Haifeng Wang
-
-5. **Goal Force: Teaching Video Models To Accomplish Physics-Conditioned Goals** - 👍 2
-   - 기관: ·9 authors1
-   - [HF 페이지](https://huggingface.co/papers/2601.05848)
-   - [논문 링크](https://arxiv.org/abs/2601.05848)
-   - Abstract: Papers arxiv:2601.05848 Goal Force: Teaching Video Models To Accomplish Physics-Conditioned Goals Published on Jan 9 · Submitted by taesiri on Jan 12 Upvote 2 Authors: Nate Gillman , Yinghua Zhou , Zitian Tang , Evan Luo , Arjan Chakravarthy , Daksh Aggarwal , Michael Freeman , Charles Herrmann , Chen Sun
-
-6. **SmartSearch: Process Reward-Guided Query Refinement for Search Agents** - 👍 2
-   - 기관: ·3 authors81
-   - [HF 페이지](https://huggingface.co/papers/2601.04888)
-   - [논문 링크](https://arxiv.org/abs/2601.04888)
-   - Abstract: Papers arxiv:2601.04888 SmartSearch: Process Reward-Guided Query Refinement for Search Agents Published on Jan 8 · Submitted by Rajkumar rawal on Jan 12 Upvote 2 Authors: Tongyu Wen , Guanting Dong , Zhicheng Dou
-
-7. **DR-LoRA: Dynamic Rank LoRA for Mixture-of-Experts Adaptation** - 👍 1
-   - 기관: ·6 authors1
-   - [HF 페이지](https://huggingface.co/papers/2601.04823)
-   - [논문 링크](https://arxiv.org/abs/2601.04823)
-   - Abstract: Papers arxiv:2601.04823 DR-LoRA: Dynamic Rank LoRA for Mixture-of-Experts Adaptation Published on Jan 8 · Submitted by Bo Li on Jan 12 Upvote 1 Authors: Guanzhi Deng , Bo Li , Ronghao Chen , Huacan Wang , Linqi Song , Lijie Wen
-
-8. **IIB-LPO: Latent Policy Optimization via Iterative Information Bottleneck** - 👍 0
-   - 기관: ·11 authors
-   - [HF 페이지](https://huggingface.co/papers/2601.05870)
-   - [논문 링크](https://arxiv.org/abs/2601.05870)
-   - Abstract: Papers arxiv:2601.05870 IIB-LPO: Latent Policy Optimization via Iterative Information Bottleneck Published on Jan 9 · Submitted by taesiri on Jan 12 Upvote - Authors: Huilin Deng , Hongchen Luo , Yue Zhu , Long Li , Zhuoyue Chen , Xinghao Zhao , Ming Li , Jihai Zhang , Mengchang Wang , Yang Cao , Yu Kang
-
-9. **GenCtrl -- A Formal Controllability Toolkit for Generative Models** - 👍 0
-   - 기관: Apple
-   - [HF 페이지](https://huggingface.co/papers/2601.05637)
-   - [논문 링크](https://arxiv.org/abs/2601.05637)
-   - Abstract: Papers arxiv:2601.05637 GenCtrl -- A Formal Controllability Toolkit for Generative Models Published on Jan 9 · Submitted by taesiri on Jan 12 · Apple Upvote - Authors: Emily Cheng , Carmen Amo Alonso , Federico Danieli , Arno Blaas , Luca Zappella , Pau Rodriguez , Xavier Suau
-
-10. **Over-Searching in Search-Augmented Large Language Models** - 👍 0
-   - 기관: Apple1
-   - [HF 페이지](https://huggingface.co/papers/2601.05503)
-   - [논문 링크](https://arxiv.org/abs/2601.05503)
-   - Abstract: Papers arxiv:2601.05503 Over-Searching in Search-Augmented Large Language Models Published on Jan 9 · Submitted by taesiri on Jan 12 · Apple Upvote - Authors: Roy Xie , Deepak Gopinath , David Qiu , Dong Lin , Haitian Sun , Saloni Potdar , Bhuwan Dhingra
+   - Abstract: Recent advances in video generation have been dominated by diffusion and flow-matching models, which produce high-quality results but remain computationally intensive and difficult to scale. In this work, we introduce VideoAR, the first large-scale Visual Autoregressive (VAR) framework for video generation that combines multi-scale next-frame prediction with autoregressive modeling. VideoAR disentangles spatial and temporal dependencies by integrating intra-frame VAR modeling with causal next-frame prediction, supported by a 3D multi-scale tokenizer that efficiently encodes spatio-temporal dynamics. To improve long-term consistency, we propose Multi-scale Temporal RoPE, Cross-Frame Error Correction, and Random Frame Mask, which collectively mitigate error propagation and stabilize temporal coherence. Our multi-stage pretraining pipeline progressively aligns spatial and temporal learning across increasing resolutions and durations. Empirically, VideoAR achieves new state-of-the-art results among autoregressive models, improving FVD on UCF-101 from 99.5 to 88.6 while reducing inference steps by over 10x, and reaching a VBench score of 81.74-competitive with diffusion-based models an order of magnitude larger. These results demonstrate that VideoAR narrows the performance gap between autoregressive and diffusion paradigms, offering a scalable, efficient, and temporally consistent foundation for future video generation research.
 
