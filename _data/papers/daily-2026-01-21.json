@@ -1,37 +1,106 @@
 {
   "date": "2026-01-21",
-  "crawled_at": "2026-01-21T03:25:33.929590",
-  "total_papers": 3,
+  "crawled_at": "2026-01-21T14:34:12.841735",
+  "total_papers": 10,
   "papers": [
     {
-      "title": "UniX: Unifying Autoregression and Diffusion for Chest X-Ray Understanding and Generation",
-      "url": "https://huggingface.co/papers/2601.11522",
-      "published": "2026-01-21T03:25:30.071156",
-      "likes": 12,
-      "institution": "Wuhan Univeristy1",
-      "paper_link": "https://arxiv.org/abs/2601.11522",
-      "code_link": "https://github.com/ZrH42/UniX",
-      "abstract": "Despite recent progress, medical foundation models still struggle to unify visual understanding and generation, as these tasks have inherently conflicting goals: semantic abstraction versus pixel-level reconstruction. Existing approaches, typically based on parameter-shared autoregressive architectures, frequently lead to compromised performance in one or both tasks. To address this, we present UniX, a next-generation unified medical foundation model for chest X-ray understanding and generation. UniX decouples the two tasks into an autoregressive branch for understanding and a diffusion branch for high-fidelity generation. Crucially, a cross-modal self-attention mechanism is introduced to dynamically guide the generation process with understanding features. Coupled with a rigorous data cleaning pipeline and a multi-stage training strategy, this architecture enables synergistic collaboration between tasks while leveraging the strengths of diffusion models for superior generation. On two representative benchmarks, UniX achieves a 46.1% improvement in understanding performance (Micro-F1) and a 24.2% gain in generation quality (FD-RadDino), using only a quarter of the parameters of LLM-CXR. By achieving performance on par with task-specific models, our work establishes a scalable paradigm for synergistic medical image understanding and generation. Codes and models are available at this https URL ."
+      "title": "Advances and Frontiers of LLM-based Issue Resolution in Software Engineering: A Comprehensive Survey",
+      "url": "https://huggingface.co/papers/2601.11655",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 41,
+      "institution": "DeepSoftwareAnalytics351",
+      "paper_link": "https://arxiv.org/abs/2601.11655",
+      "code_link": "https://deepsoftwareanalytics.github.io/Awesome-Issue-Resolution/",
+      "abstract": "Issue resolution, a complex Software Engineering (SWE) task integral to real-world development, has emerged as a compelling challenge for artificial intelligence. The establishment of benchmarks like SWE-bench revealed this task as profoundly difficult for large language models, thereby significantly accelerating the evolution of autonomous coding agents. This paper presents a systematic survey of this emerging domain. We begin by examining data construction pipelines, covering automated collection and synthesis approaches. We then provide a comprehensive analysis of methodologies, spanning training-free frameworks with their modular components to training-based techniques, including supervised fine-tuning and reinforcement learning. Subsequently, we discuss critical analyses of data quality and agent behavior, alongside practical applications. Finally, we identify key challenges and outline promising directions for future research. An open-source repository is maintained at this https URL to serve as a dynamic resource in this field."
+    },
+    {
+      "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
+      "url": "https://huggingface.co/papers/2601.12993",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 38,
+      "institution": "BeingBeyond2621",
+      "paper_link": "https://arxiv.org/abs/2601.12993",
+      "code_link": "https://github.com/BeingBeyond/Being-H",
+      "abstract": "We introduce Being-H0.5, a foundational Vision-Language-Action (VLA) model designed for robust cross-embodiment generalization across diverse robotic platforms. While existing VLAs often struggle with morphological heterogeneity and data scarcity, we propose a human-centric learning paradigm that treats human interaction traces as a universal \"mother tongue\" for physical interaction. To support this, we present UniHand-2.0, the largest embodied pre-training recipe to date, comprising over 35,000 hours of multimodal data across 30 distinct robotic embodiments. Our approach introduces a Unified Action Space that maps heterogeneous robot controls into semantically aligned slots, enabling low-resource robots to bootstrap skills from human data and high-resource platforms. Built upon this human-centric foundation, we design a unified sequential modeling and multi-task pre-training paradigm to bridge human demonstrations and robotic execution. Architecturally, Being-H0.5 utilizes a Mixture-of-Transformers design featuring a novel Mixture-of-Flow (MoF) framework to decouple shared motor primitives from specialized embodiment-specific experts. Finally, to make cross-embodiment policies stable in the real world, we introduce Manifold-Preserving Gating for robustness under sensory shift and Universal Async Chunking to universalize chunked control across embodiments with different latency and control profiles. We empirically demonstrate that Being-H0.5 achieves state-of-the-art results on simulated benchmarks, such as LIBERO (98.9%) and RoboCasa (53.9%), while also exhibiting strong cross-embodiment capabilities on five robotic platforms."
+    },
+    {
+      "title": "Toward Efficient Agents: Memory, Tool learning, and Planning",
+      "url": "https://huggingface.co/papers/2601.14192",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 27,
+      "institution": "shanghai ailab231",
+      "paper_link": "https://arxiv.org/abs/2601.14192",
+      "code_link": "https://efficient-agents.github.io/",
+      "abstract": "Recent years have witnessed increasing interest in extending large language models into agentic systems. While the effectiveness of agents has continued to improve, efficiency, which is crucial for real-world deployment, has often been overlooked. This paper therefore investigates efficiency from three core components of agents: memory, tool learning, and planning, considering costs such as latency, tokens, steps, etc. Aimed at conducting comprehensive research addressing the efficiency of the agentic system itself, we review a broad range of recent approaches that differ in implementation yet frequently converge on shared high-level principles including but not limited to bounding context via compression and management, designing reinforcement learning rewards to minimize tool invocation, and employing controlled search mechanisms to enhance efficiency, which we discuss in detail. Accordingly, we characterize efficiency in two complementary ways: comparing effectiveness under a fixed cost budget, and comparing cost at a comparable level of effectiveness. This trade-off can also be viewed through the Pareto frontier between effectiveness and cost. From this perspective, we also examine efficiency oriented benchmarks by summarizing evaluation protocols for these components and consolidating commonly reported efficiency metrics from both benchmark and methodological studies. Moreover, we discuss the key challenges and future directions, with the goal of providing promising insights."
+    },
+    {
+      "title": "FutureOmni: Evaluating Future Forecasting from Omni-Modal Context for Multimodal LLMs",
+      "url": "https://huggingface.co/papers/2601.13836",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 27,
+      "institution": "OpenMOSS11",
+      "paper_link": "https://arxiv.org/abs/2601.13836",
+      "code_link": "https://openmoss.github.io/FutureOmni",
+      "abstract": "Although Multimodal Large Language Models (MLLMs) demonstrate strong omni-modal perception, their ability to forecast future events from audio-visual cues remains largely unexplored, as existing benchmarks focus mainly on retrospective understanding. To bridge this gap, we introduce FutureOmni, the first benchmark designed to evaluate omni-modal future forecasting from audio-visual environments. The evaluated models are required to perform cross-modal causal and temporal reasoning, as well as effectively leverage internal knowledge to predict future events. FutureOmni is constructed via a scalable LLM-assisted, human-in-the-loop pipeline and contains 919 videos and 1,034 multiple-choice QA pairs across 8 primary domains. Evaluations on 13 omni-modal and 7 video-only models show that current systems struggle with audio-visual future prediction, particularly in speech-heavy scenarios, with the best accuracy of 64.8% achieved by Gemini 3 Flash. To mitigate this limitation, we curate a 7K-sample instruction-tuning dataset and propose an Omni-Modal Future Forecasting (OFF) training strategy. Evaluations on FutureOmni and popular audio-visual and video-only benchmarks demonstrate that OFF enhances future forecasting and generalization. We publicly release all code ( this https URL ) and datasets ( this https URL )."
+    },
+    {
+      "title": "OmniTransfer: All-in-one Framework for Spatio-temporal Video Transfer",
+      "url": "https://huggingface.co/papers/2601.14250",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 24,
+      "institution": "ByteDance363",
+      "paper_link": "https://arxiv.org/abs/2601.14250",
+      "code_link": "https://pangzecheung.github.io/OmniTransfer/",
+      "abstract": "Videos convey richer information than images or text, capturing both spatial and temporal dynamics. However, most existing video customization methods rely on reference images or task-specific temporal priors, failing to fully exploit the rich spatio-temporal information inherent in videos, thereby limiting flexibility and generalization in video generation. To address these limitations, we propose OmniTransfer, a unified framework for spatio-temporal video transfer. It leverages multi-view information across frames to enhance appearance consistency and exploits temporal cues to enable fine-grained temporal control. To unify various video transfer tasks, OmniTransfer incorporates three key designs: Task-aware Positional Bias that adaptively leverages reference video information to improve temporal alignment or appearance consistency; Reference-decoupled Causal Learning separating reference and target branches to enable precise reference transfer while improving efficiency; and Task-adaptive Multimodal Alignment using multimodal semantic guidance to dynamically distinguish and tackle different tasks. Extensive experiments show that OmniTransfer outperforms existing methods in appearance (ID and style) and temporal transfer (camera movement and video effects), while matching pose-guided methods in motion transfer without using pose, establishing a new paradigm for flexible, high-fidelity video generation."
     },
     {
       "title": "MemoryRewardBench: Benchmarking Reward Models for Long-Term Memory Management in Large Language Models",
       "url": "https://huggingface.co/papers/2601.11969",
-      "published": "2026-01-21T03:25:30.071156",
-      "likes": 3,
-      "institution": "Soochow University01",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 23,
+      "institution": "Soochow University41",
       "paper_link": "https://arxiv.org/abs/2601.11969",
       "code_link": "https://github.com/LCM-Lab/MemRewardBench",
       "abstract": "Existing works increasingly adopt memory-centric mechanisms to process long contexts in a segment manner, and effective memory management is one of the key capabilities that enables large language models to effectively propagate information across the entire sequence. Therefore, leveraging reward models (RMs) to automatically and reliably evaluate memory quality is critical. In this work, we introduce $\\texttt{MemoryRewardBench}$, the first benchmark to systematically study the ability of RMs to evaluate long-term memory management processes. $\\texttt{MemoryRewardBench}$ covers both long-context comprehension and long-form generation tasks, featuring 10 distinct settings with different memory management patterns, with context length ranging from 8K to 128K tokens. Evaluations on 13 cutting-edge RMs indicate a diminishing performance gap between open-source and proprietary models, with newer-generation models consistently outperforming their predecessors regardless of parameter count. We further expose the capabilities and fundamental limitations of current RMs in evaluating LLM memory management across diverse settings."
     },
     {
-      "title": "Advances and Frontiers of LLM-based Issue Resolution in Software Engineering: A Comprehensive Survey",
-      "url": "https://huggingface.co/papers/2601.11655",
-      "published": "2026-01-21T03:25:30.071156",
-      "likes": 2,
-      "institution": "DeepSoftwareAnalytics1",
-      "paper_link": "https://arxiv.org/abs/2601.11655",
-      "code_link": "https://deepsoftwareanalytics.github.io/Awesome-Issue-Resolution/",
-      "abstract": "Issue resolution, a complex Software Engineering (SWE) task integral to real-world development, has emerged as a compelling challenge for artificial intelligence. The establishment of benchmarks like SWE-bench revealed this task as profoundly difficult for large language models, thereby significantly accelerating the evolution of autonomous coding agents. This paper presents a systematic survey of this emerging domain. We begin by examining data construction pipelines, covering automated collection and synthesis approaches. We then provide a comprehensive analysis of methodologies, spanning training-free frameworks with their modular components to training-based techniques, including supervised fine-tuning and reinforcement learning. Subsequently, we discuss critical analyses of data quality and agent behavior, alongside practical applications. Finally, we identify key challenges and outline promising directions for future research. An open-source repository is maintained at this https URL to serve as a dynamic resource in this field."
+      "title": "Think3D: Thinking with Space for Spatial Reasoning",
+      "url": "https://huggingface.co/papers/2601.13029",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 17,
+      "institution": "·12 authors231",
+      "paper_link": "https://arxiv.org/abs/2601.13029",
+      "code_link": "https://github.com/zhangzaibin/spagent",
+      "abstract": "Understanding and reasoning about the physical world requires spatial intelligence: the ability to interpret geometry, perspective, and spatial relations beyond 2D perception. While recent vision large models (VLMs) excel at visual understanding, they remain fundamentally 2D perceivers and struggle with genuine 3D reasoning. We introduce Think3D, a framework that enables VLM agents to think with 3D space. By leveraging 3D reconstruction models that recover point clouds and camera poses from images or videos, Think3D allows the agent to actively manipulate space through camera-based operations and ego/global-view switching, transforming spatial reasoning into an interactive 3D chain-of-thought process. Without additional training, Think3D significantly improves the spatial reasoning performance of advanced models such as GPT-4.1 and Gemini 2.5 Pro, yielding average gains of +7.8% on BLINK Multi-view and MindCube, and +4.7% on VSI-Bench. We further show that smaller models, which struggle with spatial exploration, benefit significantly from a reinforcement learning policy that enables the model to select informative viewpoints and operations. With RL, the benefit from tool usage increases from +0.7% to +6.8%. Our findings demonstrate that training-free, tool-augmented spatial exploration is a viable path toward more flexible and human-like 3D reasoning in multimodal agents, establishing a new dimension of multimodal intelligence. Code and weights are released at this https URL ."
+    },
+    {
+      "title": "UniX: Unifying Autoregression and Diffusion for Chest X-Ray Understanding and Generation",
+      "url": "https://huggingface.co/papers/2601.11522",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 15,
+      "institution": "Wuhan Univeristy191",
+      "paper_link": "https://arxiv.org/abs/2601.11522",
+      "code_link": "https://github.com/ZrH42/UniX",
+      "abstract": "Despite recent progress, medical foundation models still struggle to unify visual understanding and generation, as these tasks have inherently conflicting goals: semantic abstraction versus pixel-level reconstruction. Existing approaches, typically based on parameter-shared autoregressive architectures, frequently lead to compromised performance in one or both tasks. To address this, we present UniX, a next-generation unified medical foundation model for chest X-ray understanding and generation. UniX decouples the two tasks into an autoregressive branch for understanding and a diffusion branch for high-fidelity generation. Crucially, a cross-modal self-attention mechanism is introduced to dynamically guide the generation process with understanding features. Coupled with a rigorous data cleaning pipeline and a multi-stage training strategy, this architecture enables synergistic collaboration between tasks while leveraging the strengths of diffusion models for superior generation. On two representative benchmarks, UniX achieves a 46.1% improvement in understanding performance (Micro-F1) and a 24.2% gain in generation quality (FD-RadDino), using only a quarter of the parameters of LLM-CXR. By achieving performance on par with task-specific models, our work establishes a scalable paradigm for synergistic medical image understanding and generation. Codes and models are available at this https URL ."
+    },
+    {
+      "title": "ToolPRMBench: Evaluating and Advancing Process Reward Models for Tool-using Agents",
+      "url": "https://huggingface.co/papers/2601.12294",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 13,
+      "institution": "Intuit1",
+      "paper_link": "https://arxiv.org/abs/2601.12294",
+      "abstract": "Reward-guided search methods have demonstrated strong potential in enhancing tool-using agents by effectively guiding sampling and exploration over complex action spaces. As a core design, those search methods utilize process reward models (PRMs) to provide step-level rewards, enabling more fine-grained monitoring. However, there is a lack of systematic and reliable evaluation benchmarks for PRMs in tool-using settings. In this paper, we introduce ToolPRMBench, a large-scale benchmark specifically designed to evaluate PRMs for tool-using agents. ToolPRMBench is built on top of several representative tool-using benchmarks and converts agent trajectories into step-level test cases. Each case contains the interaction history, a correct action, a plausible but incorrect alternative, and relevant tool metadata. We respectively utilize offline sampling to isolate local single-step errors and online sampling to capture realistic multi-step failures from full agent rollouts. A multi-LLM verification pipeline is proposed to reduce label noise and ensure data quality. We conduct extensive experiments across large language models, general PRMs, and tool-specialized PRMs on ToolPRMBench. The results reveal clear differences in PRM effectiveness and highlight the potential of specialized PRMs for tool-using. Code and data will be released at this https URL ."
+    },
+    {
+      "title": "Aligning Agentic World Models via Knowledgeable Experience Learning",
+      "url": "https://huggingface.co/papers/2601.13247",
+      "published": "2026-01-21T14:33:59.651572",
+      "likes": 12,
+      "institution": "Zhejiang University191",
+      "paper_link": "https://arxiv.org/abs/2601.13247",
+      "code_link": "https://zjunlp.github.io/WorldMind/",
+      "abstract": "Current Large Language Models (LLMs) exhibit a critical modal disconnect: they possess vast semantic knowledge but lack the procedural grounding to respect the immutable laws of the physical world. Consequently, while these agents implicitly function as world models, their simulations often suffer from physical hallucinations-generating plans that are logically sound but physically unexecutable. Existing alignment strategies predominantly rely on resource-intensive training or fine-tuning, which attempt to compress dynamic environmental rules into static model parameters. However, such parametric encapsulation is inherently rigid, struggling to adapt to the open-ended variability of physical dynamics without continuous, costly retraining. To bridge this gap, we introduce WorldMind, a framework that autonomously constructs a symbolic World Knowledge Repository by synthesizing environmental feedback. Specifically, it unifies Process Experience to enforce physical feasibility via prediction errors and Goal Experience to guide task optimality through successful trajectories. Experiments on EB-ALFRED and EB-Habitat demonstrate that WorldMind achieves superior performance compared to baselines with remarkable cross-model and cross-environment transferability."
     }
   ]
 }
