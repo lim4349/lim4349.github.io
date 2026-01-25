@@ -1,14 +1,14 @@
 {
   "date": "2026-01-25",
-  "crawled_at": "2026-01-25T03:45:44.326416",
+  "crawled_at": "2026-01-25T14:21:41.441472",
   "total_papers": 10,
   "papers": [
     {
       "title": "EvoCUA: Evolving Computer Use Agents via Learning from Scalable Synthetic Experience",
       "url": "https://huggingface.co/papers/2601.15876",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 70,
-      "institution": "meituan1472",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 75,
+      "institution": "meituan1522",
       "paper_link": "https://arxiv.org/abs/2601.15876",
       "code_link": "https://github.com/meituan/EvoCUA",
       "abstract": "The development of native computer-use agents (CUA) represents a significant leap in multimodal AI. However, their potential is currently bottlenecked by the constraints of static data scaling. Existing paradigms relying primarily on passive imitation of static datasets struggle to capture the intricate causal dynamics inherent in long-horizon computer tasks. In this work, we introduce EvoCUA, a native computer use agentic model. Unlike static imitation, EvoCUA integrates data generation and policy optimization into a self-sustaining evolutionary cycle. To mitigate data scarcity, we develop a verifiable synthesis engine that autonomously generates diverse tasks coupled with executable validators. To enable large-scale experience acquisition, we design a scalable infrastructure orchestrating tens of thousands of asynchronous sandbox rollouts. Building on these massive trajectories, we propose an iterative evolving learning strategy to efficiently internalize this experience. This mechanism dynamically regulates policy updates by identifying capability boundaries -- reinforcing successful routines while transforming failure trajectories into rich supervision through error analysis and self-correction. Empirical evaluations on the OSWorld benchmark demonstrate that EvoCUA achieves a success rate of 56.7%, establishing a new open-source state-of-the-art. Notably, EvoCUA significantly outperforms the previous best open-source model, OpenCUA-72B (45.0%), and surpasses leading closed-weights models such as UI-TARS-2 (53.1%). Crucially, our results underscore the generalizability of this approach: the evolving paradigm driven by learning from experience yields consistent performance gains across foundation models of varying scales, establishing a robust and scalable path for advancing native agent capabilities."
@@ -16,38 +16,38 @@
     {
       "title": "HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding",
       "url": "https://huggingface.co/papers/2601.14724",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 60,
-      "institution": "OpenMOSS294",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 62,
+      "institution": "OpenMOSS324",
       "paper_link": "https://arxiv.org/abs/2601.14724",
       "code_link": "https://hermes-streaming.github.io/",
       "abstract": "Recent advancements in Multimodal Large Language Models (MLLMs) have demonstrated significant improvement in offline video understanding. However, extending these capabilities to streaming video inputs, remains challenging, as existing models struggle to simultaneously maintain stable understanding performance, real-time responses, and low GPU memory overhead. To address this challenge, we propose HERMES, a novel training-free architecture for real-time and accurate understanding of video streams. Based on a mechanistic attention investigation, we conceptualize KV cache as a hierarchical memory framework that encapsulates video information across multiple granularities. During inference, HERMES reuses a compact KV cache, enabling efficient streaming understanding under resource constraints. Notably, HERMES requires no auxiliary computations upon the arrival of user queries, thereby guaranteeing real-time responses for continuous video stream interactions, which achieves 10$\\times$ faster TTFT compared to prior SOTA. Even when reducing video tokens by up to 68% compared with uniform sampling, HERMES achieves superior or comparable accuracy across all benchmarks, with up to 11.4% gains on streaming datasets."
     },
     {
-      "title": "The Flexibility Trap: Why Arbitrary Order Limits Reasoning Potential in Diffusion Language Models",
-      "url": "https://huggingface.co/papers/2601.15165",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 59,
-      "institution": "Tsinghua-LeapLab685",
-      "paper_link": "https://arxiv.org/abs/2601.15165",
-      "code_link": "https://nzl-thu.github.io/the-flexibility-trap",
-      "abstract": "Diffusion Large Language Models (dLLMs) break the rigid left-to-right constraint of traditional LLMs, enabling token generation in arbitrary orders. Intuitively, this flexibility implies a solution space that strictly supersets the fixed autoregressive trajectory, theoretically unlocking superior reasoning potential for general tasks like mathematics and coding. Consequently, numerous works have leveraged reinforcement learning (RL) to elicit the reasoning capability of dLLMs. In this paper, we reveal a counter-intuitive reality: arbitrary order generation, in its current form, narrows rather than expands the reasoning boundary of dLLMs. We find that dLLMs tend to exploit this order flexibility to bypass high-uncertainty tokens that are crucial for exploration, leading to a premature collapse of the solution space. This observation challenges the premise of existing RL approaches for dLLMs, where considerable complexities, such as handling combinatorial trajectories and intractable likelihoods, are often devoted to preserving this flexibility. We demonstrate that effective reasoning is better elicited by intentionally forgoing arbitrary order and applying standard Group Relative Policy Optimization (GRPO) instead. Our approach, JustGRPO, is minimalist yet surprisingly effective (e.g., 89.1% accuracy on GSM8K) while fully retaining the parallel decoding ability of dLLMs. Project page: this https URL"
-    },
-    {
       "title": "LLM-in-Sandbox Elicits General Agentic Intelligence",
       "url": "https://huggingface.co/papers/2601.16206",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 56,
-      "institution": "Microsoft Research634",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 61,
+      "institution": "Microsoft Research774",
       "paper_link": "https://arxiv.org/abs/2601.16206",
       "code_link": "https://llm-in-sandbox.github.io",
       "abstract": "We introduce LLM-in-Sandbox, enabling LLMs to explore within a code sandbox (i.e., a virtual computer), to elicit general intelligence in non-code domains. We first demonstrate that strong LLMs, without additional training, exhibit generalization capabilities to leverage the code sandbox for non-code tasks. For example, LLMs spontaneously access external resources to acquire new knowledge, leverage the file system to handle long contexts, and execute scripts to satisfy formatting requirements. We further show that these agentic capabilities can be enhanced through LLM-in-Sandbox Reinforcement Learning (LLM-in-Sandbox-RL), which uses only non-agentic data to train models for sandbox exploration. Experiments demonstrate that LLM-in-Sandbox, in both training-free and post-trained settings, achieves robust generalization spanning mathematics, physics, chemistry, biomedicine, long-context understanding, and instruction following. Finally, we analyze LLM-in-Sandbox's efficiency from computational and system perspectives, and open-source it as a Python package to facilitate real-world deployment."
     },
     {
+      "title": "The Flexibility Trap: Why Arbitrary Order Limits Reasoning Potential in Diffusion Language Models",
+      "url": "https://huggingface.co/papers/2601.15165",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 59,
+      "institution": "Tsinghua-LeapLab715",
+      "paper_link": "https://arxiv.org/abs/2601.15165",
+      "code_link": "https://nzl-thu.github.io/the-flexibility-trap",
+      "abstract": "Diffusion Large Language Models (dLLMs) break the rigid left-to-right constraint of traditional LLMs, enabling token generation in arbitrary orders. Intuitively, this flexibility implies a solution space that strictly supersets the fixed autoregressive trajectory, theoretically unlocking superior reasoning potential for general tasks like mathematics and coding. Consequently, numerous works have leveraged reinforcement learning (RL) to elicit the reasoning capability of dLLMs. In this paper, we reveal a counter-intuitive reality: arbitrary order generation, in its current form, narrows rather than expands the reasoning boundary of dLLMs. We find that dLLMs tend to exploit this order flexibility to bypass high-uncertainty tokens that are crucial for exploration, leading to a premature collapse of the solution space. This observation challenges the premise of existing RL approaches for dLLMs, where considerable complexities, such as handling combinatorial trajectories and intractable likelihoods, are often devoted to preserving this flexibility. We demonstrate that effective reasoning is better elicited by intentionally forgoing arbitrary order and applying standard Group Relative Policy Optimization (GRPO) instead. Our approach, JustGRPO, is minimalist yet surprisingly effective (e.g., 89.1% accuracy on GSM8K) while fully retaining the parallel decoding ability of dLLMs. Project page: this https URL"
+    },
+    {
       "title": "BayesianVLA: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries",
       "url": "https://huggingface.co/papers/2601.15197",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 51,
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 52,
       "institution": "Zhongguancun Academy144",
       "paper_link": "https://arxiv.org/abs/2601.15197",
       "code_link": "https://github.com/ZGC-EmbodyAI/BayesianVLA",
@@ -56,9 +56,9 @@
     {
       "title": "Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders",
       "url": "https://huggingface.co/papers/2601.16208",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 44,
-      "institution": "VISIONx @ NYU1072",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 46,
+      "institution": "VISIONx @ NYU1202",
       "paper_link": "https://arxiv.org/abs/2601.16208",
       "code_link": "https://rae-dit.github.io/scale-rae/",
       "abstract": "Representation Autoencoders (RAEs) have shown distinct advantages in diffusion modeling on ImageNet by training in high-dimensional semantic latent spaces. In this work, we investigate whether this framework can scale to large-scale, freeform text-to-image (T2I) generation. We first scale RAE decoders on the frozen representation encoder (SigLIP-2) beyond ImageNet by training on web, synthetic, and text-rendering data, finding that while scale improves general fidelity, targeted data composition is essential for specific domains like text. We then rigorously stress-test the RAE design choices originally proposed for ImageNet. Our analysis reveals that scaling simplifies the framework: while dimension-dependent noise scheduling remains critical, architectural complexities such as wide diffusion heads and noise-augmented decoding offer negligible benefits at scale Building on this simplified framework, we conduct a controlled comparison of RAE against the state-of-the-art FLUX VAE across diffusion transformer scales from 0.5B to 9.8B parameters. RAEs consistently outperform VAEs during pretraining across all model scales. Further, during finetuning on high-quality datasets, VAE-based models catastrophically overfit after 64 epochs, while RAE models remain stable through 256 epochs and achieve consistently better performance. Across all experiments, RAE-based diffusion models demonstrate faster convergence and better generation quality, establishing RAEs as a simpler and stronger foundation than VAEs for large-scale T2I generation. Additionally, because both visual understanding and generation can operate in a shared representation space, the multimodal model can directly reason over generated latents, opening new possibilities for unified models."
@@ -66,9 +66,9 @@
     {
       "title": "Stable-DiffCoder: Pushing the Frontier of Code Diffusion Large Language Model",
       "url": "https://huggingface.co/papers/2601.15892",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 44,
-      "institution": "ByteDance Seed211",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 45,
+      "institution": "ByteDance Seed271",
       "paper_link": "https://arxiv.org/abs/2601.15892",
       "code_link": "https://bytedance-seed.github.io/Stable-DiffCoder/",
       "abstract": "Diffusion-based language models (DLLMs) offer non-sequential, block-wise generation and richer data reuse compared to autoregressive (AR) models, but existing code DLLMs still lag behind strong AR baselines under comparable budgets. We revisit this setting in a controlled study and introduce Stable-DiffCoder, a block diffusion code model that reuses the Seed-Coder architecture, data, and training pipeline. To enable efficient knowledge learning and stable training, we incorporate a block diffusion continual pretraining (CPT) stage enhanced by a tailored warmup and block-wise clipped noise schedule. Under the same data and architecture, Stable-DiffCoder overall outperforms its AR counterpart on a broad suite of code benchmarks. Moreover, relying only on the CPT and supervised fine-tuning stages, Stable-DiffCoder achieves stronger performance than a wide range of \\~8B ARs and DLLMs, demonstrating that diffusion-based training can improve code modeling quality beyond AR training alone. Moreover, diffusion-based any-order modeling improves structured code modeling for editing and reasoning, and through data augmentation, benefits low-resource coding languages."
@@ -76,8 +76,8 @@
     {
       "title": "SAMTok: Representing Any Mask with Two Words",
       "url": "https://huggingface.co/papers/2601.16093",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 34,
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 36,
       "institution": "ByteDance1.51k2",
       "paper_link": "https://arxiv.org/abs/2601.16093",
       "code_link": "https://zhouyiks.github.io/projects/SAMTok/",
@@ -86,9 +86,9 @@
     {
       "title": "Learning to Discover at Test Time",
       "url": "https://huggingface.co/papers/2601.16175",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 30,
-      "institution": "Stanford University1212",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 33,
+      "institution": "Stanford University1522",
       "paper_link": "https://arxiv.org/abs/2601.16175",
       "code_link": "https://test-time-training.github.io/discover/",
       "abstract": "How can we use AI to discover a new state of the art for a scientific problem? Prior work in test-time scaling, such as AlphaEvolve, performs search by prompting a frozen LLM. We perform reinforcement learning at test time, so the LLM can continue to train, but now with experience specific to the test problem. This form of continual learning is quite special, because its goal is to produce one great solution rather than many good ones on average, and to solve this very problem rather than generalize to other problems. Therefore, our learning objective and search subroutine are designed to prioritize the most promising solutions. We call this method Test-Time Training to Discover (TTT-Discover). Following prior work, we focus on problems with continuous rewards. We report results for every problem we attempted, across mathematics, GPU kernel engineering, algorithm design, and biology. TTT-Discover sets the new state of the art in almost all of them: (i) Erdős' minimum overlap problem and an autocorrelation inequality; (ii) a GPUMode kernel competition (up to $2\\times$ faster than prior art); (iii) past AtCoder algorithm competitions; and (iv) denoising problem in single-cell analysis. Our solutions are reviewed by experts or the organizers. All our results are achieved with an open model, OpenAI gpt-oss-120b, and can be reproduced with our publicly available code, in contrast to previous best results that required closed frontier models. Our test-time training runs are performed using Tinker, an API by Thinking Machines, with a cost of only a few hundred dollars per problem."
@@ -96,9 +96,9 @@
     {
       "title": "Qwen3-TTS Technical Report",
       "url": "https://huggingface.co/papers/2601.15621",
-      "published": "2026-01-25T03:45:29.554087",
-      "likes": 26,
-      "institution": "Qwen3.29k1",
+      "published": "2026-01-25T14:21:28.143952",
+      "likes": 29,
+      "institution": "Qwen3.96k1",
       "paper_link": "https://arxiv.org/abs/2601.15621",
       "code_link": "https://github.com/QwenLM/Qwen3-TTS",
       "abstract": "In this report, we present the Qwen3-TTS series, a family of advanced multilingual, controllable, robust, and streaming text-to-speech models. Qwen3-TTS supports state-of-the-art 3-second voice cloning and description-based control, allowing both the creation of entirely novel voices and fine-grained manipulation over the output speech. Trained on over 5 million hours of speech data spanning 10 languages, Qwen3-TTS adopts a dual-track LM architecture for real-time synthesis, coupled with two speech tokenizers: 1) Qwen-TTS-Tokenizer-25Hz is a single-codebook codec emphasizing semantic content, which offers seamlessly integration with Qwen-Audio and enables streaming waveform reconstruction via a block-wise DiT. 2) Qwen-TTS-Tokenizer-12Hz achieves extreme bitrate reduction and ultra-low-latency streaming, enabling immediate first-packet emission ($97\\,\\mathrm{ms}$) through its 12.5 Hz, 16-layer multi-codebook design and a lightweight causal ConvNet. Extensive experiments indicate state-of-the-art performance across diverse objective and subjective benchmark (e.g., TTS multilingual test set, InstructTTSEval, and our long speech test set). To facilitate community research and development, we release both tokenizers and models under the Apache 2.0 license."
