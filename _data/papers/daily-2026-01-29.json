@@ -1,0 +1,103 @@
+{
+  "date": "2026-01-29",
+  "crawled_at": "2026-01-29T04:00:05.796124",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation",
+      "url": "https://huggingface.co/papers/2601.20614",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 45,
+      "institution": "AMAP-ML71",
+      "paper_link": "https://arxiv.org/abs/2601.20614",
+      "code_link": "https://github.com/AMAP-ML/MathForge",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) offers a robust mechanism for enhancing mathematical reasoning in large models. However, we identify a systematic lack of emphasis on more challenging questions in existing methods from both algorithmic and data perspectives, despite their importance for refining underdeveloped capabilities. Algorithmically, widely used Group Relative Policy Optimization (GRPO) suffers from an implicit imbalance where the magnitude of policy updates is lower for harder questions. Data-wise, augmentation approaches primarily rephrase questions to enhance diversity without systematically increasing intrinsic difficulty. To address these issues, we propose a two-dual MathForge framework to improve mathematical reasoning by targeting harder questions from both perspectives, which comprises a Difficulty-Aware Group Policy Optimization (DGPO) algorithm and a Multi-Aspect Question Reformulation (MQR) strategy. Specifically, DGPO first rectifies the implicit imbalance in GRPO via difficulty-balanced group advantage estimation, and further prioritizes harder questions by difficulty-aware question-level weighting. Meanwhile, MQR reformulates questions across multiple aspects to increase difficulty while maintaining the original gold answer. Overall, MathForge forms a synergistic loop: MQR expands the data frontier, and DGPO effectively learns from the augmented data. Extensive experiments show that MathForge significantly outperforms existing methods on various mathematical reasoning tasks. The code and augmented data are all available at this https URL ."
+    },
+    {
+      "title": "Advancing Open-source World Models",
+      "url": "https://huggingface.co/papers/2601.20540",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 23,
+      "institution": "Robbyant1841",
+      "paper_link": "https://arxiv.org/abs/2601.20540",
+      "code_link": "https://github.com/Robbyant/lingbot-world/",
+      "abstract": "We present LingBot-World, an open-sourced world simulator stemming from video generation. Positioned as a top-tier world model, LingBot-World offers the following features. (1) It maintains high fidelity and robust dynamics in a broad spectrum of environments, including realism, scientific contexts, cartoon styles, and beyond. (2) It enables a minute-level horizon while preserving contextual consistency over time, which is also known as \"long-term memory\". (3) It supports real-time interactivity, achieving a latency of under 1 second when producing 16 frames per second. We provide public access to the code and model in an effort to narrow the divide between open-source and closed-source technologies. We believe our release will empower the community with practical applications across areas like content creation, gaming, and robot learning."
+    },
+    {
+      "title": "DeepSeek-OCR 2: Visual Causal Flow",
+      "url": "https://huggingface.co/papers/2601.20552",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 5,
+      "institution": "DeepSeek1.35k1",
+      "paper_link": "https://arxiv.org/abs/2601.20552",
+      "code_link": "https://github.com/deepseek-ai/DeepSeek-OCR-2",
+      "abstract": "We present DeepSeek-OCR 2 to investigate the feasibility of a novel encoder-DeepEncoder V2-capable of dynamically reordering visual tokens upon image semantics. Conventional vision-language models (VLMs) invariably process visual tokens in a rigid raster-scan order (top-left to bottom-right) with fixed positional encoding when fed into LLMs. However, this contradicts human visual perception, which follows flexible yet semantically coherent scanning patterns driven by inherent logical structures. Particularly for images with complex layouts, human vision exhibits causally-informed sequential processing. Inspired by this cognitive mechanism, DeepEncoder V2 is designed to endow the encoder with causal reasoning capabilities, enabling it to intelligently reorder visual tokens prior to LLM-based content interpretation. This work explores a novel paradigm: whether 2D image understanding can be effectively achieved through two-cascaded 1D causal reasoning structures, thereby offering a new architectural approach with the potential to achieve genuine 2D reasoning. Codes and model weights are publicly accessible at this http URL ."
+    },
+    {
+      "title": "Spark: Strategic Policy-Aware Exploration via Dynamic Branching for Long-Horizon Agentic Learning",
+      "url": "https://huggingface.co/papers/2601.20209",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 5,
+      "institution": "·7 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.20209",
+      "abstract": "Reinforcement learning has empowered large language models to act as intelligent agents, yet training them for long-horizon tasks remains challenging due to the scarcity of high-quality trajectories, especially under limited resources. Existing methods typically scale up rollout sizes and indiscriminately allocate computational resources among intermediate steps. Such attempts inherently waste substantial computation budget on trivial steps while failing to guarantee sample quality. To address this, we propose \\textbf{Spark} (\\textbf{S}trategic \\textbf{P}olicy-\\textbf{A}ware explo\\textbf{R}ation via \\textbf{K}ey-state dynamic branching), a novel framework that selectively branches at critical decision states for resource-efficient exploration. Our key insight is to activate adaptive branching exploration at critical decision points to probe promising trajectories, thereby achieving precise resource allocation that prioritizes sampling quality over blind coverage. This design leverages the agent's intrinsic decision-making signals to reduce dependence on human priors, enabling the agent to autonomously expand exploration and achieve stronger generalization. Experiments across diverse tasks (e.g., embodied planning), demonstrate that \\textsc{Spark} achieves superior success rates with significantly fewer training samples, exhibiting robust generalization even in unseen scenarios."
+    },
+    {
+      "title": "Linear representations in language models can change dramatically over a conversation",
+      "url": "https://huggingface.co/papers/2601.20834",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 2,
+      "institution": "Google1",
+      "paper_link": "https://arxiv.org/abs/2601.20834",
+      "abstract": "Language model representations often contain linear directions that correspond to high-level concepts. Here, we study the dynamics of these representations: how representations evolve along these dimensions within the context of (simulated) conversations. We find that linear representations can change dramatically over a conversation; for example, information that is represented as factual at the beginning of a conversation can be represented as non-factual at the end and vice versa. These changes are content-dependent; while representations of conversation-relevant information may change, generic information is generally preserved. These changes are robust even for dimensions that disentangle factuality from more superficial response patterns, and occur across different model families and layers of the model. These representation changes do not require on-policy conversations; even replaying a conversation script written by an entirely different model can produce similar changes. However, adaptation is much weaker from simply having a sci-fi story in context that is framed more explicitly as such. We also show that steering along a representational direction can have dramatically different effects at different points in a conversation. These results are consistent with the idea that representations may evolve in response to the model playing a particular role that is cued by a conversation. Our findings may pose challenges for interpretability and steering -- in particular, they imply that it may be misleading to use static interpretations of features or directions, or probes that assume a particular range of features consistently corresponds to a particular ground-truth value. However, these types of representational dynamics also point to exciting new research directions for understanding how models adapt to context."
+    },
+    {
+      "title": "SERA: Soft-Verified Efficient Repository Agents",
+      "url": "https://huggingface.co/papers/2601.20789",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 2,
+      "institution": "AI211",
+      "paper_link": "https://arxiv.org/abs/2601.20789",
+      "code_link": "https://github.com/allenai/SERA",
+      "abstract": "Open-weight coding agents should hold a fundamental advantage over closed-source systems: they can be specialized to private codebases, encoding repository-specific information directly in their weights. Yet the cost and complexity of training has kept this advantage theoretical. We show it is now practical. We present Soft-Verified Efficient Repository Agents (SERA), an efficient method for training coding agents that enables the rapid and cheap creation of agents specialized to private codebases. Using only supervised finetuning (SFT), SERA achieves state-of-the-art results among fully open-source (open data, method, code) models while matching the performance of frontier open-weight models like Devstral-Small-2. Creating SERA models is 26x cheaper than reinforcement learning and 57x cheaper than previous synthetic data methods to reach equivalent performance. Our method, Soft Verified Generation (SVG), generates thousands of trajectories from a single code repository. Combined with cost-efficiency, this enables specialization to private codebases. Beyond repository specialization, we apply SVG to a larger corpus of codebases, generating over 200,000 synthetic trajectories. We use this dataset to provide detailed analysis of scaling laws, ablations, and confounding factors for training coding agents. Overall, we believe our work will greatly accelerate research on open coding agents and showcase the advantage of open-source models that can specialize to private codebases. We release SERA as the first model in Ai2's Open Coding Agents series, along with all our code, data, and Claude Code integration to support the research community."
+    },
+    {
+      "title": "Innovator-VL: A Multimodal Large Language Model for Scientific Discovery",
+      "url": "https://huggingface.co/papers/2601.19325",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 2,
+      "institution": "Shanghai Jiao Tong University1",
+      "paper_link": "https://arxiv.org/abs/2601.19325",
+      "code_link": "https://innovatorlm.github.io/Innovator-VL",
+      "abstract": "We present Innovator-VL, a scientific multimodal large language model designed to advance understanding and reasoning across diverse scientific domains while maintaining excellent performance on general vision tasks. Contrary to the trend of relying on massive domain-specific pretraining and opaque pipelines, our work demonstrates that principled training design and transparent methodology can yield strong scientific intelligence with substantially reduced data requirements. (i) First, we provide a fully transparent, end-to-end reproducible training pipeline, covering data collection, cleaning, preprocessing, supervised fine-tuning, reinforcement learning, and evaluation, along with detailed optimization recipes. This facilitates systematic extension by the community. (ii) Second, Innovator-VL exhibits remarkable data efficiency, achieving competitive performance on various scientific tasks using fewer than five million curated samples without large-scale pretraining. These results highlight that effective reasoning can be achieved through principled data selection rather than indiscriminate scaling. (iii) Third, Innovator-VL demonstrates strong generalization, achieving competitive performance on general vision, multimodal reasoning, and scientific benchmarks. This indicates that scientific alignment can be integrated into a unified model without compromising general-purpose capabilities. Our practices suggest that efficient, reproducible, and high-performing scientific multimodal models can be built even without large-scale data, providing a practical foundation for future research."
+    },
+    {
+      "title": "GDCNet: Generative Discrepancy Comparison Network for Multimodal Sarcasm Detection",
+      "url": "https://huggingface.co/papers/2601.20618",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 1,
+      "institution": "Institute of Computing Technology, Chinese Academy of Sciences1",
+      "paper_link": "https://arxiv.org/abs/2601.20618",
+      "abstract": "Multimodal sarcasm detection (MSD) aims to identify sarcasm within image-text pairs by modeling semantic incongruities across modalities. Existing methods often exploit cross-modal embedding misalignment to detect inconsistency but struggle when visual and textual content are loosely related or semantically indirect. While recent approaches leverage large language models (LLMs) to generate sarcastic cues, the inherent diversity and subjectivity of these generations often introduce noise. To address these limitations, we propose the Generative Discrepancy Comparison Network (GDCNet). This framework captures cross-modal conflicts by utilizing descriptive, factually grounded image captions generated by Multimodal LLMs (MLLMs) as stable semantic anchors. Specifically, GDCNet computes semantic and sentiment discrepancies between the generated objective description and the original text, alongside measuring visual-textual fidelity. These discrepancy features are then fused with visual and textual representations via a gated module to adaptively balance modality contributions. Extensive experiments on MSD benchmarks demonstrate GDCNet's superior accuracy and robustness, establishing a new state-of-the-art on the MMSD2.0 benchmark."
+    },
+    {
+      "title": "RIR-Mega-Speech: A Reverberant Speech Corpus with Comprehensive Acoustic Metadata and Reproducible Evaluation",
+      "url": "https://huggingface.co/papers/2601.19949",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 1,
+      "institution": "·1 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.19949",
+      "code_link": "https://github.com/mandip42/rir-mega-speech",
+      "abstract": "Despite decades of research on reverberant speech, comparing methods remains difficult because most corpora lack per-file acoustic annotations or provide limited documentation for reproduction. We present RIR-Mega-Speech, a corpus of approximately 117.5 hours created by convolving LibriSpeech utterances with roughly 5,000 simulated room impulse responses from the RIR-Mega collection. Every file includes RT60, direct-to-reverberant ratio (DRR), and clarity index ($C_{50}$) computed from the source RIR using clearly defined, reproducible procedures. We also provide scripts to rebuild the dataset and reproduce all evaluation results. Using Whisper small on 1,500 paired utterances, we measure 5.20% WER (95% CI: 4.69--5.78) on clean speech and 7.70% (7.04--8.35) on reverberant versions, corresponding to a paired increase of 2.50 percentage points (2.06--2.98). This represents a 48% relative degradation. WER increases monotonically with RT60 and decreases with DRR, consistent with prior perceptual studies. While the core finding that reverberation harms recognition is well established, we aim to provide the community with a standardized resource where acoustic conditions are transparent and results can be verified independently. The repository includes one-command rebuild instructions for both Windows and Linux environments."
+    },
+    {
+      "title": "SketchDynamics: Exploring Free-Form Sketches for Dynamic Intent Expression in Animation Generation",
+      "url": "https://huggingface.co/papers/2601.20622",
+      "published": "2026-01-29T03:59:52.764676",
+      "likes": 0,
+      "institution": "·4 authors",
+      "paper_link": "https://arxiv.org/abs/2601.20622",
+      "abstract": "Sketching provides an intuitive way to convey dynamic intent in animation authoring (i.e., how elements change over time and space), making it a natural medium for automatic content creation. Yet existing approaches often constrain sketches to fixed command tokens or predefined visual forms, overlooking their freeform nature and the central role of humans in shaping intention. To address this, we introduce an interaction paradigm where users convey dynamic intent to a vision-language model via free-form sketching, instantiated here in a sketch storyboard to motion graphics workflow. We implement an interface and improve it through a three-stage study with 24 participants. The study shows how sketches convey motion with minimal input, how their inherent ambiguity requires users to be involved for clarification, and how sketches can visually guide video refinement. Our findings reveal the potential of sketch and AI interaction to bridge the gap between intention and outcome, and demonstrate its applicability to 3D animation and video generation."
+    }
+  ]
+}
