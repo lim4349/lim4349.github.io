@@ -1,0 +1,84 @@
+{
+  "date": "2026-01-30",
+  "crawled_at": "2026-01-30T03:59:56.135368",
+  "total_papers": 8,
+  "papers": [
+    {
+      "title": "Language-based Trial and Error Falls Behind in the Era of Experience",
+      "url": "https://huggingface.co/papers/2601.21754",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 4,
+      "institution": "Nanyang Technological University41",
+      "paper_link": "https://arxiv.org/abs/2601.21754",
+      "code_link": "https://scout-cs.github.io/",
+      "abstract": "While Large Language Models (LLMs) excel in language-based agentic tasks, their applicability to unseen, nonlinguistic environments (e.g., symbolic or spatial tasks) remains limited. Previous work attributes this performance gap to the mismatch between the pretraining distribution and the testing distribution. In this work, we demonstrate the primary bottleneck is the prohibitive cost of exploration: mastering these tasks requires extensive trial-and-error, which is computationally unsustainable for parameter-heavy LLMs operating in a high dimensional semantic space. To address this, we propose SCOUT (Sub-Scale Collaboration On Unseen Tasks), a novel framework that decouples exploration from exploitation. We employ lightweight \"scouts\" (e.g., small MLPs) to probe environmental dynamics at a speed and scale far exceeding LLMs. The collected trajectories are utilized to bootstrap the LLM via Supervised Fine-Tuning (SFT), followed by multi-turn Reinforcement Learning (RL) to activate its latent world knowledge. Empirically, SCOUT enables a Qwen2.5-3B-Instruct model to achieve an average score of 0.86, significantly outperforming proprietary models, including Gemini-2.5-Pro (0.60), while saving about 60% GPU hours consumption."
+    },
+    {
+      "title": "VTC-R1: Vision-Text Compression for Efficient Long-Context Reasoning",
+      "url": "https://huggingface.co/papers/2601.22069",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 3,
+      "institution": "Nanyang Technological University1",
+      "paper_link": "https://arxiv.org/abs/2601.22069",
+      "code_link": "https://github.com/w-yibo/VTC-R1",
+      "abstract": "Long-context reasoning has significantly empowered large language models (LLMs) to tackle complex tasks, yet it introduces severe efficiency bottlenecks due to the computational complexity. Existing efficient approaches often rely on complex additional training or external models for compression, which limits scalability and discards critical fine-grained information. In this paper, we propose VTC-R1, a new efficient reasoning paradigm that integrates vision-text compression into the reasoning process. Instead of processing lengthy textual traces, VTC-R1 renders intermediate reasoning segments into compact images, which are iteratively fed back into vision-language models as \"optical memory.\" We construct a training dataset based on OpenR1-Math-220K achieving 3.4x token compression and fine-tune representative VLMs-Glyph and Qwen3-VL. Extensive experiments on benchmarks such as MATH500, AIME25, AMC23 and GPQA-D demonstrate that VTC-R1 consistently outperforms standard long-context reasoning. Furthermore, our approach significantly improves inference efficiency, achieving 2.7x speedup in end-to-end latency, highlighting its potential as a scalable solution for reasoning-intensive applications. Our code is available at this https URL ."
+    },
+    {
+      "title": "Typhoon-S: Minimal Open Post-Training for Sovereign Large Language Models",
+      "url": "https://huggingface.co/papers/2601.18129",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 3,
+      "institution": "Typhoon22",
+      "paper_link": "https://arxiv.org/abs/2601.18129",
+      "code_link": "https://github.com/scb-10x/typhoon-s",
+      "abstract": "Large language models (LLMs) have progressed rapidly; however, most state-of-the-art models are trained and evaluated primarily in high-resource languages such as English and Chinese, and are often developed by a small number of organizations with access to large-scale compute and data. This gatekeeping creates a practical barrier for sovereign settings in which a regional- or national-scale institution or domain owner must retain control and understanding of model weights, training data, and deployment while operating under limited resources and strict transparency constraints. To this end, we identify two core requirements: (1) adoptability, the ability to transform a base model into a general-purpose assistant, and (2) sovereign capability, the ability to perform high-stakes, region-specific tasks (e.g., legal reasoning in local languages and cultural knowledge). We investigate whether these requirements can be achieved without scaling massive instruction corpora or relying on complex preference tuning pipelines and large-scale reinforcement fine-tuning (RFT). We present Typhoon S, a minimal and open post-training recipe that combines supervised fine-tuning, on-policy distillation, and small-scale RFT. Using Thai as a representative case study, we demonstrate that our approach transforms both sovereign-adapted and general-purpose base models into instruction-tuned models with strong general performance. We further show that small-scale RFT with InK-GRPO -- an extension of GRPO that augments the GRPO loss with a next-word prediction loss -- improves Thai legal reasoning and Thai-specific knowledge while preserving general capabilities. Our results suggest that a carefully designed post-training strategy can reduce the required scale of instruction data and computation, providing a practical path toward high-quality sovereign LLMs under academic-scale resources."
+    },
+    {
+      "title": "Exploring Reasoning Reward Model for Agents",
+      "url": "https://huggingface.co/papers/2601.22154",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 2,
+      "institution": "·10 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.22154",
+      "code_link": "https://github.com/kxfan2002/Reagent",
+      "abstract": "Agentic Reinforcement Learning (Agentic RL) has achieved notable success in enabling agents to perform complex reasoning and tool use. However, most methods still relies on sparse outcome-based reward for training. Such feedback fails to differentiate intermediate reasoning quality, leading to suboptimal training results. In this paper, we introduce Agent Reasoning Reward Model (Agent-RRM), a multi-faceted reward model that produces structured feedback for agentic trajectories, including (1) an explicit reasoning trace , (2) a focused critique that provides refinement guidance by highlighting reasoning flaws, and (3) an overall score that evaluates process performance. Leveraging these signals, we systematically investigate three integration strategies: Reagent-C (text-augmented refinement), Reagent-R (reward-augmented guidance), and Reagent-U (unified feedback integration). Extensive evaluations across 12 diverse benchmarks demonstrate that Reagent-U yields substantial performance leaps, achieving 43.7% on GAIA and 46.2% on WebWalkerQA, validating the effectiveness of our reasoning reward model and training schemes. Code, models, and datasets are all released to facilitate future research."
+    },
+    {
+      "title": "Beyond Imitation: Reinforcement Learning for Active Latent Planning",
+      "url": "https://huggingface.co/papers/2601.21598",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 2,
+      "institution": "·2 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.21598",
+      "abstract": "Aiming at efficient and dense chain-of-thought (CoT) reasoning, latent reasoning methods fine-tune Large Language Models (LLMs) to substitute discrete language tokens with continuous latent tokens. These methods consume fewer tokens compared to the conventional language CoT reasoning and have the potential to plan in a dense latent space. However, current latent tokens are generally supervised based on imitating language labels. Considering that there can be multiple equivalent but diverse CoT labels for a question, passively imitating an arbitrary one may lead to inferior latent token representations and latent reasoning policies, undermining the potential planning ability and resulting in clear gaps between training and testing. In this work, we emphasize the importance of active planning over the representation space of latent tokens in achieving the optimal latent reasoning policy. So, we propose the \\underline{A}c\\underline{t}ive Latent \\underline{P}lanning method (ATP-Latent), which models the supervision process of latent tokens as a conditional variational auto-encoder (VAE) to obtain a smoother latent space. Moreover, to facilitate the most reasonable latent reasoning policy, ATP-Latent conducts reinforcement learning (RL) with an auxiliary coherence reward, which is calculated based on the consistency between VAE-decoded contents of latent tokens, enabling a guided RL process. In experiments on LLaMA-1B, ATP-Latent demonstrates +4.1\\% accuracy and -3.3\\% tokens on four benchmarks compared to advanced baselines. Codes are available on this https URL ."
+    },
+    {
+      "title": "Generation Enhances Understanding in Unified Multimodal Models via Multi-Representation Generation",
+      "url": "https://huggingface.co/papers/2601.21406",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 1,
+      "institution": "·7 authors2",
+      "paper_link": "https://arxiv.org/abs/2601.21406",
+      "code_link": "https://github.com/Sugewud/UniMRG",
+      "abstract": "Unified Multimodal Models (UMMs) integrate both visual understanding and generation within a single framework. Their ultimate aspiration is to create a cycle where understanding and generation mutually reinforce each other. While recent post-training methods have successfully leveraged understanding to enhance generation, the reverse direction of utilizing generation to improve understanding remains largely unexplored. In this work, we propose UniMRG (Unified Multi-Representation Generation), a simple yet effective architecture-agnostic post-training method. UniMRG enhances the understanding capabilities of UMMs by incorporating auxiliary generation tasks. Specifically, we train UMMs to generate multiple intrinsic representations of input images, namely pixel (reconstruction), depth (geometry), and segmentation (structure), alongside standard visual understanding objectives. By synthesizing these diverse representations, UMMs capture complementary information regarding appearance, spatial relations, and structural layout. Consequently, UMMs develop a deeper and more comprehensive understanding of visual inputs. Extensive experiments across diverse UMM architectures demonstrate that our method notably enhances fine-grained perception, reduces hallucinations, and improves spatial understanding, while simultaneously boosting generation capabilities."
+    },
+    {
+      "title": "Llama-3.1-FoundationAI-SecurityLLM-Reasoning-8B Technical Report",
+      "url": "https://huggingface.co/papers/2601.21051",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 1,
+      "institution": "Cisco Foundation AI1",
+      "paper_link": "https://arxiv.org/abs/2601.21051",
+      "abstract": "We present Foundation-Sec-8B-Reasoning, the first open-source native reasoning model for cybersecurity. Built upon our previously released Foundation-Sec-8B base model (derived from Llama-3.1-8B-Base), the model is trained through a two-stage process combining supervised fine-tuning (SFT) and reinforcement learning from verifiable rewards (RLVR). Our training leverages proprietary reasoning data spanning cybersecurity analysis, instruction-following, and mathematical reasoning. Evaluation across 10 cybersecurity benchmarks and 10 general-purpose benchmarks demonstrates performance competitive with significantly larger models on cybersecurity tasks while maintaining strong general capabilities. The model shows effective generalization on multi-hop reasoning tasks and strong safety performance when deployed with appropriate system prompts and guardrails. This work demonstrates that domain-specialized reasoning models can achieve strong performance on specialized tasks while maintaining broad general capabilities. We release the model publicly at this https URL ."
+    },
+    {
+      "title": "WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents",
+      "url": "https://huggingface.co/papers/2601.21872",
+      "published": "2026-01-30T03:59:46.017813",
+      "likes": 0,
+      "institution": "Ludwig Maximilian University of Munich1",
+      "paper_link": "https://arxiv.org/abs/2601.21872",
+      "abstract": "Web agents hold great potential for automating complex computer tasks, yet their interactions involve long-horizon, sequential decision-making with irreversible actions. In such settings, outcome-based supervision is sparse and delayed, often rewarding incorrect trajectories and failing to support inference-time scaling. This motivates the use of Process Reward Models (WebPRMs) for web navigation, but existing approaches remain limited: scalar WebPRMs collapse progress into coarse, weakly grounded signals, while checklist-based WebPRMs rely on brittle template matching that fails under layout or semantic changes and often mislabels superficially correct actions as successful, providing little insight or interpretability. To address these challenges, we introduce WebArbiter, a reasoning-first, principle-inducing WebPRM that formulates reward modeling as text generation, producing structured justifications that conclude with a preference verdict and identify the action most conducive to task completion under the current context. Training follows a two-stage pipeline: reasoning distillation equips the model with coherent principle-guided reasoning, and reinforcement learning corrects teacher biases by directly aligning verdicts with correctness, enabling stronger generalization. To support systematic evaluation, we release WebPRMBench, a comprehensive benchmark spanning four diverse web environments with rich tasks and high-quality preference annotations. On WebPRMBench, WebArbiter-7B outperforms the strongest baseline, GPT-5, by 9.1 points. In reward-guided trajectory search on WebArena-Lite, it surpasses the best prior WebPRM by up to 7.2 points, underscoring its robustness and practical value in real-world complex web tasks."
+    }
+  ]
+}
