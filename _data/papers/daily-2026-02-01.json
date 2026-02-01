@@ -1,14 +1,14 @@
 {
   "date": "2026-02-01",
-  "crawled_at": "2026-02-01T04:21:49.273946",
+  "crawled_at": "2026-02-01T14:29:04.330777",
   "total_papers": 10,
   "papers": [
     {
       "title": "Idea2Story: An Automated Pipeline for Transforming Research Concepts into Complete Scientific Narratives",
       "url": "https://huggingface.co/papers/2601.20833",
-      "published": "2026-02-01T04:21:35.240333",
-      "likes": 138,
-      "institution": "AgentAlpha2262",
+      "published": "2026-02-01T14:28:51.332163",
+      "likes": 143,
+      "institution": "AgentAlpha2662",
       "paper_link": "https://arxiv.org/abs/2601.20833",
       "code_link": "https://github.com/AgentAlphaAGI/Idea2Paper",
       "abstract": "Autonomous scientific discovery with large language model (LLM)-based agents has recently made substantial progress, demonstrating the ability to automate end-to-end research workflows. However, existing systems largely rely on runtime-centric execution paradigms, repeatedly reading, summarizing, and reasoning over large volumes of scientific literature online. This on-the-spot computation strategy incurs high computational cost, suffers from context window limitations, and often leads to brittle reasoning and hallucination. We propose Idea2Story, a pre-computation-driven framework for autonomous scientific discovery that shifts literature understanding from online reasoning to offline knowledge construction. Idea2Story continuously collects peer-reviewed papers together with their review feedback, extracts core methodological units, composes reusable research patterns, and organizes them into a structured methodological knowledge graph. At runtime, underspecified user research intents are aligned to established research paradigms, enabling efficient retrieval and reuse of high-quality research patterns instead of open-ended generation and trial-and-error. By grounding research planning and execution in a pre-built knowledge graph, Idea2Story alleviates the context window bottleneck of LLMs and substantially reduces repeated runtime reasoning over literature. We conduct qualitative analyses and preliminary empirical studies demonstrating that Idea2Story can generate coherent, methodologically grounded, and novel research patterns, and can produce several high-quality research demonstrations in an end-to-end setting. These results suggest that offline knowledge construction provides a practical and scalable foundation for reliable autonomous scientific discovery."
@@ -16,7 +16,7 @@
     {
       "title": "Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models",
       "url": "https://huggingface.co/papers/2601.20354",
-      "published": "2026-02-01T04:21:35.240333",
+      "published": "2026-02-01T14:28:51.332163",
       "likes": 104,
       "institution": "alibaba-inc973",
       "paper_link": "https://arxiv.org/abs/2601.20354",
@@ -26,8 +26,8 @@
     {
       "title": "Scaling Embeddings Outperforms Scaling Experts in Language Models",
       "url": "https://huggingface.co/papers/2601.21204",
-      "published": "2026-02-01T04:21:35.240333",
-      "likes": 89,
+      "published": "2026-02-01T14:28:51.332163",
+      "likes": 91,
       "institution": "LongCat3",
       "paper_link": "https://arxiv.org/abs/2601.21204",
       "abstract": "While Mixture-of-Experts (MoE) architectures have become the standard for sparsity scaling in large language models, they increasingly face diminishing returns and system-level bottlenecks. In this work, we explore embedding scaling as a potent, orthogonal dimension for scaling sparsity. Through a comprehensive analysis and experiments, we identify specific regimes where embedding scaling achieves a superior Pareto frontier compared to expert scaling. We systematically characterize the critical architectural factors governing this efficacy -- ranging from parameter budgeting to the interplay with model width and depth. Moreover, by integrating tailored system optimizations and speculative decoding, we effectively convert this sparsity into tangible inference speedups. Guided by these insights, we introduce LongCat-Flash-Lite, a 68.5B parameter model with ~3B activated trained from scratch. Despite allocating over 30B parameters to embeddings, LongCat-Flash-Lite not only surpasses parameter-equivalent MoE baselines but also exhibits exceptional competitiveness against existing models of comparable scale, particularly in agentic and coding domains."
@@ -35,9 +35,9 @@
     {
       "title": "DynamicVLA: A Vision-Language-Action Model for Dynamic Object Manipulation",
       "url": "https://huggingface.co/papers/2601.22153",
-      "published": "2026-02-01T04:21:35.240333",
-      "likes": 57,
-      "institution": "MMLab@NTU723",
+      "published": "2026-02-01T14:28:51.332163",
+      "likes": 58,
+      "institution": "MMLab@NTU783",
       "paper_link": "https://arxiv.org/abs/2601.22153",
       "code_link": "https://github.com/hzxie/DynamicVLA",
       "abstract": "Manipulating dynamic objects remains an open challenge for Vision-Language-Action (VLA) models, which, despite strong generalization in static manipulation, struggle in dynamic scenarios requiring rapid perception, temporal anticipation, and continuous control. We present DynamicVLA, a framework for dynamic object manipulation that integrates temporal reasoning and closed-loop adaptation through three key designs: 1) a compact 0.4B VLA using a convolutional vision encoder for spatially efficient, structurally faithful encoding, enabling fast multimodal inference; 2) Continuous Inference, enabling overlapping reasoning and execution for lower latency and timely adaptation to object motion; and 3) Latent-aware Action Streaming, which bridges the perception-execution gap by enforcing temporally aligned action execution. To fill the missing foundation of dynamic manipulation data, we introduce the Dynamic Object Manipulation (DOM) benchmark, built from scratch with an auto data collection pipeline that efficiently gathers 200K synthetic episodes across 2.8K scenes and 206 objects, and enables fast collection of 2K real-world episodes without teleoperation. Extensive evaluations demonstrate remarkable improvements in response speed, perception, and generalization, positioning DynamicVLA as a unified framework for general dynamic object manipulation across embodiments."
@@ -45,8 +45,8 @@
     {
       "title": "MMFineReason: Closing the Multimodal Reasoning Gap via Open Data-Centric Methods",
       "url": "https://huggingface.co/papers/2601.21821",
-      "published": "2026-02-01T04:21:35.240333",
-      "likes": 45,
+      "published": "2026-02-01T14:28:51.332163",
+      "likes": 46,
       "institution": "Shanghai Jiao Tong University3",
       "paper_link": "https://arxiv.org/abs/2601.21821",
       "code_link": "https://mmfinereason.github.io/",
@@ -55,9 +55,9 @@
     {
       "title": "OCRVerse: Towards Holistic OCR in End-to-End Vision-Language Models",
       "url": "https://huggingface.co/papers/2601.21639",
-      "published": "2026-02-01T04:21:35.240333",
+      "published": "2026-02-01T14:28:51.332163",
       "likes": 42,
-      "institution": "·10 authors193",
+      "institution": "·10 authors203",
       "paper_link": "https://arxiv.org/abs/2601.21639",
       "code_link": "https://github.com/DocTron-hub/OCRVerse",
       "abstract": "The development of large vision language models drives the demand for managing, and applying massive amounts of multimodal data, making OCR technology, which extracts information from visual images, increasingly popular. However, existing OCR methods primarily focus on recognizing text elements from images or scanned documents (\\textbf{Text-centric OCR}), neglecting the identification of visual elements from visually information-dense image sources (\\textbf{Vision-centric OCR}), such as charts, web pages and science plots. In reality, these visually information-dense images are widespread on the internet and have significant real-world application value, such as data visualization and web page analysis. In this technical report, we propose \\textbf{OCRVerse}, the first holistic OCR method in end-to-end manner that enables unified text-centric OCR and vision-centric OCR. To this end, we constructe comprehensive data engineering to cover a wide range of text-centric documents, such as newspapers, magazines and books, as well as vision-centric rendered composites, including charts, web pages and scientific plots. Moreover, we propose a two-stage SFT-RL multi-domain training method for OCRVerse. SFT directly mixes cross-domain data to train and establish initial domain knowledge, while RL focuses on designing personalized reward strategies for the characteristics of each domain. Specifically, since different domains require various output formats and expected outputs, we provide sufficient flexibility in the RL stage to customize flexible reward signals for each domain, thereby improving cross-domain fusion and avoiding data conflicts. Experimental results demonstrate the effectiveness of OCRVerse, achieving competitive results across text-centric and vision-centric data types, even comparable to large-scale open-source and closed-source models."
@@ -65,9 +65,9 @@
     {
       "title": "ConceptMoE: Adaptive Token-to-Concept Compression for Implicit Compute Allocation",
       "url": "https://huggingface.co/papers/2601.21420",
-      "published": "2026-02-01T04:21:35.240333",
-      "likes": 28,
-      "institution": "ByteDance Seed93",
+      "published": "2026-02-01T14:28:51.332163",
+      "likes": 31,
+      "institution": "ByteDance Seed113",
       "paper_link": "https://arxiv.org/abs/2601.21420",
       "code_link": "https://github.com/ZihaoHuang-notabot/ConceptMoE",
       "abstract": "Large language models allocate uniform computation across all tokens, ignoring that some sequences are trivially predictable while others require deep reasoning. We introduce ConceptMoE, which dynamically merges semantically similar tokens into concept representations, performing implicit token-level compute allocation. A learnable chunk module identifies optimal boundaries by measuring inter-token similarity, compressing sequences by a target ratio $R$ before they enter the compute-intensive concept model. Crucially, the MoE architecture enables controlled evaluation: we reallocate saved computation to match baseline activated FLOPs (excluding attention map computation) and total parameters, isolating genuine architectural benefits. Under these conditions, ConceptMoE consistently outperforms standard MoE across language and vision-language tasks, achieving +0.9 points on language pretraining, +2.3 points on long context understanding, and +0.6 points on multimodal benchmarks. When converting pretrained MoE during continual training with layer looping, gains reach +5.5 points, demonstrating practical applicability. Beyond performance, ConceptMoE reduces attention computation by up to $R^2\\times$ and KV cache by $R\\times$. At $R=2$, empirical measurements show prefill speedups reaching 175\\% and decoding speedups up to 117\\% on long sequences. The minimal architectural modifications enable straightforward integration into existing MoE, demonstrating that adaptive concept-level processing fundamentally improves both effectiveness and efficiency of large language models."
@@ -75,7 +75,7 @@
     {
       "title": "Qwen3-ASR Technical Report",
       "url": "https://huggingface.co/papers/2601.21337",
-      "published": "2026-02-01T04:21:35.240333",
+      "published": "2026-02-01T14:28:51.332163",
       "likes": 21,
       "institution": "Qwen3",
       "paper_link": "https://arxiv.org/abs/2601.21337",
@@ -84,7 +84,7 @@
     {
       "title": "PLANING: A Loosely Coupled Triangle-Gaussian Framework for Streaming 3D Reconstruction",
       "url": "https://huggingface.co/papers/2601.22046",
-      "published": "2026-02-01T04:21:35.240333",
+      "published": "2026-02-01T14:28:51.332163",
       "likes": 20,
       "institution": "shanghai ailab3",
       "paper_link": "https://arxiv.org/abs/2601.22046",
@@ -94,9 +94,9 @@
     {
       "title": "Exploring Reasoning Reward Model for Agents",
       "url": "https://huggingface.co/papers/2601.22154",
-      "published": "2026-02-01T04:21:35.240333",
+      "published": "2026-02-01T14:28:51.332163",
       "likes": 19,
-      "institution": "·10 authors203",
+      "institution": "·10 authors213",
       "paper_link": "https://arxiv.org/abs/2601.22154",
       "code_link": "https://github.com/kxfan2002/Reagent",
       "abstract": "Agentic Reinforcement Learning (Agentic RL) has achieved notable success in enabling agents to perform complex reasoning and tool use. However, most methods still relies on sparse outcome-based reward for training. Such feedback fails to differentiate intermediate reasoning quality, leading to suboptimal training results. In this paper, we introduce Agent Reasoning Reward Model (Agent-RRM), a multi-faceted reward model that produces structured feedback for agentic trajectories, including (1) an explicit reasoning trace , (2) a focused critique that provides refinement guidance by highlighting reasoning flaws, and (3) an overall score that evaluates process performance. Leveraging these signals, we systematically investigate three integration strategies: Reagent-C (text-augmented refinement), Reagent-R (reward-augmented guidance), and Reagent-U (unified feedback integration). Extensive evaluations across 12 diverse benchmarks demonstrate that Reagent-U yields substantial performance leaps, achieving 43.7% on GAIA and 46.2% on WebWalkerQA, validating the effectiveness of our reasoning reward model and training schemes. Code, models, and datasets are all released to facilitate future research."
