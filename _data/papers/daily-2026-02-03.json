@@ -1,0 +1,73 @@
+{
+  "date": "2026-02-03",
+  "crawled_at": "2026-02-03T04:05:52.762905",
+  "total_papers": 7,
+  "papers": [
+    {
+      "title": "FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents",
+      "url": "https://huggingface.co/papers/2602.01566",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 9,
+      "institution": "·7 authors1",
+      "paper_link": "https://arxiv.org/abs/2602.01566",
+      "abstract": "Deep research is emerging as a representative long-horizon task for large language model (LLM) agents. However, long trajectories in deep research often exceed model context limits, compressing token budgets for both evidence collection and report writing, and preventing effective test-time scaling. We introduce FS-Researcher, a file-system-based, dual-agent framework that scales deep research beyond the context window via a persistent workspace. Specifically, a Context Builder agent acts as a librarian which browses the internet, writes structured notes, and archives raw sources into a hierarchical knowledge base that can grow far beyond context length. A Report Writer agent then composes the final report section by section, treating the knowledge base as the source of facts. In this framework, the file system serves as a durable external memory and a shared coordination medium across agents and sessions, enabling iterative refinement beyond the context window. Experiments on two open-ended benchmarks (DeepResearch Bench and DeepConsult) show that FS-Researcher achieves state-of-the-art report quality across different backbone models. Further analyses demonstrate a positive correlation between final report quality and the computation allocated to the Context Builder, validating effective test-time scaling under the file-system paradigm. The code and data are anonymously open-sourced at this https URL ."
+    },
+    {
+      "title": "How Well Do Models Follow Visual Instructions? VIBE: A Systematic Benchmark for Visual Instruction-Driven Image Editing",
+      "url": "https://huggingface.co/papers/2602.01851",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 5,
+      "institution": "·12 authors1",
+      "paper_link": "https://arxiv.org/abs/2602.01851",
+      "code_link": "https://github.com/hwanyu112/VIBE-Benchmark",
+      "abstract": "Recent generative models have achieved remarkable progress in image editing. However, existing systems and benchmarks remain largely text-guided. In contrast, human communication is inherently multimodal, where visual instructions such as sketches efficiently convey spatial and structural intent. To address this gap, we introduce VIBE, the Visual Instruction Benchmark for Image Editing with a three-level interaction hierarchy that captures deictic grounding, morphological manipulation, and causal reasoning. Across these levels, we curate high-quality and diverse test cases that reflect progressively increasing complexity in visual instruction following. We further propose a robust LMM-as-a-judge evaluation framework with task-specific metrics to enable scalable and fine-grained assessment. Through a comprehensive evaluation of 17 representative open-source and proprietary image editing models, we find that proprietary models exhibit early-stage visual instruction-following capabilities and consistently outperform open-source models. However, performance degrades markedly with increasing task difficulty even for the strongest systems, highlighting promising directions for future research."
+    },
+    {
+      "title": "Ebisu: Benchmarking Large Language Models in Japanese Finance",
+      "url": "https://huggingface.co/papers/2602.01479",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 3,
+      "institution": "The Fin AI1",
+      "paper_link": "https://arxiv.org/abs/2602.01479",
+      "abstract": "Japanese finance combines agglutinative, head-final linguistic structure, mixed writing systems, and high-context communication norms that rely on indirect expression and implicit commitment, posing a substantial challenge for LLMs. We introduce Ebisu, a benchmark for native Japanese financial language understanding, comprising two linguistically and culturally grounded, expert-annotated tasks: JF-ICR, which evaluates implicit commitment and refusal recognition in investor-facing Q&A, and JF-TE, which assesses hierarchical extraction and ranking of nested financial terminology from professional disclosures. We evaluate a diverse set of open-source and proprietary LLMs spanning general-purpose, Japanese-adapted, and financial models. Results show that even state-of-the-art systems struggle on both tasks. While increased model scale yields limited improvements, language- and domain-specific adaptation does not reliably improve performance, leaving substantial gaps unresolved. Ebisu provides a focused benchmark for advancing linguistically and culturally grounded financial NLP. All datasets and evaluation scripts are publicly released."
+    },
+    {
+      "title": "PISCES: Annotation-free Text-to-Video Post-Training via Optimal Transport-Aligned Rewards",
+      "url": "https://huggingface.co/papers/2602.01624",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 2,
+      "institution": "Microsoft1",
+      "paper_link": "https://arxiv.org/abs/2602.01624",
+      "abstract": "Text-to-video (T2V) generation aims to synthesize videos with high visual quality and temporal consistency that are semantically aligned with input text. Reward-based post-training has emerged as a promising direction to improve the quality and semantic alignment of generated videos. However, recent methods either rely on large-scale human preference annotations or operate on misaligned embeddings from pre-trained vision-language models, leading to limited scalability or suboptimal supervision. We present $\\texttt{PISCES}$, an annotation-free post-training algorithm that addresses these limitations via a novel Dual Optimal Transport (OT)-aligned Rewards module. To align reward signals with human judgment, $\\texttt{PISCES}$ uses OT to bridge text and video embeddings at both distributional and discrete token levels, enabling reward supervision to fulfill two objectives: (i) a Distributional OT-aligned Quality Reward that captures overall visual quality and temporal coherence; and (ii) a Discrete Token-level OT-aligned Semantic Reward that enforces semantic, spatio-temporal correspondence between text and video tokens. To our knowledge, $\\texttt{PISCES}$ is the first to improve annotation-free reward supervision in generative post-training through the lens of OT. Experiments on both short- and long-video generation show that $\\texttt{PISCES}$ outperforms both annotation-based and annotation-free methods on VBench across Quality and Semantic scores, with human preference studies further validating its effectiveness. We show that the Dual OT-aligned Rewards module is compatible with multiple optimization paradigms, including direct backpropagation and reinforcement learning fine-tuning."
+    },
+    {
+      "title": "PromptRL: Prompt Matters in RL for Flow-Based Image Generation",
+      "url": "https://huggingface.co/papers/2602.01382",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 2,
+      "institution": "·5 authors1",
+      "paper_link": "https://arxiv.org/abs/2602.01382",
+      "code_link": "https://github.com/G-U-N/UniRL",
+      "abstract": "Flow matching models (FMs) have revolutionized text-to-image (T2I) generation, with reinforcement learning (RL) serving as a critical post-training strategy for alignment with reward objectives. In this research, we show that current RL pipelines for FMs suffer from two underappreciated yet important limitations: sample inefficiency due to insufficient generation diversity, and pronounced prompt overfitting, where models memorize specific training formulations and exhibit dramatic performance collapse when evaluated on semantically equivalent but stylistically varied prompts. We present PromptRL (Prompt Matters in RL for Flow-Based Image Generation), a framework that incorporates language models (LMs) as trainable prompt refinement agents directly within the flow-based RL optimization loop. This design yields two complementary benefits: rapid development of sophisticated prompt rewriting capabilities and, critically, a synergistic training regime that reshapes the optimization dynamics. PromptRL achieves state-of-the-art performance across multiple benchmarks, obtaining scores of 0.97 on GenEval, 0.98 on OCR accuracy, and 24.05 on PickScore. Furthermore, we validate the effectiveness of our RL approach on large-scale image editing models, improving the EditReward of FLUX.1-Kontext from 1.19 to 1.43 with only 0.06 million rollouts, surpassing Gemini 2.5 Flash Image (also known as Nano Banana), which scores 1.37, and achieving comparable performance with ReasonNet (1.44), which relied on fine-grained data annotations along with a complex multi-stage training. Our extensive experiments empirically demonstrate that PromptRL consistently achieves higher performance ceilings while requiring over 2$\\times$ fewer rollouts compared to naive flow-only RL. Our code is available at this https URL ."
+    },
+    {
+      "title": "Adaptive Ability Decomposing for Unlocking Large Reasoning Model Effective Reinforcement Learning",
+      "url": "https://huggingface.co/papers/2602.00759",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 2,
+      "institution": "RUC-AIBOX1",
+      "paper_link": "https://arxiv.org/abs/2602.00759",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has shown great potential to enhance the reasoning ability of large language models (LLMs). However, due to the limited amount of information provided during the RLVR process, the model can only engage in largely blind exploration, which often results in failure on challenging problems. To provide additional information for the RLVR process without relying on a teacher model, we propose A$^2$D, an Adaptive Ability Decomposing method for enhancing the effectiveness of RLVR. Specifically, we first train a decomposer via RLVR without distillation, enabling it to decompose complex questions into a set of simpler sub-questions. Next, we use this decomposer to annotate sub-questions for each question in the training dataset, and then train the reasoner under RLVR with sub-question guidance. To better understand A$^2$D, we first compare its performance with competitive baselines, showing its effectiveness. Next, we observe that our method functions as a plug-and-play module that can be applied to different RLVR algorithms. Furthermore, we conduct an analysis of the decomposer, revealing how the RLVR process affects its performance and behavior, and which type of guidance is better suited for enhancing the reasoner's exploration and exploitation abilities."
+    },
+    {
+      "title": "Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry",
+      "url": "https://huggingface.co/papers/2601.22588",
+      "published": "2026-02-03T04:05:39.421911",
+      "likes": 2,
+      "institution": "·11 authors1",
+      "paper_link": "https://arxiv.org/abs/2601.22588",
+      "code_link": "https://github.com/zhuochunli/Representation-as-a-judge",
+      "abstract": "Large language models (LLMs) are widely used as reference-free evaluators via prompting, but this \"LLM-as-a-Judge\" paradigm is costly, opaque, and sensitive to prompt design. In this work, we investigate whether smaller models can serve as efficient evaluators by leveraging internal representations instead of surface generation. We uncover a consistent empirical pattern: small LMs, despite with weak generative ability, encode rich evaluative signals in their hidden states. This motivates us to propose the Semantic Capacity Asymmetry Hypothesis: evaluation requires significantly less semantic capacity than generation and can be grounded in intermediate representations, suggesting that evaluation does not necessarily need to rely on large-scale generative models but can instead leverage latent features from smaller ones. Our findings motivate a paradigm shift from LLM-as-a-Judge to Representation-as-a-Judge, a decoding-free evaluation strategy that probes internal model structure rather than relying on prompted output. We instantiate this paradigm through INSPECTOR, a probing-based framework that predicts aspect-level evaluation scores from small model representations. Experiments on reasoning benchmarks (GSM8K, MATH, GPQA) show that INSPECTOR substantially outperforms prompting-based small LMs and closely approximates full LLM judges, while offering a more efficient, reliable, and interpretable alternative for scalable evaluation."
+    }
+  ]
+}
