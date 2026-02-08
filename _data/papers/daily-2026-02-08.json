@@ -1,14 +1,14 @@
 {
   "date": "2026-02-08",
-  "crawled_at": "2026-02-08T04:25:53.123928",
+  "crawled_at": "2026-02-08T14:30:59.298523",
   "total_papers": 10,
   "papers": [
     {
       "title": "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty",
       "url": "https://huggingface.co/papers/2601.22027",
-      "published": "2026-02-08T04:25:37.178938",
-      "likes": 69,
-      "institution": "BMW LLM Research Group145",
+      "published": "2026-02-08T14:30:45.922786",
+      "likes": 71,
+      "institution": "BMW LLM Research Group156",
       "paper_link": "https://arxiv.org/abs/2601.22027",
       "code_link": "https://github.com/CAR-bench/car-bench",
       "abstract": "Existing benchmarks for Large Language Model (LLM) agents focus on task completion under idealistic settings but overlook reliability in real-world, user-facing applications. In domains, such as in-car voice assistants, users often issue incomplete or ambiguous requests, creating intrinsic uncertainty that agents must manage through dialogue, tool use, and policy adherence. We introduce CAR-bench, a benchmark for evaluating consistency, uncertainty handling, and capability awareness in multi-turn, tool-using LLM agents in an in-car assistant domain. The environment features an LLM-simulated user, domain policies, and 58 interconnected tools spanning navigation, productivity, charging, and vehicle control. Beyond standard task completion, CAR-bench introduces Hallucination tasks that test agents' limit-awareness under missing tools or information, and Disambiguation tasks that require resolving uncertainty through clarification or internal information gathering. Baseline results reveal large gaps between occasional and consistent success on all task types. Even frontier reasoning LLMs achieve less than 50% consistent pass rate on Disambiguation tasks due to premature actions, and frequently violate policies or fabricate information to satisfy user requests in Hallucination tasks, underscoring the need for more reliable and self-aware LLM agents in real-world settings."
@@ -16,8 +16,8 @@
     {
       "title": "Spider-Sense: Intrinsic Risk Sensing for Efficient Agent Defense with Hierarchical Adaptive Screening",
       "url": "https://huggingface.co/papers/2602.05386",
-      "published": "2026-02-08T04:25:37.178938",
-      "likes": 63,
+      "published": "2026-02-08T14:30:45.922786",
+      "likes": 64,
       "institution": "AIFin Lab104",
       "paper_link": "https://arxiv.org/abs/2602.05386",
       "code_link": "https://github.com/aifinlab/Spider-Sense",
@@ -26,7 +26,7 @@
     {
       "title": "Length-Unbiased Sequence Policy Optimization: Revealing and Controlling Response Length Variation in RLVR",
       "url": "https://huggingface.co/papers/2602.05261",
-      "published": "2026-02-08T04:25:37.178938",
+      "published": "2026-02-08T14:30:45.922786",
       "likes": 45,
       "institution": "·6 authors74",
       "paper_link": "https://arxiv.org/abs/2602.05261",
@@ -36,9 +36,9 @@
     {
       "title": "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents",
       "url": "https://huggingface.co/papers/2602.02474",
-      "published": "2026-02-08T04:25:37.178938",
-      "likes": 43,
-      "institution": "Nanyang Technological University244",
+      "published": "2026-02-08T14:30:45.922786",
+      "likes": 44,
+      "institution": "Nanyang Technological University274",
       "paper_link": "https://arxiv.org/abs/2602.02474",
       "code_link": "https://viktoraxelsen.github.io/MemSkill/",
       "abstract": "Most Large Language Model (LLM) agent memory systems rely on a small set of static, hand-designed operations for extracting memory. These fixed procedures hard-code human priors about what to store and how to revise memory, making them rigid under diverse interaction patterns and inefficient on long histories. To this end, we present \\textbf{MemSkill}, which reframes these operations as learnable and evolvable memory skills, structured and reusable routines for extracting, consolidating, and pruning information from interaction traces. Inspired by the design philosophy of agent skills, MemSkill employs a \\emph{controller} that learns to select a small set of relevant skills, paired with an LLM-based \\emph{executor} that produces skill-guided memories. Beyond learning skill selection, MemSkill introduces a \\emph{designer} that periodically reviews hard cases where selected skills yield incorrect or incomplete memories, and evolves the skill set by proposing refinements and new skills. Together, MemSkill forms a closed-loop procedure that improves both the skill-selection policy and the skill set itself. Experiments on LoCoMo, LongMemEval, HotpotQA, and ALFWorld demonstrate that MemSkill improves task performance over strong baselines and generalizes well across settings. Further analyses shed light on how skills evolve, offering insights toward more adaptive, self-evolving memory management for LLM agents."
@@ -46,9 +46,9 @@
     {
       "title": "Context Forcing: Consistent Autoregressive Video Generation with Long Context",
       "url": "https://huggingface.co/papers/2602.06028",
-      "published": "2026-02-08T04:25:37.178938",
+      "published": "2026-02-08T14:30:45.922786",
       "likes": 29,
-      "institution": "TIGER-Lab317",
+      "institution": "TIGER-Lab347",
       "paper_link": "https://arxiv.org/abs/2602.06028",
       "code_link": "https://chenshuo20.github.io/Context_Forcing/",
       "abstract": "Recent approaches to real-time long video generation typically employ streaming tuning strategies, attempting to train a long-context student using a short-context (memoryless) teacher. In these frameworks, the student performs long rollouts but receives supervision from a teacher limited to short 5-second windows. This structural discrepancy creates a critical \\textbf{student-teacher mismatch}: the teacher's inability to access long-term history prevents it from guiding the student on global temporal dependencies, effectively capping the student's context length. To resolve this, we propose \\textbf{Context Forcing}, a novel framework that trains a long-context student via a long-context teacher. By ensuring the teacher is aware of the full generation history, we eliminate the supervision mismatch, enabling the robust training of models capable of long-term consistency. To make this computationally feasible for extreme durations (e.g., 2 minutes), we introduce a context management system that transforms the linearly growing context into a \\textbf{Slow-Fast Memory} architecture, significantly reducing visual redundancy. Extensive results demonstrate that our method enables effective context lengths exceeding 20 seconds -- 2 to 10 times longer than state-of-the-art methods like LongLive and Infinite-RoPE. By leveraging this extended context, Context Forcing preserves superior consistency across long durations, surpassing state-of-the-art baselines on various long video evaluation metrics."
@@ -56,9 +56,9 @@
     {
       "title": "DFlash: Block Diffusion for Flash Speculative Decoding",
       "url": "https://huggingface.co/papers/2602.06036",
-      "published": "2026-02-08T04:25:37.178938",
-      "likes": 27,
-      "institution": "Z Lab4931",
+      "published": "2026-02-08T14:30:45.922786",
+      "likes": 28,
+      "institution": "Z Lab4992",
       "paper_link": "https://arxiv.org/abs/2602.06036",
       "code_link": "https://github.com/z-lab/dflash",
       "abstract": "Autoregressive large language models (LLMs) deliver strong performance but require inherently sequential decoding, leading to high inference latency and poor GPU utilization. Speculative decoding mitigates this bottleneck by using a fast draft model whose outputs are verified in parallel by the target LLM; however, existing methods still rely on autoregressive drafting, which remains sequential and limits practical speedups. Diffusion LLMs offer a promising alternative by enabling parallel generation, but current diffusion models typically underperform compared with autoregressive models. In this paper, we introduce DFlash, a speculative decoding framework that employs a lightweight block diffusion model for parallel drafting. By generating draft tokens in a single forward pass and conditioning the draft model on context features extracted from the target model, DFlash enables efficient drafting with high-quality outputs and higher acceptance rates. Experiments show that DFlash achieves over 6x lossless acceleration across a range of models and tasks, delivering up to 2.5x higher speedup than the state-of-the-art speculative decoding method EAGLE-3."
@@ -66,7 +66,7 @@
     {
       "title": "RISE-Video: Can Video Generators Decode Implicit World Rules?",
       "url": "https://huggingface.co/papers/2602.05986",
-      "published": "2026-02-08T04:25:37.178938",
+      "published": "2026-02-08T14:30:45.922786",
       "likes": 26,
       "institution": "·12 authors203",
       "paper_link": "https://arxiv.org/abs/2602.05986",
@@ -76,31 +76,31 @@
     {
       "title": "Accurate Failure Prediction in Agents Does Not Imply Effective Failure Prevention",
       "url": "https://huggingface.co/papers/2602.03338",
-      "published": "2026-02-08T04:25:37.178938",
+      "published": "2026-02-08T14:30:45.922786",
       "likes": 25,
       "institution": "Writer3",
       "paper_link": "https://arxiv.org/abs/2602.03338",
       "abstract": "Proactive interventions by LLM critic models are often assumed to improve reliability, yet their effects at deployment time are poorly understood. We show that a binary LLM critic with strong offline accuracy (AUROC 0.94) can nevertheless cause severe performance degradation, inducing a 26 percentage point (pp) collapse on one model while affecting another by near zero pp. This variability demonstrates that LLM critic accuracy alone is insufficient to determine whether intervention is safe. We identify a disruption-recovery tradeoff: interventions may recover failing trajectories but also disrupt trajectories that would have succeeded. Based on this insight, we propose a pre-deployment test that uses a small pilot of 50 tasks to estimate whether intervention is likely to help or harm, without requiring full deployment. Across benchmarks, the test correctly anticipates outcomes: intervention degrades performance on high-success tasks (0 to -26 pp), while yielding a modest improvement on the high-failure ALFWorld benchmark (+2.8 pp, p=0.014). The primary value of our framework is therefore identifying when not to intervene, preventing severe regressions before deployment."
     },
     {
+      "title": "Dr. Kernel: Reinforcement Learning Done Right for Triton Kernel Generations",
+      "url": "https://huggingface.co/papers/2602.05885",
+      "published": "2026-02-08T14:30:45.922786",
+      "likes": 22,
+      "institution": "HKUST NLP Group3",
+      "paper_link": "https://arxiv.org/abs/2602.05885",
+      "code_link": "https://github.com/hkust-nlp/KernelGYM",
+      "abstract": "High-quality kernel is critical for scalable AI systems, and enabling LLMs to generate such code would advance AI development. However, training LLMs for this task requires sufficient data, a robust environment, and the process is often vulnerable to reward hacking and lazy optimization. In these cases, models may hack training rewards and prioritize trivial correctness over meaningful speedup. In this paper, we systematically study reinforcement learning (RL) for kernel generation. We first design KernelGYM, a robust distributed GPU environment that supports reward hacking check, data collection from multi-turn interactions and long-term RL training. Building on KernelGYM, we investigate effective multi-turn RL methods and identify a biased policy gradient issue caused by self-inclusion in GRPO. To solve this, we propose Turn-level Reinforce-Leave-One-Out (TRLOO) to provide unbiased advantage estimation for multi-turn RL. To alleviate lazy optimization, we incorporate mismatch correction for training stability and introduce Profiling-based Rewards (PR) and Profiling-based Rejection Sampling (PRS) to overcome the issue. The trained model, this http URL -14B, reaches performance competitive with Claude-4.5-Sonnet in Kernelbench. Finally, we study sequential test-time scaling for this http URL -14B. On the KernelBench Level-2 subset, 31.6% of the generated kernels achieve at least a 1.2x speedup over the Torch reference, surpassing Claude-4.5-Sonnet (26.7%) and GPT-5 (28.6%). When selecting the best candidate across all turns, this 1.2x speedup rate further increases to 47.8%. All resources, including environment, training code, models, and dataset, are included in this https URL ."
+    },
+    {
       "title": "ProAct: Agentic Lookahead in Interactive Environments",
       "url": "https://huggingface.co/papers/2602.05327",
-      "published": "2026-02-08T04:25:37.178938",
+      "published": "2026-02-08T14:30:45.922786",
       "likes": 22,
       "institution": "Tencent Hunyuan103",
       "paper_link": "https://arxiv.org/abs/2602.05327",
       "code_link": "https://github.com/GreatX3/ProAct",
       "abstract": "Existing Large Language Model (LLM) agents struggle in interactive environments requiring long-horizon planning, primarily due to compounding errors when simulating future states. To address this, we propose ProAct, a framework that enables agents to internalize accurate lookahead reasoning through a two-stage training paradigm. First, we introduce Grounded LookAhead Distillation (GLAD), where the agent undergoes supervised fine-tuning on trajectories derived from environment-based search. By compressing complex search trees into concise, causal reasoning chains, the agent learns the logic of foresight without the computational overhead of inference-time search. Second, to further refine decision accuracy, we propose the Monte-Carlo Critic (MC-Critic), a plug-and-play auxiliary value estimator designed to enhance policy-gradient algorithms like PPO and GRPO. By leveraging lightweight environment rollouts to calibrate value estimates, MC-Critic provides a low-variance signal that facilitates stable policy optimization without relying on expensive model-based value approximation. Experiments on both stochastic (e.g., 2048) and deterministic (e.g., Sokoban) environments demonstrate that ProAct significantly improves planning accuracy. Notably, a 4B parameter model trained with ProAct outperforms all open-source baselines and rivals state-of-the-art closed-source models, while demonstrating robust generalization to unseen environments. The codes and models are available at this https URL"
-    },
-    {
-      "title": "Dr. Kernel: Reinforcement Learning Done Right for Triton Kernel Generations",
-      "url": "https://huggingface.co/papers/2602.05885",
-      "published": "2026-02-08T04:25:37.178938",
-      "likes": 20,
-      "institution": "HKUST NLP Group3",
-      "paper_link": "https://arxiv.org/abs/2602.05885",
-      "code_link": "https://github.com/hkust-nlp/KernelGYM",
-      "abstract": "High-quality kernel is critical for scalable AI systems, and enabling LLMs to generate such code would advance AI development. However, training LLMs for this task requires sufficient data, a robust environment, and the process is often vulnerable to reward hacking and lazy optimization. In these cases, models may hack training rewards and prioritize trivial correctness over meaningful speedup. In this paper, we systematically study reinforcement learning (RL) for kernel generation. We first design KernelGYM, a robust distributed GPU environment that supports reward hacking check, data collection from multi-turn interactions and long-term RL training. Building on KernelGYM, we investigate effective multi-turn RL methods and identify a biased policy gradient issue caused by self-inclusion in GRPO. To solve this, we propose Turn-level Reinforce-Leave-One-Out (TRLOO) to provide unbiased advantage estimation for multi-turn RL. To alleviate lazy optimization, we incorporate mismatch correction for training stability and introduce Profiling-based Rewards (PR) and Profiling-based Rejection Sampling (PRS) to overcome the issue. The trained model, this http URL -14B, reaches performance competitive with Claude-4.5-Sonnet in Kernelbench. Finally, we study sequential test-time scaling for this http URL -14B. On the KernelBench Level-2 subset, 31.6% of the generated kernels achieve at least a 1.2x speedup over the Torch reference, surpassing Claude-4.5-Sonnet (26.7%) and GPT-5 (28.6%). When selecting the best candidate across all turns, this 1.2x speedup rate further increases to 47.8%. All resources, including environment, training code, models, and dataset, are included in this https URL ."
     }
   ]
 }
