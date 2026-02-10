@@ -1,0 +1,104 @@
+{
+  "date": "2026-02-10",
+  "crawled_at": "2026-02-10T04:24:10.000365",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "Modality Gap-Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models",
+      "url": "https://huggingface.co/papers/2602.07026",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 32,
+      "institution": "·15 authors261",
+      "paper_link": "https://arxiv.org/abs/2602.07026",
+      "code_link": "https://github.com/Yu-xm/ReVision.git",
+      "abstract": "Despite the success of multimodal contrastive learning in aligning visual and linguistic representations, a persistent geometric anomaly, the Modality Gap, remains: embeddings of distinct modalities expressing identical semantics occupy systematically offset regions. Prior approaches to bridge this gap are largely limited by oversimplified isotropic assumptions, hindering their application in large-scale scenarios. In this paper, we address these limitations by precisely characterizing the geometric shape of the modality gap and leveraging it for efficient model scaling. First, we propose the Fixed-frame Modality Gap Theory, which decomposes the modality gap within a frozen reference frame into stable biases and anisotropic residuals. Guided by this precise modeling, we introduce ReAlign, a training-free modality alignment strategy. Utilizing statistics from massive unpaired data, ReAlign aligns text representation into the image representation distribution via a three-step process comprising Anchor, Trace, and Centroid Alignment, thereby explicitly rectifying geometric misalignment. Building on ReAlign, we propose ReVision, a scalable training paradigm for Multimodal Large Language Models (MLLMs). ReVision integrates ReAlign into the pretraining stage, enabling the model to learn the distribution of visual representations from unpaired text before visual instruction tuning, without the need for large-scale, high-quality image-text pairs. Our framework demonstrates that statistically aligned unpaired data can effectively substitute for expensive image-text pairs, offering a robust path for the efficient scaling of MLLMs."
+    },
+    {
+      "title": "Alleviating Sparse Rewards by Modeling Step-Wise and Long-Term Sampling Effects in Flow-Based GRPO",
+      "url": "https://huggingface.co/papers/2602.06422",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 16,
+      "institution": "Zhejiang University21",
+      "paper_link": "https://arxiv.org/abs/2602.06422",
+      "code_link": "https://github.com/YunzeTong/TurningPoint-GRPO",
+      "abstract": "Deploying GRPO on Flow Matching models has proven effective for text-to-image generation. However, existing paradigms typically propagate an outcome-based reward to all preceding denoising steps without distinguishing the local effect of each step. Moreover, current group-wise ranking mainly compares trajectories at matched timesteps and ignores within-trajectory dependencies, where certain early denoising actions can affect later states via delayed, implicit interactions. We propose TurningPoint-GRPO (TP-GRPO), a GRPO framework that alleviates step-wise reward sparsity and explicitly models long-term effects within the denoising trajectory. TP-GRPO makes two key innovations: (i) it replaces outcome-based rewards with step-level incremental rewards, providing a dense, step-aware learning signal that better isolates each denoising action's \"pure\" effect, and (ii) it identifies turning points-steps that flip the local reward trend and make subsequent reward evolution consistent with the overall trajectory trend-and assigns these actions an aggregated long-term reward to capture their delayed impact. Turning points are detected solely via sign changes in incremental rewards, making TP-GRPO efficient and hyperparameter-free. Extensive experiments also demonstrate that TP-GRPO exploits reward signals more effectively and consistently improves generation. Demo code is available at this https URL ."
+    },
+    {
+      "title": "LOCA-bench: Benchmarking Language Agents Under Controllable and Extreme Context Growth",
+      "url": "https://huggingface.co/papers/2602.07962",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 11,
+      "institution": "HKUST NLP Group51",
+      "paper_link": "https://arxiv.org/abs/2602.07962",
+      "code_link": "https://github.com/hkust-nlp/LOCA-bench",
+      "abstract": "Large language models (LLMs) are increasingly capable of carrying out long-running, real-world tasks. However, as the amount of context grows, their reliability often deteriorates, a phenomenon known as \"context rot\". Existing long-context benchmarks primarily focus on single-step settings that evaluate a model's ability to retrieve information from a long snippet. In realistic scenarios, however, LLMs often need to act as agents that explore environments, follow instructions and plans, extract useful information, and predict correct actions under a dynamically growing context. To assess language agents in such settings, we introduce LOCA-bench (a benchmark for LOng-Context Agents). Given a task prompt, LOCA-bench leverages automated and scalable control of environment states to regulate the agent's context length. This design enables LOCA-bench to extend the context length potentially to infinity in a controlled way while keeping the underlying task semantics fixed. LOCA-bench evaluates language agents as a combination of models and scaffolds, including various context management strategies. While agent performance generally degrades as the environment states grow more complex, advanced context management techniques can substantially improve the overall success rate. We open-source LOCA-bench to provide a platform for evaluating models and scaffolds in long-context, agentic scenarios: this https URL"
+    },
+    {
+      "title": "RelayGen: Intra-Generation Model Switching for Efficient Reasoning",
+      "url": "https://huggingface.co/papers/2602.06454",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 10,
+      "institution": "Seoul National University VLSI Lab11",
+      "paper_link": "https://arxiv.org/abs/2602.06454",
+      "code_link": "https://github.com/jiwonsong-dev/RelayGen",
+      "abstract": "Large reasoning models (LRMs) achieve strong performance on complex reasoning tasks by generating long, multi-step reasoning trajectories, but inference-time scaling incurs substantial deployment cost. A key challenge is that generation difficulty varies within a single output, whereas existing efficiency-oriented approaches either ignore this intra-generation variation or rely on supervised token-level routing with high system complexity. We present \\textbf{RelayGen}, a training-free, segment-level runtime model switching framework that exploits difficulty variation in long-form reasoning. Through offline analysis of generation uncertainty using token probability margins, we show that coarse-grained segment-level control is sufficient to capture difficulty transitions within a reasoning trajectory. RelayGen identifies model-specific switch cues that signal transitions to lower-difficulty segments and dynamically delegates their continuation to a smaller model, while preserving high-difficulty reasoning on the large model. Across multiple reasoning benchmarks, RelayGen substantially reduces inference latency while preserving most of the accuracy of large models. When combined with speculative decoding, RelayGen achieves up to 2.2$\\times$ end-to-end speedup with less than 2\\% accuracy degradation, without requiring additional training or learned routing components."
+    },
+    {
+      "title": "LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning",
+      "url": "https://huggingface.co/papers/2602.07075",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 10,
+      "institution": "·19 authors1",
+      "paper_link": "https://arxiv.org/abs/2602.07075",
+      "abstract": "Chemical large language models (LLMs) predominantly rely on explicit Chain-of-Thought (CoT) in natural language to perform complex reasoning. However, chemical reasoning is inherently continuous and structural, and forcing it into discrete linguistic tokens introduces a fundamental representation mismatch that constrains both efficiency and performance. We introduce LatentChem, a latent reasoning interface that decouples chemical computation from textual generation, enabling models to perform multi-step reasoning directly in continuous latent space while emitting language only for final outputs. Remarkably, we observe a consistent emergent behavior: when optimized solely for task success, models spontaneously internalize reasoning, progressively abandoning verbose textual derivations in favor of implicit latent computation. This shift is not merely stylistic but computationally advantageous. Across diverse chemical reasoning benchmarks, LatentChem achieves a 59.88\\% non-tie win rate over strong CoT-based baselines on ChemCoTBench, while delivering a 10.84$\\times$ average inference speedup. Our results provide empirical evidence that chemical reasoning is more naturally and effectively realized as continuous latent dynamics rather than discretized linguistic trajectories."
+    },
+    {
+      "title": "AgentCPM-Report: Interleaving Drafting and Deepening for Open-Ended Deep Research",
+      "url": "https://huggingface.co/papers/2602.06540",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 4,
+      "institution": "OpenBMB7261",
+      "paper_link": "https://arxiv.org/abs/2602.06540",
+      "code_link": "https://github.com/OpenBMB/AgentCPM/tree/main/AgentCPM-Report",
+      "abstract": "Generating deep research reports requires large-scale information acquisition and the synthesis of insight-driven analysis, posing a significant challenge for current language models. Most existing approaches follow a plan-then-write paradigm, whose performance heavily depends on the quality of the initial outline. However, constructing a comprehensive outline itself demands strong reasoning ability, causing current deep research systems to rely almost exclusively on closed-source or online large models. This reliance raises practical barriers to deployment and introduces safety and privacy concerns for user-authored data. In this work, we present AgentCPM-Report, a lightweight yet high-performing local solution composed of a framework that mirrors the human writing process and an 8B-parameter deep research agent. Our framework uses a Writing As Reasoning Policy (WARP), which enables models to dynamically revise outlines during report generation. Under this policy, the agent alternates between Evidence-Based Drafting and Reasoning-Driven Deepening, jointly supporting information acquisition, knowledge refinement, and iterative outline evolution. To effectively equip small models with this capability, we introduce a Multi-Stage Agentic Training strategy, consisting of cold-start, atomic skill RL, and holistic pipeline RL. Experiments on DeepResearch Bench, DeepConsult, and DeepResearch Gym demonstrate that AgentCPM-Report outperforms leading closed-source systems, with substantial gains in Insight."
+    },
+    {
+      "title": "Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control",
+      "url": "https://huggingface.co/papers/2601.21363",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 3,
+      "institution": "·6 authors3",
+      "paper_link": "https://arxiv.org/abs/2601.21363",
+      "code_link": "https://lift-humanoid.github.io/",
+      "abstract": "Reinforcement learning (RL) is widely used for humanoid control, with on-policy methods such as Proximal Policy Optimization (PPO) enabling robust training via large-scale parallel simulation and, in some cases, zero-shot deployment to real robots. However, the low sample efficiency of on-policy algorithms limits safe adaptation to new environments. Although off-policy RL and model-based RL have shown improved sample efficiency, the gap between large-scale pretraining and efficient finetuning on humanoids still exists. In this paper, we find that off-policy Soft Actor-Critic (SAC), with large-batch update and a high Update-To-Data (UTD) ratio, reliably supports large-scale pretraining of humanoid locomotion policies, achieving zero-shot deployment on real robots. For adaptation, we demonstrate that these SAC-pretrained policies can be finetuned in new environments and out-of-distribution tasks using model-based methods. Data collection in the new environment executes a deterministic policy while stochastic exploration is instead confined to a physics-informed world model. This separation mitigates the risks of random exploration during adaptation while preserving exploratory coverage for improvement. Overall, the approach couples the wall-clock efficiency of large-scale simulation during pretraining with the sample efficiency of model-based learning during fine-tuning."
+    },
+    {
+      "title": "NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models",
+      "url": "https://huggingface.co/papers/2602.06694",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 2,
+      "institution": "Samsung Research1",
+      "paper_link": "https://arxiv.org/abs/2602.06694",
+      "abstract": "Weight-only quantization has become a standard approach for efficiently serving large language models (LLMs). However, existing methods fail to efficiently compress models to binary (1-bit) levels, as they either require large amounts of data and compute or incur additional storage. In this work, we propose NanoQuant, the first post-training quantization (PTQ) method to compress LLMs to both binary and sub-1-bit levels. NanoQuant formulates quantization as a low-rank binary factorization problem, and compresses full-precision weights to low-rank binary matrices and scales. Specifically, it utilizes an efficient alternating direction method of multipliers (ADMM) method to precisely initialize latent binary matrices and scales, and then tune the initialized parameters through a block and model reconstruction process. Consequently, NanoQuant establishes a new Pareto frontier in low-memory post-training quantization, achieving state-of-the-art accuracy even at sub-1-bit compression rates. NanoQuant makes large-scale deployment feasible on consumer hardware. For example, it compresses Llama2-70B by 25.8$\\times$ in just 13 hours on a single H100, enabling a 70B model to operate on a consumer 8 GB GPU."
+    },
+    {
+      "title": "When and How Much to Imagine: Adaptive Test-Time Scaling with World Models for Visual Spatial Reasoning",
+      "url": "https://huggingface.co/papers/2602.08236",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 1,
+      "institution": "University of North Carolina at Chapel Hill11",
+      "paper_link": "https://arxiv.org/abs/2602.08236",
+      "code_link": "https://adaptive-visual-tts.github.io/",
+      "abstract": "Despite rapid progress in Multimodal Large Language Models (MLLMs), visual spatial reasoning remains unreliable when correct answers depend on how a scene would appear under unseen or alternative viewpoints. Recent work addresses this by augmenting reasoning with world models for visual imagination, but questions such as when imagination is actually necessary, how much of it is beneficial, and when it becomes harmful, remain poorly understood. In practice, indiscriminate imagination can increase computation and even degrade performance by introducing misleading evidence. In this work, we present an in-depth analysis of test-time visual imagination as a controllable resource for spatial reasoning. We study when static visual evidence is sufficient, when imagination improves reasoning, and how excessive or unnecessary imagination affects accuracy and efficiency. To support this analysis, we introduce AVIC, an adaptive test-time framework with world models that explicitly reasons about the sufficiency of current visual evidence before selectively invoking and scaling visual imagination. Across spatial reasoning benchmarks (SAT, MMSI) and an embodied navigation benchmark (R2R), our results reveal clear scenarios where imagination is critical, marginal, or detrimental, and show that selective control can match or outperform fixed imagination strategies with substantially fewer world-model calls and language tokens. Overall, our findings highlight the importance of analyzing and controlling test-time imagination for efficient and reliable spatial reasoning."
+    },
+    {
+      "title": "ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking",
+      "url": "https://huggingface.co/papers/2602.06445",
+      "published": "2026-02-10T04:23:56.731208",
+      "likes": 0,
+      "institution": "·9 authors1",
+      "paper_link": "https://arxiv.org/abs/2602.06445",
+      "abstract": "Achieving stable and energy-efficient locomotion is essential for humanoid robots to operate continuously in real-world applications. Existing MPC and RL approaches often rely on energy-related metrics embedded within a multi-objective optimization framework, which require extensive hyperparameter tuning and often result in suboptimal policies. To address these challenges, we propose ECO (Energy-Constrained Optimization), a constrained RL framework that separates energy-related metrics from rewards, reformulating them as explicit inequality constraints. This method provides a clear and interpretable physical representation of energy costs, enabling more efficient and intuitive hyperparameter tuning for improved energy efficiency. ECO introduces dedicated constraints for energy consumption and reference motion, enforced by the Lagrangian method, to achieve stable, symmetric, and energy-efficient walking for humanoid robots. We evaluated ECO against MPC, standard RL with reward shaping, and four state-of-the-art constrained RL methods. Experiments, including sim-to-sim and sim-to-real transfers on the kid-sized humanoid robot BRUCE, demonstrate that ECO significantly reduces energy consumption compared to baselines while maintaining robust walking performance. These results highlight a substantial advancement in energy-efficient humanoid locomotion. All experimental demonstrations can be found on the project website: this https URL ."
+    }
+  ]
+}
