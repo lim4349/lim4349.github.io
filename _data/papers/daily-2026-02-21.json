@@ -1,13 +1,13 @@
 {
   "date": "2026-02-21",
-  "crawled_at": "2026-02-21T03:57:24.259325",
+  "crawled_at": "2026-02-21T14:29:16.268661",
   "total_papers": 10,
   "papers": [
     {
       "title": "SpargeAttention2: Trainable Sparse Attention via Hybrid Top-k+Top-p Masking and Distillation Fine-Tuning",
       "url": "https://huggingface.co/papers/2602.13515",
-      "published": "2026-02-21T03:57:11.283663",
-      "likes": 27,
+      "published": "2026-02-21T14:29:02.097352",
+      "likes": 33,
       "institution": "Tsinghua University5",
       "paper_link": "https://arxiv.org/abs/2602.13515",
       "code_link": "https://github.com/thu-ml/SpargeAttn",
@@ -16,8 +16,8 @@
     {
       "title": "Mobile-Agent-v3.5: Multi-platform Fundamental GUI Agents",
       "url": "https://huggingface.co/papers/2602.16855",
-      "published": "2026-02-21T03:57:11.283663",
-      "likes": 23,
+      "published": "2026-02-21T14:29:02.097352",
+      "likes": 32,
       "institution": "TongyiLab3",
       "paper_link": "https://arxiv.org/abs/2602.16855",
       "code_link": "https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v3.5",
@@ -26,16 +26,35 @@
     {
       "title": "Unified Latents (UL): How to train your latents",
       "url": "https://huggingface.co/papers/2602.17270",
-      "published": "2026-02-21T03:57:11.283663",
-      "likes": 21,
+      "published": "2026-02-21T14:29:02.097352",
+      "likes": 25,
       "institution": "Google3",
       "paper_link": "https://arxiv.org/abs/2602.17270",
       "abstract": "We present Unified Latents (UL), a framework for learning latent representations that are jointly regularized by a diffusion prior and decoded by a diffusion model. By linking the encoder's output noise to the prior's minimum noise level, we obtain a simple training objective that provides a tight upper bound on the latent bitrate. On ImageNet-512, our approach achieves competitive FID of 1.4, with high reconstruction quality (PSNR) while requiring fewer training FLOPs than models trained on Stable Diffusion latents. On Kinetics-600, we set a new state-of-the-art FVD of 1.3."
     },
     {
+      "title": "Frontier AI Risk Management Framework in Practice: A Risk Analysis Technical Report v1.5",
+      "url": "https://huggingface.co/papers/2602.14457",
+      "published": "2026-02-21T14:29:02.097352",
+      "likes": 22,
+      "institution": "AI45Research4",
+      "paper_link": "https://arxiv.org/abs/2602.14457",
+      "code_link": "https://ai45lab.github.io/safeworkf1-page/",
+      "abstract": "To understand and identify the unprecedented risks posed by rapidly advancing artificial intelligence (AI) models, Frontier AI Risk Management Framework in Practice presents a comprehensive assessment of their frontier risks. As Large Language Models (LLMs) general capabilities rapidly evolve and the proliferation of agentic AI, this version of the risk analysis technical report presents an updated and granular assessment of five critical dimensions: cyber offense, persuasion and manipulation, strategic deception, uncontrolled AI R\\&D, and self-replication. Specifically, we introduce more complex scenarios for cyber offense. For persuasion and manipulation, we evaluate the risk of LLM-to-LLM persuasion on newly released LLMs. For strategic deception and scheming, we add the new experiment with respect to emergent misalignment. For uncontrolled AI R\\&D, we focus on the ``mis-evolution'' of agents as they autonomously expand their memory substrates and toolsets. Besides, we also monitor and evaluate the safety performance of OpenClaw during the interaction on the Moltbook. For self-replication, we introduce a new resource-constrained scenario. More importantly, we propose and validate a series of robust mitigation strategies to address these emerging threats, providing a preliminary technical and actionable pathway for the secure deployment of frontier AI. This work reflects our current understanding of AI frontier risks and urges collective action to mitigate these challenges."
+    },
+    {
+      "title": "Arcee Trinity Large Technical Report",
+      "url": "https://huggingface.co/papers/2602.17004",
+      "published": "2026-02-21T14:29:02.097352",
+      "likes": 12,
+      "institution": "Arcee AI2",
+      "paper_link": "https://arxiv.org/abs/2602.17004",
+      "abstract": "We present the technical report for Arcee Trinity Large, a sparse Mixture-of-Experts model with 400B total parameters and 13B activated per token. Additionally, we report on Trinity Nano and Trinity Mini, with Trinity Nano having 6B total parameters with 1B activated per token, Trinity Mini having 26B total parameters with 3B activated per token. The models' modern architecture includes interleaved local and global attention, gated attention, depth-scaled sandwich norm, and sigmoid routing for Mixture-of-Experts. For Trinity Large, we also introduce a new MoE load balancing strategy titled Soft-clamped Momentum Expert Bias Updates (SMEBU). We train the models using the Muon optimizer. All three models completed training with zero loss spikes. Trinity Nano and Trinity Mini were pre-trained on 10 trillion tokens, and Trinity Large was pre-trained on 17 trillion tokens. The model checkpoints are available at this https URL ."
+    },
+    {
       "title": "\"What Are You Doing?\": Effects of Intermediate Feedback from Agentic LLM In-Car Assistants During Multi-Step Processing",
       "url": "https://huggingface.co/papers/2602.15569",
-      "published": "2026-02-21T03:57:11.283663",
+      "published": "2026-02-21T14:29:02.097352",
       "likes": 12,
       "institution": "BMW LLM Research Group23",
       "paper_link": "https://arxiv.org/abs/2602.15569",
@@ -43,18 +62,9 @@
       "abstract": "Agentic AI assistants that autonomously perform multi-step tasks raise open questions for user experience: how should such systems communicate progress and reasoning during extended operations, especially in attention-critical contexts such as driving? We investigate feedback timing and verbosity from agentic LLM-based in-car assistants through a controlled, mixed-methods study (N=45) comparing planned steps and intermediate results feedback against silent operation with final-only response. Using a dual-task paradigm with an in-car voice assistant, we found that intermediate feedback significantly improved perceived speed, trust, and user experience while reducing task load - effects that held across varying task complexities and interaction contexts. Interviews further revealed user preferences for an adaptive approach: high initial transparency to establish trust, followed by progressively reducing verbosity as systems prove reliable, with adjustments based on task stakes and situational context. We translate our empirical findings into design implications for feedback timing and verbosity in agentic assistants, balancing transparency and efficiency."
     },
     {
-      "title": "Arcee Trinity Large Technical Report",
-      "url": "https://huggingface.co/papers/2602.17004",
-      "published": "2026-02-21T03:57:11.283663",
-      "likes": 11,
-      "institution": "Arcee AI2",
-      "paper_link": "https://arxiv.org/abs/2602.17004",
-      "abstract": "We present the technical report for Arcee Trinity Large, a sparse Mixture-of-Experts model with 400B total parameters and 13B activated per token. Additionally, we report on Trinity Nano and Trinity Mini, with Trinity Nano having 6B total parameters with 1B activated per token, Trinity Mini having 26B total parameters with 3B activated per token. The models' modern architecture includes interleaved local and global attention, gated attention, depth-scaled sandwich norm, and sigmoid routing for Mixture-of-Experts. For Trinity Large, we also introduce a new MoE load balancing strategy titled Soft-clamped Momentum Expert Bias Updates (SMEBU). We train the models using the Muon optimizer. All three models completed training with zero loss spikes. Trinity Nano and Trinity Mini were pre-trained on 10 trillion tokens, and Trinity Large was pre-trained on 17 trillion tokens. The model checkpoints are available at this https URL ."
-    },
-    {
       "title": "Calibrate-Then-Act: Cost-Aware Exploration in LLM Agents",
       "url": "https://huggingface.co/papers/2602.16699",
-      "published": "2026-02-21T03:57:11.283663",
+      "published": "2026-02-21T14:29:02.097352",
       "likes": 11,
       "institution": "·3 authors42",
       "paper_link": "https://arxiv.org/abs/2602.16699",
@@ -64,7 +74,7 @@
     {
       "title": "DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers",
       "url": "https://huggingface.co/papers/2602.16968",
-      "published": "2026-02-21T03:57:11.283663",
+      "published": "2026-02-21T14:29:02.097352",
       "likes": 10,
       "institution": "Amazon3",
       "paper_link": "https://arxiv.org/abs/2602.16968",
@@ -74,7 +84,7 @@
     {
       "title": "TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment",
       "url": "https://huggingface.co/papers/2602.13579",
-      "published": "2026-02-21T03:57:11.283663",
+      "published": "2026-02-21T14:29:02.097352",
       "likes": 10,
       "institution": "University of Michigan3",
       "paper_link": "https://arxiv.org/abs/2602.13579",
@@ -82,20 +92,10 @@
       "abstract": "Human demonstrations collected by wearable devices (e.g., tactile gloves) provide fast and dexterous supervision for policy learning, and are guided by rich, natural tactile feedback. However, a key challenge is how to transfer human-collected tactile signals to robots despite the differences in sensing modalities and embodiment. Existing human-to-robot (H2R) approaches that incorporate touch often assume identical tactile sensors, require paired data, and involve little to no embodiment gap between human demonstrator and the robots, limiting scalability and generality. We propose TactAlign, a cross-embodiment tactile alignment method that transfers human-collected tactile signals to a robot with different embodiment. TactAlign transforms human and robot tactile observations into a shared latent representation using a rectified flow, without paired datasets, manual labels, or privileged information. Our method enables low-cost latent transport guided by hand-object interaction-derived pseudo-pairs. We demonstrate that TactAlign improves H2R policy transfer across multiple contact-rich tasks (pivoting, insertion, lid closing), generalizes to unseen objects and tasks with human data (less than 5 minutes), and enables zero-shot H2R transfer on a highly dexterous tasks (light bulb screwing)."
     },
     {
-      "title": "Frontier AI Risk Management Framework in Practice: A Risk Analysis Technical Report v1.5",
-      "url": "https://huggingface.co/papers/2602.14457",
-      "published": "2026-02-21T03:57:11.283663",
-      "likes": 8,
-      "institution": "AI45Research4",
-      "paper_link": "https://arxiv.org/abs/2602.14457",
-      "code_link": "https://ai45lab.github.io/safeworkf1-page/",
-      "abstract": "To understand and identify the unprecedented risks posed by rapidly advancing artificial intelligence (AI) models, Frontier AI Risk Management Framework in Practice presents a comprehensive assessment of their frontier risks. As Large Language Models (LLMs) general capabilities rapidly evolve and the proliferation of agentic AI, this version of the risk analysis technical report presents an updated and granular assessment of five critical dimensions: cyber offense, persuasion and manipulation, strategic deception, uncontrolled AI R\\&D, and self-replication. Specifically, we introduce more complex scenarios for cyber offense. For persuasion and manipulation, we evaluate the risk of LLM-to-LLM persuasion on newly released LLMs. For strategic deception and scheming, we add the new experiment with respect to emergent misalignment. For uncontrolled AI R\\&D, we focus on the ``mis-evolution'' of agents as they autonomously expand their memory substrates and toolsets. Besides, we also monitor and evaluate the safety performance of OpenClaw during the interaction on the Moltbook. For self-replication, we introduce a new resource-constrained scenario. More importantly, we propose and validate a series of robust mitigation strategies to address these emerging threats, providing a preliminary technical and actionable pathway for the secure deployment of frontier AI. This work reflects our current understanding of AI frontier risks and urges collective action to mitigate these challenges."
-    },
-    {
       "title": "Computer-Using World Model",
       "url": "https://huggingface.co/papers/2602.17365",
-      "published": "2026-02-21T03:57:11.283663",
-      "likes": 6,
+      "published": "2026-02-21T14:29:02.097352",
+      "likes": 8,
       "institution": "·18 authors2",
       "paper_link": "https://arxiv.org/abs/2602.17365",
       "abstract": "Agents operating in complex software environments benefit from reasoning about the consequences of their actions, as even a single incorrect user interface (UI) operation can derail long, artifact-preserving workflows. This challenge is particularly acute for computer-using scenarios, where real execution does not support counterfactual exploration, making large-scale trial-and-error learning and planning impractical despite the environment being fully digital and deterministic. We introduce the Computer-Using World Model (CUWM), a world model for desktop software that predicts the next UI state given the current state and a candidate action. CUWM adopts a two-stage factorization of UI dynamics: it first predicts a textual description of agent-relevant state changes, and then realizes these changes visually to synthesize the next screenshot. CUWM is trained on offline UI transitions collected from agents interacting with real Microsoft Office applications, and further refined with a lightweight reinforcement learning stage that aligns textual transition predictions with the structural requirements of computer-using environments. We evaluate CUWM via test-time action search, where a frozen agent uses the world model to simulate and compare candidate actions before execution. Across a range of Office tasks, world-model-guided test-time scaling improves decision quality and execution robustness."
