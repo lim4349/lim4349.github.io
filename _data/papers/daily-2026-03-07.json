@@ -1,13 +1,13 @@
 {
   "date": "2026-03-07",
-  "crawled_at": "2026-03-07T03:51:39.965933",
+  "crawled_at": "2026-03-07T14:26:57.087880",
   "total_papers": 10,
   "papers": [
     {
       "title": "MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier",
       "url": "https://huggingface.co/papers/2603.03756",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 74,
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 77,
       "institution": "MiroMind AI93",
       "paper_link": "https://arxiv.org/abs/2603.03756",
       "code_link": "https://github.com/ZonglinY/MOOSE-Star",
@@ -16,9 +16,9 @@
     {
       "title": "SkillNet: Create, Evaluate, and Connect AI Skills",
       "url": "https://huggingface.co/papers/2603.04448",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 45,
-      "institution": "Zhejiang University1003",
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 52,
+      "institution": "Zhejiang University1243",
       "paper_link": "https://arxiv.org/abs/2603.04448",
       "code_link": "https://github.com/zjunlp/SkillNet",
       "abstract": "Current AI agents can flexibly invoke tools and execute complex tasks, yet their long-term advancement is hindered by the lack of systematic accumulation and transfer of skills. Without a unified mechanism for skill consolidation, agents frequently ``reinvent the wheel'', rediscovering solutions in isolated contexts without leveraging prior strategies. To overcome this limitation, we introduce SkillNet, an open infrastructure designed to create, evaluate, and organize AI skills at scale. SkillNet structures skills within a unified ontology that supports creating skills from heterogeneous sources, establishing rich relational connections, and performing multi-dimensional evaluation across Safety, Completeness, Executability, Maintainability, and Cost-awareness. Our infrastructure integrates a repository of over 200,000 skills, an interactive platform, and a versatile Python toolkit. Experimental evaluations on ALFWorld, WebShop, and ScienceWorld demonstrate that SkillNet significantly enhances agent performance, improving average rewards by 40% and reducing execution steps by 30% across multiple backbone models. By formalizing skills as evolving, composable assets, SkillNet provides a robust foundation for agents to move from transient experience to durable mastery."
@@ -26,9 +26,9 @@
     {
       "title": "DARE: Aligning LLM Agents with the R Statistical Ecosystem via Distribution-Aware Retrieval",
       "url": "https://huggingface.co/papers/2603.04743",
-      "published": "2026-03-07T03:51:26.673530",
+      "published": "2026-03-07T14:26:42.939321",
       "likes": 41,
-      "institution": "The Hong Kong Polytechnic University63",
+      "institution": "The Hong Kong Polytechnic University73",
       "paper_link": "https://arxiv.org/abs/2603.04743",
       "code_link": "https://ama-cmfai.github.io/DARE_webpage/",
       "abstract": "Large Language Model (LLM) agents can automate data-science workflows, but many rigorous statistical methods implemented in R remain underused because LLMs struggle with statistical knowledge and tool retrieval. Existing retrieval-augmented approaches focus on function-level semantics and ignore data distribution, producing suboptimal matches. We propose DARE (Distribution-Aware Retrieval Embedding), a lightweight, plug-and-play retrieval model that incorporates data distribution information into function representations for R package retrieval. Our main contributions are: (i) RPKB, a curated R Package Knowledge Base derived from 8,191 high-quality CRAN packages; (ii) DARE, an embedding model that fuses distributional features with function metadata to improve retrieval relevance; and (iii) RCodingAgent, an R-oriented LLM agent for reliable R code generation and a suite of statistical analysis tasks for systematically evaluating LLM agents in realistic analytical scenarios. Empirically, DARE achieves an NDCG at 10 of 93.47%, outperforming state-of-the-art open-source embedding models by up to 17% on package retrieval while using substantially fewer parameters. Integrating DARE into RCodingAgent yields significant gains on downstream analysis tasks. This work helps narrow the gap between LLM automation and the mature R statistical ecosystem."
@@ -36,8 +36,8 @@
     {
       "title": "AgentVista: Evaluating Multimodal Agents in Ultra-Challenging Realistic Visual Scenarios",
       "url": "https://huggingface.co/papers/2602.23166",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 30,
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 31,
       "institution": "HKUST NLP Group302",
       "paper_link": "https://arxiv.org/abs/2602.23166",
       "code_link": "https://agentvista-bench.github.io/",
@@ -46,7 +46,7 @@
     {
       "title": "RoboPocket: Improve Robot Policies Instantly with Your Phone",
       "url": "https://huggingface.co/papers/2603.05504",
-      "published": "2026-03-07T03:51:26.673530",
+      "published": "2026-03-07T14:26:42.939321",
       "likes": 29,
       "institution": "Shanghai Jiao Tong University4",
       "paper_link": "https://arxiv.org/abs/2603.05504",
@@ -56,18 +56,28 @@
     {
       "title": "HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images",
       "url": "https://huggingface.co/papers/2603.02210",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 24,
-      "institution": "ByteDance222",
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 25,
+      "institution": "ByteDance232",
       "paper_link": "https://arxiv.org/abs/2603.02210",
       "code_link": "https://correr-zhou.github.io/HiFi-Inpaint/",
       "abstract": "Human-product images, which showcase the integration of humans and products, play a vital role in advertising, e-commerce, and digital marketing. The essential challenge of generating such images lies in ensuring the high-fidelity preservation of product details. Among existing paradigms, reference-based inpainting offers a targeted solution by leveraging product reference images to guide the inpainting process. However, limitations remain in three key aspects: the lack of diverse large-scale training data, the struggle of current models to focus on product detail preservation, and the inability of coarse supervision for achieving precise guidance. To address these issues, we propose HiFi-Inpaint, a novel high-fidelity reference-based inpainting framework tailored for generating human-product images. HiFi-Inpaint introduces Shared Enhancement Attention (SEA) to refine fine-grained product features and Detail-Aware Loss (DAL) to enforce precise pixel-level supervision using high-frequency maps. Additionally, we construct a new dataset, HP-Image-40K, with samples curated from self-synthesis data and processed with automatic filtering. Experimental results show that HiFi-Inpaint achieves state-of-the-art performance, delivering detail-preserving human-product images."
     },
     {
+      "title": "Interactive Benchmarks",
+      "url": "https://huggingface.co/papers/2603.04737",
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 13,
+      "institution": "Interactive Benchmarks152",
+      "paper_link": "https://arxiv.org/abs/2603.04737",
+      "code_link": "https://github.com/interactivebench/interactivebench",
+      "abstract": "Standard benchmarks have become increasingly unreliable due to saturation, subjectivity, and poor generalization. We argue that evaluating model's ability to acquire information actively is important to assess model's intelligence. We propose Interactive Benchmarks, a unified evaluation paradigm that assesses model's reasoning ability in an interactive process under budget constraints. We instantiate this framework across two settings: Interactive Proofs, where models interact with a judge to deduce objective truths or answers in logic and mathematics; and Interactive Games, where models reason strategically to maximize long-horizon utilities. Our results show that interactive benchmarks provide a robust and faithful assessment of model intelligence, revealing that there is still substantial room to improve in interactive scenarios. Project page: this https URL"
+    },
+    {
       "title": "SageBwd: A Trainable Low-bit Attention",
       "url": "https://huggingface.co/papers/2603.02170",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 12,
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 13,
       "institution": "University of California, Berkeley2",
       "paper_link": "https://arxiv.org/abs/2603.02170",
       "code_link": "https://github.com/thu-ml/SageAttention",
@@ -76,9 +86,9 @@
     {
       "title": "DreamWorld: Unified World Modeling in Video Generation",
       "url": "https://huggingface.co/papers/2603.00466",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 12,
-      "institution": "·8 authors153",
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 13,
+      "institution": "·8 authors163",
       "paper_link": "https://arxiv.org/abs/2603.00466",
       "code_link": "https://github.com/ABU121111/DreamWorld",
       "abstract": "Despite impressive progress in video generation, existing models remain limited to surface-level plausibility, lacking a coherent and unified understanding of the world. Prior approaches typically incorporate only a single form of world-related knowledge or rely on rigid alignment strategies to introduce additional knowledge. However, aligning the single world knowledge is insufficient to constitute a world model that requires jointly modeling multiple heterogeneous dimensions (e.g., physical commonsense, 3D and temporal consistency). To address this limitation, we introduce \\textbf{DreamWorld}, a unified framework that integrates complementary world knowledge into video generators via a \\textbf{Joint World Modeling Paradigm}, jointly predicting video pixels and features from foundation models to capture temporal dynamics, spatial geometry, and semantic consistency. However, naively optimizing these heterogeneous objectives can lead to visual instability and temporal flickering. To mitigate this issue, we propose \\textit{Consistent Constraint Annealing (CCA)} to progressively regulate world-level constraints during training, and \\textit{Multi-Source Inner-Guidance} to enforce learned world priors at inference. Extensive evaluations show that DreamWorld improves world consistency, outperforming Wan2.1 by 2.26 points on VBench. Code will be made publicly available at \\href{ this https URL }{\\textcolor{mypink}{\\textbf{Github}}}."
@@ -86,22 +96,12 @@
     {
       "title": "Large Multimodal Models as General In-Context Classifiers",
       "url": "https://huggingface.co/papers/2602.23229",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 12,
-      "institution": "Multimedia and Human Understanding Group172",
+      "published": "2026-03-07T14:26:42.939321",
+      "likes": 13,
+      "institution": "Multimedia and Human Understanding Group182",
       "paper_link": "https://arxiv.org/abs/2602.23229",
       "code_link": "https://circle-lmm.github.io/",
       "abstract": "Which multimodal model should we use for classification? Previous studies suggest that the answer lies in CLIP-like contrastive Vision-Language Models (VLMs), due to their remarkable performance in zero-shot classification. In contrast, Large Multimodal Models (LMM) are more suitable for complex tasks. In this work, we argue that this answer overlooks an important capability of LMMs: in-context learning. We benchmark state-of-the-art LMMs on diverse datasets for closed-world classification and find that, although their zero-shot performance is lower than CLIP's, LMMs with a few in-context examples can match or even surpass contrastive VLMs with cache-based adapters, their \"in-context\" equivalent. We extend this analysis to the open-world setting, where the generative nature of LMMs makes them more suitable for the task. In this challenging scenario, LMMs struggle whenever provided with imperfect context information. To address this issue, we propose CIRCLE, a simple training-free method that assigns pseudo-labels to in-context examples, iteratively refining them with the available context itself. Through extensive experiments, we show that CIRCLE establishes a robust baseline for open-world classification, surpassing VLM counterparts and highlighting the potential of LMMs to serve as unified classifiers, and a flexible alternative to specialized models."
-    },
-    {
-      "title": "Interactive Benchmarks",
-      "url": "https://huggingface.co/papers/2603.04737",
-      "published": "2026-03-07T03:51:26.673530",
-      "likes": 11,
-      "institution": "Interactive Benchmarks152",
-      "paper_link": "https://arxiv.org/abs/2603.04737",
-      "code_link": "https://github.com/interactivebench/interactivebench",
-      "abstract": "Standard benchmarks have become increasingly unreliable due to saturation, subjectivity, and poor generalization. We argue that evaluating model's ability to acquire information actively is important to assess model's intelligence. We propose Interactive Benchmarks, a unified evaluation paradigm that assesses model's reasoning ability in an interactive process under budget constraints. We instantiate this framework across two settings: Interactive Proofs, where models interact with a judge to deduce objective truths or answers in logic and mathematics; and Interactive Games, where models reason strategically to maximize long-horizon utilities. Our results show that interactive benchmarks provide a robust and faithful assessment of model intelligence, revealing that there is still substantial room to improve in interactive scenarios. Project page: this https URL"
     }
   ]
 }
