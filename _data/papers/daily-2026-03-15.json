@@ -1,14 +1,14 @@
 {
   "date": "2026-03-15",
-  "crawled_at": "2026-03-15T04:24:00.324424",
+  "crawled_at": "2026-03-15T14:33:01.710662",
   "total_papers": 10,
   "papers": [
     {
       "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
       "url": "https://huggingface.co/papers/2603.12255",
-      "published": "2026-03-15T04:23:47.239793",
-      "likes": 69,
-      "institution": "Tencent Hunyuan942",
+      "published": "2026-03-15T14:32:48.169000",
+      "likes": 71,
+      "institution": "Tencent Hunyuan962",
       "paper_link": "https://arxiv.org/abs/2603.12255",
       "code_link": "https://liuff19.github.io/Spatial-TTT/",
       "abstract": "Humans perceive and understand real-world spaces through a stream of visual observations. Therefore, the ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time. In this paper, we propose Spatial-TTT towards streaming visual-based spatial intelligence with test-time training (TTT), which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. Specifically, we design a hybrid architecture and adopt large-chunk updates parallel with sliding-window attention for efficient spatial video processing. To further promote spatial awareness, we introduce a spatial-predictive mechanism applied to TTT layers with 3D spatiotemporal convolution, which encourages the model to capture geometric correspondence and temporal continuity across frames. Beyond architecture design, we construct a dataset with dense 3D spatial descriptions, which guides the model to update its fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments demonstrate that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks. Project page: this https URL ."
@@ -16,9 +16,9 @@
     {
       "title": "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections",
       "url": "https://huggingface.co/papers/2603.12180",
-      "published": "2026-03-15T04:23:47.239793",
-      "likes": 49,
-      "institution": "Snowflake142",
+      "published": "2026-03-15T14:32:48.169000",
+      "likes": 50,
+      "institution": "Snowflake152",
       "paper_link": "https://arxiv.org/abs/2603.12180",
       "code_link": "https://github.com/OxRML/MADQA",
       "abstract": "Multimodal agents offer a promising path to automating complex document-intensive workflows. Yet, a critical question remains: do these agents demonstrate genuine strategic reasoning, or merely stochastic trial-and-error search? To address this, we introduce MADQA, a benchmark of 2,250 human-authored questions grounded in 800 heterogeneous PDF documents. Guided by Classical Test Theory, we design it to maximize discriminative power across varying levels of agentic abilities. To evaluate agentic behaviour, we introduce a novel evaluation protocol measuring the accuracy-effort trade-off. Using this framework, we show that while the best agents can match human searchers in raw accuracy, they succeed on largely different questions and rely on brute-force search to compensate for weak strategic planning. They fail to close the nearly 20% gap to oracle performance, persisting in unproductive loops. We release the dataset and evaluation harness to help facilitate the transition from brute-force retrieval to calibrated, efficient reasoning."
@@ -26,9 +26,9 @@
     {
       "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
       "url": "https://huggingface.co/papers/2603.12201",
-      "published": "2026-03-15T04:23:47.239793",
-      "likes": 35,
-      "institution": "Z.ai113",
+      "published": "2026-03-15T14:32:48.169000",
+      "likes": 37,
+      "institution": "Z.ai123",
       "paper_link": "https://arxiv.org/abs/2603.12201",
       "code_link": "https://github.com/THUDM/IndexCache",
       "abstract": "Long-context agentic workflows have emerged as a defining use case for large language models, making attention efficiency critical for both inference speed and serving cost. Sparse attention addresses this challenge effectively, and DeepSeek Sparse Attention (DSA) is a representative production-grade solution: a lightweight lightning indexer selects the top-k most relevant tokens per query, reducing core attention from $O(L^2)$ to $O(Lk)$. However, the indexer itself retains $O(L^2)$ complexity and must run independently at every layer, despite the fact that the resulting top-k selections are highly similar across consecutive layers. We present IndexCache, which exploits this cross-layer redundancy by partitioning layers into a small set of Full layers that run their own indexers and a majority of Shared layers that simply reuse the nearest Full layer's top-k indices. We propose two complementary approaches to determine and optimize this configuration. Training-free IndexCache applies a greedy search algorithm that selects which layers to retain indexers by directly minimizing language modeling loss on a calibration set, requiring no weight updates. Training-aware IndexCache introduces a multi-layer distillation loss that trains each retained indexer against the averaged attention distributions of all layers it serves, enabling even simple interleaved patterns to match full-indexer accuracy. Experimental results on a 30B DSA model show that IndexCache can remove 75% of indexer computations with negligible quality degradation, achieving up to 1.82$\\times$ prefill speedup and 1.48$\\times$ decode speedup compared to standard DSA. These positive results are further confirmed by our preliminary experiments on the production-scale GLM-5 model (Figure 1)."
@@ -36,8 +36,8 @@
     {
       "title": "Video-Based Reward Modeling for Computer-Use Agents",
       "url": "https://huggingface.co/papers/2603.10178",
-      "published": "2026-03-15T04:23:47.239793",
-      "likes": 34,
+      "published": "2026-03-15T14:32:48.169000",
+      "likes": 35,
       "institution": "Language, Intelligence, and Model Evaluation Lab102",
       "paper_link": "https://arxiv.org/abs/2603.10178",
       "code_link": "https://github.com/limenlp/ExeVRM",
@@ -46,7 +46,7 @@
     {
       "title": "ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation",
       "url": "https://huggingface.co/papers/2603.11421",
-      "published": "2026-03-15T04:23:47.239793",
+      "published": "2026-03-15T14:32:48.169000",
       "likes": 28,
       "institution": "Tencent362",
       "paper_link": "https://arxiv.org/abs/2603.11421",
@@ -56,7 +56,7 @@
     {
       "title": "DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning",
       "url": "https://huggingface.co/papers/2603.12257",
-      "published": "2026-03-15T04:23:47.239793",
+      "published": "2026-03-15T14:32:48.169000",
       "likes": 26,
       "institution": "TongyiLab2",
       "paper_link": "https://arxiv.org/abs/2603.12257",
@@ -66,7 +66,7 @@
     {
       "title": "Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation",
       "url": "https://huggingface.co/papers/2603.12247",
-      "published": "2026-03-15T04:23:47.239793",
+      "published": "2026-03-15T14:32:48.169000",
       "likes": 22,
       "institution": "SJTU VisionXLab232",
       "paper_link": "https://arxiv.org/abs/2603.12247",
@@ -76,9 +76,9 @@
     {
       "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents",
       "url": "https://huggingface.co/papers/2603.12056",
-      "published": "2026-03-15T04:23:47.239793",
+      "published": "2026-03-15T14:32:48.169000",
       "likes": 20,
-      "institution": "·5 authors342",
+      "institution": "·5 authors452",
       "paper_link": "https://arxiv.org/abs/2603.12056",
       "code_link": "https://xskill-agent.github.io/xskill_page/",
       "abstract": "Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experiences, providing concise action-level guidance for tool selection and decision making, and skills, providing structured task-level guidance for planning and tool use. To this end, we propose XSkill, a dual-stream framework for continual learning from experience and skills in multimodal agents. XSkill grounds both knowledge extraction and retrieval in visual observations. During accumulation, XSkill distills and consolidates experiences and skills from multi-path rollouts via visually grounded summarization and cross-rollout critique. During inference, it retrieves and adapts this knowledge to the current visual context and feeds usage history back into accumulation to form a continual learning loop. Evaluated on five benchmarks across diverse domains with four backbone models, XSkill consistently and substantially outperforms both tool-only and learning-based baselines. Further analysis reveals that the two knowledge streams play complementary roles in influencing the reasoning behaviors of agents and show superior zero-shot generalization."
@@ -86,9 +86,9 @@
     {
       "title": "DVD: Deterministic Video Depth Estimation with Generative Priors",
       "url": "https://huggingface.co/papers/2603.12250",
-      "published": "2026-03-15T04:23:47.239793",
-      "likes": 17,
-      "institution": "·15 authors1012",
+      "published": "2026-03-15T14:32:48.169000",
+      "likes": 18,
+      "institution": "·15 authors1102",
       "paper_link": "https://arxiv.org/abs/2603.12250",
       "code_link": "https://dvd-project.github.io/",
       "abstract": "Existing video depth estimation faces a fundamental trade-off: generative models suffer from stochastic geometric hallucinations and scale drift, while discriminative models demand massive labeled datasets to resolve semantic ambiguities. To break this impasse, we present DVD, the first framework to deterministically adapt pre-trained video diffusion models into single-pass depth regressors. Specifically, DVD features three core designs: (i) repurposing the diffusion timestep as a structural anchor to balance global stability with high-frequency details; (ii) latent manifold rectification (LMR) to mitigate regression-induced over-smoothing, enforcing differential constraints to restore sharp boundaries and coherent motion; and (iii) global affine coherence, an inherent property bounding inter-window divergence, which enables seamless long-video inference without requiring complex temporal alignment. Extensive experiments demonstrate that DVD achieves state-of-the-art zero-shot performance across benchmarks. Furthermore, DVD successfully unlocks the profound geometric priors implicit in video foundation models using 163x less task-specific data than leading baselines. Notably, we fully release our pipeline, providing the whole training suite for SOTA video depth estimation to benefit the open-source community."
@@ -96,7 +96,7 @@
     {
       "title": "WeEdit: A Dataset, Benchmark and Glyph-Guided Framework for Text-centric Image Editing",
       "url": "https://huggingface.co/papers/2603.11593",
-      "published": "2026-03-15T04:23:47.239793",
+      "published": "2026-03-15T14:32:48.169000",
       "likes": 15,
       "institution": "·7 authors1",
       "paper_link": "https://arxiv.org/abs/2603.11593",
