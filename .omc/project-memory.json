@@ -1,0 +1,253 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1773756905142,
+  "projectRoot": "/home/lsg/works/lim4349.github.io",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "Python",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "requirements.txt"
+        ]
+      },
+      {
+        "name": "Ruby",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Gemfile"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "rollup",
+        "version": "4.52.5",
+        "category": "build"
+      }
+    ],
+    "packageManager": "bundler",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": "npm test",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {
+      "build": "concurrently npm:build:*",
+      "build:css": "node purgecss.js",
+      "build:js": "rollup -c --bundleConfigAsCjs --environment BUILD:production",
+      "watch:js": "rollup -c --bundleConfigAsCjs -w",
+      "lint:js": "eslint",
+      "lint:scss": "stylelint _sass/**/*.scss",
+      "lint:fix:scss": "npm run lint:scss -- --fix",
+      "test": "npm run lint:js && npm run lint:scss",
+      "prepare": "husky"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets",
+      "docs",
+      "scripts"
+    ],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "_data": {
+      "path": "_data",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1773756905114,
+      "keyFiles": [
+        "authors.yml",
+        "contact.yml",
+        "media.yml",
+        "share.yml"
+      ]
+    },
+    "_includes": {
+      "path": "_includes",
+      "purpose": null,
+      "fileCount": 28,
+      "lastAccessed": 1773756905126,
+      "keyFiles": [
+        "comment.html",
+        "datetime.html",
+        "favicons.html",
+        "footer.html",
+        "head.html"
+      ]
+    },
+    "_javascript": {
+      "path": "_javascript",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1773756905129,
+      "keyFiles": [
+        "categories.js",
+        "commons.js",
+        "home.js",
+        "misc.js",
+        "page.js"
+      ]
+    },
+    "_layouts": {
+      "path": "_layouts",
+      "purpose": null,
+      "fileCount": 10,
+      "lastAccessed": 1773756905132,
+      "keyFiles": [
+        "archives.html",
+        "categories.html",
+        "category.html",
+        "compress.html",
+        "default.html"
+      ]
+    },
+    "_plugins": {
+      "path": "_plugins",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1773756905133,
+      "keyFiles": [
+        "posts-lastmod-hook.rb"
+      ]
+    },
+    "_posts": {
+      "path": "_posts",
+      "purpose": null,
+      "fileCount": 128,
+      "lastAccessed": 1773756905135,
+      "keyFiles": [
+        "2025-11-03-daily-papers-1762174155.md",
+        "2025-11-03-supprots-sdqa.md",
+        "2025-11-04-daily-papers-1762260555.md",
+        "2025-11-05-daily-papers-1762346955.md",
+        "2025-11-06-daily-papers-1762433355.md"
+      ]
+    },
+    "_sass": {
+      "path": "_sass",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1773756905135,
+      "keyFiles": [
+        "main.bundle.scss",
+        "main.scss"
+      ]
+    },
+    "_tabs": {
+      "path": "_tabs",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1773756905135,
+      "keyFiles": [
+        "about.md",
+        "archives.md",
+        "categories.md",
+        "tags.md"
+      ]
+    },
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 3,
+      "lastAccessed": 1773756905136,
+      "keyFiles": [
+        "404.html",
+        "feed.xml",
+        "robots.txt"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 4,
+      "lastAccessed": 1773756905136,
+      "keyFiles": [
+        "CHANGELOG.md",
+        "CODE_OF_CONDUCT.md",
+        "CONTRIBUTING.md",
+        "SECURITY.md"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 3,
+      "lastAccessed": 1773756905137,
+      "keyFiles": [
+        "LOGIC_REVIEW.md",
+        "README.md",
+        "crawl_hf_papers.py"
+      ]
+    },
+    "tools": {
+      "path": "tools",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1773756905137,
+      "keyFiles": [
+        "init.sh",
+        "release.sh",
+        "run.sh",
+        "test.sh"
+      ]
+    },
+    "_sass/components": {
+      "path": "_sass/components",
+      "purpose": "UI components",
+      "fileCount": 3,
+      "lastAccessed": 1773756905139,
+      "keyFiles": [
+        "_buttons.scss",
+        "_index.scss",
+        "_popups.scss"
+      ]
+    },
+    "_sass/pages": {
+      "path": "_sass/pages",
+      "purpose": "Page components",
+      "fileCount": 8,
+      "lastAccessed": 1773756905140,
+      "keyFiles": [
+        "_archives.scss",
+        "_categories.scss",
+        "_category-tag.scss"
+      ]
+    },
+    "assets/lib": {
+      "path": "assets/lib",
+      "purpose": "Library code",
+      "fileCount": 0,
+      "lastAccessed": 1773756905141,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}

@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git push\",\"description\":\"Push to remote\"}",
+  "error": "Exit code 1\nTo https://github.com/lim4349/lim4349.github.io.git\n ! [rejected]        master -> master (fetch first)\nerror: 레퍼런스를 'https://github.com/lim4349/lim4349.github.io.git'에 푸시하는데 실패했습니다\n힌트: Updates were rejected because the remote contains work that you do not\n힌트: have locally. This is usually caused by another repository pushing to\n힌트: the same ref. If you want to integrate the remote changes, use\n힌트: 'git pull' before pushing again.\n힌트: See the 'Note about fast-forwards' in 'git push -...",
+  "timestamp": "2026-03-17T14:16:29.019Z",
+  "retry_count": 1
+}
