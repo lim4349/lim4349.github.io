@@ -1,0 +1,103 @@
+{
+  "date": "2026-03-25",
+  "crawled_at": "2026-03-25T04:10:05.157831",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "PEARL: Personalized Streaming Video Understanding Model",
+      "url": "https://huggingface.co/papers/2603.20422",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 29,
+      "institution": "Peking University232",
+      "paper_link": "https://arxiv.org/abs/2603.20422",
+      "code_link": "https://github.com/Yuanhong-Zheng/PEARL",
+      "abstract": "Human cognition of new concepts is inherently a streaming process: we continuously recognize new objects or identities and update our memories over time. However, current multimodal personalization methods are largely limited to static images or offline videos. This disconnects continuous visual input from instant real-world feedback, limiting their ability to provide the real-time, interactive personalized responses essential for future AI assistants. To bridge this gap, we first propose and formally define the novel task of Personalized Streaming Video Understanding (PSVU). To facilitate research in this new direction, we introduce PEARL-Bench, the first comprehensive benchmark designed specifically to evaluate this challenging setting. It evaluates a model's ability to respond to personalized concepts at exact timestamps under two modes: (1) Frame-level, focusing on a specific person or object in discrete frames, and (2) a novel Video-level, focusing on personalized actions unfolding across continuous frames. PEARL-Bench comprises 132 unique videos and 2,173 fine-grained annotations with precise timestamps. Concept diversity and annotation quality are strictly ensured through a combined pipeline of automated generation and human verification. To tackle this challenging new setting, we further propose PEARL, a plug-and-play, training-free strategy that serves as a strong baseline. Extensive evaluations across 8 offline and online models demonstrate that PEARL achieves state-of-the-art performance. Notably, it brings consistent PSVU improvements when applied to 3 distinct architectures, proving to be a highly effective and robust strategy. We hope this work advances vision-language model (VLM) personalization and inspires further research into streaming personalized AI assistants. Code is available at this https URL ."
+    },
+    {
+      "title": "WildWorld: A Large-Scale Dataset for Dynamic World Modeling with Actions and Explicit State toward Generative ARPG",
+      "url": "https://huggingface.co/papers/2603.23497",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 26,
+      "institution": "·8 authors",
+      "paper_link": "https://arxiv.org/abs/2603.23497",
+      "code_link": "https://shandaai.github.io/wildworld-project/",
+      "abstract": "Dynamical systems theory and reinforcement learning view world evolution as latent-state dynamics driven by actions, with visual observations providing partial information about the state. Recent video world models attempt to learn this action-conditioned dynamics from data. However, existing datasets rarely match the requirement: they typically lack diverse and semantically meaningful action spaces, and actions are directly tied to visual observations rather than mediated by underlying states. As a result, actions are often entangled with pixel-level changes, making it difficult for models to learn structured world dynamics and maintain consistent evolution over long horizons. In this paper, we propose WildWorld, a large-scale action-conditioned world modeling dataset with explicit state annotations, automatically collected from a photorealistic AAA action role-playing game (Monster Hunter: Wilds). WildWorld contains over 108 million frames and features more than 450 actions, including movement, attacks, and skill casting, together with synchronized per-frame annotations of character skeletons, world states, camera poses, and depth maps. We further derive WildBench to evaluate models through Action Following and State Alignment. Extensive experiments reveal persistent challenges in modeling semantically rich actions and maintaining long-horizon state consistency, highlighting the need for state-aware video generation. The project page is this https URL ."
+    },
+    {
+      "title": "From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents",
+      "url": "https://huggingface.co/papers/2603.22386",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 22,
+      "institution": "IBM81",
+      "paper_link": "https://arxiv.org/abs/2603.22386",
+      "code_link": "https://github.com/IBM/awesome-agentic-workflow-optimization",
+      "abstract": "Large language model (LLM)-based systems are becoming increasingly popular for solving tasks by constructing executable workflows that interleave LLM calls, information retrieval, tool use, code execution, memory updates, and verification. This survey reviews recent methods for designing and optimizing such workflows, which we treat as agentic computation graphs (ACGs). We organize the literature based on when workflow structure is determined, where structure refers to which components or agents are present, how they depend on each other, and how information flows between them. This lens distinguishes static methods, which fix a reusable workflow scaffold before deployment, from dynamic methods, which select, generate, or revise the workflow for a particular run before or during execution. We further organize prior work along three dimensions: when structure is determined, what part of the workflow is optimized, and which evaluation signals guide optimization (e.g., task metrics, verifier signals, preferences, or trace-derived feedback). We also distinguish reusable workflow templates, run-specific realized graphs, and execution traces, separating reusable design choices from the structures actually deployed in a given run and from realized runtime behavior. Finally, we outline a structure-aware evaluation perspective that complements downstream task metrics with graph-level properties, execution cost, robustness, and structural variation across inputs. Our goal is to provide a clear vocabulary, a unified framework for positioning new methods, a more comparable view of existing body of literature, and a more reproducible evaluation standard for future work in workflow optimizations for LLM agents."
+    },
+    {
+      "title": "Rethinking Token-Level Policy Optimization for Multimodal Chain-of-Thought",
+      "url": "https://huggingface.co/papers/2603.22847",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 12,
+      "institution": "·7 authors21",
+      "paper_link": "https://arxiv.org/abs/2603.22847",
+      "code_link": "https://github.com/xzxxntxdy/PEPO",
+      "abstract": "Multimodal Chain-of-Thought (CoT) reasoning requires large vision-language models to construct reasoning trajectories that interleave perceptual grounding with multi-step inference. However, existing Reinforcement Learning with Verifiable Rewards (RLVR) methods typically optimize reasoning at a coarse granularity, treating CoT uniformly without distinguishing their varying degrees of visual grounding. In this work, we conduct a token-level analysis of multimodal reasoning trajectories and show that successful reasoning is characterized by structured token dynamics reflecting both perceptual grounding and exploratory inference. Building upon this analysis, we propose Perception-Exploration Policy Optimization (PEPO), which derives a perception prior from hidden state similarity and integrates it with token entropy through a smooth gating mechanism to produce token-level advantages. PEPO integrates seamlessly with existing RLVR frameworks such as GRPO and DAPO, requiring neither additional supervision nor auxiliary branches. Extensive experiments across diverse multimodal benchmarks demonstrate consistent and robust improvements over strong RL baselines, spanning geometry reasoning, visual grounding, visual puzzle solving, and few-shot classification, while maintaining stable training dynamics. Code: this https URL"
+    },
+    {
+      "title": "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning",
+      "url": "https://huggingface.co/papers/2603.23483",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 10,
+      "institution": "·6 authors61",
+      "paper_link": "https://arxiv.org/abs/2603.23483",
+      "code_link": "https://github.com/MAC-AutoML/SpecEyes",
+      "abstract": "Agentic multimodal large language models (MLLMs) (e.g., OpenAI o3 and Gemini Agentic Vision) achieve remarkable reasoning capabilities through iterative visual tool invocation. However, the cascaded perception, reasoning, and tool-calling loops introduce significant sequential overhead. This overhead, termed agentic depth, incurs prohibitive latency and seriously limits system-level concurrency. To this end, we propose SpecEyes, an agentic-level speculative acceleration framework that breaks this sequential bottleneck. Our key insight is that a lightweight, tool-free MLLM can serve as a speculative planner to predict the execution trajectory, enabling early termination of expensive tool chains without sacrificing accuracy. To regulate this speculative planning, we introduce a cognitive gating mechanism based on answer separability, which quantifies the model's confidence for self-verification without requiring oracle labels. Furthermore, we design a heterogeneous parallel funnel that exploits the stateless concurrency of the small model to mask the stateful serial execution of the large model, maximizing system throughput. Extensive experiments on V* Bench, HR-Bench, and POPE demonstrate that SpecEyes achieves 1.1-3.35x speedup over the agentic baseline while preserving or even improving accuracy (up to +6.7%), thereby boosting serving throughput under concurrent workloads."
+    },
+    {
+      "title": "UniGRPO: Unified Policy Optimization for Reasoning-Driven Visual Generation",
+      "url": "https://huggingface.co/papers/2603.23500",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 8,
+      "institution": "ByteDance Seed1",
+      "paper_link": "https://arxiv.org/abs/2603.23500",
+      "abstract": "Unified models capable of interleaved generation have emerged as a promising paradigm, with the community increasingly converging on autoregressive modeling for text and flow matching for image generation. To advance this direction, we propose a unified reinforcement learning framework tailored for interleaved generation. We validate our approach on its fundamental unit: a single round of reasoning-driven image generation, where the model first expands the user prompt through reasoning, followed by image synthesis. Formulating this multimodal generation process as a Markov Decision Process with sparse terminal rewards, we introduce UniGRPO to jointly optimize text and image generation policies using GRPO. Adopting a minimalist methodology to avoid over-design, we leverage established training recipes for both modalities by seamlessly integrating standard GRPO for reasoning and FlowGRPO for visual synthesis. To ensure scalability to multi-round interleaved generation, we introduce two critical modifications to the original FlowGRPO: (1) eliminating classifier-free guidance to maintain linear, unbranched rollouts, which is essential for scaling to complex scenarios involving multi-turn interactions and multi-condition generation (e.g., editing); and (2) replacing the standard latent KL penalty with an MSE penalty directly on the velocity fields, providing a more robust and direct regularization signal to mitigate reward hacking effectively. Our experiments demonstrate that this unified training recipe significantly enhances image generation quality through reasoning, providing a robust and scalable baseline for the future post-training of fully interleaved models."
+    },
+    {
+      "title": "MinerU-Diffusion: Rethinking Document OCR as Inverse Rendering via Diffusion Decoding",
+      "url": "https://huggingface.co/papers/2603.22458",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 8,
+      "institution": "·6 authors1",
+      "paper_link": "https://arxiv.org/abs/2603.22458",
+      "abstract": "Optical character recognition (OCR) has evolved from line-level transcription to structured document parsing, requiring models to recover long-form sequences containing layout, tables, and formulas. Despite recent advances in vision-language models, most existing systems rely on autoregressive decoding, which introduces sequential latency and amplifies error propagation in long documents. In this work, we revisit document OCR from an inverse rendering perspective, arguing that left-to-right causal generation is an artifact of serialization rather than an intrinsic property of the task. Motivated by this insight, we propose MinerU-Diffusion, a unified diffusion-based framework that replaces autoregressive sequential decoding with parallel diffusion denoising under visual conditioning. MinerU-Diffusion employs a block-wise diffusion decoder and an uncertainty-driven curriculum learning strategy to enable stable training and efficient long-sequence inference. Extensive experiments demonstrate that MinerU-Diffusion consistently improves robustness while achieving up to 3.2x faster decoding compared to autoregressive baselines. Evaluations on the proposed Semantic Shuffle benchmark further confirm its reduced dependence on linguistic priors and stronger visual OCR capability."
+    },
+    {
+      "title": "SIMART: Decomposing Monolithic Meshes into Sim-ready Articulated Assets via MLLM",
+      "url": "https://huggingface.co/papers/2603.23386",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 6,
+      "institution": "ByteDance Seed1",
+      "paper_link": "https://arxiv.org/abs/2603.23386",
+      "code_link": "https://simart-mllm.github.io/",
+      "abstract": "High-quality articulated 3D assets are indispensable for embodied AI and physical simulation, yet 3D generation still focuses on static meshes, leaving a gap in \"sim-ready\" interactive objects. Most recent articulated object creation methods rely on multi-stage pipelines that accumulate errors across decoupled modules. Alternatively, unified MLLMs offer a single-stage path to joint static asset understanding and sim-ready asset generation. However dense voxel-based 3D tokenization yields long 3D token sequences and high memory overhead, limiting scalability to complex articulated objects. To address this, we propose SIMART, a unified MLLM framework that jointly performs part-level decomposition and kinematic prediction. By introducing a Sparse 3D VQ-VAE, SIMART reduces token counts by 70% vs. dense voxel tokens, enabling high-fidelity multi-part assemblies. SIMART achieves state-of-the-art performance on PartNet-Mobility and in-the-wild AIGC datasets, and enables physics-based robotic simulation."
+    },
+    {
+      "title": "ThinkJEPA: Empowering Latent World Models with Large Vision-Language Reasoning Model",
+      "url": "https://huggingface.co/papers/2603.22281",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 5,
+      "institution": "Northeastern University1",
+      "paper_link": "https://arxiv.org/abs/2603.22281",
+      "abstract": "Recent progress in latent world models (e.g., V-JEPA2) has shown promising capability in forecasting future world states from video observations. Nevertheless, dense prediction from a short observation window limits temporal context and can bias predictors toward local, low-level extrapolation, making it difficult to capture long-horizon semantics and reducing downstream utility. Vision--language models (VLMs), in contrast, provide strong semantic grounding and general knowledge by reasoning over uniformly sampled frames, but they are not ideal as standalone dense predictors due to compute-driven sparse sampling, a language-output bottleneck that compresses fine-grained interaction states into text-oriented representations, and a data-regime mismatch when adapting to small action-conditioned datasets. We propose a VLM-guided JEPA-style latent world modeling framework that combines dense-frame dynamics modeling with long-horizon semantic guidance via a dual-temporal pathway: a dense JEPA branch for fine-grained motion and interaction cues, and a uniformly sampled VLM \\emph{thinker} branch with a larger temporal stride for knowledge-rich guidance. To transfer the VLM's progressive reasoning signals effectively, we introduce a hierarchical pyramid representation extraction module that aggregates multi-layer VLM representations into guidance features compatible with latent prediction. Experiments on hand-manipulation trajectory prediction show that our method outperforms both a strong VLM-only baseline and a JEPA-predictor baseline, and yields more robust long-horizon rollout behavior."
+    },
+    {
+      "title": "MultiBind: A Benchmark for Attribute Misbinding in Multi-Subject Generation",
+      "url": "https://huggingface.co/papers/2603.21937",
+      "published": "2026-03-25T04:09:50.962401",
+      "likes": 4,
+      "institution": "·7 authors1",
+      "paper_link": "https://arxiv.org/abs/2603.21937",
+      "abstract": "Subject-driven image generation is increasingly expected to support fine-grained control over multiple entities within a single image. In multi-reference workflows, users may provide several subject images, a background reference, and long, entity-indexed prompts to control multiple people within one scene. In this setting, a key failure mode is cross-subject attribute misbinding: attributes are preserved, edited, or transferred to the wrong subject. Existing benchmarks and metrics largely emphasize holistic fidelity or per-subject self-similarity, making such failures hard to diagnose. We introduce MultiBind, a benchmark built from real multi-person photographs. Each instance provides slot-ordered subject crops with masks and bounding boxes, canonicalized subject references, an inpainted background reference, and a dense entity-indexed prompt derived from structured annotations. We also propose a dimension-wise confusion evaluation protocol that matches generated subjects to ground-truth slots and measures slot-to-slot similarity using specialists for face identity, appearance, pose, and expression. By subtracting the corresponding ground-truth similarity matrices, our method separates self-degradation from true cross-subject interference and exposes interpretable failure patterns such as drift, swap, dominance, and blending. Experiments on modern multi-reference generators show that MultiBind reveals binding failures that conventional reconstruction metrics miss."
+    }
+  ]
+}
