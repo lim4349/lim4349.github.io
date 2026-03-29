@@ -1,14 +1,14 @@
 {
   "date": "2026-03-29",
-  "crawled_at": "2026-03-29T04:28:57.696477",
+  "crawled_at": "2026-03-29T14:35:47.539739",
   "total_papers": 10,
   "papers": [
     {
       "title": "PixelSmile: Toward Fine-Grained Facial Expression Editing",
       "url": "https://huggingface.co/papers/2603.25728",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 106,
-      "institution": "Fudan University683",
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 109,
+      "institution": "Fudan University703",
       "paper_link": "https://arxiv.org/abs/2603.25728",
       "code_link": "https://ammmob.github.io/PixelSmile/",
       "abstract": "Fine-grained facial expression editing has long been limited by intrinsic semantic overlap. To address this, we construct the Flex Facial Expression (FFE) dataset with continuous affective annotations and establish FFE-Bench to evaluate structural confusion, editing accuracy, linear controllability, and the trade-off between expression editing and identity preservation. We propose PixelSmile, a diffusion framework that disentangles expression semantics via fully symmetric joint training. PixelSmile combines intensity supervision with contrastive learning to produce stronger and more distinguishable expressions, achieving precise and stable linear expression control through textual latent interpolation. Extensive experiments demonstrate that PixelSmile achieves superior disentanglement and robust identity preservation, confirming its effectiveness for continuous, controllable, and fine-grained expression editing, while naturally supporting smooth expression blending."
@@ -16,8 +16,8 @@
     {
       "title": "Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale",
       "url": "https://huggingface.co/papers/2603.25040",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 103,
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 105,
       "institution": "Intern Large Models6",
       "paper_link": "https://arxiv.org/abs/2603.25040",
       "code_link": "https://github.com/InternLM/Intern-S1",
@@ -26,9 +26,9 @@
     {
       "title": "Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration",
       "url": "https://huggingface.co/papers/2603.24800",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 50,
-      "institution": "Visual Generative AI group323",
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 51,
+      "institution": "Visual Generative AI group343",
       "paper_link": "https://arxiv.org/abs/2603.24800",
       "code_link": "https://v-gen-ai.github.io/Calibri-page/",
       "abstract": "In this paper, we uncover the hidden potential of Diffusion Transformers (DiTs) to significantly enhance generative tasks. Through an in-depth analysis of the denoising process, we demonstrate that introducing a single learned scaling parameter can significantly improve the performance of DiT blocks. Building on this insight, we propose Calibri, a parameter-efficient approach that optimally calibrates DiT components to elevate generative quality. Calibri frames DiT calibration as a black-box reward optimization problem, which is efficiently solved using an evolutionary algorithm and modifies just ~100 parameters. Experimental results reveal that despite its lightweight design, Calibri consistently improves performance across various text-to-image models. Notably, Calibri also reduces the inference steps required for image generation, all while maintaining high-quality outputs."
@@ -36,9 +36,9 @@
     {
       "title": "RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models",
       "url": "https://huggingface.co/papers/2603.25502",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 45,
-      "institution": "Southern university of science and technology662",
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 46,
+      "institution": "Southern university of science and technology932",
       "paper_link": "https://arxiv.org/abs/2603.25502",
       "code_link": "https://yfyang007.github.io/RealRestorer/",
       "abstract": "Image restoration under real-world degradations is critical for downstream tasks such as autonomous driving and object detection. However, existing restoration models are often limited by the scale and distribution of their training data, resulting in poor generalization to real-world scenarios. Recently, large-scale image editing models have shown strong generalization ability in restoration tasks, especially for closed-source models like Nano Banana Pro, which can restore images while preserving consistency. Nevertheless, achieving such performance with those large universal models requires substantial data and computational costs. To address this issue, we construct a large-scale dataset covering nine common real-world degradation types and train a state-of-the-art open-source model to narrow the gap with closed-source alternatives. Furthermore, we introduce RealIR-Bench, which contains 464 real-world degraded images and tailored evaluation metrics focusing on degradation removal and consistency preservation. Extensive experiments demonstrate our model ranks first among open-source methods, achieving state-of-the-art performance."
@@ -46,8 +46,8 @@
     {
       "title": "Voxtral TTS",
       "url": "https://huggingface.co/papers/2603.25551",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 33,
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 38,
       "institution": "Mistral AI_2",
       "paper_link": "https://arxiv.org/abs/2603.25551",
       "abstract": "We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio. Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens. These tokens are encoded and decoded with Voxtral Codec, a speech tokenizer trained from scratch with a hybrid VQ-FSQ quantization scheme. In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4\\% win rate over ElevenLabs Flash v2.5. We release the model weights under a CC BY-NC license."
@@ -55,9 +55,9 @@
     {
       "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
       "url": "https://huggingface.co/papers/2603.23516",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 28,
-      "institution": "EverMind-AI2.3k2",
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 32,
+      "institution": "EverMind-AI2.31k2",
       "paper_link": "https://arxiv.org/abs/2603.23516",
       "code_link": "https://github.com/EverMind-AI/MSA",
       "abstract": "Long-term memory is a cornerstone of human intelligence. Enabling AI to process lifetime-scale information remains a long-standing pursuit in the field. Due to the constraints of full-attention architectures, the effective context length of large language models (LLMs) is typically limited to 1M tokens. Existing approaches, such as hybrid linear attention, fixed-size memory states (e.g., RNNs), and external storage methods like RAG or agent systems, attempt to extend this limit. However, they often suffer from severe precision degradation and rapidly increasing latency as context length grows, an inability to dynamically modify memory content, or a lack of end-to-end optimization. These bottlenecks impede complex scenarios like large-corpus summarization, Digital Twins, and long-history agent reasoning, while limiting memory capacity and slowing inference. We present Memory Sparse Attention (MSA), an end-to-end trainable, efficient, and massively scalable memory model framework. Through core innovations including scalable sparse attention and document-wise RoPE, MSA achieves linear complexity in both training and inference while maintaining exceptional stability, exhibiting less than 9% degradation when scaling from 16K to 100M tokens. Furthermore, KV cache compression, combined with Memory Parallel, enables 100M-token inference on 2xA800 GPUs. We also propose Memory Interleaving to facilitate complex multi-hop reasoning across scattered memory segments. MSA significantly surpasses frontier LLMs, state-of-the-art RAG systems, and leading memory agents in long-context benchmarks. These results demonstrate that by decoupling memory capacity from reasoning, MSA provides a scalable foundation to endow general-purpose models with intrinsic, lifetime-scale memory."
@@ -65,8 +65,8 @@
     {
       "title": "MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data",
       "url": "https://huggingface.co/papers/2603.25319",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 26,
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 27,
       "institution": "The University of Hong Kong382",
       "paper_link": "https://arxiv.org/abs/2603.25319",
       "code_link": "https://macro400k.github.io/",
@@ -75,9 +75,9 @@
     {
       "title": "SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks",
       "url": "https://huggingface.co/papers/2603.24755",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 22,
-      "institution": "University of Wisconsin - Madison282",
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 23,
+      "institution": "University of Wisconsin - Madison302",
       "paper_link": "https://arxiv.org/abs/2603.24755",
       "code_link": "https://github.com/SprocketLab/slop-code-bench",
       "abstract": "Software development is iterative, yet agentic coding benchmarks overwhelmingly evaluate single-shot solutions against complete specifications. Code can pass the test suite but become progressively harder to extend. Recent iterative benchmarks attempt to close this gap, but constrain the agent's design decisions too tightly to faithfully measure how code quality shapes future extensions. We introduce SlopCodeBench, a language-agnostic benchmark comprising 20 problems and 93 checkpoints, in which agents repeatedly extend their own prior solutions under evolving specifications that force architectural decisions without prescribing internal structure. We track two trajectory-level quality signals: verbosity, the fraction of redundant or duplicated code, and structural erosion, the share of complexity mass concentrated in high-complexity functions. No agent solves any problem end-to-end across 11 models; the highest checkpoint solve rate is 17.2%. Quality degrades steadily: erosion rises in 80% of trajectories and verbosity in 89.8%. Against 48 open-source Python repositories, agent code is 2.2x more verbose and markedly more eroded. Tracking 20 of those repositories over time shows that human code stays flat, while agent code deteriorates with each iteration. A prompt-intervention study shows that initial quality can be improved, but it does not halt degradation. These results demonstrate that pass-rate benchmarks systematically undermeasure extension robustness, and that current agents lack the design discipline iterative software development demands."
@@ -85,8 +85,8 @@
     {
       "title": "AVControl: Efficient Framework for Training Audio-Visual Controls",
       "url": "https://huggingface.co/papers/2603.24793",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 15,
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 17,
       "institution": "Lightricks2",
       "paper_link": "https://arxiv.org/abs/2603.24793",
       "code_link": "https://matanby.github.io/AVControl/",
@@ -95,8 +95,8 @@
     {
       "title": "VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models",
       "url": "https://huggingface.co/papers/2603.24575",
-      "published": "2026-03-29T04:28:44.335912",
-      "likes": 11,
+      "published": "2026-03-29T14:35:30.349276",
+      "likes": 12,
       "institution": "University of Washington102",
       "paper_link": "https://arxiv.org/abs/2603.24575",
       "code_link": "https://vfig-proj.github.io/",
