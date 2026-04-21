@@ -1,14 +1,24 @@
 {
   "date": "2026-04-21",
-  "crawled_at": "2026-04-21T04:40:59.589859",
+  "crawled_at": "2026-04-21T15:15:24.391840",
   "total_papers": 10,
   "papers": [
     {
+      "title": "Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation",
+      "url": "https://huggingface.co/papers/2604.18168",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 85,
+      "institution": "AMAP-ML731",
+      "paper_link": "https://arxiv.org/abs/2604.18168",
+      "code_link": "https://github.com/AMAP-ML/EMF",
+      "abstract": "Few-step generation has been a long-standing goal, with recent one-step generation methods exemplified by MeanFlow achieving remarkable results. Existing research on MeanFlow primarily focuses on class-to-image generation. However, an intuitive yet unexplored direction is to extend the condition from fixed class labels to flexible text inputs, enabling richer content creation. Compared to the limited class labels, text conditions pose greater challenges to the model's understanding capability, necessitating the effective integration of powerful text encoders into the MeanFlow framework. Surprisingly, although incorporating text conditions appears straightforward, we find that integrating powerful LLM-based text encoders using conventional training strategies results in unsatisfactory performance. To uncover the underlying cause, we conduct detailed analyses and reveal that, due to the extremely limited number of refinement steps in the MeanFlow generation, such as only one step, the text feature representations are required to possess sufficiently high discriminability. This also explains why discrete and easily distinguishable class features perform well within the MeanFlow framework. Guided by these insights, we leverage a powerful LLM-based text encoder validated to possess the required semantic properties and adapt the MeanFlow generation process to this framework, resulting in efficient text-conditioned synthesis for the first time. Furthermore, we validate our approach on the widely used diffusion model, demonstrating significant generation performance improvements. We hope this work provides a general and practical reference for future research on text-conditioned MeanFlow generation. The code is available at this https URL ."
+    },
+    {
       "title": "OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation",
       "url": "https://huggingface.co/papers/2604.18486",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 31,
-      "institution": "Xiaomi Research1",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 65,
+      "institution": "Xiaomi Research2",
       "paper_link": "https://arxiv.org/abs/2604.18486",
       "code_link": "https://xiaomi-embodied-intelligence.github.io/OneVL/",
       "abstract": "Chain-of-Thought (CoT) reasoning has become a powerful driver of trajectory prediction in VLA-based autonomous driving, yet its autoregressive nature imposes a latency cost that is prohibitive for real-time deployment. Latent CoT methods attempt to close this gap by compressing reasoning into continuous hidden states, but consistently fall short of their explicit counterparts. We suggest that this is due to purely linguistic latent representations compressing a symbolic abstraction of the world, rather than the causal dynamics that actually govern driving. Thus, we present OneVL (One-step latent reasoning and planning with Vision-Language explanations), a unified VLA and World Model framework that routes reasoning through compact latent tokens supervised by dual auxiliary decoders. Alongside a language decoder that reconstructs text CoT, we introduce a visual world model decoder that predicts future-frame tokens, forcing the latent space to internalize the causal dynamics of road geometry, agent motion, and environmental change. A three-stage training pipeline progressively aligns these latents with trajectory, language, and visual objectives, ensuring stable joint optimization. At inference, the auxiliary decoders are discarded and all latent tokens are prefilled in a single parallel pass, matching the speed of answer-only prediction. Across four benchmarks, OneVL becomes the first latent CoT method to surpass explicit CoT, delivering state-of-the-art accuracy at answer-only latency, and providing direct evidence that tighter compression, when guided in both language and world-model supervision, produces more generalizable representations than verbose token-by-token reasoning. Project Page: this https URL"
@@ -16,91 +26,81 @@
     {
       "title": "Agent-World: Scaling Real-World Environment Synthesis for Evolving General Agent Intelligence",
       "url": "https://huggingface.co/papers/2604.18292",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 28,
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 57,
       "institution": "ByteDance Seed2",
       "paper_link": "https://arxiv.org/abs/2604.18292",
       "code_link": "https://agent-tars-world.github.io/-/",
       "abstract": "Large language models are increasingly expected to serve as general-purpose agents that interact with external, stateful tool environments. The Model Context Protocol (MCP) and broader agent skills offer a unified interface for connecting agents with scalable real-world services, but training robust agents remains limited by the lack of realistic environments and principled mechanisms for life-long learning. In this paper, we present \\textbf{Agent-World}, a self-evolving training arena for advancing general agent intelligence through scalable environments. Agent-World has two main components: (1) Agentic Environment-Task Discovery, which autonomously explores topic-aligned databases and executable tool ecosystems from thousands of real-world environment themes and synthesizes verifiable tasks with controllable difficulty; and (2) Continuous Self-Evolving Agent Training, which combines multi-environment reinforcement learning with a self-evolving agent arena that automatically identifies capability gaps through dynamic task synthesis and drives targeted learning, enabling the co-evolution of agent policies and environments. Across 23 challenging agent benchmarks, Agent-World-8B and 14B consistently outperforms strong proprietary models and environment scaling baselines. Further analyses reveal scaling trends in relation to environment diversity and self-evolution rounds, offering insights for building general agent intelligence."
     },
     {
+      "title": "OpenGame: Open Agentic Coding for Games",
+      "url": "https://huggingface.co/papers/2604.18394",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 45,
+      "institution": "·11 authors81",
+      "paper_link": "https://arxiv.org/abs/2604.18394",
+      "code_link": "https://github.com/leigest519/OpenGame",
+      "abstract": "Game development sits at the intersection of creative design and intricate software engineering, demanding the joint orchestration of game engines, real-time loops, and tightly coupled state across many files. While Large Language Models (LLMs) and code agents now solve isolated programming tasks with ease, they consistently stumble when asked to produce a fully playable game from a high-level design, collapsing under cross-file inconsistencies, broken scene wiring, and logical incoherence. We bridge this gap with OpenGame, the first open-source agentic framework explicitly designed for end-to-end web game creation. At its core lies Game Skill, a reusable, evolving capability composed of a Template Skill that grows a library of project skeletons from experience and a Debug Skill that maintains a living protocol of verified fixes - together enabling the agent to scaffold stable architectures and systematically repair integration errors rather than patch isolated syntax bugs. Powering this framework is GameCoder-27B, a code LLM specialized for game engine mastery through a three-stage pipeline of continual pre-training, supervised fine-tuning, and execution-grounded reinforcement learning. Since verifying interactive playability is fundamentally harder than checking static code, we further introduce OpenGame-Bench, an evaluation pipeline that scores agentic game generation along Build Health, Visual Usability, and Intent Alignment via headless browser execution and VLM judging. Across 150 diverse game prompts, OpenGame establishes a new state-of-the-art. We hope OpenGame pushes code agents beyond discrete software engineering problems and toward building complex, interactive real-world applications. Our framework will be fully open-sourced."
+    },
+    {
       "title": "MultiWorld: Scalable Multi-Agent Multi-View Video World Models",
       "url": "https://huggingface.co/papers/2604.18564",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 17,
-      "institution": "The University of Hong Kong41",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 35,
+      "institution": "The University of Hong Kong622",
       "paper_link": "https://arxiv.org/abs/2604.18564",
       "code_link": "https://multi-world.github.io/",
       "abstract": "Video world models have achieved remarkable success in simulating environmental dynamics in response to actions by users or agents. They are modeled as action-conditioned video generation models that take historical frames and current actions as input to predict future frames. Yet, most existing approaches are limited to single-agent scenarios and fail to capture the complex interactions inherent in real-world multi-agent systems. We present \\textbf{MultiWorld}, a unified framework for multi-agent multi-view world modeling that enables accurate control of multiple agents while maintaining multi-view consistency. We introduce the Multi-Agent Condition Module to achieve precise multi-agent controllability, and the Global State Encoder to ensure coherent observations across different views. MultiWorld supports flexible scaling of agent and view counts, and synthesizes different views in parallel for high efficiency. Experiments on multi-player game environments and multi-robot manipulation tasks demonstrate that MultiWorld outperforms baselines in video fidelity, action-following ability, and multi-view consistency. Project page: this https URL"
     },
     {
-      "title": "WebCompass: Towards Multimodal Web Coding Evaluation for Code Language Models",
-      "url": "https://huggingface.co/papers/2604.18224",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 10,
-      "institution": "·19 authors1",
-      "paper_link": "https://arxiv.org/abs/2604.18224",
-      "abstract": "Large language models are rapidly evolving into interactive coding agents capable of end-to-end web coding, yet existing benchmarks evaluate only narrow slices of this capability, typically text-conditioned generation with static-correctness metrics, leaving visual fidelity, interaction quality, and codebase-level reasoning largely unmeasured. We introduce WebCompass, a multimodal benchmark that provides unified lifecycle evaluation of web engineering capability. Recognizing that real-world web coding is an iterative cycle of generation, editing, and repair, WebCompass spans three input modalities (text, image, video) and three task types (generation, editing, repair), yielding seven task categories that mirror professional workflows. Through a multi-stage, human-in-the-loop pipeline, we curate instances covering 15 generation domains, 16 editing operation types, and 11 repair defect types, each annotated at Easy/Medium/Hard levels. For evaluation, we adopt a checklist-guided LLM-as-a-Judge protocol for editing and repair, and propose a novel Agent-as-a-Judge paradigm for generation that autonomously executes generated websites in a real browser, explores interactive behaviors via the Model Context Protocol (MCP), and iteratively synthesizes targeted test cases, closely approximating human acceptance testing. We evaluate representative closed-source and open-source models and observe that: (1) closed-source models remain substantially stronger and more balanced; (2) editing and repair exhibit distinct difficulty profiles, with repair preserving interactivity better but remaining execution-challenging; (3) aesthetics is the most persistent bottleneck, especially for open-source models; and (4) framework choice materially affects outcomes, with Vue consistently challenging while React and Vanilla/HTML perform more strongly depending on task type."
-    },
-    {
-      "title": "When Can LLMs Learn to Reason with Weak Supervision?",
-      "url": "https://huggingface.co/papers/2604.18574",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 7,
-      "institution": "·6 authors1",
-      "paper_link": "https://arxiv.org/abs/2604.18574",
-      "code_link": "https://github.com/pavelslab-nyu/rlvr-weak-supervision",
-      "abstract": "Large language models have achieved significant reasoning improvements through reinforcement learning with verifiable rewards (RLVR). Yet as model capabilities grow, constructing high-quality reward signals becomes increasingly difficult, making it essential to understand when RLVR can succeed under weaker forms of supervision. We conduct a systematic empirical study across diverse model families and reasoning domains under three weak supervision settings: scarce data, noisy rewards, and self-supervised proxy rewards. We find that generalization is governed by training reward saturation dynamics: models that generalize exhibit a prolonged pre-saturation phase during which training reward and downstream performance climb together, while models that saturate rapidly memorize rather than learn. We identify reasoning faithfulness, defined as the extent to which intermediate steps logically support the final answer, as the pre-RL property that predicts which regime a model falls into, while output diversity alone is uninformative. Motivated by these findings, we disentangle the contributions of continual pre-training and supervised fine-tuning, finding that SFT on explicit reasoning traces is necessary for generalization under weak supervision, while continual pre-training on domain data amplifies the effect. Applied together to Llama3.2-3B-Base, these interventions enable generalization across all three settings where the base model previously failed."
-    },
-    {
-      "title": "ClawEnvKit: Automatic Environment Generation for Claw-Like Agents",
-      "url": "https://huggingface.co/papers/2604.18543",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 3,
-      "institution": "·7 authors2",
-      "paper_link": "https://arxiv.org/abs/2604.18543",
-      "code_link": "https://github.com/xirui-li/ClawEnvKit",
-      "abstract": "Constructing environments for training and evaluating claw-like agents remains a manual, human-intensive process that does not scale. We argue that what is needed is not just a dataset, but an automated pipeline capable of generating diverse, verified environments on demand. To this end, we introduce ClawEnvKit, an autonomous generation pipeline that instantiates this formalism from natural language descriptions. The pipeline comprises three modules: (1) a parser that extracts structured generation parameters from natural language input; (2) a generator that produces the task specification, tool interface, and scoring configuration; and (3) a validator that enforces feasibility, diversity, structural validity, and internal consistency across the generated environments. Using ClawEnvKit, we construct Auto-ClawEval, the first large-scale benchmark for claw-like agents, comprising 1,040 environments across 24 categories. Empirically, Auto-ClawEval matches or exceeds human-curated environments on coherence and clarity at 13,800x lower cost. Evaluated across 4 model families and 8 agent harness frameworks, we find that harness engineering boosts performance by up to 15.7 percentage points over a bare ReAct baseline, completion remains the primary axis of variation with no model saturating the benchmark, and automated generation enables evaluation at a scale previously infeasible. Beyond static benchmarking, ClawEnvKit enables live evaluation: users describe a desired capability in natural language and obtain a verified environment on demand, turning evaluation into a continuous, user-driven process. The same mechanism serves as an on-demand training environment generator, producing task distributions that adapt to an agent's current weaknesses rather than being bounded by existing user logs."
-    },
-    {
       "title": "EasyVideoR1: Easier RL for Video Understanding",
       "url": "https://huggingface.co/papers/2604.16893",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 3,
-      "institution": "·9 authors1",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 32,
+      "institution": "·9 authors91",
       "paper_link": "https://arxiv.org/abs/2604.16893",
       "code_link": "https://github.com/cyuQ1n/EasyVideoR1",
       "abstract": "Reinforcement learning from verifiable rewards (RLVR) has demonstrated remarkable effectiveness in improving the reasoning capabilities of large language models. As models evolve into natively multimodal architectures, extending RLVR to video understanding becomes increasingly important yet remains largely unexplored, due to the diversity of video task types, the computational overhead of repeatedly decoding and preprocessing high-dimensional visual inputs, and the difficulty of reproducible evaluation across numerous sensitive hyperparameters. Existing open-source RL training frameworks provide solid infrastructure for text and image scenarios but lack systematic optimizations tailored for video modality. In this work, we present \\textbf{EasyVideoR1}, a complete and efficient reinforcement learning framework specifically designed for training large vision-language models on video understanding tasks. EasyVideoR1 makes the following contributions: (1) a full video RL training pipeline with offline preprocessing and tensor caching that eliminates redundant video decoding and yields a 1.47 $\\times$ throughput improvement; (2) a comprehensive, task-aware reward system covering 11 distinct video and image problem types with unified routing and modular extension; (3) a mixed offline-online data training paradigm that combines curated high-quality trajectories with on-policy exploration, benefiting the learning of more challenging tasks; (4) joint image-video training with independently configurable pixel budgets, allowing the two modalities to mutually reinforce each other; and (5) an asynchronous multi-benchmark evaluation framework covering 22 mainstream video understanding benchmarks, with reproduced accuracy closely aligned with officially reported scores."
     },
     {
-      "title": "Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models",
-      "url": "https://huggingface.co/papers/2604.16593",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 3,
-      "institution": "University of Science and Technology Beijing61",
-      "paper_link": "https://arxiv.org/abs/2604.16593",
-      "code_link": "https://github.com/jacklanda/SemanticQA",
-      "abstract": "We present SemanticQA, an evaluation suite designed to assess language models (LMs) in semantic phrase processing tasks. The benchmark consolidates existing multiword expression (MwE) resources and reorganizes them into a unified testbed. It covers both general lexical phenomena, such as lexical collocations, and three fine-grained categories: idiomatic expressions, noun compounds, and verbal constructions. Through SemanticQA, we assess LMs of diverse architectures and scales in extraction, classification, and interpretation tasks, as well as sequential task compositions. We reveal substantial performance variation, particularly on tasks requiring semantic reasoning, highlighting differences in reasoning efficacy and semantic understanding of LMs, providing insights for pushing LMs with stronger comprehension on non-trivial semantic phrases. The evaluation harness and data of SemanticQA are available at this https URL ."
+      "title": "GFT: From Imitation to Reward Fine-Tuning with Unbiased Group Advantages and Dynamic Coefficient Rectification",
+      "url": "https://huggingface.co/papers/2604.14258",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 18,
+      "institution": "ZJU-OmniAI202",
+      "paper_link": "https://arxiv.org/abs/2604.14258",
+      "code_link": "https://github.com/ZJU-OmniAI/GFT",
+      "abstract": "Large language models are typically post-trained using supervised fine-tuning (SFT) and reinforcement learning (RL), yet effectively unifying efficient knowledge injection with robust generalization remains challenging. In this work, we provide a training-dynamics analysis showing that SFT can be interpreted as a special case of policy gradient optimization with an extremely sparse implicit reward and unstable inverse-probability weighting, which together lead to single-path dependency, entropy collapse, and gradient explosion. Motivated by this diagnosis, we propose Group Fine-Tuning (GFT), a unified post-training framework that addresses these intrinsic limitations through two mechanisms: Group Advantage Learning, which constructs diverse response groups and derives normalized contrastive supervision to alleviate reward sparsity, and Dynamic Coefficient Rectification, which adaptively bounds inverse-probability weights to stabilize optimization while preserving efficient knowledge injection. Experiments demonstrate that GFT consistently surpasses SFT-based methods and yields policies that integrate more smoothly with subsequent RL training."
     },
     {
-      "title": "Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play",
-      "url": "https://huggingface.co/papers/2604.17696",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 2,
-      "institution": "The University of Hong Kong01",
-      "paper_link": "https://arxiv.org/abs/2604.17696",
-      "code_link": "https://github.com/ydyyyy/Stratagem",
-      "abstract": "Games offer a compelling paradigm for developing general reasoning capabilities in language models, as they naturally demand strategic planning, probabilistic inference, and adaptive decision-making. However, existing self-play approaches rely solely on terminal game outcomes, providing no mechanism to distinguish transferable reasoning patterns from game-specific heuristics. We present STRATAGEM, which addresses two fundamental barriers to reasoning transfer: domain specificity, where learned patterns remain anchored in game semantics, and contextual stasis, where static game contexts fail to cultivate progressive reasoning. STRATAGEM selectively reinforces trajectories exhibiting abstract, domain-agnostic reasoning through a Reasoning Transferability Coefficient, while incentivizing adaptive reasoning development via a Reasoning Evolution Reward. Experiments across mathematical reasoning, general reasoning, and code generation benchmarks demonstrate substantial improvements, with particularly strong gains on competition-level mathematics where multi-step reasoning is critical. Ablation studies and human evaluation confirm that both components contribute to transferable reasoning."
+      "title": "WebCompass: Towards Multimodal Web Coding Evaluation for Code Language Models",
+      "url": "https://huggingface.co/papers/2604.18224",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 17,
+      "institution": "·19 authors1",
+      "paper_link": "https://arxiv.org/abs/2604.18224",
+      "abstract": "Large language models are rapidly evolving into interactive coding agents capable of end-to-end web coding, yet existing benchmarks evaluate only narrow slices of this capability, typically text-conditioned generation with static-correctness metrics, leaving visual fidelity, interaction quality, and codebase-level reasoning largely unmeasured. We introduce WebCompass, a multimodal benchmark that provides unified lifecycle evaluation of web engineering capability. Recognizing that real-world web coding is an iterative cycle of generation, editing, and repair, WebCompass spans three input modalities (text, image, video) and three task types (generation, editing, repair), yielding seven task categories that mirror professional workflows. Through a multi-stage, human-in-the-loop pipeline, we curate instances covering 15 generation domains, 16 editing operation types, and 11 repair defect types, each annotated at Easy/Medium/Hard levels. For evaluation, we adopt a checklist-guided LLM-as-a-Judge protocol for editing and repair, and propose a novel Agent-as-a-Judge paradigm for generation that autonomously executes generated websites in a real browser, explores interactive behaviors via the Model Context Protocol (MCP), and iteratively synthesizes targeted test cases, closely approximating human acceptance testing. We evaluate representative closed-source and open-source models and observe that: (1) closed-source models remain substantially stronger and more balanced; (2) editing and repair exhibit distinct difficulty profiles, with repair preserving interactivity better but remaining execution-challenging; (3) aesthetics is the most persistent bottleneck, especially for open-source models; and (4) framework choice materially affects outcomes, with Vue consistently challenging while React and Vanilla/HTML perform more strongly depending on task type."
     },
     {
-      "title": "Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?",
-      "url": "https://huggingface.co/papers/2604.17338",
-      "published": "2026-04-21T04:40:46.638166",
-      "likes": 2,
-      "institution": "University of Southern California31",
-      "paper_link": "https://arxiv.org/abs/2604.17338",
-      "code_link": "https://precise-debugging-benchmark.github.io/",
-      "abstract": "Unlike code completion, debugging requires localizing faults and applying targeted edits. We observe that frontier LLMs often regenerate correct but over-edited solutions during debugging. To evaluate how far LLMs are from precise debugging, we introduce the Precise Debugging Benchmark (PDB) framework, which automatically converts any coding dataset into a debugging benchmark with precision-aware evaluation. PDB generates buggy programs by synthesizing verified atomic bugs and composing them into multi-bug programs. We define two novel metrics, edit-level precision and bug-level recall, which measures how many necessary edits are made and how many bugs are resolved. We release two evaluation benchmarks: PDB-Single-Hard on single-line bugs, and PDB-Multi on multi-line bugs. Experiments show that frontier models, such as GPT-5.1-Codex and DeepSeek-V3.2-Thinking, achieve unit-test pass rates above 76% but exhibit precision below 45%, even when explicitly instructed to perform minimal debugging. Finally, we show that iterative and agentic debugging strategies do not substantially improve precision or recall, highlighting the need to rethink post-training pipelines for coding models."
+      "title": "ClawEnvKit: Automatic Environment Generation for Claw-Like Agents",
+      "url": "https://huggingface.co/papers/2604.18543",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 15,
+      "institution": "·7 authors8",
+      "paper_link": "https://arxiv.org/abs/2604.18543",
+      "code_link": "https://github.com/xirui-li/ClawEnvKit",
+      "abstract": "Constructing environments for training and evaluating claw-like agents remains a manual, human-intensive process that does not scale. We argue that what is needed is not just a dataset, but an automated pipeline capable of generating diverse, verified environments on demand. To this end, we introduce ClawEnvKit, an autonomous generation pipeline that instantiates this formalism from natural language descriptions. The pipeline comprises three modules: (1) a parser that extracts structured generation parameters from natural language input; (2) a generator that produces the task specification, tool interface, and scoring configuration; and (3) a validator that enforces feasibility, diversity, structural validity, and internal consistency across the generated environments. Using ClawEnvKit, we construct Auto-ClawEval, the first large-scale benchmark for claw-like agents, comprising 1,040 environments across 24 categories. Empirically, Auto-ClawEval matches or exceeds human-curated environments on coherence and clarity at 13,800x lower cost. Evaluated across 4 model families and 8 agent harness frameworks, we find that harness engineering boosts performance by up to 15.7 percentage points over a bare ReAct baseline, completion remains the primary axis of variation with no model saturating the benchmark, and automated generation enables evaluation at a scale previously infeasible. Beyond static benchmarking, ClawEnvKit enables live evaluation: users describe a desired capability in natural language and obtain a verified environment on demand, turning evaluation into a continuous, user-driven process. The same mechanism serves as an on-demand training environment generator, producing task distributions that adapt to an agent's current weaknesses rather than being bounded by existing user logs."
+    },
+    {
+      "title": "SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
+      "url": "https://huggingface.co/papers/2604.17308",
+      "published": "2026-04-21T15:15:11.361468",
+      "likes": 15,
+      "institution": "·16 authors31",
+      "paper_link": "https://arxiv.org/abs/2604.17308",
+      "code_link": "https://zhangzi-a.github.io/SkillFlow-project-page/",
+      "abstract": "As the capability frontier of autonomous agents continues to expand, they are increasingly able to complete specialized tasks through plug-and-play external skills. Yet current benchmarks mostly test whether models can use provided skills, leaving open whether they can discover skills from experience, repair them after failure, and maintain a coherent library over time. We introduce SkillFlow, a benchmark of 166 tasks across 20 families in which task construction within each family follows a Domain-Agnostic Execution Flow (DAEF) that defines an agent workflow framework, allowing these tasks to share a consistent workflow. Agents are evaluated under an Agentic Lifelong Learning protocol in which they begin without skills, solve tasks sequentially within each family, externalize lessons through trajectory- and rubric-driven skill patches, and carry the updated library forward. Experiments reveal a substantial capability gap. For Claude Opus 4.6, lifelong skill evolution improves task success from 62.65% to 71.08% (+8.43 points). However, high skill usage does not necessarily imply high utility: Kimi K2.5 gains only +0.60 points despite 66.87% skill usage, while Qwen-Coder-Next reaches only a 44.58% task completion rate and still regresses relative to the vanilla setting. SkillFlow contributes a structured testbed for this direction and an in-depth empirical analysis of skill discovery, patching, transfer, and their failure modes under lifelong evaluation."
     }
   ]
 }
