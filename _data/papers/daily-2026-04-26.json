@@ -1,13 +1,13 @@
 {
   "date": "2026-04-26",
-  "crawled_at": "2026-04-26T04:51:46.628477",
+  "crawled_at": "2026-04-26T14:47:08.549528",
   "total_papers": 10,
   "papers": [
     {
       "title": "LLaTiSA: Towards Difficulty-Stratified Time Series Reasoning from Visual Perception to Semantics",
       "url": "https://huggingface.co/papers/2604.17295",
-      "published": "2026-04-26T04:51:33.158127",
-      "likes": 80,
+      "published": "2026-04-26T14:46:54.878825",
+      "likes": 81,
       "institution": "AMAP-ML723",
       "paper_link": "https://arxiv.org/abs/2604.17295",
       "code_link": "https://github.com/RainingNovember/LLaTiSA",
@@ -16,7 +16,7 @@
     {
       "title": "WorldMark: A Unified Benchmark Suite for Interactive Video World Models",
       "url": "https://huggingface.co/papers/2604.21686",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 34,
       "institution": "·8 authors3",
       "paper_link": "https://arxiv.org/abs/2604.21686",
@@ -26,9 +26,9 @@
     {
       "title": "UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling",
       "url": "https://huggingface.co/papers/2604.19734",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 27,
-      "institution": "xpeng-robotics373",
+      "institution": "xpeng-robotics383",
       "paper_link": "https://arxiv.org/abs/2604.19734",
       "code_link": "https://xpeng-robotics.github.io/unit/",
       "abstract": "Scaling humanoid foundation models is bottlenecked by the scarcity of robotic data. While massive egocentric human data offers a scalable alternative, bridging the cross-embodiment chasm remains a fundamental challenge due to kinematic mismatches. We introduce UniT (Unified Latent Action Tokenizer via Visual Anchoring), a framework that establishes a unified physical language for human-to-humanoid transfer. Grounded in the philosophy that heterogeneous kinematics share universal visual consequences, UniT employs a tri-branch cross-reconstruction mechanism: actions predict vision to anchor kinematics to physical outcomes, while vision reconstructs actions to filter out irrelevant visual confounders. Concurrently, a fusion branch synergies these purified modalities into a shared discrete latent space of embodiment-agnostic physical intents. We validate UniT across two paradigms: 1) Policy Learning (VLA-UniT): By predicting these unified tokens, it effectively leverages diverse human data to achieve state-of-the-art data efficiency and robust out-of-distribution (OOD) generalization on both humanoid simulation benchmark and real-world deployments, notably demonstrating zero-shot task transfer. 2) World Modeling (WM-UniT): By aligning cross-embodiment dynamics via unified tokens as conditions, it realizes direct human-to-humanoid action transfer. This alignment ensures that human data seamlessly translates into enhanced action controllability for humanoid video generation. Ultimately, by inducing a highly aligned cross-embodiment representation (empirically verified by t-SNE visualizations revealing the convergence of human and humanoid features into a shared manifold), UniT offers a scalable path to distill vast human knowledge into general-purpose humanoid capabilities."
@@ -36,9 +36,9 @@
     {
       "title": "StyleID: A Perception-Aware Dataset and Metric for Stylization-Agnostic Facial Identity Recognition",
       "url": "https://huggingface.co/papers/2604.21689",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 20,
-      "institution": "·6 authors184",
+      "institution": "·6 authors194",
       "paper_link": "https://arxiv.org/abs/2604.21689",
       "code_link": "https://kwanyun.github.io/StyleID_page/",
       "abstract": "Creative face stylization aims to render portraits in diverse visual idioms such as cartoons, sketches, and paintings while retaining recognizable identity. However, current identity encoders, which are typically trained and calibrated on natural photographs, exhibit severe brittleness under stylization. They often mistake changes in texture or color palette for identity drift or fail to detect geometric exaggerations. This reveals the lack of a style-agnostic framework to evaluate and supervise identity consistency across varying styles and strengths. To address this gap, we introduce StyleID, a human perception-aware dataset and evaluation framework for facial identity under stylization. StyleID comprises two datasets: (i) StyleBench-H, a benchmark that captures human same-different verification judgments across diffusion- and flow-matching-based stylization at multiple style strengths, and (ii) StyleBench-S, a supervision set derived from psychometric recognition-strength curves obtained through controlled two-alternative forced-choice (2AFC) experiments. Leveraging StyleBench-S, we fine-tune existing semantic encoders to align their similarity orderings with human perception across styles and strengths. Experiments demonstrate that our calibrated models yield significantly higher correlation with human judgments and enhanced robustness for out-of-domain, artist drawn portraits. All of our datasets, code, and pretrained models are publicly available at this https URL"
@@ -46,8 +46,8 @@
     {
       "title": "Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks",
       "url": "https://huggingface.co/papers/2604.20987",
-      "published": "2026-04-26T04:51:33.158127",
-      "likes": 16,
+      "published": "2026-04-26T14:46:54.878825",
+      "likes": 17,
       "institution": "Good Start Labs102",
       "paper_link": "https://arxiv.org/abs/2604.20987",
       "code_link": "https://wuxiyang1996.github.io/COSPLAY_page/",
@@ -56,7 +56,7 @@
     {
       "title": "Seeing Fast and Slow: Learning the Flow of Time in Videos",
       "url": "https://huggingface.co/papers/2604.21931",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 15,
       "institution": "·9 authors2",
       "paper_link": "https://arxiv.org/abs/2604.21931",
@@ -66,9 +66,9 @@
     {
       "title": "VLAA-GUI: Knowing When to Stop, Recover, and Search, A Modular Framework for GUI Automation",
       "url": "https://huggingface.co/papers/2604.21375",
-      "published": "2026-04-26T04:51:33.158127",
-      "likes": 12,
-      "institution": "UCSC-VLAA112",
+      "published": "2026-04-26T14:46:54.878825",
+      "likes": 13,
+      "institution": "UCSC-VLAA132",
       "paper_link": "https://arxiv.org/abs/2604.21375",
       "code_link": "https://ucsc-vlaa.github.io/VLAA-GUI/",
       "abstract": "Autonomous GUI agents face two fundamental challenges: early stopping, where agents prematurely declare success without verifiable evidence, and repetitive loops, where agents cycle through the same failing actions without recovery. We present VLAA-GUI, a modular GUI agentic framework built around three integrated components that guide the system on when to Stop, Recover, and Search. First, a mandatory Completeness Verifier enforces UI-observable success criteria and verification at every finish step -- with an agent-level verifier that cross-examines completion claims with decision rules, rejecting those lacking direct visual evidence. Second, a mandatory Loop Breaker provides multi-tier filtering: switching interaction mode after repeated failures, forcing strategy changes after persistent screen-state recurrence, and binding reflection signals to strategy shifts. Third, an on-demand Search Agent searches online for unfamiliar workflows by directly querying a capable LLM with search ability, returning results as plain text. We additionally integrate a Coding Agent for code-intensive actions and a Grounding Agent for precise action grounding, both invoked on demand when required. We evaluate VLAA-GUI across five top-tier backbones, including Opus 4.5, 4.6 and Gemini 3.1 Pro, on two benchmarks with Linux and Windows tasks, achieving top performance on both (77.5% on OSWorld and 61.0% on WindowsAgentArena). Notably, three of the five backbones surpass human performance (72.4%) on OSWorld in a single pass. Ablation studies show that all three proposed components consistently improve a strong backbone, while a weaker backbone benefits more from these tools when the step budget is sufficient. Further analysis also shows that the Loop Breaker nearly halves wasted steps for loop-prone models."
@@ -76,7 +76,7 @@
     {
       "title": "TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale",
       "url": "https://huggingface.co/papers/2604.21889",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 10,
       "institution": "CodeFuse AI3",
       "paper_link": "https://arxiv.org/abs/2604.21889",
@@ -85,7 +85,7 @@
     {
       "title": "Hybrid Policy Distillation for LLMs",
       "url": "https://huggingface.co/papers/2604.20244",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 10,
       "institution": "·4 authors32",
       "paper_link": "https://arxiv.org/abs/2604.20244",
@@ -95,7 +95,7 @@
     {
       "title": "Context Unrolling in Omni Models",
       "url": "https://huggingface.co/papers/2604.21921",
-      "published": "2026-04-26T04:51:33.158127",
+      "published": "2026-04-26T14:46:54.878825",
       "likes": 9,
       "institution": "·19 authors1",
       "paper_link": "https://arxiv.org/abs/2604.21921",
