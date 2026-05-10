@@ -1,14 +1,14 @@
 {
   "date": "2026-05-10",
-  "crawled_at": "2026-05-10T05:29:46.571505",
+  "crawled_at": "2026-05-10T14:55:22.974667",
   "total_papers": 10,
   "papers": [
     {
       "title": "Beyond Semantic Similarity: Rethinking Retrieval for Agentic Search via Direct Corpus Interaction",
       "url": "https://huggingface.co/papers/2605.05242",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 68,
-      "institution": "TIGER-Lab493",
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 73,
+      "institution": "TIGER-Lab603",
       "paper_link": "https://arxiv.org/abs/2605.05242",
       "code_link": "https://github.com/DCI-Agent/DCI-Agent-Lite",
       "abstract": "Modern retrieval systems, whether lexical or semantic, expose a corpus through a fixed similarity interface that compresses access into a single top-k retrieval step before reasoning. This abstraction is efficient, but for agentic search, it becomes a bottleneck: exact lexical constraints, sparse clue conjunctions, local context checks, and multi-step hypothesis refinement are difficult to implement by calling a conventional off-the-shelf retriever, and evidence filtered out early cannot be recovered by stronger downstream reasoning. Agentic tasks further exacerbate this limitation because they require agents to orchestrate multiple steps, including discovering intermediate entities, combining weak clues, and revising the plan after observing partial evidence. To tackle the limitation, we study direct corpus interaction (DCI), where an agent searches the raw corpus directly with general-purpose terminal tools (e.g., grep, file reads, shell commands, lightweight scripts), without any embedding model, vector index, or retrieval API. This approach requires no offline indexing and adapts naturally to evolving local corpora. Across IR benchmarks and end-to-end agentic search tasks, this simple setup substantially outperforms strong sparse, dense, and reranking baselines on several BRIGHT and BEIR datasets, and attains strong accuracy on BrowseComp-Plus and multi-hop QA without relying on any conventional semantic retriever. Our results indicate that as language agents become stronger, retrieval quality depends not only on reasoning ability but also on the resolution of the interface through which the model interacts with the corpus, with which DCI opens a broader interface-design space for agentic search."
@@ -16,8 +16,8 @@
     {
       "title": "Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning",
       "url": "https://huggingface.co/papers/2605.06130",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 61,
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 63,
       "institution": "·9 authors2",
       "paper_link": "https://arxiv.org/abs/2605.06130",
       "abstract": "A persistent skill library allows language model agents to reuse successful strategies across tasks. Maintaining such a library requires three coupled capabilities. The agent selects a relevant skill, utilizes it during execution, and distills new skills from experience. Existing methods optimize these capabilities in isolation or with separate reward sources, resulting in partial and conflicting evolution. We propose Skill1, a framework that trains a single policy to co-evolve skill selection, utilization, and distillation toward a shared task-outcome objective. The policy generates a query to search the skill library, re-ranks candidates to select one, solves the task conditioned on it, and distills a new skill from the trajectory. All learning derives from a single task-outcome signal. Its low-frequency trend credits selection and its high-frequency variation credits distillation. Experiments on ALFWorld and WebShop show that Skill1 outperforms prior skill-based and reinforcement learning baselines. Training dynamics confirm the co-evolution of the three capabilities, and ablations show that removing any credit signal degrades the evolution."
@@ -25,8 +25,8 @@
     {
       "title": "Continuous Latent Diffusion Language Model",
       "url": "https://huggingface.co/papers/2605.06548",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 54,
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 59,
       "institution": "·11 authors6",
       "paper_link": "https://arxiv.org/abs/2605.06548",
       "code_link": "https://hongcanguo.github.io/Cola-DLM/",
@@ -35,8 +35,8 @@
     {
       "title": "MiA-Signature: Approximating Global Activation for Long-Context Understanding",
       "url": "https://huggingface.co/papers/2605.06416",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 47,
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 49,
       "institution": "Tencent3",
       "paper_link": "https://arxiv.org/abs/2605.06416",
       "abstract": "A growing body of work in cognitive science suggests that reportable conscious access is associated with \\emph{global ignition} over distributed memory systems, while such activation is only partially accessible as individuals cannot directly access or enumerate all activated contents. This tension suggests a plausible mechanism that cognition may rely on a compact representation that approximates the global influence of activation on downstream processing. Inspired by this idea, we introduce the concept of \\textbf{Mindscape Activation Signature (MiA-Signature)}, a compressed representation of the global activation pattern induced by a query. In LLM systems, this is instantiated via submodular-based selection of high-level concepts that cover the activated context space, optionally refined through lightweight iterative updates using working memory. The resulting MiA-Signature serves as a conditioning signal that approximates the effect of the full activation state while remaining computationally tractable. Integrating MiA-Signatures into both RAG and agentic systems yields consistent performance gains across multiple long-context understanding tasks."
@@ -44,8 +44,8 @@
     {
       "title": "RaguTeam at SemEval-2026 Task 8: Meno and Friends in a Judge-Orchestrated LLM Ensemble for Faithful Multi-Turn Response Generation",
       "url": "https://huggingface.co/papers/2605.04523",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 37,
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 39,
       "institution": "Novosibirsk State University35",
       "paper_link": "https://arxiv.org/abs/2605.04523",
       "code_link": "https://github.com/RaguTeam/ragu_mtrag_semeval",
@@ -54,7 +54,7 @@
     {
       "title": "When to Trust Imagination: Adaptive Action Execution for World Action Models",
       "url": "https://huggingface.co/papers/2605.06222",
-      "published": "2026-05-10T05:29:33.395005",
+      "published": "2026-05-10T14:55:09.655619",
       "likes": 36,
       "institution": "·7 authors3",
       "paper_link": "https://arxiv.org/abs/2605.06222",
@@ -63,7 +63,7 @@
     {
       "title": "MARBLE: Multi-Aspect Reward Balance for Diffusion RL",
       "url": "https://huggingface.co/papers/2605.06507",
-      "published": "2026-05-10T05:29:33.395005",
+      "published": "2026-05-10T14:55:09.655619",
       "likes": 34,
       "institution": "Zhejiang University263",
       "paper_link": "https://arxiv.org/abs/2605.06507",
@@ -73,8 +73,8 @@
     {
       "title": "SkillOS: Learning Skill Curation for Self-Evolving Agents",
       "url": "https://huggingface.co/papers/2605.06614",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 30,
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 32,
       "institution": "·16 authors2",
       "paper_link": "https://arxiv.org/abs/2605.06614",
       "abstract": "LLM-based agents are increasingly deployed to handle streaming tasks, yet they often remain one-off problem solvers that fail to learn from past interactions. Reusable skills distilled from experience provide a natural substrate for self-evolution, where high-quality skill curation serves as the key bottleneck. Existing approaches either rely on manual skill curation, prescribe heuristic skill operations, or train for short-horizon skill operations. However, they still struggle to learn complex long-term curation policies from indirect and delayed feedback. To tackle this challenge, we propose SkillOS, an experience-driven RL training recipe for learning skill curation in self-evolving agents. SkillOS pairs a frozen agent executor that retrieves and applies skills with a trainable skill curator that updates an external SkillRepo from accumulated experience. To provide learning signals for curation, we design composite rewards and train on grouped task streams based on skill-relevant task dependencies, where earlier trajectories update the SkillRepo, and later related tasks evaluate these updates. Across multi-turn agentic tasks and single-turn reasoning tasks, SkillOS consistently outperforms memory-free and strong memory-based baselines in both effectiveness and efficiency, with the learned skill curator generalizing across different executor backbones and task domains. Further analyses show that the learned curator produces more targeted skill use, while the skills in SkillRepo evolve into more richly structured Markdown files that encode higher-level meta-skills over time."
@@ -82,8 +82,8 @@
     {
       "title": "Nonsense Helps: Prompt Space Perturbation Broadens Reasoning Exploration",
       "url": "https://huggingface.co/papers/2605.05566",
-      "published": "2026-05-10T05:29:33.395005",
-      "likes": 29,
+      "published": "2026-05-10T14:55:09.655619",
+      "likes": 31,
       "institution": "·6 authors3",
       "paper_link": "https://arxiv.org/abs/2605.05566",
       "abstract": "Reinforcement learning with verifiable rewards, particularly Group Relative Policy Optimization (GRPO), has significantly advanced the reasoning capabilities of Large Language Models (LLMs). However, in complex tasks, GRPO frequently suffers from the ``zero-advantage problem'': when all sampled rollouts for a query fail, the relative advantage collapses to zero. Consequently, the model loses effective training signals for these questions, wasting the training data and computational budget. While simply increasing the sampling budget for these questions is a common remedy, the static sampling policy inherently constrains reasoning exploration, limiting the success rate. In this paper, we propose Lorem Perturbation for Exploration (LoPE), a simple yet effective training framework to break this exploration bottleneck. We posit that task-irrelevant prompt-space perturbations can shift the model's output distribution enough to unlock orthogonal reasoning pathways for hard questions. Specifically, LoPE prepends sequences stochastically assembled from Lorem Ipsum vocabulary (a pseudo-Latin placeholder text) to the prompts before resampling. Experiments across 1.7B, 4B, and 7B models demonstrate that LoPE significantly outperforms resampling with the original prompts. Further analysis reveals that other Latin-based random sequences with low perplexity are also effective perturbations. Our results establish LoPE as a strong baseline for broadening exploration in LLM reinforcement learning."
@@ -91,9 +91,9 @@
     {
       "title": "Audio-Visual Intelligence in Large Foundation Models",
       "url": "https://huggingface.co/papers/2605.04045",
-      "published": "2026-05-10T05:29:33.395005",
+      "published": "2026-05-10T14:55:09.655619",
       "likes": 26,
-      "institution": "National University of Singapore333",
+      "institution": "National University of Singapore343",
       "paper_link": "https://arxiv.org/abs/2605.04045",
       "code_link": "https://javisverse.github.io/",
       "abstract": "Audio-Visual Intelligence (AVI) has emerged as a central frontier in artificial intelligence, bridging auditory and visual modalities to enable machines that can perceive, generate, and interact in the multimodal real world. In the era of large foundation models, joint modeling of audio and vision has become increasingly crucial, i.e., not only for understanding but also for controllable generation and reasoning across dynamic, temporally grounded signals. Recent advances, such as Meta MovieGen and Google Veo-3, highlight the growing industrial and academic focus on unified audio-vision architectures that learn from massive multimodal data. However, despite rapid progress, the literature remains fragmented, spanning diverse tasks, inconsistent taxonomies, and heterogeneous evaluation practices that impede systematic comparison and knowledge integration. This survey provides the first comprehensive review of AVI through the lens of large foundation models. We establish a unified taxonomy covering the broad landscape of AVI tasks, ranging from understanding (e.g., speech recognition, sound localization) to generation (e.g., audio-driven video synthesis, video-to-audio) and interaction (e.g., dialogue, embodied, or agentic interfaces). We synthesize methodological foundations, including modality tokenization, cross-modal fusion, autoregressive and diffusion-based generation, large-scale pretraining, instruction alignment, and preference optimization. Furthermore, we curate representative datasets, benchmarks, and evaluation metrics, offering a structured comparison across task families and identifying open challenges in synchronization, spatial reasoning, controllability, and safety. By consolidating this rapidly expanding field into a coherent framework, this survey aims to serve as a foundational reference for future research on large-scale AVI."
