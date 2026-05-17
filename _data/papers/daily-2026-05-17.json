@@ -1,14 +1,14 @@
 {
   "date": "2026-05-17",
-  "crawled_at": "2026-05-17T05:40:33.646793",
+  "crawled_at": "2026-05-17T14:58:52.553470",
   "total_papers": 10,
   "papers": [
     {
       "title": "Achieving Gold-Medal-Level Olympiad Reasoning via Simple and Unified Scaling",
       "url": "https://huggingface.co/papers/2605.13301",
-      "published": "2026-05-17T05:40:20.863750",
+      "published": "2026-05-17T14:58:39.437170",
       "likes": 138,
-      "institution": "·28 authors652",
+      "institution": "·28 authors683",
       "paper_link": "https://arxiv.org/abs/2605.13301",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recent progress in reasoning models has substantially advanced long-horizon mathematical and scientific problem solving, with several systems now reaching gold-medal-level performance on International Mathematical Olympiad (IMO) and International Physics Olympiad (IPhO) problems. In this paper, we introduce a simple and unified recipe for converting a post-trained reasoning backbone into a rigorous olympiad-level solver. The recipe first uses a reverse-perplexity curriculum for SFT to instill rigorous proof-search and self-checking behaviors, then scales these behaviors through a two-stage RL pipeline that progresses from RL with verifiable rewards to more delicate proof-level RL, and finally boosts solving performance with test-time scaling. Applying this recipe, we train a 30B-A3B backbone with SFT on around 340K sub-8K-token trajectories followed by 200 RL steps. The resulting model, SU-01, supports stable reasoning on difficult problems with trajectories exceeding 100K tokens, while achieving gold-medal-level performance on mathematical and physical olympiad competitions, including IMO 2025/USAMO 2026 and IPhO 2024/2025. It also demonstrates strong generalization of scientific reasoning to domains beyond mathematics and physics."
@@ -16,8 +16,8 @@
     {
       "title": "Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation",
       "url": "https://huggingface.co/papers/2605.15141",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 82,
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 83,
       "institution": "Tsinghua Machine Learning Group2",
       "paper_link": "https://arxiv.org/abs/2605.15141",
       "code_link": "https://github.com/huggingface",
@@ -26,8 +26,8 @@
     {
       "title": "Self-Distilled Agentic Reinforcement Learning",
       "url": "https://huggingface.co/papers/2605.15155",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 78,
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 81,
       "institution": "·11 authors64",
       "paper_link": "https://arxiv.org/abs/2605.15155",
       "code_link": "https://github.com/huggingface",
@@ -36,8 +36,8 @@
     {
       "title": "MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models",
       "url": "https://huggingface.co/papers/2605.14906",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 67,
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 68,
       "institution": "NVIDIA164",
       "paper_link": "https://arxiv.org/abs/2605.14906",
       "code_link": "https://github.com/huggingface",
@@ -46,8 +46,8 @@
     {
       "title": "SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer",
       "url": "https://huggingface.co/papers/2605.15178",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 58,
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 66,
       "institution": "NVIDIA1",
       "paper_link": "https://arxiv.org/abs/2605.15178",
       "code_link": "https://github.com/huggingface",
@@ -56,9 +56,9 @@
     {
       "title": "MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory",
       "url": "https://huggingface.co/papers/2605.15128",
-      "published": "2026-05-17T05:40:20.863750",
+      "published": "2026-05-17T14:58:39.437170",
       "likes": 53,
-      "institution": "·17 authors251",
+      "institution": "·17 authors261",
       "paper_link": "https://arxiv.org/abs/2605.15128",
       "code_link": "https://github.com/huggingface",
       "abstract": "Long-term agent memory is increasingly multimodal, yet existing evaluations rarely test whether agents preserve the visual evidence needed for later reasoning. In prior work, many visually grounded questions can be answered using only captions or textual traces, allowing answers to be inferred without preserving the fine-grained visual evidence. Meanwhile, harder cases that require reasoning over changing visual states are largely absent. Therefore, we introduce MemEye, a framework that evaluates memory capabilities from two dimensions: one measures the granularity of decisive visual evidence (from scene-level to pixel-level evidence), and the other measures how retrieved evidence must be used (from single evidence to evolutionary synthesis). Under this framework, we construct a new benchmark across 8 life-scenario tasks, with ablation-driven validation gates for assessing answerability, shortcut resistance, visual necessity, and reasoning structure. By evaluating 13 memory methods across 4 VLM backbones, we show that current architectures still struggle to preserve fine-grained visual details and reason about state changes over time. Our findings show that long-term multimodal memory depends on evidence routing, temporal tracking, and detail extraction."
@@ -66,7 +66,7 @@
     {
       "title": "Darwin Family: MRI-Trust-Weighted Evolutionary Merging for Training-Free Scaling of Language-Model Reasoning",
       "url": "https://huggingface.co/papers/2605.14386",
-      "published": "2026-05-17T05:40:20.863750",
+      "published": "2026-05-17T14:58:39.437170",
       "likes": 50,
       "institution": "FINAL_Bench2",
       "paper_link": "https://arxiv.org/abs/2605.14386",
@@ -76,9 +76,9 @@
     {
       "title": "Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based Multi-Agent Systems",
       "url": "https://huggingface.co/papers/2605.14892",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 42,
-      "institution": "Xi'an Jiaotong University142",
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 44,
+      "institution": "Xi'an Jiaotong University152",
       "paper_link": "https://arxiv.org/abs/2605.14892",
       "code_link": "https://github.com/huggingface",
       "abstract": "LLM-based autonomous agents have demonstrated strong capabilities in reasoning, planning, and tool use, yet remain limited when tasks require sustained coordination across roles, tools, and environments. Multi-agent systems address this through structured collaboration among specialized agents, but tighter coordination also amplifies a less explored risk: errors can propagate across agents and interaction rounds, producing failures that are difficult to diagnose and rarely translate into structural self-improvement. Existing surveys cover individual agent capabilities, multi-agent collaboration, or agent self-evolution separately, leaving the causal dependencies among them unexamined. This survey provides a unified review organized around four causally linked stages, which we term the LIFE progression: Lay the capability foundation, Integrate agents through collaboration, Find faults through attribution, and Evolve through autonomous self-improvement. For each stage, we provide systematic taxonomies and formally characterize the dependencies between adjacent stages, revealing how each stage both depends on and constrains the next. Beyond synthesizing existing work, we identify open challenges at stage boundaries and propose a cross-stage research agenda for closed-loop multi-agent systems capable of continuously diagnosing failures, reorganizing structures, and refining agent behaviors, extending current coordination frameworks toward more self-organizing forms of collective intelligence. By bridging these previously fragmented research threads, this survey aims to offer both a systematic reference and a conceptual roadmap toward autonomous, self-improving multi-agent intelligence."
@@ -86,9 +86,9 @@
     {
       "title": "WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation",
       "url": "https://huggingface.co/papers/2605.10912",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 39,
-      "institution": "Intern Large Models3712",
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 40,
+      "institution": "Intern Large Models3732",
       "paper_link": "https://arxiv.org/abs/2605.10912",
       "code_link": "https://github.com/huggingface",
       "abstract": "Large language and vision-language models increasingly power agents that act on a user's behalf through command-line interface (CLI) harnesses. However, most agent benchmarks still rely on synthetic sandboxes, short-horizon tasks, mock-service APIs, and final-answer checks, leaving open whether agents can complete realistic long-horizon work in the runtimes where they are deployed. This work presents WildClawBench, a native-runtime benchmark of 60 human-authored, bilingual, multimodal tasks spanning six thematic categories. Each task averages roughly 8 minutes of wall-clock time and over 20 tool calls, and runs inside a reproducible Docker container hosting an actual CLI agent harness (OpenClaw, Claude Code, Codex, or Hermes Agent) with access to real tools rather than mock services. Grading is hybrid, combining deterministic rule-based checks, environment-state auditing of side effects, and an LLM/VLM judge for semantic verification. Across 19 frontier models, the best, Claude Opus 4.7, reaches only 62.2% overall under OpenClaw, while every other model stays below 60%, and switching harness alone shifts a single model by up to 18 points. These results show that long-horizon, native-runtime agent evaluation remains a far-from-resolved task for current frontier models. We release the tasks, code, and containerized tooling to support reproducible evaluation."
@@ -96,8 +96,8 @@
     {
       "title": "STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?",
       "url": "https://huggingface.co/papers/2605.06527",
-      "published": "2026-05-17T05:40:20.863750",
-      "likes": 37,
+      "published": "2026-05-17T14:58:39.437170",
+      "likes": 39,
       "institution": "HKUST NLP Group2",
       "paper_link": "https://arxiv.org/abs/2605.06527",
       "code_link": "https://github.com/huggingface",
