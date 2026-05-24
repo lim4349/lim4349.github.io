@@ -1,0 +1,107 @@
+{
+  "date": "2026-05-24",
+  "crawled_at": "2026-05-24T05:53:22.089220",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards",
+      "url": "https://huggingface.co/papers/2605.21467",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 190,
+      "institution": "·3 authors51",
+      "paper_link": "https://arxiv.org/abs/2605.21467",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Reinforcement learning from verifiable rewards (RLVR) has emerged as a central technique for improving the reasoning capabilities of large language models. Despite its effectiveness, how response-level rewards translate into token-level probability changes remains poorly understood. We introduce a discriminator view of RLVR updates, showing that the policy-gradient update direction implicitly acts as a linear discriminator over token-gradient vectors and thereby determines which token probabilities are increased or decreased during learning. Under standard sequence-level RLVR, this discriminator is constructed from positive- and negative-side centroids formed by advantage-weighted averaging of token-gradient vectors. However, such centroid construction can be dominated by shared high-frequency patterns, such as formatting tokens, diluting sparse yet discriminative directions that better distinguish high-reward responses from low-reward ones. To address this limitation, we propose $\\textbf{DelTA}$, a discriminative token credit assignment method that estimates token coefficients to amplify side-specific token-gradient directions and downweight shared or weakly discriminative ones. These coefficients reweight a self-normalized RLVR surrogate, making the effective side-wise centroids more contrastive and thereby reshaping the RLVR update direction. On seven mathematical benchmarks, DelTA outperforms the strongest same-scale baselines by 3.26 and 2.62 average points on Qwen3-8B-Base and Qwen3-14B-Base, respectively. Additional results on code generation, a different backbone, and out-of-domain evaluations further demonstrate the generalization ability of DelTA."
+    },
+    {
+      "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
+      "url": "https://huggingface.co/papers/2605.22355",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 167,
+      "institution": "AMAP-ML1122",
+      "paper_link": "https://arxiv.org/abs/2605.22355",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Public transit route planning traditionally depends on structured map infrastructure and complex routing engines, and no existing dataset supports training models to bypass this dependency. We present TransitLM, a large-scale dataset of over 13 million transit route planning records from four Chinese cities covering 120,845 stations and 13,666 lines, released as a continual pre-training corpus and benchmark data for three evaluation tasks with complementary metrics. Experiments show that an LLM trained on TransitLM produces structurally valid routes at high accuracy and implicitly grounds arbitrary GPS coordinates to appropriate stations without any explicit mapping. These results demonstrate that transit route planning can be learned entirely from data, enabling end-to-end, map-free route generation directly from origin-destination information. The dataset and benchmark are available at this https URL , with evaluation code at this https URL ."
+    },
+    {
+      "title": "Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?",
+      "url": "https://huggingface.co/papers/2605.22109",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 160,
+      "institution": "The University of Tokyo71",
+      "paper_link": "https://arxiv.org/abs/2605.22109",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Multimodal Large Language Models (MLLMs) are increasingly deployed in human-facing roles where personality perception is critical, yet existing benchmarks evaluate this capability solely on numerical Big Five score prediction, leaving open whether models truly perceive personality through behavioral understanding or merely prejudge through superficial pattern matching. We address this gap with three contributions. (i) A new task: we formalize Grounded Personality Reasoning (GPR), which requires MLLMs to anchor each Big Five rating in observable evidence through a chain of rating, reasoning, and grounding. (ii) A new dataset: we release MM-OCEAN (1,104 videos, 5,320 MCQs), produced by a multi-agent pipeline with human verification, with timestamped behavioral observations, evidence-grounded trait analyses, and seven categories of cue-grounding MCQs. (iii) Benchmark and analysis: we design a three-tier evaluation (rating, reasoning, grounding) plus four sample-level failure-mode metrics: Prejudice Rate (PR), Confabulation Rate (CR), Integration-failure Rate (IR), and Holistic-grounding Rate (HR), and benchmark 27 MLLMs (13 closed, 14 open). The analysis uncovers a striking Prejudice Gap: across the field, 51% of correct ratings are not grounded in retrieved cues, and the Holistic-Grounding Rate spans only 0-33.5%. These findings expose a disconnect between getting the right score and reasoning for the right reason, charting a roadmap for grounded social cognition in MLLMs."
+    },
+    {
+      "title": "π-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows",
+      "url": "https://huggingface.co/papers/2605.14678",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 90,
+      "institution": "Simplified Reasoning353",
+      "paper_link": "https://arxiv.org/abs/2605.14678",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "The rise of personal assistant agents, e.g., OpenClaw, highlights the growing potential of large language models to support users across everyday life and work. A core challenge in these settings is proactive assistance, since users often begin with underspecified requests and leave important needs, constraints, or preferences unstated. However, existing benchmarks rarely evaluate whether agents can identify and act on such hidden intents before they are explicitly stated, especially in sustained multi-turn interactions where user needs emerge gradually. To address this gap, we introduce $\\pi$-Bench, a benchmark for proactive assistance comprising 100 multi-turn tasks across 5 domain-specific user personas. By incorporating hidden user intents, inter-task dependencies, and cross-session continuity, $\\pi$-Bench evaluates agents' ability to anticipate and address user needs over extended interactions, jointly measuring proactivity and task completion in long-horizon trajectories that better reflect real-world use. Experiments show (1) proactive assistance remains challenging, (2) a clear distinction between task completion and proactivity, and (3) the value of prior interaction for proactive intent resolution in later tasks."
+    },
+    {
+      "title": "Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps",
+      "url": "https://huggingface.co/papers/2605.16928",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 84,
+      "institution": "RTP-LLM1",
+      "paper_link": "https://arxiv.org/abs/2605.16928",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Long-context inference in large language models is bottlenecked by the quadratic cost of full attention. Existing efficient alternatives often rely either on native sparse training or on heuristic token eviction, creating an undesirable trade-off among efficiency, training cost, and accuracy. In this work, we show that full-attention LLMs are already intrinsically sparse and can be transformed into highly sparse models with only minimal adaptation. Our approach is built on three observations: (1) only a small subset of attention heads truly requires full long-context processing; (2) long-range retrieval is governed primarily by a low-dimensional subspace, allowing relevant tokens to be retrieved efficiently with a 16-dimensional indexer; and (3) the useful token budget is strongly query-dependent, making dynamic top-$p$ selection more suitable than fixed top-$k$ sparsification. Based on these insights, we propose RTPurbo, which retains the full KV cache only for retrieval heads and introduces a lightweight token indexer for sparse attention. By exploiting the model's intrinsic sparsity, RTPurbo achieves sparsification with only a few hundred training steps. Experiments on long-context benchmarks and reasoning tasks show that RTPurbo preserves near-lossless accuracy while delivering substantial efficiency gains, including up to a 9.36$\\times$ prefill speedup at 1M context and about a 2.01$\\times$ decode speedup. These results suggest that strong sparse inference can be obtained from standard full-attention training without expensive native sparse pretraining."
+    },
+    {
+      "title": "ACC: Compiling Agent Trajectories for Long-Context Training",
+      "url": "https://huggingface.co/papers/2605.21850",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 56,
+      "institution": "University of Science and Technology of China1",
+      "paper_link": "https://arxiv.org/abs/2605.21850",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Recent development of agents has renewed demand for long-context reasoning capacity of LLMs. However, training LLMs for this capacity requires costly long-document curation or heuristic context synthesis. We observe that agents produce massive trajectories when solving problems, invoking tools and receiving environment observations across many turns. The evidence needed to answer the original question is thus scattered throughout these turns, requiring integration of distant context segments. Nevertheless, standard agent SFT masks tool responses and only trains turn-level tool selection, creating a supervision blind spot where these scattered signals go unused. We propose Agent Context Compilation (ACC), which converts trajectories from search, software engineering, and database querying agents into long-context QA pairs that combine the original question with tool responses and environment observations gathered across multiple turns, training the model to answer directly without tool use. This makes the dependencies between the question and the evidence explicit, enabling direct supervision of long-context reasoning over distant segments without additional annotation. ACC is a simple but effective approach that can be combined with any existing long-context extension or training method, providing scalable supervised fine-tuning data. We validate ACC on long-range dependency modeling tasks through MRCR and GraphWalks, challenging benchmarks requiring cross-turn coreference resolution and graph traversal over extended contexts. Training Qwen3-30B-A3B with ACC achieves 68.3 on MRCR (+18.1) and 77.5 on GraphWalks (+7.6), results comparable to Qwen3-235B-A22B, while preserving general capabilities on GPQA, MMLU-Pro, AIME, and IFEval. Further mechanism analysis reveals that the ACC-trained model exhibits task-adaptive attention restructuring and expert specialization."
+    },
+    {
+      "title": "PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects",
+      "url": "https://huggingface.co/papers/2605.21572",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 45,
+      "institution": "·8 authors841",
+      "paper_link": "https://arxiv.org/abs/2605.21572",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Simulation-ready physical 3D assets have emerged as a promising direction owing to their broad applicability in downstream tasks. However, most existing 3D generation methods either neglect physical properties or are limited to a single asset category, e.g., rigid, deformable, or articulated objects. To address these limitations, we introduce PhysX-Omni, a unified framework for simulation-ready physical 3D generation across diverse asset types. Specifically, we develop a novel and efficient geometry representation tailored for Vision-Language Models, which directly encodes high-resolution 3D structures without compression, significantly improving generation performance. In addition, we construct the first general simulation-ready 3D dataset, PhysXVerse, covering diverse indoor and outdoor categories. Furthermore, to comprehensively and flexibly evaluate both generative and understanding capabilities in the wild, we propose PhysX-Bench, which encompasses six key attributes: geometry, absolute scale, material, affordance, kinematics, and function description. Extensive experiments with conventional metrics and PhysX-Bench show that PhysX-Omni performs strongly in both generation and understanding. Moreover, additional studies further validate the potential of PhysX-Omni for applications in simulation-ready scene generation and robotic policy learning. We believe PhysX-Omni can significantly advance a wide range of downstream applications, particularly in embodied AI and physics-based simulation."
+    },
+    {
+      "title": "LatentOmni: Rethinking Omni-Modal Understanding via Unified Audio-Visual Latent Reasoning",
+      "url": "https://huggingface.co/papers/2605.22012",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 37,
+      "institution": "Kling Team91",
+      "paper_link": "https://arxiv.org/abs/2605.22012",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Joint audio-visual reasoning is essential for omnimodal understanding, yet current multimodal large language models (MLLMs) still struggle when reasoning requires fine-grained evidence from both modalities. A central limitation is that explicit text-based chain-of-thought (CoT) compresses continuous audio-visual signals into discrete tokens, weakening temporal grounding and shifting intermediate reasoning toward language priors. We argue that a unified latent space is a better medium for such reasoning because it preserves dense sensory information while remaining compatible with autoregressive generation. Based on this insight, we propose \\textbf{LatentOmni}, a cross-modal reasoning framework that interleaves textual reasoning with audio-visual latent states. LatentOmni introduces feature-level supervision to align latent reasoning states with task-relevant sensory features and uses Omni-Sync Position Embedding (OSPE) to maintain temporal consistency between latent audio and visual states. We further construct \\textbf{LatentOmni-Instruct-35K}, a dataset of audio-visual interleaved reasoning trajectories for supervising latent-space reasoning. Comprehensive evaluation across multiple audio-visual reasoning benchmarks demonstrates that LatentOmni achieves the best performance among the evaluated open-source models and consistently outperforms the Explicit Text CoT baseline, supporting latent-space joint reasoning as a promising path toward stronger omnimodal understanding."
+    },
+    {
+      "title": "Forecasting Scientific Progress with Artificial Intelligence",
+      "url": "https://huggingface.co/papers/2605.22681",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 34,
+      "institution": "University of Oxford181",
+      "paper_link": "https://arxiv.org/abs/2605.22681",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Artificial intelligence (AI) is increasingly embedded in scientific discovery, yet whether it can anticipate scientific progress remains unclear. To study this question, we introduce a temporally grounded evaluation framework for forecasting scientific progress under controlled knowledge constraints. We present CUSP (Cutoff-conditioned Unseen Scientific Progress), a multi-disciplinary and event-level benchmark that evaluates scientific forecasting in AI systems through feasibility assessment, mechanistic reasoning, generative solution design, and temporal prediction. Across 4,760 scientific events, we observe systematic and domain-dependent limitations in current frontier models. While models can identify plausible research directions from competing candidates, they fail to reliably predict whether scientific advances will be realized and systematically misestimate when they will occur. Performance is highly heterogeneous across domains, with the timing of AI progress more predictable than advances in biology, chemistry, and physics. Performance is largely insensitive to whether events occur before or after the training cutoff, suggesting these limitations cannot be explained solely by knowledge exposure in training data. Under controlled information access, additional pre-cutoff knowledge improves performance but does not close the gap to full-information settings, which becomes more pronounced for high-citation advances. Models also exhibit systematic overconfidence and strong response biases, indicating unreliable uncertainty estimation. Taken together, current AI systems fall short as predictive tools for scientific progress. Access to prior knowledge does not translate into reliable forecasting, and performance benefits more from post-event information than from forward-looking prediction."
+    },
+    {
+      "title": "SEGA: Spectral-Energy Guided Attention for Resolution Extrapolation in Diffusion Transformers",
+      "url": "https://huggingface.co/papers/2605.22668",
+      "published": "2026-05-24T05:53:08.663513",
+      "likes": 32,
+      "institution": "University of Toronto Computer Science1",
+      "paper_link": "https://arxiv.org/abs/2605.22668",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Diffusion transformers (DiTs) have emerged as a dominant architecture for text-to-image generation, yet their performance drops when generating at resolutions beyond their training range. Existing training-free approaches mitigate this by modifying inference-time attention behavior, often through Rotary Position Embeddings (RoPE) extrapolation combined with attention scaling. However, these strategies apply a uniform and content-agnostic scaling across RoPE components with distinct frequency characteristics, inducing a trade-off between preserving global structure and recovering fine detail. We introduce SEGA, a training-free method that dynamically scales attention across RoPE components according to the latent's spatial-frequency structure at each denoising step. This adaptive scaling improves both structural coherence and fine-detail fidelity. Experiments show that SEGA consistently improves high-resolution synthesis across multiple target resolutions, outperforming state-of-the-art training-free baselines."
+    }
+  ]
+}
