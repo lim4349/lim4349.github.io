@@ -1,13 +1,13 @@
 {
   "date": "2026-05-24",
-  "crawled_at": "2026-05-24T05:53:22.089220",
+  "crawled_at": "2026-05-24T15:05:38.323188",
   "total_papers": 10,
   "papers": [
     {
       "title": "DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards",
       "url": "https://huggingface.co/papers/2605.21467",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 190,
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 192,
       "institution": "·3 authors51",
       "paper_link": "https://arxiv.org/abs/2605.21467",
       "code_link": "https://github.com/huggingface",
@@ -16,7 +16,7 @@
     {
       "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
       "url": "https://huggingface.co/papers/2605.22355",
-      "published": "2026-05-24T05:53:08.663513",
+      "published": "2026-05-24T15:05:24.839221",
       "likes": 167,
       "institution": "AMAP-ML1122",
       "paper_link": "https://arxiv.org/abs/2605.22355",
@@ -26,9 +26,9 @@
     {
       "title": "Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?",
       "url": "https://huggingface.co/papers/2605.22109",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 160,
-      "institution": "The University of Tokyo71",
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 161,
+      "institution": "The University of Tokyo91",
       "paper_link": "https://arxiv.org/abs/2605.22109",
       "code_link": "https://github.com/huggingface",
       "abstract": "Multimodal Large Language Models (MLLMs) are increasingly deployed in human-facing roles where personality perception is critical, yet existing benchmarks evaluate this capability solely on numerical Big Five score prediction, leaving open whether models truly perceive personality through behavioral understanding or merely prejudge through superficial pattern matching. We address this gap with three contributions. (i) A new task: we formalize Grounded Personality Reasoning (GPR), which requires MLLMs to anchor each Big Five rating in observable evidence through a chain of rating, reasoning, and grounding. (ii) A new dataset: we release MM-OCEAN (1,104 videos, 5,320 MCQs), produced by a multi-agent pipeline with human verification, with timestamped behavioral observations, evidence-grounded trait analyses, and seven categories of cue-grounding MCQs. (iii) Benchmark and analysis: we design a three-tier evaluation (rating, reasoning, grounding) plus four sample-level failure-mode metrics: Prejudice Rate (PR), Confabulation Rate (CR), Integration-failure Rate (IR), and Holistic-grounding Rate (HR), and benchmark 27 MLLMs (13 closed, 14 open). The analysis uncovers a striking Prejudice Gap: across the field, 51% of correct ratings are not grounded in retrieved cues, and the Holistic-Grounding Rate spans only 0-33.5%. These findings expose a disconnect between getting the right score and reasoning for the right reason, charting a roadmap for grounded social cognition in MLLMs."
@@ -36,8 +36,8 @@
     {
       "title": "π-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows",
       "url": "https://huggingface.co/papers/2605.14678",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 90,
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 91,
       "institution": "Simplified Reasoning353",
       "paper_link": "https://arxiv.org/abs/2605.14678",
       "code_link": "https://github.com/huggingface",
@@ -46,8 +46,8 @@
     {
       "title": "Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps",
       "url": "https://huggingface.co/papers/2605.16928",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 84,
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 85,
       "institution": "RTP-LLM1",
       "paper_link": "https://arxiv.org/abs/2605.16928",
       "code_link": "https://github.com/huggingface",
@@ -56,7 +56,7 @@
     {
       "title": "ACC: Compiling Agent Trajectories for Long-Context Training",
       "url": "https://huggingface.co/papers/2605.21850",
-      "published": "2026-05-24T05:53:08.663513",
+      "published": "2026-05-24T15:05:24.839221",
       "likes": 56,
       "institution": "University of Science and Technology of China1",
       "paper_link": "https://arxiv.org/abs/2605.21850",
@@ -66,9 +66,9 @@
     {
       "title": "PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects",
       "url": "https://huggingface.co/papers/2605.21572",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 45,
-      "institution": "·8 authors841",
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 46,
+      "institution": "·8 authors891",
       "paper_link": "https://arxiv.org/abs/2605.21572",
       "code_link": "https://github.com/huggingface",
       "abstract": "Simulation-ready physical 3D assets have emerged as a promising direction owing to their broad applicability in downstream tasks. However, most existing 3D generation methods either neglect physical properties or are limited to a single asset category, e.g., rigid, deformable, or articulated objects. To address these limitations, we introduce PhysX-Omni, a unified framework for simulation-ready physical 3D generation across diverse asset types. Specifically, we develop a novel and efficient geometry representation tailored for Vision-Language Models, which directly encodes high-resolution 3D structures without compression, significantly improving generation performance. In addition, we construct the first general simulation-ready 3D dataset, PhysXVerse, covering diverse indoor and outdoor categories. Furthermore, to comprehensively and flexibly evaluate both generative and understanding capabilities in the wild, we propose PhysX-Bench, which encompasses six key attributes: geometry, absolute scale, material, affordance, kinematics, and function description. Extensive experiments with conventional metrics and PhysX-Bench show that PhysX-Omni performs strongly in both generation and understanding. Moreover, additional studies further validate the potential of PhysX-Omni for applications in simulation-ready scene generation and robotic policy learning. We believe PhysX-Omni can significantly advance a wide range of downstream applications, particularly in embodied AI and physics-based simulation."
@@ -76,32 +76,32 @@
     {
       "title": "LatentOmni: Rethinking Omni-Modal Understanding via Unified Audio-Visual Latent Reasoning",
       "url": "https://huggingface.co/papers/2605.22012",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 37,
-      "institution": "Kling Team91",
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 40,
+      "institution": "Kling Team101",
       "paper_link": "https://arxiv.org/abs/2605.22012",
       "code_link": "https://github.com/huggingface",
       "abstract": "Joint audio-visual reasoning is essential for omnimodal understanding, yet current multimodal large language models (MLLMs) still struggle when reasoning requires fine-grained evidence from both modalities. A central limitation is that explicit text-based chain-of-thought (CoT) compresses continuous audio-visual signals into discrete tokens, weakening temporal grounding and shifting intermediate reasoning toward language priors. We argue that a unified latent space is a better medium for such reasoning because it preserves dense sensory information while remaining compatible with autoregressive generation. Based on this insight, we propose \\textbf{LatentOmni}, a cross-modal reasoning framework that interleaves textual reasoning with audio-visual latent states. LatentOmni introduces feature-level supervision to align latent reasoning states with task-relevant sensory features and uses Omni-Sync Position Embedding (OSPE) to maintain temporal consistency between latent audio and visual states. We further construct \\textbf{LatentOmni-Instruct-35K}, a dataset of audio-visual interleaved reasoning trajectories for supervising latent-space reasoning. Comprehensive evaluation across multiple audio-visual reasoning benchmarks demonstrates that LatentOmni achieves the best performance among the evaluated open-source models and consistently outperforms the Explicit Text CoT baseline, supporting latent-space joint reasoning as a promising path toward stronger omnimodal understanding."
     },
     {
-      "title": "Forecasting Scientific Progress with Artificial Intelligence",
-      "url": "https://huggingface.co/papers/2605.22681",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 34,
-      "institution": "University of Oxford181",
-      "paper_link": "https://arxiv.org/abs/2605.22681",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Artificial intelligence (AI) is increasingly embedded in scientific discovery, yet whether it can anticipate scientific progress remains unclear. To study this question, we introduce a temporally grounded evaluation framework for forecasting scientific progress under controlled knowledge constraints. We present CUSP (Cutoff-conditioned Unseen Scientific Progress), a multi-disciplinary and event-level benchmark that evaluates scientific forecasting in AI systems through feasibility assessment, mechanistic reasoning, generative solution design, and temporal prediction. Across 4,760 scientific events, we observe systematic and domain-dependent limitations in current frontier models. While models can identify plausible research directions from competing candidates, they fail to reliably predict whether scientific advances will be realized and systematically misestimate when they will occur. Performance is highly heterogeneous across domains, with the timing of AI progress more predictable than advances in biology, chemistry, and physics. Performance is largely insensitive to whether events occur before or after the training cutoff, suggesting these limitations cannot be explained solely by knowledge exposure in training data. Under controlled information access, additional pre-cutoff knowledge improves performance but does not close the gap to full-information settings, which becomes more pronounced for high-citation advances. Models also exhibit systematic overconfidence and strong response biases, indicating unreliable uncertainty estimation. Taken together, current AI systems fall short as predictive tools for scientific progress. Access to prior knowledge does not translate into reliable forecasting, and performance benefits more from post-event information than from forward-looking prediction."
-    },
-    {
       "title": "SEGA: Spectral-Energy Guided Attention for Resolution Extrapolation in Diffusion Transformers",
       "url": "https://huggingface.co/papers/2605.22668",
-      "published": "2026-05-24T05:53:08.663513",
-      "likes": 32,
-      "institution": "University of Toronto Computer Science1",
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 34,
+      "institution": "University of Toronto Computer Science2",
       "paper_link": "https://arxiv.org/abs/2605.22668",
       "code_link": "https://github.com/huggingface",
       "abstract": "Diffusion transformers (DiTs) have emerged as a dominant architecture for text-to-image generation, yet their performance drops when generating at resolutions beyond their training range. Existing training-free approaches mitigate this by modifying inference-time attention behavior, often through Rotary Position Embeddings (RoPE) extrapolation combined with attention scaling. However, these strategies apply a uniform and content-agnostic scaling across RoPE components with distinct frequency characteristics, inducing a trade-off between preserving global structure and recovering fine detail. We introduce SEGA, a training-free method that dynamically scales attention across RoPE components according to the latent's spatial-frequency structure at each denoising step. This adaptive scaling improves both structural coherence and fine-detail fidelity. Experiments show that SEGA consistently improves high-resolution synthesis across multiple target resolutions, outperforming state-of-the-art training-free baselines."
+    },
+    {
+      "title": "Forecasting Scientific Progress with Artificial Intelligence",
+      "url": "https://huggingface.co/papers/2605.22681",
+      "published": "2026-05-24T15:05:24.839221",
+      "likes": 34,
+      "institution": "University of Oxford201",
+      "paper_link": "https://arxiv.org/abs/2605.22681",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Artificial intelligence (AI) is increasingly embedded in scientific discovery, yet whether it can anticipate scientific progress remains unclear. To study this question, we introduce a temporally grounded evaluation framework for forecasting scientific progress under controlled knowledge constraints. We present CUSP (Cutoff-conditioned Unseen Scientific Progress), a multi-disciplinary and event-level benchmark that evaluates scientific forecasting in AI systems through feasibility assessment, mechanistic reasoning, generative solution design, and temporal prediction. Across 4,760 scientific events, we observe systematic and domain-dependent limitations in current frontier models. While models can identify plausible research directions from competing candidates, they fail to reliably predict whether scientific advances will be realized and systematically misestimate when they will occur. Performance is highly heterogeneous across domains, with the timing of AI progress more predictable than advances in biology, chemistry, and physics. Performance is largely insensitive to whether events occur before or after the training cutoff, suggesting these limitations cannot be explained solely by knowledge exposure in training data. Under controlled information access, additional pre-cutoff knowledge improves performance but does not close the gap to full-information settings, which becomes more pronounced for high-citation advances. Models also exhibit systematic overconfidence and strong response biases, indicating unreliable uncertainty estimation. Taken together, current AI systems fall short as predictive tools for scientific progress. Access to prior knowledge does not translate into reliable forecasting, and performance benefits more from post-event information than from forward-looking prediction."
     }
   ]
 }
