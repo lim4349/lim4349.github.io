@@ -1,107 +1,107 @@
 {
   "date": "2026-05-25",
-  "crawled_at": "2026-05-25T06:16:33.040502",
+  "crawled_at": "2026-05-25T16:23:36.555849",
   "total_papers": 10,
   "papers": [
     {
       "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
       "url": "https://huggingface.co/papers/2605.23904",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 53,
-      "institution": "Microsoft Research82",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 147,
+      "institution": "Microsoft Research722",
       "paper_link": "https://arxiv.org/abs/2605.23904",
       "code_link": "https://github.com/huggingface",
       "abstract": "Agent skills today are hand-crafted, generated one-shot, or evolved through loosely controlled self-revision, none of which behaves like a deep-learning optimizer for the skill, and none of which reliably improves over its starting point under feedback. We argue the skill should instead be trained as the external state of a frozen agent, with the same discipline that makes weight-space optimization reproducible. SkillOpt is, to our knowledge, the first systematic controllable text-space optimizer for agent skills: a separate optimizer model turns scored rollouts into bounded add/delete/replace edits on a single skill document, and an edit is accepted only when it strictly improves a held-out validation score. A textual learning-rate budget, rejected-edit buffer, and epoch-wise slow/meta update make skill training stable while adding zero inference-time model calls at deployment. Across six benchmarks, seven target models, and three execution harnesses (direct chat, Codex, Claude Code), SkillOpt is best or tied on all 52 evaluated (model, benchmark, harness) cells and beats every per-cell competitor among human, one-shot LLM, Trace2Skill, TextGrad, GEPA, and EvoSkill skills. On GPT-5.5 it lifts the average no-skill accuracy by +23.5 points in direct chat, by +24.8 inside the Codex agentic loop, and by +19.1 inside Claude Code. Transfer experiments further show that optimized skill artifacts retain value when moved across model scales, between Codex and Claude Code execution environments, and to a nearby math benchmark without further optimization."
     },
     {
-      "title": "Rethinking Cross-Layer Information Routing in Diffusion Transformers",
-      "url": "https://huggingface.co/papers/2605.20708",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 52,
-      "institution": "RTP-LLM1",
-      "paper_link": "https://arxiv.org/abs/2605.20708",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Diffusion Transformers (DiTs) have become a de facto backbone of modern visual generation, and nearly every major axis of their design -- tokenization, attention, conditioning, objectives, and latent autoencoders -- has been extensively revisited. The residual stream that governs how information accumulates across layers, however, has been directly inherited from the original Transformer. In this paper, we present a systematic empirical analysis of cross-layer information flow in DiTs, jointly along depth and denoising timestep, and identify three concrete symptoms of traditional residual addition, namely monotonic forward magnitude inflation, sharp backward gradient decay, and pronounced block-wise redundancy. Motivated by this diagnosis, we propose Diffusion-Adaptive Routing (\\textsc{DAR}), a drop-in residual replacement that performs \\emph{learnable, timestep-adaptive, and non-incremental} aggregation over the history of sublayer outputs. Moreover, the proposed \\textsc{DAR} is compatible with many modern Transformer enhancement methods, such as REPA. On ImageNet $256\\times256$, \\textsc{DAR} improves SiT-XL/2 by $2.11$ FID ($7.56$ vs.\\ $9.67$) and matches the baseline's converged quality with $8.75\\times$ fewer training iterations. Stacked on top of REPA, it yields a $2\\times$ training acceleration in the early stage, suggesting cross-layer information routing as an underexplored design axis in diffusion modeling, one that operates orthogonally to existing representation-alignment objectives. Beyond pretraining, \\textsc{DAR} can also be applied during the fine-tuning stage of large-scale T2I models and preserves high-frequency details during Distribution Matching Distillation."
-    },
-    {
       "title": "Lens: Rethinking Training Efficiency for Foundational Text-to-Image Models",
       "url": "https://huggingface.co/papers/2605.21573",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 45,
-      "institution": "Microsoft811",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 87,
+      "institution": "Microsoft1131",
       "paper_link": "https://arxiv.org/abs/2605.21573",
       "code_link": "https://github.com/huggingface",
       "abstract": "We introduce Lens, a 3.8B-parameter T2I model that achieves performance competitive with, and in several cases surpassing, state-of-the-art models with more than 6B parameters across various benchmarks, while requiring significantly less training compute. For example, Lens requires only about 19.3% of the training compute used by Z-Image. The training efficiency of Lens stems from two key strategies beyond its compact model size. First, we maximize data information density per training batch by (i) training on Lens-800M, a dataset of 800M densely captioned image-text pairs whose captions are generated by GPT-4.1 and contain approximately 109 words on average, providing richer semantic supervision than conventional short captions, and (ii) constructing each batch from images with multiple resolutions and diverse aspect ratios, thereby enlarging the effective visual coverage of each optimization step. Second, we improve convergence speed through careful architectural choices, including adopting a semantic VAE that provides better latent representations and employing a strong language encoder that accelerates optimization while enabling multilingual generalization from English-only training data. After pre-training, we apply RL with taxonomy-driven prompts (Lens-RL-8K) and structured reward rubrics to suppress artifacts and improve visual quality, a reasoner module with training-free system prompt search to better align user requests with the model, and distillation-based acceleration for 4-step inference. Through efficient training and systematic optimization, Lens generalizes to arbitrary aspect ratios from 1:2 to 2:1 and resolutions up to 1440^2, and supports prompts in several commonly used languages. Thanks to its compact size, Lens generates a 1024^2 image in 3.15 seconds on a single NVIDIA H100 GPU, while its distilled turbo version performs 4-step generation in 0.84 seconds."
     },
     {
-      "title": "See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding",
-      "url": "https://huggingface.co/papers/2605.18018",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 25,
-      "institution": "TongyiLab801",
-      "paper_link": "https://arxiv.org/abs/2605.18018",
+      "title": "Rethinking Cross-Layer Information Routing in Diffusion Transformers",
+      "url": "https://huggingface.co/papers/2605.20708",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 82,
+      "institution": "RTP-LLM3",
+      "paper_link": "https://arxiv.org/abs/2605.20708",
       "code_link": "https://github.com/huggingface",
-      "abstract": "We present SWIM (See What I Mean), a novel training strategy that aligns vision and language representations to enable fine-grained object understanding solely from textual prompts. Unlike existing approaches that require explicit visual prompts, such as masks or points, SWIM leverages mask supervision only during training to guide cross-modal attention, allowing the model to automatically attend to the user-specified object at inference. Our cross-attention analysis of pretrained multimodal large languagemodels (MLLMs) reveals a systematic discrepancy: Attribute words produce sharp, localized activations in the visual modality, whereas object nouns yield diffuse and scattered patterns due to semantic reference bias and distributed high-level representations. To address this misalignment, we construct NL-Refer, an enriched dataset, in which each object mask is paired with a precise natural language referring expression. SWIM extracts multi-layer cross-attention maps from object nouns and enforces spatial consistency with ground-truth masks. Experimental results demonstrate that SWIM substantially improves text-visual alignment and achieves superior performance over visual-prompt-based methods on fine-grained object understanding benchmarks. The code and data are available at \\href{ this https URL }{ this https URL }."
+      "abstract": "Diffusion Transformers (DiTs) have become a de facto backbone of modern visual generation, and nearly every major axis of their design -- tokenization, attention, conditioning, objectives, and latent autoencoders -- has been extensively revisited. The residual stream that governs how information accumulates across layers, however, has been directly inherited from the original Transformer. In this paper, we present a systematic empirical analysis of cross-layer information flow in DiTs, jointly along depth and denoising timestep, and identify three concrete symptoms of traditional residual addition, namely monotonic forward magnitude inflation, sharp backward gradient decay, and pronounced block-wise redundancy. Motivated by this diagnosis, we propose Diffusion-Adaptive Routing (\\textsc{DAR}), a drop-in residual replacement that performs \\emph{learnable, timestep-adaptive, and non-incremental} aggregation over the history of sublayer outputs. Moreover, the proposed \\textsc{DAR} is compatible with many modern Transformer enhancement methods, such as REPA. On ImageNet $256\\times256$, \\textsc{DAR} improves SiT-XL/2 by $2.11$ FID ($7.56$ vs.\\ $9.67$) and matches the baseline's converged quality with $8.75\\times$ fewer training iterations. Stacked on top of REPA, it yields a $2\\times$ training acceleration in the early stage, suggesting cross-layer information routing as an underexplored design axis in diffusion modeling, one that operates orthogonally to existing representation-alignment objectives. Beyond pretraining, \\textsc{DAR} can also be applied during the fine-tuning stage of large-scale T2I models and preserves high-frequency details during Distribution Matching Distillation."
+    },
+    {
+      "title": "SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research",
+      "url": "https://huggingface.co/papers/2605.22878",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 44,
+      "institution": "University College London CS381",
+      "paper_link": "https://arxiv.org/abs/2605.22878",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "The exponential growth of global academic output has confronted researchers and AI agents with an unprecedented ``information explosion,'' where fragmented and unstructured knowledge organization impedes deep interdisciplinary integration. Current academic retrieval tools predominantly rely on superficial keyword matching or vector-space semantic retrieval, which lack the topological reasoning capabilities required to navigate complex logical connections. Agentic deep-research-based frameworks are often prone to logical hallucinations and consuming high inference costs. To bridge this gap, in this report, we introduce SciAtlas, a large-scale, multi-disciplinary, heterogeneous academic resource knowledge graph designed as a panoramic scientific evolution network. By integrating over 43M papers from 26 disciplines, and a total of 157M entities and 3B triplets, SciAtlas provides a structured topological cognitive substrate that dismantles disciplinary barriers and furnishes AI agents with a global perspective. Furthermore, we develop a neuro-symbolic retrieval algorithm featuring tri-path collaborative recall and graph reranking, achieving a seamless transition from simple semantic matching to deterministic association discovery. We also present key application directions of SciAtlas, including literature review, automated research trend synthesis, idea positioning, and academic trajectory exploration, to demonstrate that SciAtlas can serve as an effective ``cognitive map'' to empower the full loop of automated scientific research while significantly reducing reasoning costs. We have released the interfaces for KG retrieval and various downstream tasks in our GitHub repo."
     },
     {
       "title": "StepAudio 2.5 Technical Report",
       "url": "https://huggingface.co/papers/2605.23463",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 24,
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 35,
       "institution": "·101 authors1",
       "paper_link": "https://arxiv.org/abs/2605.23463",
       "code_link": "https://github.com/huggingface",
       "abstract": "Unified audio-language modeling has emerged as a prominent trend in modern speech systems, promising to bring the reasoning capabilities of large language models to auditory tasks. However, existing unified foundations often struggle to match the depth of specialized systems across automatic speech recognition (ASR), text-to-speech synthesis (TTS), and realtime spoken interaction. Bridging this gap remains an open challenge. This report presents StepAudio 2.5, a unified audio-language foundation model that matches or exceeds specialized systems across all three capabilities. Rather than treating these tasks as architecturally distinct, we operate on the premise that once text and audio share a multimodal representational space, task specialization becomes a matter of operational regimes: data construction, optimization targets, and decoding constraints. Guided by this insight, we advance the post-training paradigm from standard supervised learning to task-tailored Reinforcement Learning from Human Feedback (RLHF), using it as the primary mechanism to define complex optimization targets. We leverage this RLHF-centric alignment, alongside specialized decoding, to shape a shared backbone into three distinct operational modes. Concretely, the ASR branch advances transcription efficiency via verifiable multi-token decoding; the TTS branch achieves controllable, expressive synthesis through preference-based RLHF and context-rich supervision; and the Realtime branch realizes low-latency, persona-consistent dialogue via generative reward modeling within an RLHF framework. On standard benchmarks, StepAudio 2.5 achieves state-of-the-art results across ASR, TTS, and Realtime, demonstrating that a singular audio-language foundation can successfully internalize the distinct deployment objectives of speech understanding, generation, and live interaction."
     },
     {
+      "title": "See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding",
+      "url": "https://huggingface.co/papers/2605.18018",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 28,
+      "institution": "TongyiLab831",
+      "paper_link": "https://arxiv.org/abs/2605.18018",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "We present SWIM (See What I Mean), a novel training strategy that aligns vision and language representations to enable fine-grained object understanding solely from textual prompts. Unlike existing approaches that require explicit visual prompts, such as masks or points, SWIM leverages mask supervision only during training to guide cross-modal attention, allowing the model to automatically attend to the user-specified object at inference. Our cross-attention analysis of pretrained multimodal large languagemodels (MLLMs) reveals a systematic discrepancy: Attribute words produce sharp, localized activations in the visual modality, whereas object nouns yield diffuse and scattered patterns due to semantic reference bias and distributed high-level representations. To address this misalignment, we construct NL-Refer, an enriched dataset, in which each object mask is paired with a precise natural language referring expression. SWIM extracts multi-layer cross-attention maps from object nouns and enforces spatial consistency with ground-truth masks. Experimental results demonstrate that SWIM substantially improves text-visual alignment and achieves superior performance over visual-prompt-based methods on fine-grained object understanding benchmarks. The code and data are available at \\href{ this https URL }{ this https URL }."
+    },
+    {
       "title": "From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills",
       "url": "https://huggingface.co/papers/2605.23899",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 15,
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 21,
       "institution": "Microsoft Research",
       "paper_link": "https://arxiv.org/abs/2605.23899",
       "code_link": "https://github.com/huggingface",
       "abstract": "Language agents increasingly improve by reusing \\emph{skills} -- structured procedural artifacts distilled from past experience. In particular, \\emph{domain-level} and \\emph{model-generated} skills are especially promising. They offer fast adaptation within a domain by encoding domain-specific recurring procedures, and they scale beyond labor-intensive hand-crafting. However, while extraction methods continue to proliferate, understanding remains limited, with no comprehensive study spanning the full skill lifecycle -- \\textbf{experience generation}, \\textbf{skill extraction}, and \\textbf{skill consumption} -- to ask whether such skills actually work, when they work, and what makes them succeed or fail. To close this gap, we build a utility-grounded evaluation framework that provides systematic experimental results across extractors and target agents, covering five diverse agentic task domains. We find that model-generated skills are beneficial on average but exhibit non-trivial negative transfer, and that neither extractors nor targets behave uniformly. A model can be a strong extractor yet a weak consumer, or vice versa, with skill utility independent of model scale or baseline task strength. To explain these patterns, we then dissect each lifecycle stage in depth, analyzing how experience composition shapes skill quality, what properties characterize useful skills, and how the same skill transfers across different consumers. Finally, we translate these findings into a concrete \\emph{meta-skill} that guides skill extraction toward the features tied to actual utility, which consistently improves skill quality across domains and substantially reduces negative transfer."
     },
     {
-      "title": "RankE: End-to-End Post-Training for Discrete Text-to-Image Generation with Decoder Co-Evolution",
-      "url": "https://huggingface.co/papers/2605.21195",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 9,
-      "institution": "Westlake University142",
-      "paper_link": "https://arxiv.org/abs/2605.21195",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Discrete autoregressive (AR) text-to-image (T2I) models pair a VQ tokenizer with an AR policy, and current post-training pipelines optimize only the policy while keeping the VQ decoder frozen. Recent diffusion T2I work, exemplified by REPA-E, has shown that the VAE itself constitutes a key alignment bottleneck, yet no analogous investigation exists for discrete AR models. We show that policy-only optimization induces Latent Covariate Shift: as the policy evolves, the resulting token distribution diverges from the ground-truth distribution on which the decoder was trained, such that reward scores improve while decoded image quality degrades. To address this mismatch, we propose RankE, the first end-to-end post-training framework for discrete T2I generation. Rather than optimizing the policy against a fixed decoder, RankE co-evolves both components through alternating optimization: each module maximizes a ranking-based alignment objective while being regularized by a stability-preserving anchor suited to its parameter space. This co-evolution breaks the fidelity--alignment trade-off that plagues frozen-decoder approaches: on LlamaGen-XL (775M), standard RL improves CLIP but degrades FID, whereas RankE improves both simultaneously (FID 15.21, CLIP 33.76 on MS-COCO 30K). Consistent gains on Janus-Pro (1B) confirm that decoder co-evolution reliably converts reward optimization into pixel-space quality improvements."
-    },
-    {
       "title": "PhotoFlow: Agentic 3D Virtual Photography Missions",
       "url": "https://huggingface.co/papers/2605.23771",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 8,
-      "institution": "Visionary-Laboratoary21",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 20,
+      "institution": "Visionary-Laboratoary241",
       "paper_link": "https://arxiv.org/abs/2605.23771",
       "code_link": "https://github.com/huggingface",
       "abstract": "Virtual photography asks an agent to enter a prepared 3D scene with no preselected camera pose or reference image, infer a suitable shot from scene information and a language intent, choose executable camera parameters, and render the final photograph. Recent progress in vision-language models makes this kind of spatial agent increasingly plausible, but the task stresses two capabilities that remain hard to evaluate together: complex 3D spatial understanding and abstract aesthetic judgment. We introduce PhotoFlow, a Director-Reviewer-Reflector agent for closed-loop camera search. The Director builds a soft photographic blueprint and proposes diverse candidate cameras; the Reviewer combines rule checks, visual critique, and pairwise incumbent selection; and the Reflector converts failures into region memory, dead-zone suppression, and high-explore relocation. We also introduce VPhotoBench, a benchmark of 47 open-license Blender scenes and 141 language-conditioned photography missions spanning subject placement, relational composition, and atmosphere/style. On held-out experiments, PhotoFlow achieves the strongest external quality-alignment composite and success rate among one-shot prediction, single-chain reflection, anchor-bank selection, and random search under a six-round rendering budget. To our knowledge, this is the first work to make language-conditioned virtual photography in arbitrary Blender scenes an executable agent task, and our results show that an LLM-centered spatial agent can already produce strong photographs in a setting designed to challenge both 3D reasoning and aesthetic choice."
     },
     {
+      "title": "VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis",
+      "url": "https://huggingface.co/papers/2605.22570",
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 18,
+      "institution": "·4 authors102",
+      "paper_link": "https://arxiv.org/abs/2605.22570",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Spatio-temporal reasoning is a core capability for Multimodal Large Language Models (MLLMs) operating in the real world. As such, evaluating it precisely has become an essential challenge. However, existing spatio-temporal reasoning benchmark datasets primarily rely on static image sets or passively curated video data, which limits the evaluation of fine-grained reasoning capabilities. In this paper, we introduce VGenST-Bench, a video benchmark that employs generative models to actively synthesize highly controlled and diverse evaluation scenarios. To construct VGenST-Bench, we propose a multi-agent pipeline incorporating a human quality control stage, ensuring the quality of all generated videos and QA pairs. We establish a comprehensive 3x2x2 video taxonomy, encompassing Spatial Scale, Perspective, and Scene Dynamics to span diverse scenarios. Furthermore, we design a hierarchical task suite that decouples low-level visual perception from high-level spatio-temporal reasoning. By shifting the paradigm from passive curation to active synthesis, VGenST-Bench enables fine-grained diagnosis of spatio-temporal understanding in MLLMs."
+    },
+    {
       "title": "PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion",
       "url": "https://huggingface.co/papers/2605.23902",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 8,
+      "published": "2026-05-25T16:23:23.585665",
+      "likes": 17,
       "institution": "NVIDIA",
       "paper_link": "https://arxiv.org/abs/2605.23902",
       "code_link": "https://github.com/huggingface",
       "abstract": "Most practical high-resolution text-to-image systems, including latent diffusion and autoregressive models, perform generation in a compact latent space, and a decoder maps the generated latents back to pixels. Yet the latent-to-pixel decoder is reconstruction-oriented, optimized to invert the encoder rather than synthesize more details, and becomes increasingly costly at megapixel scale. This drawback calls for a more expressive and efficient decoding paradigm. Motivated by recent progress in scalable pixel-space diffusion, we introduce PiD, a Pixel diffusion Decoder that reformulates latent decoding as conditional pixel diffusion, unifying decoding and upsampling into one generative module. By denoising directly in high-resolution pixel space, PiD synthesizes $4\\times$ and even $8\\times$ upscaled images with low latency. For latent conditioning, a lightweight sigma-aware adapter injects noise-corrupted latents into the pixel diffusion backbone, enabling PiD to decode partially denoised latents and terminate the latent diffusion process early. To further improve efficiency, we distill the model using DMD2, reducing inference to just 4 steps. PiD applies to both conventional VAE latents and semantic latents (e.g., SigLIP, DINOv2) used in recent RAE-based models. PiD decodes latents of $512 \\times 512$ images into $2048 \\times 2048$ pixels in under 1 second with 13 GB peak memory on a consumer RTX 5090, and as fast as 210 ms on a GB200 GPU, about $6\\times$ faster than cascaded diffusion-based super-resolution pipelines with better visual fidelity."
-    },
-    {
-      "title": "VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis",
-      "url": "https://huggingface.co/papers/2605.22570",
-      "published": "2026-05-25T06:16:20.609716",
-      "likes": 8,
-      "institution": "·4 authors42",
-      "paper_link": "https://arxiv.org/abs/2605.22570",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Spatio-temporal reasoning is a core capability for Multimodal Large Language Models (MLLMs) operating in the real world. As such, evaluating it precisely has become an essential challenge. However, existing spatio-temporal reasoning benchmark datasets primarily rely on static image sets or passively curated video data, which limits the evaluation of fine-grained reasoning capabilities. In this paper, we introduce VGenST-Bench, a video benchmark that employs generative models to actively synthesize highly controlled and diverse evaluation scenarios. To construct VGenST-Bench, we propose a multi-agent pipeline incorporating a human quality control stage, ensuring the quality of all generated videos and QA pairs. We establish a comprehensive 3x2x2 video taxonomy, encompassing Spatial Scale, Perspective, and Scene Dynamics to span diverse scenarios. Furthermore, we design a hierarchical task suite that decouples low-level visual perception from high-level spatio-temporal reasoning. By shifting the paradigm from passive curation to active synthesis, VGenST-Bench enables fine-grained diagnosis of spatio-temporal understanding in MLLMs."
     }
   ]
 }
