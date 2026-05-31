@@ -1,13 +1,13 @@
 {
   "date": "2026-05-31",
-  "crawled_at": "2026-05-31T06:08:16.123073",
+  "crawled_at": "2026-05-31T15:17:50.140209",
   "total_papers": 10,
   "papers": [
     {
       "title": "AgentDoG 1.5: A Lightweight and Scalable Alignment Framework for AI Agent Safety and Security",
       "url": "https://huggingface.co/papers/2605.29801",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 116,
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 126,
       "institution": "shanghai ailab3",
       "paper_link": "https://arxiv.org/abs/2605.29801",
       "code_link": "https://github.com/huggingface",
@@ -16,8 +16,8 @@
     {
       "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
       "url": "https://huggingface.co/papers/2605.30280",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 96,
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 101,
       "institution": "Qwen3",
       "paper_link": "https://arxiv.org/abs/2605.30280",
       "code_link": "https://github.com/huggingface",
@@ -26,9 +26,9 @@
     {
       "title": "OmniRetrieval: Unified Retrieval across Heterogeneous Knowledge Sources",
       "url": "https://huggingface.co/papers/2605.29250",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 63,
-      "institution": "KAIST AI172",
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 64,
+      "institution": "KAIST AI202",
       "paper_link": "https://arxiv.org/abs/2605.29250",
       "code_link": "https://github.com/huggingface",
       "abstract": "Real-world information needs require access to structurally diverse knowledge sources, from unstructured text and relational tables to knowledge graphs and property graphs. Existing retrievers, however, operate over one source at a time under a fixed query language, leaving the broader landscape of available knowledge fragmented behind incompatible interfaces. A natural attempt at unification would collapse these sources into a shared space, but this erases the structural affordances (such as schemas, ontologies, compositional operators) that give each source its expressive power. Effective retrieval over diverse knowledge, therefore, requires not homogenization but an overarching layer that meets each source on its own terms. To achieve this, we present OmniRetrieval, a framework that takes any natural-language query, identifies appropriate knowledge sources, and dispatches source-native queries to their native execution engines. Across an extensive benchmark spanning 13 datasets and 309 distinct knowledge bases over text, relational, and graph-structured sources, OmniRetrieval exceeds single-source baselines, demonstrating that it can serve as a general-purpose interface to the heterogeneous sources while preserving the structural distinctions that make each source valuable."
@@ -36,8 +36,8 @@
     {
       "title": "CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation",
       "url": "https://huggingface.co/papers/2605.25378",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 52,
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 53,
       "institution": "·10 authors143",
       "paper_link": "https://arxiv.org/abs/2605.25378",
       "code_link": "https://github.com/huggingface",
@@ -46,9 +46,9 @@
     {
       "title": "minWM: A Full-Stack Open-Source Framework for Real-Time Interactive Video World Models",
       "url": "https://huggingface.co/papers/2605.30263",
-      "published": "2026-05-31T06:08:02.478999",
+      "published": "2026-05-31T15:17:36.934120",
       "likes": 49,
-      "institution": "·12 authors3823",
+      "institution": "·12 authors4093",
       "paper_link": "https://arxiv.org/abs/2605.30263",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recent video diffusion foundation models have achieved remarkable progress in high-quality video generation, yet turning them into real-time interactive video world models remains challenging. Interactive world models require controllable, causal, and low-latency rollout, which in practice demands a full pipeline spanning data construction, controllable fine-tuning, autoregressive training, few-step distillation, and streaming inference. In this work, we present minWM, a full-stack open-source framework for building real-time interactive video world models. minWM provides an end-to-end pipeline that converts existing bidirectional T2V/TI2V video foundation models into camera-controllable few-step autoregressive world models. Specifically, minWM first fine-tunes a bidirectional video diffusion model with camera control, and then applies the Causal Forcing / Causal Forcing++ pipeline, including AR diffusion training, causal ODE or causal consistency distillation, and asymmetric DMD, to distill it into a few-step autoregressive generator for low-latency rollout. The framework is modular and architecture-extensible: we instantiate it on representative open backbones, including Wan2.1-T2V-1.3B and HY1.5-TI2V-8B, covering both cross-attention-based condition injection and MMDiT-style architectures. minWM also supports adapting existing video world models, such as HY-WorldPlay, to new data distributions, training recipes, and latency targets. Beyond releasing runnable scripts, checkpoints, documentation, and inference code, we provide practical ablations on camera trajectory quality, controllability training steps, and minimal batch-size requirements. We hope minWM serves as a reproducible and extensible recipe for building and adapting real-time interactive video world models. Project Page: [ this https URL ]( this https URL )"
@@ -56,9 +56,9 @@
     {
       "title": "YoCausal: How Far is Video Generation from World Model? A Causality Perspective",
       "url": "https://huggingface.co/papers/2605.30346",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 38,
-      "institution": "Alaya Studio262",
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 40,
+      "institution": "Alaya Studio282",
       "paper_link": "https://arxiv.org/abs/2605.30346",
       "code_link": "https://github.com/huggingface",
       "abstract": "As video diffusion models (VDMs) advance toward world models, a key question arises: do they truly understand causality, or merely overfit to statistical temporal patterns? Existing benchmarks mostly rely on synthetic data, limiting real-world generalization due to the sim-to-real gap. We present YoCausal, a two-level benchmark inspired by the Violation of Expectation (VoE) paradigm from cognitive science. By temporally reversing real-world videos at zero cost as natural counterfactual samples, YoCausal establishes an arbitrarily extensible evaluation protocol. Level 1 introduces the Reverse Surprise Index (RSI), quantifying arrow-of-time perception via denoising loss. Level 2 introduces the Causality Cognition Index (CCI), which leverages a VLM to stratify datasets into causal and non-causal subsets, disentangling genuine causal reasoning from temporal bias. Evaluation of 13 state-of-the-art VDMs reveals that perceiving the arrow of time does not imply understanding causality, and a significant gap persists relative to human-level causal cognition."
@@ -66,9 +66,9 @@
     {
       "title": "Why Far Looks Up: Probing Spatial Representation in Vision-Language Models",
       "url": "https://huggingface.co/papers/2605.30161",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 37,
-      "institution": "NVIDIA72",
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 38,
+      "institution": "NVIDIA82",
       "paper_link": "https://arxiv.org/abs/2605.30161",
       "code_link": "https://github.com/huggingface",
       "abstract": "Vision-language models (VLMs) achieve strong performance on spatial reasoning benchmarks, yet it remains unclear whether this reflects structured 3D understanding or reliance on statistical shortcuts in natural images. We introduce a representation-level analysis framework that constructs minimal contrastive pairs to measure how spatial axes are organized and disentangled within VLM embeddings. Our analysis across multiple model families reveals a consistent vertical-distance entanglement: models conflate vertical image position with distance, mirroring the perspective bias of natural photographs. This bias produces a significant accuracy gap between perspective-consistent and counter-heuristic examples, and intensifies under data scaling even as overall benchmark accuracy improves. We further show that models with similar benchmark scores can exhibit different internal representations, and that these differences predict accuracy and robustness across diverse spatial reasoning benchmarks. To isolate this bias from evaluation-set skew, we introduce SpatialTunnel, a synthetic benchmark designed to expose spatial shortcut biases by removing common correlations present in natural images. Experiments confirm that the entanglement is model-intrinsic, and that models with well-separated spatial axes exhibit greater robustness, suggesting that well-structured spatial representations lead to more reliable spatial reasoning across diverse benchmarks. Code and benchmark are available on the project page: this https URL ."
@@ -76,9 +76,9 @@
     {
       "title": "GenClaw: Code-Driven Agentic Image Generation",
       "url": "https://huggingface.co/papers/2605.30248",
-      "published": "2026-05-31T06:08:02.478999",
+      "published": "2026-05-31T15:17:36.934120",
       "likes": 31,
-      "institution": "Tencent Hunyuan782",
+      "institution": "Tencent Hunyuan912",
       "paper_link": "https://arxiv.org/abs/2605.30248",
       "code_link": "https://github.com/huggingface",
       "abstract": "Image generation models have evolved from text-conditioned pixel synthesis toward multimodal agents endowed with visual comprehension and tool invocation capabilities. Yet, existing agents remain at the mercy of underlying black-box image models. Their workflow is trapped in a repetitive cycle of prompt rewriting for generation refinement, leaving them with no mechanism to directly manipulate the canvas. In essence, the potential of LLMs to serve as a genuine \"brush\" for precise visual construction remains largely untapped. In this paper, we propose GenClaw, a code-driven agentic image generation paradigm that empowers the agent to create like a human artist: first conceptualizing, then sketching, and finally coloring. Specifically, the agent first constructs the conceptual knowledge and context through search and reasoning. It then utilizes code (e.g., SVG, HTML, this http URL ) to render executable visual sketches. Finally, it employs an image generation model to supplement textures, materials, and photorealism. In this workflow, code serves as a controllable intermediate canvas bridging linguistic reasoning and pixel synthesis, seamlessly integrating programmatic logic with the visual expressiveness of generative models. By transforming image generation from a black-box paradigm into a staged process akin to authentic human creation, GenClaw offers a step toward for highly controllable and interpretable visual generation systems."
@@ -86,8 +86,8 @@
     {
       "title": "How LoRA Remembers? A Parametric Memory Law for LLM Finetuning",
       "url": "https://huggingface.co/papers/2605.30260",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 26,
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 27,
       "institution": "alibaba-inc32",
       "paper_link": "https://arxiv.org/abs/2605.30260",
       "code_link": "https://github.com/huggingface",
@@ -96,9 +96,9 @@
     {
       "title": "EarlyTom: Early Token Compression Completes Fast Video Understanding",
       "url": "https://huggingface.co/papers/2605.30010",
-      "published": "2026-05-31T06:08:02.478999",
-      "likes": 25,
-      "institution": "·7 authors153",
+      "published": "2026-05-31T15:17:36.934120",
+      "likes": 27,
+      "institution": "·7 authors163",
       "paper_link": "https://arxiv.org/abs/2605.30010",
       "code_link": "https://github.com/huggingface",
       "abstract": "Video large language models (Video-LLMs) have demonstrated strong capabilities in video understanding tasks. However, their practical deployment is still hindered by the inefficiency introduced by processing massive amounts of visual tokens. Although recent approaches achieve extremely low token retention ratios while maintaining accuracy comparable to full-token baselines, most of them perform compression only at the late stage of prefilling, leaving the efficiency of the vision encoder unoptimized. In this paper, we first show that vision encoding contributes a large portion to the time-to-first-token (TTFT). Therefore, instead of compressing visual tokens only after the vision encoder, performing compression inside the encoder still leaves substantial room for exploration. Based on this insight, we propose EarlyTom, a training-free token compression framework that performs early-stage visual token compression inside the vision encoder, enabling significantly better TTFT reduction and higher throughput. In addition, we introduce a decoupled spatial token selection strategy that improves the overall compression effectiveness. EarlyTom reduces TTFT by up to 2.65x and FLOPs by up to 61% on a single NVIDIA A100 GPU for the LLaVA-OneVision-7B model, while maintaining accuracy comparable to the full-token baseline. These improvements substantially enhance the practicality of deploying Video-LLMs in real-world production scenarios."
