@@ -281,6 +281,33 @@ class HFDailyPapersCrawler:
                     if abstract:
                         break
 
+        return self._sanitize_abstract(abstract)
+
+    def _sanitize_abstract(self, abstract: str) -> str:
+        """Remove placeholder links that become broken internal Markdown links."""
+        if not abstract:
+            return ""
+
+        placeholder_url = r"this\s+https?\s+URL"
+
+        def link_text(match) -> str:
+            label = re.sub(r"\s+", " ", match.group(1)).strip()
+            if not label or re.fullmatch(placeholder_url, label, flags=re.I):
+                return "this URL"
+            return label
+
+        abstract = re.sub(
+            rf"\[\s*([^\]]*?)\s*\]\(\s*{placeholder_url}\s*\)",
+            link_text,
+            str(abstract),
+            flags=re.I,
+        )
+        abstract = re.sub(
+            rf"\\href\{{\s*{placeholder_url}\s*\}}\{{\s*([^{{}}]*?)\s*\}}",
+            link_text,
+            abstract,
+            flags=re.I,
+        )
         return abstract
 
     def has_existing_post(self, target_date: datetime) -> bool:
@@ -479,6 +506,7 @@ class HFDailyPapersCrawler:
         # Front Matter
         front_matter = f"""---
 title: Hugging Face Daily Papers - {filename_date}
+permalink: /posts/daily-papers-{filename_date}/
 date: {post_date.strftime("%Y-%m-%d %H:%M:%S")} +0900
 categories: [Daily Papers, 일간]
 tags: [huggingface, papers, daily, ai]
@@ -500,7 +528,8 @@ author: lim4349
             if paper.get("paper_link"):
                 content += f"   - [논문 링크]({paper['paper_link']})\n"
             if paper.get("abstract"):
-                content += f"   - Abstract: {paper['abstract']}\n"
+                abstract = self._sanitize_abstract(paper["abstract"])
+                content += f"   - Abstract: {abstract}\n"
             content += "\n"
 
         filepath.write_text(front_matter + content, encoding="utf-8")
@@ -548,6 +577,7 @@ author: lim4349
 
         front_matter = f"""---
 title: Hugging Face Papers Monthly Summary - {year}년 {month}월
+permalink: /posts/monthly-papers-summary-{date_str}/
 date: {year}-{month:02d}-01 09:00:00 +0900
 categories: [Daily Papers, 월간]
 tags: [huggingface, papers, monthly, ai, summary]
@@ -573,7 +603,8 @@ author: lim4349
             if paper.get("paper_link"):
                 content += f"   - [논문 링크]({paper['paper_link']})\n"
             if paper.get("abstract"):
-                content += f"   - Abstract: {paper['abstract']}\n"
+                abstract = self._sanitize_abstract(paper["abstract"])
+                content += f"   - Abstract: {abstract}\n"
             content += "\n"
 
         if summary["top_tags"]:
