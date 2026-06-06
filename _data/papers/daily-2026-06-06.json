@@ -1,13 +1,13 @@
 {
   "date": "2026-06-06",
-  "crawled_at": "2026-06-06T05:46:09.616207",
+  "crawled_at": "2026-06-06T15:17:51.591721",
   "total_papers": 10,
   "papers": [
     {
       "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution",
       "url": "https://huggingface.co/papers/2606.06492",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 52,
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 60,
       "institution": "University of Waterloo2",
       "paper_link": "https://arxiv.org/abs/2606.06492",
       "code_link": "https://github.com/huggingface",
@@ -16,8 +16,8 @@
     {
       "title": "ArcANE: Do Role-Playing Language Agents Stay in Character at the Right Time?",
       "url": "https://huggingface.co/papers/2606.05553",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 41,
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 42,
       "institution": "Seoul National University3",
       "paper_link": "https://arxiv.org/abs/2606.05553",
       "code_link": "https://github.com/huggingface",
@@ -26,9 +26,9 @@
     {
       "title": "TIDE: Proactive Multi-Problem Discovery via Template-Guided Iteration",
       "url": "https://huggingface.co/papers/2606.04743",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 36,
-      "institution": "KAIST AI3",
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 37,
+      "institution": "KAIST AI4",
       "paper_link": "https://arxiv.org/abs/2606.04743",
       "code_link": "https://github.com/huggingface",
       "abstract": "Agents are widely deployed as assistants over documents, tools, and code. However, they typically act only on explicit user requests, which surface only the problems the user has noticed, while many other important problems coexist, hidden in plain sight, within the broader user context, with their total number unknown in advance. We frame this as the task of discovering multiple hidden problems from context, in which coexisting problems should be uncovered, grounded in supporting evidence, and paired with concrete actions. To this end, we introduce TIDE, a template-guided iterative framework with two complementary mechanisms. Specifically, motivated by the observation that single-pass prediction anchors on the most salient cases and yields generic claims, we propose iterative discovery, which surfaces a small batch of candidates per round while conditioning on what has already been found, so subsequent rounds extend coverage; and thought templates, reusable schemas distilled from previously solved cases that specify what contextual signals to attend to and how to connect them, anchoring each prediction in a recognizable problem class. We validate TIDE on two realistic settings, personal workspaces and software repositories, across four model backbones, showing substantial gains over single-shot and parallel multi-agent baselines on task coverage, identification, and resolution."
@@ -36,8 +36,8 @@
     {
       "title": "AdaPlanBench: Evaluating Adaptive Planning in Large Language Model Agents under World and User Constraints",
       "url": "https://huggingface.co/papers/2606.05622",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 34,
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 35,
       "institution": "University of Illinois at Urbana-Champaign183",
       "paper_link": "https://arxiv.org/abs/2606.05622",
       "code_link": "https://github.com/huggingface",
@@ -46,8 +46,8 @@
     {
       "title": "VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding",
       "url": "https://huggingface.co/papers/2606.05259",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 33,
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 34,
       "institution": "Yale University161",
       "paper_link": "https://arxiv.org/abs/2606.05259",
       "code_link": "https://github.com/huggingface",
@@ -56,7 +56,7 @@
     {
       "title": "Reinforcement Learning Elicits Contextual Learning of Unseen Language Translation",
       "url": "https://huggingface.co/papers/2606.06428",
-      "published": "2026-06-06T05:45:55.737291",
+      "published": "2026-06-06T15:17:38.327282",
       "likes": 23,
       "institution": "University of Zurich, Department of Computational Linguistics82",
       "paper_link": "https://arxiv.org/abs/2606.06428",
@@ -66,7 +66,7 @@
     {
       "title": "RobotValues: Evaluating Household Robots When Human Values Conflict",
       "url": "https://huggingface.co/papers/2606.03312",
-      "published": "2026-06-06T05:45:55.737291",
+      "published": "2026-06-06T15:17:38.327282",
       "likes": 23,
       "institution": "Seoul National University5",
       "paper_link": "https://arxiv.org/abs/2606.03312",
@@ -74,31 +74,31 @@
       "abstract": "While household robots are often evaluated based on task completion, everyday domestic environments involve value-conflicting situations in which robots are expected to choose actions that prioritize other values than task success, such as human autonomy, efficiency, or social appropriateness. Yet, there are no benchmarks for evaluating robots' value preferences in such scenarios. We introduce RobotValues, a benchmark to evaluate household robot planners in 10K value-conflict scenarios. Each instance consists of a realistic household image with multiple plausible robot actions that prioritize different human values. We construct RobotValues through LLM-assisted scenario generation, stakeholder-grounded value extraction, image generation and automatic quality control. Using RobotValues we evaluate VLMs used in robotics and find that models exhibit default value preferences, including safety and accommodation, while underselecting privacy-prioritizing actions. When the models are instructed to prioritize specific values that conflict with their own preferences, they often fail to override their default actions, choosing incorrect actions for 80% of the time. These findings suggest that household robot evaluation should measure not only task completion or safety compliance, but also whether robots can choose among plausible actions when human values conflict."
     },
     {
-      "title": "Personal AI Agent for Camera Roll VQA",
-      "url": "https://huggingface.co/papers/2606.05275",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 18,
-      "institution": "·5 authors61",
-      "paper_link": "https://arxiv.org/abs/2606.05275",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "We study the personal camera roll visual question answering setting. In this setting, a conversational AI assistant can access a user's personal camera roll and retrieve relevant photos to answer queries, ranging from simple factual questions (e.g., ``Name of the food I tried yesterday?'') to more open-ended ones (e.g., ``Recommend some dishes I have never eaten before''). Given the vast nature of the personal camera roll (i.e., multiple years, hundreds to thousands of photos), a successful AI assistant needs to understand a long-horizon, highly personalized visual content stream in order to navigate and locate the correct and/or relevant information. To support this, we collect and manually annotate questions that mimic real-world usage. The final dataset, camroll, contains 50 users, 31,476 images, and 2,500 QA pairs. We further design camroll-agent, a conversational AI agent equipped with hierarchical memory and a minimal set of tools for efficient navigation over large, personalized visual memory. Experimental results show that camroll-agent outperforms numerous baselines and methods for long-context understanding AI agents system. Together, the camroll dataset and camroll-agent highlight the gap in AI agents' long-context reasoning: personalized visual memory requires different approaches from standard long-context textual memory, especially when consistency, visual details, and user-specific context are present."
-    },
-    {
       "title": "LoomVideo: Unifying Multimodal Inputs into Video Generation and Editing",
       "url": "https://huggingface.co/papers/2606.06042",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 17,
-      "institution": "Peking University301",
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 21,
+      "institution": "Peking University391",
       "paper_link": "https://arxiv.org/abs/2606.06042",
       "code_link": "https://github.com/huggingface",
       "abstract": "Developing unified video generation and editing models capable of interpreting interleaved multimodal inputs is a promising yet challenging frontier field. Existing unified frameworks predominantly rely on massive models (typically 13B parameters or more) and incorporate source video conditions for editing by concatenating sequence tokens. This concatenation inevitably doubles the sequence length, quadrupling the computational complexity of the self-attention mechanism and introducing prohibitive overhead. To address these bottlenecks, we present LoomVideo, a highly efficient 5B-parameter unified architecture for both video generation and editing. LoomVideo replaces the standard text encoder with a Multimodal Large Language Model (MLLM) and employs Deepstack injection mechanism to align multi-layer MLLM features with the Diffusion Transformer (DiT). Crucially, we introduce a zero-overhead Scale-and-Add conditioning approach for video editing. By scaling and directly adding the clean source video latent to the noised target latent, this elegant design eliminates the need for token concatenation, drastically reducing computational cost while maintaining robust capabilities for complex, non-rigid edits. Furthermore, a Negative Temporal RoPE strategy is seamlessly integrated to handle multiple reference images. Extensive experiments demonstrate that our compact 5B model achieves state-of-the-art or highly competitive performance across comprehensive benchmarks, exhibiting exceptional superiority in e-commerce and fashion generation scenarios. Benefiting from the zero-overhead conditioning mechanism, LoomVideo achieves at least a 5.41x acceleration in inference speed compared to models of similar capabilities, paving the way for highly practical and efficient video foundation models."
     },
     {
+      "title": "Personal AI Agent for Camera Roll VQA",
+      "url": "https://huggingface.co/papers/2606.05275",
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 18,
+      "institution": "·5 authors71",
+      "paper_link": "https://arxiv.org/abs/2606.05275",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "We study the personal camera roll visual question answering setting. In this setting, a conversational AI assistant can access a user's personal camera roll and retrieve relevant photos to answer queries, ranging from simple factual questions (e.g., ``Name of the food I tried yesterday?'') to more open-ended ones (e.g., ``Recommend some dishes I have never eaten before''). Given the vast nature of the personal camera roll (i.e., multiple years, hundreds to thousands of photos), a successful AI assistant needs to understand a long-horizon, highly personalized visual content stream in order to navigate and locate the correct and/or relevant information. To support this, we collect and manually annotate questions that mimic real-world usage. The final dataset, camroll, contains 50 users, 31,476 images, and 2,500 QA pairs. We further design camroll-agent, a conversational AI agent equipped with hierarchical memory and a minimal set of tools for efficient navigation over large, personalized visual memory. Experimental results show that camroll-agent outperforms numerous baselines and methods for long-context understanding AI agents system. Together, the camroll dataset and camroll-agent highlight the gap in AI agents' long-context reasoning: personalized visual memory requires different approaches from standard long-context textual memory, especially when consistency, visual details, and user-specific context are present."
+    },
+    {
       "title": "Rethinking Continual Experience Internalization for Self-Evolving LLM Agents",
       "url": "https://huggingface.co/papers/2606.04703",
-      "published": "2026-06-06T05:45:55.737291",
-      "likes": 16,
-      "institution": "·10 authors12",
+      "published": "2026-06-06T15:17:38.327282",
+      "likes": 17,
+      "institution": "·10 authors32",
       "paper_link": "https://arxiv.org/abs/2606.04703",
       "code_link": "https://github.com/huggingface",
       "abstract": "Experience internalization converts contextual experience from past interactions into reusable parametric capability, offering a promising path toward continual learning in large language models (LLMs). While prior work has predominantly focused on single-iteration transfer, we discover that under multi-iteration experience learning, existing methods suffer from a progressive capability collapse rather than compounding improvement. We systematically examine this failure through three vital dimensions of experience internalization: (1) Experience Granularity: We find that principle-level experience is more durable than instance-level experience, as it effectively abstracts transferable strategies away from trajectory-specific details. (2) Experience Injection Pattern: Our analysis reveals that step-wise injection significantly outperforms global injection by aligning experience with intermediate decision states, a property that is critical for long-horizon tool use. (3) Internalization Regime: We demonstrate that off-policy context-distillation on high-quality teacher trajectories provides a substantially more stable training signal than on-policy context-distillation, which is inherently limited by local corrections on student-induced flawed states. Together, these insights yield a simple yet robust recipe for stable and sustainable experience internalization, providing concrete guidance for engineering self-evolving and continually learning LLMs."
