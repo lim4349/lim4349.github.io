@@ -1,13 +1,13 @@
 {
   "date": "2026-06-13",
-  "crawled_at": "2026-06-13T06:07:08.860383",
+  "crawled_at": "2026-06-13T15:43:03.271187",
   "total_papers": 10,
   "papers": [
     {
       "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
       "url": "https://huggingface.co/papers/2606.13681",
-      "published": "2026-06-13T06:06:55.091599",
-      "likes": 107,
+      "published": "2026-06-13T15:42:50.356251",
+      "likes": 116,
       "institution": "Massachusetts Institute of Technology93",
       "paper_link": "https://arxiv.org/abs/2606.13681",
       "code_link": "https://github.com/huggingface",
@@ -16,9 +16,9 @@
     {
       "title": "MiniMax Sparse Attention",
       "url": "https://huggingface.co/papers/2606.13392",
-      "published": "2026-06-13T06:06:55.091599",
-      "likes": 88,
-      "institution": "MiniMax2153",
+      "published": "2026-06-13T15:42:50.356251",
+      "likes": 97,
+      "institution": "MiniMax2403",
       "paper_link": "https://arxiv.org/abs/2606.13392",
       "code_link": "https://github.com/huggingface",
       "abstract": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enabling group-specific sparse retrieval while maintaining efficient block-level execution; the Main Branch then performs exact block-sparse attention over only the selected blocks. Designed around a principle of simplicity and scalability, MSA is deliberately streamlined, making it straightforward to deploy efficiently across a broad range of GPUs. To translate sparsity into practical speedups, we co-design MSA with a GPU execution path that uses exp-free Top-k selection and KV-outer sparse attention to improve tensor-core utilization under block-granular access. On a 109B-parameter model with native multimodal training, MSA performs on par with GQA while reducing per-token attention compute by 28.4x at 1M context. Paired with our co-designed kernel, MSA achieves 14.2x prefill and 7.6x decoding wall-clock speedups on H800. Our inference kernel is available at: this https URL . A production-grade natively multimodal model powered by MSA has been publicly released at: this https URL ."
@@ -26,8 +26,8 @@
     {
       "title": "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces",
       "url": "https://huggingface.co/papers/2606.09426",
-      "published": "2026-06-13T06:06:55.091599",
-      "likes": 81,
+      "published": "2026-06-13T15:42:50.356251",
+      "likes": 94,
       "institution": "Microsoft352",
       "paper_link": "https://arxiv.org/abs/2606.09426",
       "code_link": "https://github.com/huggingface",
@@ -36,9 +36,9 @@
     {
       "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
       "url": "https://huggingface.co/papers/2606.13673",
-      "published": "2026-06-13T06:06:55.091599",
+      "published": "2026-06-13T15:42:50.356251",
       "likes": 80,
-      "institution": "NVIDIA533",
+      "institution": "NVIDIA623",
       "paper_link": "https://arxiv.org/abs/2606.13673",
       "code_link": "https://github.com/huggingface",
       "abstract": "Spatial reasoning, the ability to determine where objects are, how they relate, and how they move in 3D, remains a fundamental challenge for vision-language models (VLMs). Tool-augmented agents attempt to address this by augmenting VLMs with specialist perception modules, yet their effectiveness is bounded by the action interface through which those tools are invoked. In this work, we study how the design of this interface shapes the agent's capacity for open-ended spatial reasoning. Existing spatial agents either employ single-pass code execution, which commits to a full analysis strategy before any intermediate result is observed, or rely on a structured tool-call interface that often offers less flexibility for freely composing operations or tailoring the analysis to each task. Both designs offer limited flexibility for open-ended, complex 3D/4D spatial reasoning. We therefore propose SpatialClaw, a training-free framework for spatial reasoning that adopts code as the action interface. SpatialClaw maintains a stateful Python kernel pre-loaded with input frames and a suite of perception and geometry primitives, letting a VLM-backed agent write one executable cell per step conditioned on all prior outputs, enabling the agent to flexibly compose and manipulate perception results and adapt its analysis to both intermediate text and visual observations and the demands of each problem. Evaluated across 20 spatial reasoning benchmarks spanning a broad range of static and dynamic 3D/4D spatial reasoning tasks, SpatialClaw achieves 59.9% average accuracy, outperforming the recent spatial agent by +11.2 points, with consistent gains across six VLM backbones from two model families without any benchmark- or model-specific adaptation."
@@ -46,9 +46,9 @@
     {
       "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
       "url": "https://huggingface.co/papers/2606.13679",
-      "published": "2026-06-13T06:06:55.091599",
+      "published": "2026-06-13T15:42:50.356251",
       "likes": 74,
-      "institution": "·7 authors993",
+      "institution": "·7 authors1103",
       "paper_link": "https://arxiv.org/abs/2606.13679",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recent image generators have demonstrated impressive photorealism and instruction-following capabilities in single-image generation and editing. However, constrained by their architectures, they cannot achieve interleaved generation (text-image sequence), which has crucial applications in visual narratives, guidance, and embodied manipulation. Even the latest open-source Unified Multimodal Models (UMMs) exhibit limited performance in this regard. In this paper, we introduce InterleaveThinker, the first multi-agent pipeline designed to endow any existing image generator with interleaved generation capabilities. Specifically, we employ a planner agent to organize the image-text input sequence, instructing the image generator on the required execution at each step. Subsequently, we introduce a critic agent to evaluate the generator's outputs, identify samples that deviate from the planned instructions, and refine the instructions for regeneration. To implement this pipeline, we construct the Interleave-Planner-SFT-80k and Interleave-Critic-SFT-112k to perform a format cold-start. Then we develop Interleave-Critic-RL-13k to reinforce the step-wise instruction correction capability within a generation trajectory using GRPO. Since a single interleaved generation trajectory may involve over 25 generator calls, optimizing the entire trajectory is computationally impractical. Therefore, we propose accuracy reward and step-wise reward, allowing single-step RL to effectively guide the entire generation trajectory. The results show that InterleaveThinker improves performance across various image generators. On interleaved generation benchmarks, it achieves performance comparable to Nano Banana and GPT-5. Surprisingly, it also significantly enhances the base model on reasoning-based benchmarks; for example, on 4-step FLUX.2-klein, we observe substantial gains on WISE and RISE."
@@ -56,39 +56,39 @@
     {
       "title": "Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?",
       "url": "https://huggingface.co/papers/2606.08063",
-      "published": "2026-06-13T06:06:55.091599",
+      "published": "2026-06-13T15:42:50.356251",
       "likes": 73,
-      "institution": "·9 authors733",
+      "institution": "·9 authors753",
       "paper_link": "https://arxiv.org/abs/2606.08063",
       "code_link": "https://github.com/huggingface",
       "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated remarkable success in visual understanding, yet their performance degrades significantly under real-world visual corruptions. While existing robustness enhancement approaches exist, they are limited: black-box feature alignment lacks interpretability, and white-box text-based reasoning cannot restore lost pixel-level details. This work investigates a fundamental research question: Can MLLMs recover corrupted visual content by themselves? To address this, we propose Robust-U1, a novel framework that equips MLLMs with explicit visual self-recovery capability for robust understanding. The approach comprises three core stages: supervised fine-tuning for initial reconstruction, reinforcement learning with dual rewards (pixel-level SSIM and semantic-level CLIP similarity) for aligning high visual quality, and multimodal reasoning that jointly considers both the corrupted input and the recovered image. Extensive experiments demonstrate that Robust-U1 achieves state-of-the-art robustness on the real-world corruption benchmark and maintains superior performance under adversarial corruptions on general VQA benchmarks. Analysis confirms that high-quality visual recovery directly enhances reasoning performance, establishing self-recovery as a critical mechanism for robust visual understanding. The source code is available at this https URL ."
     },
     {
-      "title": "FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents",
-      "url": "https://huggingface.co/papers/2606.12087",
-      "published": "2026-06-13T06:06:55.091599",
-      "likes": 71,
-      "institution": "·12 authors172",
-      "paper_link": "https://arxiv.org/abs/2606.12087",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Training deep search agents requires verifiable questions whose answers remain unavailable until sufficient evidence has been acquired through search. Existing synthesis methods often increase apparent difficulty by enriching graph structures, but structural complexity alone does not guarantee realized search difficulty: the intended search process can collapse through a cheaper identifying route. We formalize this gap with a shortcut-aware difficulty framework and identify four actionable shortcut risks: evidence co-coverage, single-clue selectivity, exposed constants, and prior-knowledge binding. To diagnose their realized effects, we use trajectory signatures including solving cost, answer hit time, and prior-shortcut rate. Guided by this framework, we introduce FORT, a Framework of Shortcut-Resistant Training-Data Synthesis. FORT constructs shortcut-resistant training data by controlling shortcut risks across entity selection, evidence graph construction, question formulation, and adversarial refinement. Experiments show that FORT induces longer pre-answer search and fewer shortcut patterns than existing open-source deep search datasets. Using the resulting trajectories, we train FORT-Searcher with supervised fine-tuning (SFT) only, and it achieves the best overall performance among comparable-size open-source search agents on challenging deep search benchmarks. Relevant resources will be made available at this https URL ."
-    },
-    {
       "title": "MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling",
       "url": "https://huggingface.co/papers/2606.13473",
-      "published": "2026-06-13T06:06:55.091599",
-      "likes": 69,
+      "published": "2026-06-13T15:42:50.356251",
+      "likes": 72,
       "institution": "MiniMax1",
       "paper_link": "https://arxiv.org/abs/2606.13473",
       "code_link": "https://github.com/huggingface",
       "abstract": "We present MaxProof, a population-level test-time scaling framework for competition-level mathematical proof in the MiniMax-M3 series. M3 first trains three proof-oriented capabilities -- proof generation, proof verification, and critique-conditioned proof repair -- using a defense-in-depth generative verifier engineered for low false-positive rate. These capabilities are merged into a single released M3 model. At test time, MaxProof treats the model as a generator, verifier, refiner, and ranker, searches over a population of candidate proofs, and returns one final proof through tournament selection. With MaxProof test-time scaling, the M3 model reaches 35/42 on IMO 2025 and 36/42 on USAMO 2026, exceeding the human gold-medal threshold on both."
     },
     {
+      "title": "FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents",
+      "url": "https://huggingface.co/papers/2606.12087",
+      "published": "2026-06-13T15:42:50.356251",
+      "likes": 71,
+      "institution": "·12 authors182",
+      "paper_link": "https://arxiv.org/abs/2606.12087",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Training deep search agents requires verifiable questions whose answers remain unavailable until sufficient evidence has been acquired through search. Existing synthesis methods often increase apparent difficulty by enriching graph structures, but structural complexity alone does not guarantee realized search difficulty: the intended search process can collapse through a cheaper identifying route. We formalize this gap with a shortcut-aware difficulty framework and identify four actionable shortcut risks: evidence co-coverage, single-clue selectivity, exposed constants, and prior-knowledge binding. To diagnose their realized effects, we use trajectory signatures including solving cost, answer hit time, and prior-shortcut rate. Guided by this framework, we introduce FORT, a Framework of Shortcut-Resistant Training-Data Synthesis. FORT constructs shortcut-resistant training data by controlling shortcut risks across entity selection, evidence graph construction, question formulation, and adversarial refinement. Experiments show that FORT induces longer pre-answer search and fewer shortcut patterns than existing open-source deep search datasets. Using the resulting trajectories, we train FORT-Searcher with supervised fine-tuning (SFT) only, and it achieves the best overall performance among comparable-size open-source search agents on challenging deep search benchmarks. Relevant resources will be made available at this https URL ."
+    },
+    {
       "title": "LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories",
       "url": "https://huggingface.co/papers/2606.13578",
-      "published": "2026-06-13T06:06:55.091599",
+      "published": "2026-06-13T15:42:50.356251",
       "likes": 50,
-      "institution": "·18 authors452",
+      "institution": "·18 authors462",
       "paper_link": "https://arxiv.org/abs/2606.13578",
       "code_link": "https://github.com/huggingface",
       "abstract": "Scientific laboratories increasingly rely on AI systems to reason about experiments, but the physical act of doing science remains largely outside their reach. AI can help read literature, generate hypotheses, and plan protocols, yet the execution of those protocols at the bench still requires a human operator. Vision-Language-Action (VLA) models provide one possible interface between written protocols and robot execution, but existing policies are trained mostly on household and tabletop demonstrations and rarely encounter the instruments, transparent liquids, or fixed protocol workflows found in scientific laboratories. Closing this gap requires both laboratory-specific supervision and a unified learning framework that can accommodate the diverse robot embodiments used to execute experimental protocols. We therefore identify data and embodiment as central bottlenecks alongside model design. To address the data side, we build RoboGenesis, a simulation-based workflow and data engine that composes configured laboratory workflows from atomic skills, validates and filters rollouts, and exports structured demonstrations across supported robot profiles. On the policy side, we present LabVLA, trained with a two-stage recipe: FAST action token pretraining first makes the Qwen3-VL-4B-Instruct backbone action aware before any continuous control is learned, and flow matching posttraining then attaches a DiT action expert under knowledge insulation. On the LabUtopia benchmark, LabVLA achieves the highest average success rate among all evaluated baselines under both in-distribution and out-of-distribution settings."
@@ -96,8 +96,8 @@
     {
       "title": "HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers",
       "url": "https://huggingface.co/papers/2606.13289",
-      "published": "2026-06-13T06:06:55.091599",
-      "likes": 24,
+      "published": "2026-06-13T15:42:50.356251",
+      "likes": 25,
       "institution": "Nanjing University2",
       "paper_link": "https://arxiv.org/abs/2606.13289",
       "code_link": "https://github.com/huggingface",
