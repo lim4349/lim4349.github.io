@@ -1,0 +1,107 @@
+{
+  "date": "2026-06-23",
+  "crawled_at": "2026-06-23T05:58:02.068459",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems",
+      "url": "https://huggingface.co/papers/2606.22388",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 32,
+      "institution": "University of Illinois at Urbana-Champaign21",
+      "paper_link": "https://arxiv.org/abs/2606.22388",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "LLM agents increasingly operate in large tool ecosystems, where real-world tasks require discovering relevant tools, inferring implicit sub-goals, and adapting to dynamic environments over long horizons. However, existing benchmarks rarely evaluate planning under retrieval-limited tool visibility. To address this gap, we introduce PlanBench-XL, an interactive benchmark of 327 retail tasks over 1,665 tools that tests whether agents can iteratively retrieve usable tools, invoke them to uncover intermediate evidence for subsequent calls toward the final goal. PlanBench-XL further features an optional blocking mechanism that simulates real-world unpredictability through missing, failing, or distracting tool functions, forcing agents to detect disrupted paths and adapt at runtime. Experiments on ten leading LLMs show that massive-tool planning remains challenging: while GPT-5.4 achieves 51.90% accuracy in block-free settings, it collapses to 11.36% under the most severe blocking condition. Further analysis shows that agents are especially vulnerable when failures lack explicit error signals or when recovery requires longer alternative tool-use paths. These results establish PlanBench-XL as a testbed for diagnosing agentic planning failures and highlight the need for robust adaptive planning in long-horizon tasks with large, imperfect tool environments."
+    },
+    {
+      "title": "EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions",
+      "url": "https://huggingface.co/papers/2606.23654",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 31,
+      "institution": "Frontis AI91",
+      "paper_link": "https://arxiv.org/abs/2606.23654",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Enterprise agents increasingly operate inside workspaces: they read heterogeneous files, invoke tools, and deliver business artifacts. We introduce EnterpriseClawBench, an enterprise agent benchmark constructed from proprietary, real-world agent sessions. Starting from a large archive of workplace sessions, the EnterpriseClawBench produces 852 reproducible tasks, each paired with recovered fixtures, rewritten prompts, role classes, skill subclasses, hard rules, and semantic rubrics. Because the sessions contain internal enterprise content, we do not release the benchmark data; instead, our reusable contribution is the construction and evaluation protocol. On EnterpriseClawBench, the best configuration reaches only 0.663 (Codex with GPT-5.5). These results show that enterprise agent evaluation must report harness--model combinations, artifact delivery, visual quality, cost, runtime, and skill-transfer behavior, rather than collapsing performance into a single score. Code: this https URL"
+    },
+    {
+      "title": "KaLM-Reranker-V1: Fast but Not Late Interaction for Compressed Document Reranking",
+      "url": "https://huggingface.co/papers/2606.22807",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 27,
+      "institution": "KaLM-Embedding2",
+      "paper_link": "https://arxiv.org/abs/2606.22807",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "As retrieval systems scale, high-quality reranking becomes increasingly important. However, most existing rerankers, whether encoder-based or decoder-based, jointly encode the query and passage, tightly coupling their computation and limiting deployment efficiency as well as flexibility. We present KaLM-Reranker-V1, a fast but not late-interaction (FBNL) reranker that decouples query and passage computation while retaining expressive relevance modeling. Built on an encoder-decoder architecture, KaLM-Reranker-V1 uses the encoder to pre-encode passages with Matryoshka embedding pooling, while the decoder models the system instruction, user instruction, and query intent; cross-attention then captures relevance between the query context and passage representations. This design makes KaLM-Reranker-V1 efficient through decoupled passage encoding, yet not late interaction, by preserving rich relevance modeling through cross-attention. We instantiate KaLM-Reranker-V1 in three sizes, Nano, Small, and Large, with 0.27B, 1B, and 4B activated parameters, respectively. Extensive experiments on BEIR, MIRACL, and LMEB demonstrate that KaLM-Reranker-V1 achieves strong reranking performance with superior efficiency. On BEIR, KaLM-Reranker-V1 achieves state-of-the-art performance, on par with strong industrial models such as the Qwen3-Reranker series; on MIRACL, despite not being extensively trained on multilingual data, KaLM-Reranker-V1 still shows excellent reranking performance. Moreover, on LMEB, reranking models demonstrate a clear advantage, with even the 0.27B Nano model remaining competitive with 7-12B embedding models."
+    },
+    {
+      "title": "World Action Models: A Survey",
+      "url": "https://huggingface.co/papers/2606.20781",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 24,
+      "institution": "National University of Singapore2171",
+      "paper_link": "https://arxiv.org/abs/2606.20781",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "World Action Models (WAMs) are embodied predictive-action models that make a forecast of the future available to action. Recent WAMs repurpose large video generation models, and a parallel line relies on language or vision-language backbones without a video-generation core. This rapid expansion has blurred the boundary among broad world models, video generation models, action-grounded video world models, Vision-Language-Action policies, and WAMs. This survey gives the field a common account. It first clarifies these boundaries, then organizes existing works through two complementary views. The first view asks what each method is required to generate, spanning rendered futures, latent futures, and video-generation-free action reasoning. The second view decomposes each method by predictive substrate, backbone, action coupling, and deployment regime. This anatomy supports a unified discussion of interactability, causality, persistence, physical plausibility, and generalization, followed by data, evaluation, and open challenges. Across these axes, a consistent design pattern emerges: WAMs are not simply video generators with action heads, but predictive-action methods whose design choices trade representational richness against compute, memory, latency, and action-label cost. The field is moving toward methods that generate less of the future while preserving what control requires. The survey homepage is available at this https URL ."
+    },
+    {
+      "title": "EvoEmbedding: Evolvable Representations for Long-Context Retrieval and Agentic Memory",
+      "url": "https://huggingface.co/papers/2606.21649",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 17,
+      "institution": "Nanjing University143",
+      "paper_link": "https://arxiv.org/abs/2606.21649",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Existing embedding models are inherently static: they encode text segments in isolation, ignoring their surrounding context and temporal order. This paper introduces EvoEmbedding, a novel embedding model that generates evolvable representations for retrieval. It is tailored for long-context scenarios, where information is dynamic, sequential, and requires continuous state tracking. Our design is simple: EvoEmbedding maintains a continuously updated latent memory as it sequentially processes inputs, and uses it alongside the raw content to jointly generate evolvable embeddings. Consequently, for the same query, our model adapts its representation to retrieve distinct targets based on the evolving context, going beyond static semantic search. To equip the model with this capability, we construct EvoTrain-180K, a diverse dataset for the joint optimization of latent memory and retrieval. Furthermore, we introduce a memory queue to prevent representation collapse during recurrent encoding, alongside segment-batching techniques that tackle significant length variance and accelerate training by 3.8$\\times$. Extensive experiments show that our model not only outperforms larger-scale specialists (e.g., Qwen3-Embedding-8B and KaLM-Embedding-Gemma3-12B) across a range of long-context retrieval benchmarks, but also generalizes well to downstream tasks (e.g., personalization) with contexts 10$\\times$ longer than its training window. Notably, EvoEmbedding seamlessly integrates into agentic workflows to boost performance. For instance, a naive RAG pipeline equipped with our model surpasses dedicated agentic memory systems. Project Page: this https URL ."
+    },
+    {
+      "title": "CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents",
+      "url": "https://huggingface.co/papers/2606.22883",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 15,
+      "institution": "NJU-LINK Lab1",
+      "paper_link": "https://arxiv.org/abs/2606.22883",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "While recent LLM-based terminal agents have demonstrated promising capabilities, the scarcity of high-quality, executable training data remains a critical bottleneck. Existing synthesis pipelines typically scale by retrofitting surface-level artifacts into tasks, frequently yielding ambiguous instructions, shallow execution paths, and brittle tests that provide weak learning signals. To overcome this, we introduce CLI-Universe, a principled synthesis engine that constructs terminal-agent tasks. CLI-Universe generates candidate tasks by sampling combinations across a multi-dimensional capability taxonomy (domain, skill type, capability, and engineering pillar), then grounds each candidate through evidence-guided deep research over real-world technical materials. To ensure rigorous supervision, validated blueprints are instantiated into Dockerized environments and subjected to a multi-stage executable verification pipeline featuring rubric-gated test construction, hint-conditional filtering, and strict fail-to-pass checking. Across the full pipeline, from candidate generation to verification, approximately two-thirds of candidates are discarded, retaining only those that are genuine, verifiable, and non-trivially challenging. To validate our framework, we instantiate a highly distilled dataset of 6,000 trajectories called CLI-Universe-6K. Remarkably, fine-tuning Qwen3-32B on CLI-Universe-6K achieves 33.4% on Terminal-Bench 2.0. This sets a new state-of-the-art for models trained on open-source data at or below 32B parameters, and outperforms several models an order of magnitude larger, demonstrating the profound data efficiency of structured, high-fidelity synthesis."
+    },
+    {
+      "title": "HydraHead: From Head-Level Functional Heterogeneity to Specialized Attention Hybridization",
+      "url": "https://huggingface.co/papers/2606.20097",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 13,
+      "institution": "·7 authors1",
+      "paper_link": "https://arxiv.org/abs/2606.20097",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "The quadratic complexity of attention poses a critical bottleneck for long-context processing, spurring interest in hybrid attention designs. Most open-source hybrid models adopt a layer-wise strategy. Yet, prior work has noted the inherent difficulty of integrating Linear Attention (LA) with Full Attention (FA), suggesting that the design space of attention hybridization remains underexplored. To probe this space, we conduct interpretability analysis and observe that layers exhibit block-wise functional similarity, while individual heads within the same layer display distinct functional specialization despite sharing input features. This head-level heterogeneity suggests that the head dimension provides a natural and principled granularity for fusing heterogeneous attention signals. Building on this insight, we introduce HydraHead, a novel architecture that hybridizes FA and LA along the head axis. HydraHead features two key innovations: (1) an interpretability-driven selection strategy that identifies retrieval-critical heads and preserves FA only for them, and (2) a scale-normalized fusion module that reconciles the distributional gap between FA and LA head outputs. By leveraging a three-stage transfer pipeline with parameter reuse and distillation, we achieve high-performance hybrid models with minimal training overhead. Under a unified training setup, HydraHead outperforms other hybrid designs in long-context tasks while maintaining strong general reasoning. With interpretability-driven head selection, it matches a 3:1 layer-wise hybrid's long-context performance at a 7:1 LA-to-FA ratio. Crucially, trained on only 15B tokens, HydraHead achieves over 69% improvement over the baseline at 512K context length, approaching Qwen3.5, a leading model of comparable size with a native context length of 256K. This highlights the significant scaling potential of head-level hybridization."
+    },
+    {
+      "title": "Learning from Your Own Mistakes: Constructing Learnable Micro-Reflective Trajectories for Self-Distillation",
+      "url": "https://huggingface.co/papers/2606.18844",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 12,
+      "institution": "QwenBusinessUnit-Edu1",
+      "paper_link": "https://arxiv.org/abs/2606.18844",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Self-distillation improves reasoning in large language models by using the model's own rollouts as training signal, typically through implicit logit-level alignment that minimizes KL divergence toward a privileged target distribution. However, because this supervision is generated via uncontrolled sampling, it provides no diagnostic insight into the model's specific errors or corrective guidance for its individual failure patterns. Consequently, the model learns to imitate a privileged distribution rather than receiving fine-grained corrections that pinpoint where and why its reasoning fails. In this paper, we propose Trajectory-Augmented Policy Optimization (TAPO), which advances self-distillation from implicit distributional alignment to explicit trajectory construction. During RL training, the model produces both correct and incorrect rollouts to the same query, and TAPO leverages this contrastive structure to construct micro-reflective corrections, new training trajectories that retain the model's erroneous reasoning up to the point of failure, then insert a natural-language diagnosis and corrected reasoning guided by a correct reference from the same sampling group. Since each trajectory is anchored in the learner's own prefix and solutions, the corrective signal preserves the model's on-policy distribution to a greater extent than the position-wise alignment imposed by KL-based methods. To integrate these trajectories, TAPO introduces difficulty-aware candidate selection at the model's capability boundary and decoupled advantage estimation to prevent gradient contamination. Experiments on AIME 2024, AIME 2025, and HMMT 2025 show that TAPO achieves consistent improvements over GRPO under the same number of training steps. Further analysis demonstrates that TAPO strengthens both first-pass reasoning and error-correction effectiveness."
+    },
+    {
+      "title": "OpenRath: Session-Centered Runtime State for Agent Systems",
+      "url": "https://huggingface.co/papers/2606.19409",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 10,
+      "institution": "·3 authors6591",
+      "paper_link": "https://arxiv.org/abs/2606.19409",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Modern agent systems often suffer from fragmented runtime state: transcripts, tool effects, memory events, workspace placement, branch provenance, and replay evidence are recorded separately and become difficult to inspect or reproduce. OpenRath addresses this issue with a PyTorch-like programming model for multi-agent, multi-session systems. The analogy concerns the role of a central first-class runtime abstraction, not tensor computation. Its core abstraction is Session, the runtime value passed between agents and workflows. A Session is branchable, inspectable, replayable, backend-aware, and composable. It records conversation chunks, sandbox placement, lineage metadata, token usage, pending work, and tool evidence, while defining where memory interactions enter the runtime record. Since this state is carried by the same value used in program execution, fork, merge, and replay become explicit runtime operations rather than states reconstructed from external traces. OpenRath further defines Sandbox, Tool, Agent, Memory, Workflow, and Selector, with Selector turning control flow into runtime-routed decisions. This report presents the programming model, architecture, audited milestones, and evidence protocol. Its claims are limited to controlled runtime properties, while broad quantitative comparisons, live-provider quality, optional-backend availability, and memory quality are left for follow-on evaluation. The central thesis is that Session provides agent systems with a first-class runtime value for auditable composition."
+    },
+    {
+      "title": "Deep Research in Physical Sciences: A Multi-Agent Framework and Comprehensive Benchmark",
+      "url": "https://huggingface.co/papers/2606.18648",
+      "published": "2026-06-23T05:57:49.583668",
+      "likes": 7,
+      "institution": "shanghai ailab11",
+      "paper_link": "https://arxiv.org/abs/2606.18648",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Deep research agents are Large Language Model (LLM)-based systems designed for autonomous, multi-step scientific reasoning, and they hold immense potential for accelerating research in the physical sciences. However, comprehensive and in-depth evaluations of their capabilities within this domain remain lacking. To address this gap, we introduce PhySciBench, a benchmark highly relevant to physical science research, comprising 200 expert-curated questions, balanced between physics and chemistry, across six task categories that reflect real-world scientific workflows. Evaluations of state-of-the-art models and agent systems on PhySciBench reveal limited performance; even the strongest baseline, Gemini Deep Research, achieves an accuracy of only 33.5%. Analysis of failure cases identifies three recurrent deficiencies: fragility in extended reasoning chains, limited knowledge transfer across steps, and a lack of physics-grounded self-verification. Motivated by these findings, we develop DelveAgent, a modular multi-agent framework equipped with an adaptive planning loop, dual-granularity memory, and a hierarchical physics-grounded reflection mechanism. Across four scientific benchmarks, DelveAgent improves accuracy by up to 7.5 percentage points while reducing inference costs to approximately one-third of the strongest baseline. These results establish the significance of PhySciBench as a critical benchmark for evaluating AI systems in the physical sciences and demonstrate that architectural specialization can effectively enhance the reliability of autonomous scientific this http URL data andcode are publicly available athttps://github.com/yigengjiang/physci-deepresearch."
+    }
+  ]
+}
