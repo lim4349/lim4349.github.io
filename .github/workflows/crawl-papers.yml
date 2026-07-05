@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write  # 커밋 및 푸시를 위한 권한
+  actions: write   # 배포 워크플로우 수동 실행을 위한 권한
 
 jobs:
   crawl:
@@ -19,7 +20,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.PAT_TOKEN }}
         fetch-depth: 0  # 전체 히스토리 가져오기
         ref: refs/heads/master  # master 브랜치 명시적 지정
     
@@ -66,7 +66,8 @@ jobs:
           while [ $retry_count -lt $max_retries ]; do
             if git push; then
               echo "✅ 변경사항이 커밋되고 푸시되었습니다."
-              echo "📦 배포 워크플로우가 자동으로 트리거됩니다."
+              echo "📦 배포 워크플로우를 실행합니다."
+              GH_TOKEN="${{ github.token }}" gh workflow run pages-deploy.yml --ref master
               echo "   GitHub Actions에서 'Build and Deploy Pages' 워크플로우 실행을 확인하세요."
               exit 0
             else
