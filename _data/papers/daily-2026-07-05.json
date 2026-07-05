@@ -1,13 +1,13 @@
 {
   "date": "2026-07-05",
-  "crawled_at": "2026-07-05T13:03:24.903194",
+  "crawled_at": "2026-07-05T15:13:56.781785",
   "total_papers": 10,
   "papers": [
     {
       "title": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
       "url": "https://huggingface.co/papers/2607.02512",
-      "published": "2026-07-05T13:03:11.945352",
-      "likes": 76,
+      "published": "2026-07-05T15:13:43.702298",
+      "likes": 80,
       "institution": "University of Waterloo1263",
       "paper_link": "https://arxiv.org/abs/2607.02512",
       "code_link": "https://github.com/huggingface",
@@ -16,7 +16,7 @@
     {
       "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
       "url": "https://huggingface.co/papers/2607.02255",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 46,
       "institution": "Alaya Studio613",
       "paper_link": "https://arxiv.org/abs/2607.02255",
@@ -26,7 +26,7 @@
     {
       "title": "EvoPolicyGym: Evaluating Autonomous Policy Evolution in Interactive Environments",
       "url": "https://huggingface.co/papers/2607.02440",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 43,
       "institution": "·16 authors2",
       "paper_link": "https://arxiv.org/abs/2607.02440",
@@ -36,7 +36,7 @@
     {
       "title": "Morphing into Hybrid Attention Models",
       "url": "https://huggingface.co/papers/2606.30562",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 37,
       "institution": "ByteDance Seed105",
       "paper_link": "https://arxiv.org/abs/2606.30562",
@@ -46,7 +46,7 @@
     {
       "title": "Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling",
       "url": "https://huggingface.co/papers/2607.01642",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 28,
       "institution": "·7 authors1312",
       "paper_link": "https://arxiv.org/abs/2607.01642",
@@ -56,7 +56,7 @@
     {
       "title": "AgenticDataBench: A Comprehensive Benchmark for Data Agents",
       "url": "https://huggingface.co/papers/2607.01647",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 27,
       "institution": "Tsinghua University232",
       "paper_link": "https://arxiv.org/abs/2607.01647",
@@ -66,7 +66,7 @@
     {
       "title": "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory",
       "url": "https://huggingface.co/papers/2607.02517",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 21,
       "institution": "·13 authors2",
       "paper_link": "https://arxiv.org/abs/2607.02517",
@@ -76,9 +76,9 @@
     {
       "title": "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning",
       "url": "https://huggingface.co/papers/2606.31825",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 19,
-      "institution": "·8 authors22",
+      "institution": "·8 authors32",
       "paper_link": "https://arxiv.org/abs/2606.31825",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recent multimodal large language models have shown great promise in clinical image reasoning, but existing post-training pipelines remain predominantly outcome-centric, relying on final answer correctness or sequence-level preferences. This suffers from sparse credit assignment, making it difficult to optimize the reasoning process essential for clinical applications. Our analysis reveals that cascading errors from early-stage reasoning failures are a leading cause of incorrect predictions in medical visual question answering (VQA) benchmarks. Motivated by this, we propose Medical Reasoning-aware Policy Optimization (MRPO), an RL algorithm that incorporates step-wise process rewards. When the final answer is incorrect, MRPO assigns exponentially larger penalties to tokens in earlier invalid reasoning steps, breaking failure cascades without compromising successful paths. Across three multimodal LLM backbones, MRPO consistently outperforms standard GRPO and a recent RL baseline, and on Qwen3-VL-8B-Instruct even surpasses substantially larger medical MLLMs such as HuatuoGPT-Vision-34B by 2.79 points. Moreover, MRPO reduces early-stage reasoning failures from 64.0% to 13.0%, showing that targeted mitigation of cascading failures improves both reasoning quality and final answer accuracy. Our code is available at this https URL"
@@ -86,8 +86,8 @@
     {
       "title": "SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use",
       "url": "https://huggingface.co/papers/2607.01874",
-      "published": "2026-07-05T13:03:11.945352",
-      "likes": 14,
+      "published": "2026-07-05T15:13:43.702298",
+      "likes": 15,
       "institution": "·7 authors1",
       "paper_link": "https://arxiv.org/abs/2607.01874",
       "code_link": "https://github.com/huggingface",
@@ -96,7 +96,7 @@
     {
       "title": "Optimizing Visual Generative Models via Distribution-wise Rewards",
       "url": "https://huggingface.co/papers/2607.02291",
-      "published": "2026-07-05T13:03:11.945352",
+      "published": "2026-07-05T15:13:43.702298",
       "likes": 14,
       "institution": "Tencent Hunyuan3",
       "paper_link": "https://arxiv.org/abs/2607.02291",
