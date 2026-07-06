@@ -1,0 +1,45 @@
+---
+title: Hugging Face Daily Papers - 2026-07-06
+permalink: /posts/daily-papers-2026-07-06/
+date: 2026-07-06 09:15:00 +0900
+categories: [Daily Papers, 일간]
+tags: [huggingface, papers, daily, ai]
+author: lim4349
+---
+
+# Hugging Face Daily Papers - 2026-07-06
+
+총 **5개**의 논문이 수집되었습니다.
+
+## 📊 좋아요 순위
+
+1. **VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon** - 👍 9
+   - 기관: ZJU-OmniAI181
+   - [HF 페이지](https://huggingface.co/papers/2607.01804)
+   - [논문 링크](https://arxiv.org/abs/2607.01804)
+   - Abstract: Vision-Language-Action (VLA) foundation models have recently achieved strong progress in embodied intelligence. To reduce policy-call frequency while preserving temporal coherence, most generative policies adopt an action chunk mechanism, executing multiple future actions in an open-loop manner under a fixed action horizon. However, this "predict-then-blindly-execute" paradigm sacrifices closed-loop reactivity: in contact-rich physical interactions, even small local perturbations can rapidly amplify within the open-loop blind spot, leading to compounding errors and ultimately task failure. To address this limitation, we propose VLA-Corrector, a lightweight corrective inference framework for action-chunked VLA policies. Without modifying the backbone policy weights, VLA-Corrector introduces a lightweight Latent-space Vision Monitor (LVM) that continuously compares predicted and actual visual feature evolution, enabling online detection of visual dynamics deviations. Once persistent deviation is detected, the system triggers a truncation event, discards the remaining stale actions, and invokes corrective replanning via Online Gradient Guidance (OGG). The detect-and-correct mechanism of VLA-Corrector naturally induces an event-triggered adaptive action horizon: it preserves long-horizon execution when the current chunk remains reliable, and invokes short-horizon corrective replanning when execution begins to drift. In doing so, VLA-Corrector mitigates the trade-off imposed by static horizons between execution robustness and policy-call frequency. It can be integrated into different VLA models without further retraining the VLA backbone, interrupting compounding errors while preserving much of the efficiency benefit of action chunking and substantially improving robustness in long-horizon, contact-rich robotic manipulation tasks.
+
+2. **The Mirage of Optimizing Training Policies: Monotonic Inference Policies as the Real Objective for LLM Reinforcement Learning** - 👍 6
+   - 기관: ·12 authors1
+   - [HF 페이지](https://huggingface.co/papers/2606.29526)
+   - [논문 링크](https://arxiv.org/abs/2606.29526)
+   - Abstract: Reinforcement learning (RL) has gained growing attention in large language model (LLM) post-training, yet RL training remains fragile and can suffer from instability or collapse. One vital cause is training-inference mismatch: LLM adopts separate inference and training engines for generation efficiency and training precision, which in practice exhibits inconsistent probabilities for the same trajectories on training and inference sides, even with synchronized model parameters. This naturally induces a special type of off-policyness ever existing and poisoning the training. Prior works have made various efforts in addressing the off-policyness to stabilize the training policies under the mismatch. In this paper, we point out the objective misalignment neglected by existing works that an effective update to the policy in the training engine not necessarily ensures the improvement of the inference policy, i.e., the one used in deployment. To this end, we propose a new policy optimization objective for LLM RL, named Monotonic Inference Policy Improvement (MIPI). Following this principle, we introduce Monotonic Inference Policy Update (MIPU), a two-step LLM RL framework that constructs sampler-referenced candidate updates and selectively accepts synchronized candidates using an inference-side gap proxy. Experiments conducted on two model scales under high mismatch show that MIPU improves average reasoning performance and training stability.
+
+3. **Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots** - 👍 3
+   - 기관: PhysicalAI System Group @ SAIL Lab, Southeast University171
+   - [HF 페이지](https://huggingface.co/papers/2607.02501)
+   - [논문 링크](https://arxiv.org/abs/2607.02501)
+   - Abstract: Embodied AI models now span vision-language-action (VLA) models and world-action models (WAMs), but practical deployment remains fragmented across model-specific Python stacks, backend assumptions, and robot-side glue code, especially on heterogeneous edge devices. Existing inference runtimes are designed mainly for request-response serving and therefore do not satisfy the runtime contract of embodied deployment: multi-rate execution inside closed-loop control, latency-first batch-1 inference on heterogeneous hardware, and extensible embodied interfaces beyond fixed token I/O. We present this http URL , a portable C++ inference runtime for embodied models. Based on an architectural analysis of representative VLA models and WAMs, this http URL captures a shared execution path and organizes it into five layers: input adapters, sequence builders, backbone execution, head plugins, and deployment adapters. The runtime provides modular multi-rate execution, latency-first fused inference, and extensible operator and I/O support, enabling deployment across heterogeneous devices, robots, and simulators through one backend abstraction. We evaluate this http URL on two VLA models, HY-VLA and pi0.5, and on a preliminary WAM benchmark using a LingBot-VA Transformer block. The VLA deployments achieve successful closed-loop execution with 100.0% and 91.0% task success rates, respectively. The WAM benchmark reduces block memory from 312.2 MiB to 88.1 MiB. These results show that this http URL improves deployment efficiency while preserving high accuracy across diverse embodied model architectures.
+
+4. **Securing the AI Agent: A Unified Framework for Multi-Layer Agent Red Teaming** - 👍 2
+   - 기관: Tencent1
+   - [HF 페이지](https://huggingface.co/papers/2606.31227)
+   - [논문 링크](https://arxiv.org/abs/2606.31227)
+   - Abstract: The fast growth of open-source AI infrastructure, from model serving engines and agent platforms to the Model Context Protocol (MCP) ecosystem and the language models themselves, has outpaced the security tooling available to defend it. We present AI-Infra-Guard, an open-source framework that organizes AI red teaming around a single observation: the attack surface of an AI agent is stratified across layers (infrastructure, protocol/tool, agent behavior, and model), and no single detection paradigm fits all of them. The framework therefore matches a paradigm to each layer, from deterministic rule matching over 75+ AI components and 1{,}400+ vulnerability rules, through LLM-driven agentic auditing of MCP servers and agent-skill packages and multi-turn black-box agent red teaming, to a jailbreak harness with 26+ attack operators over sixteen datasets. To our knowledge it is the only open-source framework to span all of these, including supply-chain auditing of the agent skills that increasingly extend AI agents. We release AI-Infra-Guard as open source so that \emph{layer-paradigm matching} can serve as a practical foundation for agent security and a shared base for the community to build on.
+
+5. **AGE: Adaptive-masking for Graph Embedding in Graph Retrieval-Augmented Generation** - 👍 2
+   - 기관: OMRON SINIC X Corp.3
+   - [HF 페이지](https://huggingface.co/papers/2607.00052)
+   - [논문 링크](https://arxiv.org/abs/2607.00052)
+   - Abstract: GraphRAG is an extension of retrieval-augmented generation (RAG) that supports large language models (LLMs) by referring to graph-structured data as external knowledge. While this technique ideally captures intricate relationships, it often struggles with graph representations for LLMs, particularly for frozen LLMs, due to the misalignment between graph-based and text-based latent features. We tackle this issue by introducing the {\it Adaptive-masking for Graph Embedding (AGE)}. AGE employs a Transformer in a mask-based self-supervised learning (SSL) approach. We designed the architecture similar to text embedding encoders, addressing the latent feature misalignment. In contrast to natural language texts, graphs are concise representations, and there exist {\it key nodes} that hold dominant contextual information, which are challenging to predict from their surroundings. Masking such key nodes leads to inefficiency in the SSL process. Therefore, AGE focuses on predicting nodes apart from key nodes, utilizing a learnable node sampler. Our experimental results indicate that AGE significantly improves approaches using non-parametric search component in GraphQA tasks, achieving superior accuracy across four benchmark datasets with distinct characteristics.
+
