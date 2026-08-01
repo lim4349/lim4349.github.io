@@ -1,14 +1,14 @@
 {
   "date": "2026-08-01",
-  "crawled_at": "2026-08-01T05:17:31.531801",
+  "crawled_at": "2026-08-01T15:01:18.104869",
   "total_papers": 10,
   "papers": [
     {
       "title": "AskChem: Claim-Centered Infrastructure for Chemistry Literature Synthesis",
       "url": "https://huggingface.co/papers/2607.28618",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 285,
-      "institution": "New York University52",
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 288,
+      "institution": "New York University72",
       "paper_link": "https://arxiv.org/abs/2607.28618",
       "code_link": "https://github.com/huggingface",
       "abstract": "Chemistry literature synthesis often requires assembling specific findings scattered across many publications, yet existing literature-search systems primarily return ranked document lists. As a result, scientists and AI agents need to locate relevant information, verify their provenance, and assemble cross-paper answers manually. We present AskChem, a claim-centered infrastructure for cross-paper chemistry search. AskChem changes the unit of retrieval from the paper to the provenance-carrying claim: each paper is converted into atomic, typed claims, each grounded by a source DOI and a verbatim quote or an explicit evidence locator. Over this shared claim store, AskChem exposes complementary structures for search and synthesis: a stabilized faceted taxonomy for hierarchical retrieval and browsing, an evidence graph linking claims through relations, and an exploratory living taxonomy that situates indexed papers under scientific principles. AskChem currently indexes 2.4M claims from 147K papers and provides a web interface, as well as REST, SDK, and MCP access for AI agents. On AskChem-Bench, grounding a GPT-5.5 reader in AskChem yields 100% resolvable DOIs, compared with 88.3% without retrieval, and the highest citation density among five tested systems. AskChem is live at this https URL ."
@@ -16,9 +16,9 @@
     {
       "title": "Qwen-UI-Agent Technical Report: Toward Next-Generation Real-World Centric Foundation GUI Agents",
       "url": "https://huggingface.co/papers/2607.28227",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 271,
-      "institution": "TongyiLab6",
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 277,
+      "institution": "TongyiLab7",
       "paper_link": "https://arxiv.org/abs/2607.28227",
       "code_link": "https://github.com/huggingface",
       "abstract": "GUI agents have the potential to become a general purpose executor over existing digital devices. To advance them toward real-world use, we envision agents that operate reliably on real devices, execute workflows across platforms, combine GUI interaction with CLI execution, complete long-horizon tasks, proactively initiate useful services, and autonomously improve their capabilities with minimal human effort. Guided by this vision, we present Qwen-UI-Agent, a real-world centric foundation GUI agent spanning mobile, computer-use, web, and DeepSearch environments. Qwen-UI-Agent combines diverse sandbox environments with a large-scale real-device mobile runtime. Its unified action space interleaves GUI operations with CLI execution and generates batched actions in a single model turn. An AutoResearch-style data flywheel uses agents to construct tasks and environments, diagnose failures, and plan subsequent iterations. Online RL supports training on trajectories exceeding 100 turns, with over 10,000 concurrent environments accelerating rollout. A lightweight harness layer supports proactive service initiation and stateful workflows across mobile and computer. Across a broad suite of evaluations, Qwen-UI-Agent sets state-of-the-art performance on mobile-use benchmarks while delivering competitive performance on computer- and browser-use tasks against frontier models, including Opus 4.8, Gemini 3.1 Pro, and GPT-5.6 Sol. On mobile use, it achieves 82.1% on MobileWorld, 92.2% on MobileWorld-Real, and 97.5% on AndroidDaily. On computer use, it achieves 79.5% on OSWorld-Verified and a 40.0% partial-progress score on OSWorld-v2. On browser use and GUI grounding, it achieves 73.6% on WebArena and 81.5% on ScreenSpot-Pro, respectively."
@@ -26,9 +26,9 @@
     {
       "title": "Metis: Memory Foundation Model",
       "url": "https://huggingface.co/papers/2607.26760",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 245,
-      "institution": "MemTensor423",
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 252,
+      "institution": "MemTensor513",
       "paper_link": "https://arxiv.org/abs/2607.26760",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recent advances in AI agents have increasingly internalized native capabilities into their underlying foundation models, giving rise to multimodal foundation models and large reasoning models. However, agent memory is still primarily implemented through external modules, leaving the native memory capability largely unexplored. In this paper, we take a first step toward this direction by introducing memory foundation models, which empower foundation models with native memory capabilities. We formalize native memory from two perspectives: a persistent and dynamically evolving memory state within the backbone, and native memory procedures that autonomously store and utilize information through model computation. We show that native memory offers advantages in architecture, end-to-end optimization, and efficiency. Based on this formulation, we propose Metis, the first prototype of memory foundation models. Metis introduces a new architecture that equips a foundation model with a native memory state, allowing historical information to be compressed into the model and accessed through memory attention. We construct large-scale memory-specific training data and introduce multiple optimization objectives to acquire these native memory procedures through mid-training. The online memory maintenance of Metis is gradient-free, and the memory update requires only a forward pass. At inference time, all learned model weights remain frozen, while the native memory states are autonomously transformed through standard forward computation. Through extensive experiments, we show that Metis exhibits native memory capabilities and further provide a detailed analysis of its strengths, limitations, and behaviors. To facilitate future research on memory foundation models, we release our project and model checkpoints."
@@ -36,9 +36,9 @@
     {
       "title": "Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering",
       "url": "https://huggingface.co/papers/2607.28568",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 158,
-      "institution": "Frontis AI722",
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 161,
+      "institution": "Frontis AI912",
       "paper_link": "https://arxiv.org/abs/2607.28568",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recursive self-improvement (RSI) requires AI systems that improve the process of building AI (i.e., AI4AI); machine learning engineering (MLE) offers a concrete, executable testbed for studying this capability. We introduce OpenMLE, an open full-stack system for RSI research in MLE, spanning verifiable task environments with execution feedback (OpenMLE-Gym), operator learning (OpenMLE-RL), and long-horizon search (OpenMLE-Evo). On this stack we post-train Frontis-MA1 (35B) as a meta-evolution agent for MLE, aligning post-training and inference around four atomic program-evolution operators (Draft, Improve, Debug, Crossover): the same operators are trained via execution-grounded SFT and RL on data deduplicated against all evaluation benchmarks, then composed into long-horizon search, coupling learning and evolution in a single loop. On MLE-Bench Lite under a 12-hour per-task budget on one RTX 4090 capped at 12 GB VRAM, Frontis-MA1 (35B) improves Medal Average from 39.39% to 60.61% over its base model with OpenMLE-Evo, and reaches 71.21% with OpenMLE-Evo-Max (benchmark-independent experience priors and asynchronous search), exceeding GPT-5.5 + Codex and approaching GPT-5.6 Sol and the 2.8T Kimi K3. On held-out NatureBench Lite, both components transfer: with the framework fixed, swapping in the trained model raises Match-SOTA from 50% to 70%; with the model fixed, swapping in OpenMLE-Evo raises it from 20% to 50%. We release the model weights and the full OpenMLE stack to enable reproducible research on executable AI4AI toward RSI. Code: this https URL"
@@ -46,9 +46,9 @@
     {
       "title": "PhiZero: A World Model Built Around Physical Language",
       "url": "https://huggingface.co/papers/2607.28624",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 150,
-      "institution": "·7 authors233",
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 155,
+      "institution": "Chinese Academic of Science Institute of Automation313",
       "paper_link": "https://arxiv.org/abs/2607.28624",
       "code_link": "https://github.com/huggingface",
       "abstract": "We introduce PhiZero, a physical world model built around physical language, a compact discrete representation of world-state transitions. Existing physical world models typically predict future videos directly in pixel space, leaving the underlying world dynamics implicit within high-dimensional visual predictors. Motivated by humans' ability to abstract predictive structure from visual experience and organize it in natural language for explicit reasoning, we learn physical language from in-the-wild videos through self-supervision and use it to explicitly reason about how the physical world evolves. Accordingly, PhiZero adopts a reason-then-render paradigm: it first infers future world evolution as a physical-language sequence and then renders the inferred transitions into videos. Extensive experiments across generation and understanding benchmarks validate the ability of PhiZero to model physically coherent world evolution. We further show its potential for realistic and interactive world modeling, fine-grained action-conditioned simulation, and zero-shot motion transfer."
@@ -56,9 +56,9 @@
     {
       "title": "VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System",
       "url": "https://huggingface.co/papers/2607.27380",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 62,
-      "institution": "·28 authors552",
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 63,
+      "institution": "·28 authors622",
       "paper_link": "https://arxiv.org/abs/2607.27380",
       "code_link": "https://github.com/huggingface",
       "abstract": "Text-to-video models have achieved remarkable visual quality, yet they still struggle to generate physically consistent dynamics because the temporal evolution of a scene must be inferred implicitly from a highly compressed text prompt. Existing chain-of-thought approaches introduce intermediate plans or visual states, but these representations are typically non-executable or temporally sparse, limiting their ability to instantiate and control the complete spatiotemporal process. To address this limitation, we introduce VideoCoCo, an agentic dual-engine framework in which executable Blender code serves as a process-level chain of thought. Given a text prompt, a coding agent synthesizes a Blender program that explicitly specifies the scene and its temporal evolution. The executable simulation engine runs the program to produce a deterministic spatiotemporal draft, which is subsequently transformed into a photorealistic video by a generative video engine through draft-conditioned editing. This decomposition separates process-level reasoning from high-fidelity visual realization. To adapt the video editor to simulated drafts, we construct VideoCoCo-3K, a curated dataset of draft-instruction-target triplets. VideoCoCo improves the OmniWeaving baseline from 0.475 to 0.558 on PhyGenBench and from 52.18 to 77.88 on VBench-2.0, achieving the best average score on both benchmarks. These results demonstrate that executable code provides an effective, controllable, and inspectable intermediate representation for physically consistent video generation."
@@ -66,9 +66,9 @@
     {
       "title": "Memory Decoder at Scale: A Pretrained, Parametric Long-Term Memory",
       "url": "https://huggingface.co/papers/2607.27919",
-      "published": "2026-08-01T05:17:17.625140",
+      "published": "2026-08-01T15:01:03.578276",
       "likes": 48,
-      "institution": "·7 authors62",
+      "institution": "·7 authors72",
       "paper_link": "https://arxiv.org/abs/2607.27919",
       "code_link": "https://github.com/huggingface",
       "abstract": "Decoder-only language models entangle long-term memory and reasoning in a single parameter set, making it difficult to scale memory capacity independently. Memory Decoder introduces a parametric long-term memory module but only studies it at a relatively small scale. In this work, we present Memory Decoder at Scale, scaling memory models up to 6.9B parameters and pretraining them on 300B tokens. At this data scale, the combined cost of indexing and search makes a standard Faiss pipeline infeasible. We address this bottleneck with a distributed pipeline for Faiss indexing and retrieval, together with sparse, batch-wise loading of kNN distributions. Across model scales, we find that allocating more parameters to memory yields a better parameter-performance tradeoff than scaling the base model alone. On 17 benchmarks, pairing a 6.9B general memory with Pythia-410M raises its average score from 29.86 to 37.34, surpassing Pythia-12B (37.24) with 39% fewer total parameters. For Qwen3 Base models ranging from 0.6B to 14B, 1.7B domain memories improve the average score across the three domains by more than 9 points at every scale. Overall, our results demonstrate that independently scaling pretrained memory offers a more parameter efficient path to improving language model performance."
@@ -76,8 +76,8 @@
     {
       "title": "Beacon: Knowing When and How to Perform Agentic Visual Reasoning",
       "url": "https://huggingface.co/papers/2607.28595",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 45,
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 46,
       "institution": "Kling Team22",
       "paper_link": "https://arxiv.org/abs/2607.28595",
       "code_link": "https://github.com/huggingface",
@@ -86,8 +86,8 @@
     {
       "title": "BM25 Wins at Scale: A Scaling Study of Retrieval-Augmented Generation Paradigms",
       "url": "https://huggingface.co/papers/2607.26497",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 39,
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 40,
       "institution": "muset.ai4",
       "paper_link": "https://arxiv.org/abs/2607.26497",
       "code_link": "https://github.com/huggingface",
@@ -96,8 +96,8 @@
     {
       "title": "Flux-OPD: On-Policy Distillation with Evolving Contexts",
       "url": "https://huggingface.co/papers/2607.28022",
-      "published": "2026-08-01T05:17:17.625140",
-      "likes": 38,
+      "published": "2026-08-01T15:01:03.578276",
+      "likes": 39,
       "institution": "Peking University2",
       "paper_link": "https://arxiv.org/abs/2607.28022",
       "code_link": "https://github.com/huggingface",
