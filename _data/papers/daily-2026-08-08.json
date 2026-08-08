@@ -1,13 +1,13 @@
 {
   "date": "2026-08-08",
-  "crawled_at": "2026-08-08T03:15:30.065729",
+  "crawled_at": "2026-08-08T14:32:47.382428",
   "total_papers": 10,
   "papers": [
     {
       "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
       "url": "https://huggingface.co/papers/2608.05987",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 68,
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 75,
       "institution": "Tsinghua University142",
       "paper_link": "https://arxiv.org/abs/2608.05987",
       "code_link": "https://github.com/huggingface",
@@ -16,9 +16,9 @@
     {
       "title": "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
       "url": "https://huggingface.co/papers/2607.28609",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 55,
-      "institution": "NLP Group of The University of Hong Kong262",
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 59,
+      "institution": "NLP Group of The University of Hong Kong282",
       "paper_link": "https://arxiv.org/abs/2607.28609",
       "code_link": "https://github.com/huggingface",
       "abstract": "Computer-using agents (CUAs) are advancing rapidly across the digital world. A CUA trajectory records the agent's actions, states, and reasoning. Verifying whether it fulfilled the task instruction is central to CUA evaluation, data curation, and reinforcement learning. Neither human-written verifiers nor human annotators can provide such verification at scale, so the field increasingly turns to vision-language models (VLMs) as judges of CUA trajectories. But a fundamental question has long gone unexamined: are these VLM judges reliable enough? To study it systematically, we introduce OSReward, a realistic, high-quality benchmark that evaluates VLM judges on CUA trajectories. The trajectories come from diverse agent backbones executing human-verified instructions across platforms, and are then rigorously labeled with ground-truth verdicts through multi-stage human annotation. Building on it, we derive OSReward-Hard, a challenge set concentrating genuinely hard cases, and OSReward-Multi for fine-grained efficiency and alignment scoring. The most comprehensive evaluation of VLM judges to date finds even state-of-the-art models fall short of an ideal judge, sharing a systematic leniency bias that mislabels failed runs as successes. The few reliable enough to trust are too expensive to run at scale, while affordable open models trail far behind. To close this gap, we construct and release OS-Shepherd-100K, an open corpus of reasoning-annotated trajectory judgments for the CUA community. On it, we train OS-Shepherd (9B and 35B), open reward models that supply low-cost, stable, and reliable reward signals, matching commercial judges at 30-60x lower cost than the frontier. Extensive analyses further inform the design of reliable CUA reward at scale. Our code, benchmark, dataset, and model checkpoints are available at this https URL ."
@@ -26,8 +26,8 @@
     {
       "title": "Interpretable MEG Decoding of Perceived Speech: Cortical Sources and the Stimulus Features That Drive Retrieval",
       "url": "https://huggingface.co/papers/2608.01481",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 48,
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 56,
       "institution": "·5 authors83",
       "paper_link": "https://arxiv.org/abs/2608.01481",
       "code_link": "https://github.com/huggingface",
@@ -36,8 +36,8 @@
     {
       "title": "WorldClaw: Agentic 3D Open-World Generation at Scale",
       "url": "https://huggingface.co/papers/2608.05248",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 47,
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 50,
       "institution": "Tencent Hunyuan1",
       "paper_link": "https://arxiv.org/abs/2608.05248",
       "code_link": "https://github.com/huggingface",
@@ -46,8 +46,8 @@
     {
       "title": "GST-Bench: Can VLMs Develop Global Spatial Awareness from Video?",
       "url": "https://huggingface.co/papers/2608.05747",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 31,
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 36,
       "institution": "ByteDance Seed1",
       "paper_link": "https://arxiv.org/abs/2608.05747",
       "code_link": "https://github.com/huggingface",
@@ -56,52 +56,52 @@
     {
       "title": "EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning",
       "url": "https://huggingface.co/papers/2608.06197",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 30,
-      "institution": "Tencent132",
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 33,
+      "institution": "Tencent142",
       "paper_link": "https://arxiv.org/abs/2608.06197",
       "code_link": "https://github.com/huggingface",
       "abstract": "Training large language model agents for long-horizon tool use typically relies on interactions with real or synthesized executable environments, whose construction and verification are costly, or on external simulators that are difficult to ground. We introduce EnvACE, an agentic reinforcement learning method that replaces external environment interaction during training with world rehearsal. The policy alternates between acting and rehearsal: it first generates a tool call, then plays the role of the environment to produce the response induced by that action, and conditions subsequent decisions on the rehearsed response. Both roles are jointly optimized end-to-end using task-success rewards. Through world rehearsal, the policy internalizes the relationship between actions and their environment responses in its parameters, yielding an agent world model that directly supports decision making. Across BFCL-v4, tau^2-Bench, VitaBench, and FinMCP-Bench, EnvACE achieves strong and transferable performance, outperforming environment-scaling baselines in the overall evaluation. Controlled studies further show that world rehearsal consistently improves policy learning across model scales. At test time, the internalized world model enables private rehearsal before committed execution, yielding further gains under a moderate rehearsal budget without additional external interaction. Our findings establish world rehearsal as a new path toward scaling LLM agent training beyond the constraints of external environments. Our code is publicly available at this https URL ."
     },
     {
-      "title": "Learning from Failures: Retrieval-Centric CoT via Hard Negatives for Unified Multimodal Retrieval",
-      "url": "https://huggingface.co/papers/2608.06060",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 26,
-      "institution": "DeepGlint72",
-      "paper_link": "https://arxiv.org/abs/2608.06060",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Unified multimodal retrieval aims to identify candidates that satisfy complex user intent expressed through heterogeneous inputs. Although Large Vision-Language Model (LVLM)-based retrievers are efficient and scalable, directly encoding raw multimodal inputs often misses fine-grained discriminative cues, leading to confusion among semantically similar candidates. Recent methods mitigate this limitation by generating Chain-of-Thought (CoT) rationales to enrich the query representation. However, such reasoning is typically derived from the query alone: it explains what the query describes, but not what the retriever misunderstands. We argue that effective retrieval reasoning should instead be conditioned on retrieval feedback. Based on this insight, we introduce UniME-R1, an embedder-adviser framework that learns to reason over initially retrieved candidates and generate Retrieval-Centric Chain-of-Thought (RC-CoT). The adviser analyzes candidates individually to identify the discriminative cues confused by the embedder. If the target appears in the initial top-k set, UniME-R1 directly reranks the candidates; otherwise, it generates RC-CoT to refine the retrieval direction and performs full-corpus re-retrieval with a dual-mode embedder. To train the framework, we mine hard negatives to simulate realistic retrieval failures, jointly optimize direct retrieval and RC-CoT-augmented retrieval, and align the adviser with retrieval outcomes through supervised learning and retrieval-oriented reinforcement learning. Extensive experiments on MMEB-V2 and a diverse set of general multimodal retrieval benchmarks demonstrate that UniME-R1 consistently improves retrieval performance over strong baselines."
-    },
-    {
       "title": "ChronoVision: Temporal Reasoning via Latent State Reconstruction",
       "url": "https://huggingface.co/papers/2608.05631",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 26,
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 32,
       "institution": "PediaMed AI2",
       "paper_link": "https://arxiv.org/abs/2608.05631",
       "code_link": "https://github.com/huggingface",
       "abstract": "Multimodal large language models excel at passive perception but struggle with complex visual cognitive tasks requiring multi-step temporal reasoning. This degradation largely stems from the inherent ambiguity of language-based reasoning, which often fails to accurately articulate continuous visual transformations. To address this, we propose ChronoVision, a multimodal framework designed to align visual logic with latent imagery. During supervised fine-tuning, a Reconstructive Visual Head predicts the latent representation of the final transformed state, while an ROI Attention Locating module focuses the model on key visual evidence via semantic span queries. In post-training, we apply reinforcement learning with an implicit process grounding mechanism, guided by a composite reward function that evaluates outcome correctness, latent process alignment, and unsupervised visual focus. Furthermore, we introduce Vbvr-VQA, a novel dataset that evaluates temporal tracking by reformulating video reasoning into a strict image-ordering task. Experiments demonstrate that ChronoVision achieves state-of-the-art performance on Vbvr-VQA with 74.8% in-domain and 71.6% out-of-domain accuracy, alongside a strong 55.0% accuracy on IntPhys2, a highly challenging cross-domain benchmark."
     },
     {
-      "title": "From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models",
-      "url": "https://huggingface.co/papers/2608.06020",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 24,
-      "institution": "FreedomAI482",
-      "paper_link": "https://arxiv.org/abs/2608.06020",
+      "title": "Learning from Failures: Retrieval-Centric CoT via Hard Negatives for Unified Multimodal Retrieval",
+      "url": "https://huggingface.co/papers/2608.06060",
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 29,
+      "institution": "DeepGlint82",
+      "paper_link": "https://arxiv.org/abs/2608.06060",
       "code_link": "https://github.com/huggingface",
-      "abstract": "Economic World Models (EWMs) are generative economic models that simulate how economies evolve from within by modeling heterogeneous agents, their beliefs and actions, and the market and institutional mechanisms through which their interactions produce aggregate outcomes. This paper develops an implementation roadmap for building economic world models as generative engines in which heterogeneous agents act, interact, adapt, and co-evolve with markets and institutions, thereby producing economic dynamics from the inside. We organize EWM systems into a six-level capability ladder, from fixed rule-based agent worlds to adaptive and LLM-based agent worlds, self-evolving agents, evolving institutional worlds, and sim-to-real economic twins aligned with real observations. A systematic literature survey across these levels reveals that existing work remains concentrated in lower-level agent and simulation environments, while systems with self-evolving agents, endogenous institutions, persistent empirical alignment, and validated economic mechanisms remain rare. By translating the EWM agenda into an implementation blueprint, this paper aims to accelerate the development of the next generation of economic simulation environments that can serve as high-fidelity sandboxes for human decision-makers and as training, planning, evaluation, and safety substrates for AI agents. We release a curated paper list and related resources to support future research."
+      "abstract": "Unified multimodal retrieval aims to identify candidates that satisfy complex user intent expressed through heterogeneous inputs. Although Large Vision-Language Model (LVLM)-based retrievers are efficient and scalable, directly encoding raw multimodal inputs often misses fine-grained discriminative cues, leading to confusion among semantically similar candidates. Recent methods mitigate this limitation by generating Chain-of-Thought (CoT) rationales to enrich the query representation. However, such reasoning is typically derived from the query alone: it explains what the query describes, but not what the retriever misunderstands. We argue that effective retrieval reasoning should instead be conditioned on retrieval feedback. Based on this insight, we introduce UniME-R1, an embedder-adviser framework that learns to reason over initially retrieved candidates and generate Retrieval-Centric Chain-of-Thought (RC-CoT). The adviser analyzes candidates individually to identify the discriminative cues confused by the embedder. If the target appears in the initial top-k set, UniME-R1 directly reranks the candidates; otherwise, it generates RC-CoT to refine the retrieval direction and performs full-corpus re-retrieval with a dual-mode embedder. To train the framework, we mine hard negatives to simulate realistic retrieval failures, jointly optimize direct retrieval and RC-CoT-augmented retrieval, and align the adviser with retrieval outcomes through supervised learning and retrieval-oriented reinforcement learning. Extensive experiments on MMEB-V2 and a diverse set of general multimodal retrieval benchmarks demonstrate that UniME-R1 consistently improves retrieval performance over strong baselines."
     },
     {
       "title": "HarnessOpt-Bench: Evaluating LLMs at Harness Optimization",
       "url": "https://huggingface.co/papers/2608.06301",
-      "published": "2026-08-08T03:15:16.630206",
-      "likes": 21,
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 27,
       "institution": "Scale AI2",
       "paper_link": "https://arxiv.org/abs/2608.06301",
       "code_link": "https://github.com/huggingface",
       "abstract": "As LLMs are increasingly deployed within agentic systems, their capabilities depend not only on the model weights but also on the harness: the prompts, tools, control flow, memory, and orchestration code surrounding them. This makes automated harness optimization -- the iterative and evaluation-guided improvement of a harness by an AI system -- both an important route to improving AI systems and a demanding capability for AI systems themselves. Yet the community lacks a common protocol for measuring how well frontier LLMs perform at this task. We introduce HarnessOpt-Bench, a benchmark for end-to-end harness optimization under expensive and stochastic evaluation. An optimizer, an LLM paired with a coding harness, receives a target agent's seed harness, graded evaluation feedback, and a fixed target-evaluation budget. It edits the harness and nominates a final candidate, which is scored by its normalized gain over the seed on a held-out test partition that remains inaccessible throughout search. A trusted execution environment enforces the evaluation boundary, meters target-agent resource use, and preserves candidate versions for audit. We evaluate 5 frontier LLMs as optimizers both under a shared coding harness and under their native harnesses across 4 downstream tasks, over 111 scored runs. Experiment results show that optimizer models separate more than the coding harnesses they act through, native harnesses are not consistently superior, and gains vary substantially across tasks and seed regimes. These results establish harness optimization as a measurable and discriminative capability with large space for improvement."
+    },
+    {
+      "title": "From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models",
+      "url": "https://huggingface.co/papers/2608.06020",
+      "published": "2026-08-08T14:32:33.205114",
+      "likes": 27,
+      "institution": "FreedomAI482",
+      "paper_link": "https://arxiv.org/abs/2608.06020",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Economic World Models (EWMs) are generative economic models that simulate how economies evolve from within by modeling heterogeneous agents, their beliefs and actions, and the market and institutional mechanisms through which their interactions produce aggregate outcomes. This paper develops an implementation roadmap for building economic world models as generative engines in which heterogeneous agents act, interact, adapt, and co-evolve with markets and institutions, thereby producing economic dynamics from the inside. We organize EWM systems into a six-level capability ladder, from fixed rule-based agent worlds to adaptive and LLM-based agent worlds, self-evolving agents, evolving institutional worlds, and sim-to-real economic twins aligned with real observations. A systematic literature survey across these levels reveals that existing work remains concentrated in lower-level agent and simulation environments, while systems with self-evolving agents, endogenous institutions, persistent empirical alignment, and validated economic mechanisms remain rare. By translating the EWM agenda into an implementation blueprint, this paper aims to accelerate the development of the next generation of economic simulation environments that can serve as high-fidelity sandboxes for human decision-makers and as training, planning, evaluation, and safety substrates for AI agents. We release a curated paper list and related resources to support future research."
     }
   ]
 }
