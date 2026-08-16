@@ -1,14 +1,14 @@
 {
   "date": "2026-08-16",
-  "crawled_at": "2026-08-16T02:51:11.950676",
+  "crawled_at": "2026-08-16T14:24:25.726337",
   "total_papers": 10,
   "papers": [
     {
       "title": "Alaya-EVOKE: From Linear-Scaling Supervision to Endless World",
       "url": "https://huggingface.co/papers/2608.13546",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 111,
-      "institution": "·6 authors2",
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 113,
+      "institution": "·6 authors3",
       "paper_link": "https://arxiv.org/abs/2608.13546",
       "code_link": "https://github.com/huggingface",
       "abstract": "Interactive world models must support persistent memory, responsive interaction, and long-horizon generation, yet these requirements place conflicting demands on the model. Maintaining history in the denoiser context or key-value cache incurs growing cost, forcing a trade-off between session length and retained memory, while low-latency interaction relies on few-step generation whose capabilities are bounded by its teacher. Evoke addresses both limitations by externalizing persistent world state and redesigning the teacher for long-horizon interactive generation. Scene geometry is maintained in an external, camera-indexed world state bank, from which only view-relevant information is retrieved, keeping the denoiser context bounded as the session grows. Rather than treating the teacher as a fixed generator, we design it for long-horizon supervision: its sparse attention combines chunk-wise grouping, retrieval of selected distant frames, and a linear-attention global state, yielding linear growth in memory and compute while enabling supervision over long horizons. Such supervision exposes content drift that stays locally plausible within short windows, while per-chunk conditioning enables prompt changes and event control throughout the sequence. A 30-second distribution-matching objective, applied under self-forced rollouts, transfers both capabilities to a three-step student that uses no classifier-free guidance, improving resistance to long-term drift while preserving responsive conditioning. With bounded context and recurrent external memory, Evoke supports open-ended, continuously evolving generation; on a single H200 at $384\\times 640$, each $1.5\\,\\mathrm{s}$ chunk is generated in $2.11\\,\\mathrm{s}$. As a three-step world model, Evoke achieves state-of-the-art performance on WBench while remaining competitive on VBench-Long and VBench-2.0."
@@ -16,8 +16,8 @@
     {
       "title": "LLMRouter: Unified Infrastructure for Developing, Evaluating, and Deploying LLM Routers",
       "url": "https://huggingface.co/papers/2608.06867",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 97,
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 99,
       "institution": "University of Illinois at Urbana-Champaign2.36k2",
       "paper_link": "https://arxiv.org/abs/2608.06867",
       "code_link": "https://github.com/huggingface",
@@ -26,8 +26,8 @@
     {
       "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation",
       "url": "https://huggingface.co/papers/2608.13489",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 86,
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 87,
       "institution": "alibaba453",
       "paper_link": "https://arxiv.org/abs/2608.13489",
       "code_link": "https://github.com/huggingface",
@@ -36,7 +36,7 @@
     {
       "title": "DarwinX: Evolving Agent Harnesses Through Natural Selection",
       "url": "https://huggingface.co/papers/2608.07545",
-      "published": "2026-08-16T02:50:58.506635",
+      "published": "2026-08-16T14:24:12.099774",
       "likes": 70,
       "institution": "Salesforce AI Research2",
       "paper_link": "https://arxiv.org/abs/2608.07545",
@@ -46,8 +46,8 @@
     {
       "title": "Intern-S2-Preview: Scientific Agentic Foundation Model",
       "url": "https://huggingface.co/papers/2608.13505",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 47,
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 50,
       "institution": "Intern Large Models1",
       "paper_link": "https://arxiv.org/abs/2608.13505",
       "code_link": "https://github.com/huggingface",
@@ -56,8 +56,8 @@
     {
       "title": "How Can Rhetoric Reward-Hack AI Reviewers? Dissecting Rhetorical Sensitivity in AI-Based Peer Review",
       "url": "https://huggingface.co/papers/2608.08975",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 42,
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 43,
       "institution": "University of Maryland2",
       "paper_link": "https://arxiv.org/abs/2608.08975",
       "code_link": "https://github.com/huggingface",
@@ -66,9 +66,9 @@
     {
       "title": "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design",
       "url": "https://huggingface.co/papers/2608.13560",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 38,
-      "institution": "meituan443",
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 39,
+      "institution": "meituan533",
       "paper_link": "https://arxiv.org/abs/2608.13560",
       "code_link": "https://github.com/huggingface",
       "abstract": "Transforming multimodal sources into condensed and structured media outputs can be fundamentally conceptualized as a long-horizon agentic process centered on a model-harness system. While an ideal harness system should align with human design priors and accumulate reusable experience through empirical exploration to drive recursive self-improvement, existing paradigms remain static and fall short of this capability. In this paper, we present AutoDesign, a framework that aligns with human design priors, where a meta-harness optimizer guides a code agent to recursively improve harness based on rollout feedback. To instantiate and evaluate this framework, we focus on the academic paper-to-poster generation task and introduce PosterBench, comprising a 100-paper Main Track spanning five disciplines and PosterBench-mini, a shared 10-paper subset for controlled evaluation. On the PosterBench Main Track, AutoDesign achieves the highest score of 78.32, surpassing the closed-source commercial system Claude Design by 7.45 points. Across seven controlled code-agent-model configurations, integrating the learned DesignHarness consistently improves performance, increasing the average PosterBench Score from 54.99 to 67.39 (+12.4%). In a fully autonomous long-horizon loop, it executes 253 tool calls and 11 editing turns within 40 minutes for under $3, reaching average conference-poster quality in human evaluation. A system-blind human study further demonstrates that AutoDesign achieves the highest human preference among evaluated systems."
@@ -76,7 +76,7 @@
     {
       "title": "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives",
       "url": "https://huggingface.co/papers/2608.13552",
-      "published": "2026-08-16T02:50:58.506635",
+      "published": "2026-08-16T14:24:12.099774",
       "likes": 38,
       "institution": "The University of Hong Kong522",
       "paper_link": "https://arxiv.org/abs/2608.13552",
@@ -86,8 +86,8 @@
     {
       "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
       "url": "https://huggingface.co/papers/2608.12743",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 34,
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 35,
       "institution": "Zhejiang University2",
       "paper_link": "https://arxiv.org/abs/2608.12743",
       "code_link": "https://github.com/huggingface",
@@ -96,9 +96,9 @@
     {
       "title": "Massive Activations in Hybrid Linear Attention Large Language Models: Pre-Attention Spikes and Inter-Spike Plateaus",
       "url": "https://huggingface.co/papers/2608.12149",
-      "published": "2026-08-16T02:50:58.506635",
-      "likes": 23,
-      "institution": "Startlux64",
+      "published": "2026-08-16T14:24:12.099774",
+      "likes": 24,
+      "institution": "Startlux74",
       "paper_link": "https://arxiv.org/abs/2608.12149",
       "code_link": "https://github.com/huggingface",
       "abstract": "We present the first systematic study of Massive activations (MAs) in layer-interleaved HLA LLMs and uncover two architecture-aligned morphologies: MAs consistently spike immediately before full attention layers, forming pre-attention spikes (PAS), and can persist through intervening linear attention layers, giving rise to inter-spike plateaus (ISP). As full attention becomes denser, successive PAS become increasingly connected through ISP, ultimately recovering the stable MA morphology of full attention LLMs. We establish the recurrence of this organization across five linear attention architectures, six hybridization configurations, five data domains, and representative open-source hybrid models spanning 1.2B to 397B total parameters. Controlled pretraining of GDN-based hybrids at scales up to 1.3B shows that both morphologies emerge early and respond asymmetrically to output gating: full attention output gating strongly attenuates their absolute magnitudes without eliminating their layerwise organization, whereas removing GDN gates yields comparatively modest amplification. Mechanistically, our systematic-outlier analysis supports a shared lifecycle account governed by the timing of MA cancellation. PAS follows a localized write-sink-cancel process, while the extended persistence of ISP is consistent with delayed cancellation. At the full attention limit, this account recovers the stable MA morphology characteristic of full attention LLMs. Our code is available at this https URL ."
