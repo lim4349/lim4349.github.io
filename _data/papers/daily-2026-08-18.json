@@ -1,0 +1,77 @@
+{
+  "date": "2026-08-18",
+  "crawled_at": "2026-08-18T02:46:49.645293",
+  "total_papers": 7,
+  "papers": [
+    {
+      "title": "VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?",
+      "url": "https://huggingface.co/papers/2608.15265",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 15,
+      "institution": "Tencent241",
+      "paper_link": "https://arxiv.org/abs/2608.15265",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Constructing an interactive 3D open world from a user query is important. However, existing methods are primarily evaluated on idealized, simple queries, making it difficult to systematically analyze and compare how multimodal agents understand user intent, use 3D tools, and reason over textual and visual 3D world information. To this end, we propose VibeWorlding, a unified framework for benchmarking and training vibe worlding agents: a multimodal agent that can autonomously infer user intent, plan scene layout, invoke 3D tools, and reflect on the multimodal feedback in a multi-turn agent-environment interaction process. To achieve this, we first build VWE-BENCH, a benchmark of 2,616 high-quality 3D assets, 323 human-annotated seed 3D worlds, and 6,828 reverse-synthesized multimodal user queries, split into verified queries with ground-truth and unverified queries with carefully designed rubrics. Moreover, we develop VibeWorlding-Gym, a joint multimodal RL post-training framework that integrates (1) a sandbox environment unifying asset retrieval, editing, and image rendering as MCP tools, and (2) a rubric-based verifier that combines physical feasibility and intent fulfillment verification, supporting both fair model evaluation and scalable multimodal RL reward service. Our experiments show that current frontier MLLMs are far from solving the vibe worlding agent task, with even GPT-5.5 and Qwen3.8-Max reaching below 60% success rate, and trace the bottleneck to precise 3D world editing. We further find that RL training can ease this weakness and enable open-source MLLMs to even surpass closed-source frontiers: our VibeWorlder-8B is comparable to frontier MLLMs, while our flagship VibeWorlder-30B-A3B attains the best overall Pass@1 among all evaluated models."
+    },
+    {
+      "title": "Agentic Transaction: Towards ACID-Compliant Agent Systems",
+      "url": "https://huggingface.co/papers/2608.13900",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 9,
+      "institution": "Tsinghua University31",
+      "paper_link": "https://arxiv.org/abs/2608.13900",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Large language model (LLM) agents are evolving from conversational assistants into autonomous systems that execute long-horizon tasks through reasoning, tool use, code generation, and workspace manipulation. As agents increasingly operate over persistent environments and multi-step workflows, they face challenges analogous to those addressed by transactional database systems: reliable execution, consistent outcomes, safe concurrency, and durable state management. We introduce the concept of an agentic transaction and propose an ACID-compliant agent system framework that reinterprets the classical ACID properties for agent execution through four semantic guarantees: Semantic Atomicity, Semantic Consistency, Semantic Isolation, and Semantic Durability. Together, these properties provide a principled foundation for building reliable agent systems despite model uncertainty and dynamic execution environments. To instantiate this framework, we develop an ACID-compliant data agent that realizes these guarantees through transactional exploration-execution-validation cycles, transactional skill hubs, confidence divergence-based validation, semantic dependency-aware isolation, and transaction-aware semantic state management. Experimental results on widely used benchmarks show that our system achieves a 10.6% improvement over state-of-the-art agents, including Claude Code. This work opens a broader research agenda on extending transactional principles and system architectures toward building trustworthy, scalable, and self-evolving AI agent systems."
+    },
+    {
+      "title": "Understanding Cognition-Induced Risks in Agentic AI Systems",
+      "url": "https://huggingface.co/papers/2608.15304",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 8,
+      "institution": "Shanghai AI Laboratory1",
+      "paper_link": "https://arxiv.org/abs/2608.15304",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Frontier agentic systems powered by large language models (LLMs) exhibit human-like patterns of cognition. As these systems become deeply integrated across different domains, their cognitive engagement raises critical concerns for human society that remain insufficiently studied. To address this gap, we systematically analyze risks induced by expanding cognitive capabilities, following a three-level framework defined by their cognitive scope, from physical cognition to social cognition, and finally to self-referential cognition. We study their potential risks to human agency, autonomy, and control capability, corresponding to each cognitive level. We finally propose strategies to mitigate these risks and enhance the controllability of agentic AI systems, ensuring their long-term safe development."
+    },
+    {
+      "title": "R^3-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets",
+      "url": "https://huggingface.co/papers/2608.16033",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 7,
+      "institution": "·9 authors1",
+      "paper_link": "https://arxiv.org/abs/2608.16033",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "In cognitive science, resource rationality asks how an agent should allocate limited computation to maximize expected value. Most reasoning and agent benchmarks use independent per-task budgets; existing shared-budget studies do not calibrate suite performance against the same model's demonstrated single-problem competence. We introduce $R^3$-Bench, which evaluates six-problem suites under shared budgets across mathematics, competitive programming, and abstract reasoning in tool-free and agentic settings. Matched single-problem response curves define an offline empirical oracle over observed successes. Across 72 main-table cells for six models, the oracle mean matches or exceeds the contest mean in all cells and is strictly higher in 71. Under moderate tool-free pressure, equal-allocation replay also exceeds contest performance for four of six models. Trajectory diagnostics reveal limited strategy updating and pressure-dependent failure patterns. In a three-model diagnostic under strong agentic pressure, at least one fixed scheduler exceeds the contest mean in six of nine cells, but no policy dominates across domains. These results expose a persistent gap between demonstrated competence and shared-budget realization."
+    },
+    {
+      "title": "GenRouter: Unified Workflow Routing for Agentic Image Generation",
+      "url": "https://huggingface.co/papers/2608.16721",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 3,
+      "institution": "·7 authors1",
+      "paper_link": "https://arxiv.org/abs/2608.16721",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "The rapid evolution of text-to-image (T2I) generation models has effectively solved the foundational challenge of raw pixel synthesis, shifting the community's focus toward fulfilling increasingly intricate user requests. While recent agentic image generation workflows enhance static inference with advanced capabilities like external knowledge retrieval and iterative reasoning, they mostly operate in isolated silos with fixed ``one-size-fits-all\" topologies. This inevitably leads to severe compute-mismatch, where simple queries are forced through computationally heavy pipelines. To bridge this gap, we present GenRouter, the first unified workflow routing framework for agentic image generation. We first formulate GenCanvas, standardizing diverse agentic pipelines into a universal set of foundational primitives and executable templates. Operating over this unified space, GenRouter adaptively routes heterogeneous prompts to their optimal workflows via (i) demand profiling, (ii) experience matching, and (iii) Pareto filtering. Extensive experiments across diverse benchmarks demonstrate that GenRouter achieves superior visual alignment while reducing execution costs by over 95% and latency by 65% compared to heavyweight static pipelines. Furthermore, the system continuously self-evolves via accumulated experience, enabling robust zero-shot generalization that boosts performance and halves computational overhead."
+    },
+    {
+      "title": "MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling",
+      "url": "https://huggingface.co/papers/2608.14783",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 3,
+      "institution": "Shanghai AI Laboratory5041",
+      "paper_link": "https://arxiv.org/abs/2608.14783",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Part-aware 3D object generation is essential for graphics applications such as controllable modeling, editing, and articulation, where objects are represented as coherent assemblies of semantic parts. However, existing part-aware generation methods, do not scale well to highly complex objects. As the number of parts increases, generating detailed geometry becomes prohibitively expensive in token length and memory. We introduce MegaParts, a scalable autoregressive 3D generation framework to address this challenge by combining structured sequence modeling with a token-efficient vector-quantized shape tokenizer. Our tokenizer learns discrete latent representations for part-level geometry by minimizing token usage subject to high-fidelity reconstruction, enabling adaptive-length tokenization based on geometric complexity. On top of this compact representation, we train a large language model to generate object bounding boxes, part bounding boxes, and part shape tokens within a unified structured sequence. Combined with efficient long-context training strategy, our token-efficient formulation scales to objects with up to 300 parts and sequence lengths up to 256k tokens. This substantially extends the scale of part-aware 3D generation while preserving compositional structure and enabling fine-grained part-level control. Our method achieves higher mesh quality than baseline autoregressive and diffusion models, showing that compressed discrete part tokens improve not only scalability but also the achievable fidelity of generated geometry. These results suggest that LLM native token-efficient autoregressive modeling is a compelling alternative to diffusion for large-scale part-aware 3D generation. The project page is available at this https URL ."
+    },
+    {
+      "title": "NaviDC-OCR: Navigating Document Parsing Across Digital and Camera-Captured Documents",
+      "url": "https://huggingface.co/papers/2608.12898",
+      "published": "2026-08-18T02:46:39.996289",
+      "likes": 3,
+      "institution": "StarDoc-AI171",
+      "paper_link": "https://arxiv.org/abs/2608.12898",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Document parsing aims to transform unstructured documents into structured and machine-readable representations. Recent advances in Vision-Language Models (VLMs) have significantly advanced document parsing. However, existing approaches still face two major challenges. First, decoupled VLM-based methods heavily rely on accurate layout analysis, where geometric distortions in camera-captured documents can introduce cascading errors. Second, although end-to-end VLM-based methods alleviate the dependence on explicit layout detection, they often suffer from redundant generation, hallucinations, and insufficient structural reasoning in high-resolution scenarios. To address these challenges, we propose NaviDC-OCR, a unified framework for document parsing. NaviDC-OCR introduces deformation-aware learning to incorporate geometric perception into VLMs and proposes an adaptive sampling mechanism for complex layout representation. Furthermore, a content-structure decoupled learning strategy is developed to explicitly model formula grammars and table structures, enabling more effective structured representation learning. Extensive experiments demonstrate that NaviDC-OCR achieves state-of-the-art performance across diverse document parsing benchmarks. It obtains overall scores of 96.87, 88.53 and 78.41 on OmniDocBench v1.6, Wild-OmniDocBench, and PureDocBench, respectively, and ranks first in the ICDAR 2026 Sci-ImageMiner Challenge. These results validate the effectiveness and generalization capability of NaviDC-OCR in complex document parsing scenarios."
+    }
+  ]
+}
