@@ -1,14 +1,14 @@
 {
   "date": "2026-08-23",
-  "crawled_at": "2026-08-23T02:53:23.410244",
+  "crawled_at": "2026-08-23T14:24:31.529234",
   "total_papers": 10,
   "papers": [
     {
       "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
       "url": "https://huggingface.co/papers/2608.19880",
-      "published": "2026-08-23T02:53:11.034836",
-      "likes": 246,
-      "institution": "Google1692",
+      "published": "2026-08-23T14:24:18.850917",
+      "likes": 251,
+      "institution": "Google2532",
       "paper_link": "https://arxiv.org/abs/2608.19880",
       "code_link": "https://github.com/huggingface",
       "abstract": "LLM agents learn by interacting with environments, yet these environments are hand-built and static: blind to an agent's weaknesses, and quickly left behind as it improves. While recent environment generation methods attempt to address this, they require domain-specific pipelines, rely on expensive or unreliable verifiers, and still produce static environments. To alleviate the engineering burden of rebuilding environments from scratch, we propose Environment Harness (EnvHarness), a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic. Operating through standard interfaces, EnvHarness applies across diverse domains while ensuring every reshaped environment retains its original verifier. To automate this process, we introduce EnvRigger, which treats the target policy as a black box, observing its execution trajectories to synthesize EnvHarness components targeting diagnosed flaws, and validating them via fresh rollouts. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment generation pipelines, achieving up to a 9.0-point improvement on held-out instances with 9.8% fewer execution steps. Furthermore, EnvHarness provides a superior optimization signal for reinforcement learning, enabling continuous, targeted co-evolution of the policy and its environment."
@@ -16,9 +16,9 @@
     {
       "title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis",
       "url": "https://huggingface.co/papers/2608.18580",
-      "published": "2026-08-23T02:53:11.034836",
-      "likes": 112,
-      "institution": "university of science and technology  of china293",
+      "published": "2026-08-23T14:24:18.850917",
+      "likes": 114,
+      "institution": "university of science and technology  of china373",
       "paper_link": "https://arxiv.org/abs/2608.18580",
       "code_link": "https://github.com/huggingface",
       "abstract": "Training terminal agents requires scalable executable supervision, yet synthesizing high-quality terminal tasks remains challenging. Each task couples an instruction, an initialized environment, a reference solution, and an executable verifier; if these artifacts are generated from inconsistent assumptions, the resulting task may be unsolvable or incorrectly evaluated. Meanwhile, multi-stage synthesis can discard the goals, dependencies, state transitions, and procedural constraints encoded in the original sources. We present FACET (Fine-grained Agentic Construction of Executable Tasks), a framework that addresses both information preservation and cross-artifact consistency. FACET reconstructs related agent skills into coherent, information-rich scenarios, then realizes and repairs the execution environment before generating the final task artifacts. The resulting container state serves as shared grounding for the instruction, solution, and verifier, while execution-based validation and targeted repair correct artifact-specific failures without unnecessarily regenerating valid components. FACET produces complex terminal tasks with dense executable checks, and successful trajectories collected from these tasks provide effective, data-efficient supervision. Fine-tuning models across multiple scales consistently improves performance on Terminal-Bench 2.1, while analyses of alternative generation schemes support the importance of environment-grounded construction for task validity and solution-verifier alignment. These results establish source-intent preservation and shared executable-state grounding as key principles for scalable terminal-task synthesis."
@@ -26,9 +26,9 @@
     {
       "title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
       "url": "https://huggingface.co/papers/2608.20335",
-      "published": "2026-08-23T02:53:11.034836",
-      "likes": 66,
-      "institution": "Ant Research3177",
+      "published": "2026-08-23T14:24:18.850917",
+      "likes": 68,
+      "institution": "Ant Research3927",
       "paper_link": "https://arxiv.org/abs/2608.20335",
       "code_link": "https://github.com/huggingface",
       "abstract": "We present 4DAnyone, a framework for reconstructing 4D humans from an uncalibrated monocular video by generating reconstruction-grade multiview-consistent videos and lifting them into 4D Gaussian Splatting (4DGS). Existing camera-controlled video diffusion models synthesize plausible novel-view videos but fail to maintain consistency when scaled to the tens of target views required for 4DGS reconstruction. We identify this failure as a bounded-attention-context problem: when target views exceed the capacity of a single DiT forward pass, they must be split into groups, exposing two coupled bottlenecks. On the reference-context side, conditioning on all previously generated views grows as $O(N)$, weakening cross-view appearance guidance. On the target-context side, disjoint groups cannot directly exchange information, causing global structural drift. 4DAnyone addresses both bottlenecks with two complementary designs: Reference Context Packing (RCP) compresses growing reference views into a fixed-length mixed-resolution context with $O(1)$ reference-context complexity, while Target Context Routing (TCR) rotates target-view groupings during denoising to share context across groups at high-noise steps and stabilize details at low-noise steps. We further build the MVGameHuman dataset using our in-house game engine and combine it with light-stage and in-the-wild video datasets for training. Experiments on DNA-Rendering and DyMVHumans show that 4DAnyone outperforms prior methods in both novel-view video quality and downstream 4DGS reconstruction, with robust in-the-wild generalization. See our project page for video results and source code: this https URL ."
@@ -36,9 +36,9 @@
     {
       "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
       "url": "https://huggingface.co/papers/2608.19799",
-      "published": "2026-08-23T02:53:11.034836",
-      "likes": 60,
-      "institution": "OpenMOSS494",
+      "published": "2026-08-23T14:24:18.850917",
+      "likes": 61,
+      "institution": "OpenMOSS504",
       "paper_link": "https://arxiv.org/abs/2608.19799",
       "code_link": "https://github.com/huggingface",
       "abstract": "Software increasingly functions as part of the scientific instrument itself, making failures in scientific code capable of compromising not only program behavior but also the evidence underlying scientific conclusions. Yet existing evaluations of coding agents largely emphasize aggregate task success, providing limited insight into why agents fail when repairing scientific software. We introduce \\textbf{SWE-bench Science}, a repository-level benchmark for scientific software engineering comprising 119 tasks from 98 GitHub repositories across 20 scientific domains. Each task is organized into one of three paradigms: Issue-driven, Expert-exploratory, and Engineering-integration. Even the best-performing agent, \\textbf{Claude Code with Opus-5 (max), achieves a pass@1 below 50\\%}, highlighting the substantial challenges posed by scientific software engineering. We identify four recurring failure mechanisms: deficits in scientific knowledge or abstraction, misguided exploration or surface-level repair, incomplete repair coverage or system integration, and failures to generalize scientific knowledge beyond observed cases in our analysis. We further conduct a paired ablation that removes explicit scientific guidance while preserving the repository and executable engineering context. The results show that scientific knowledge is not uniformly beneficial: well-grounded information can constrain repair and improve average performance and token efficiency, whereas poorly aligned guidance can induce anchoring and does not necessarily improve exact repair success. Together, SWE-bench Science provides a broad testbed for studying both the capabilities and failure mechanisms of coding agents in scientific software engineering."
@@ -46,7 +46,7 @@
     {
       "title": "WithEveryone: Unified Planning and Identity Grounding for Group Image Generation",
       "url": "https://huggingface.co/papers/2608.20336",
-      "published": "2026-08-23T02:53:11.034836",
+      "published": "2026-08-23T14:24:18.850917",
       "likes": 39,
       "institution": "Tencent Hunyuan432",
       "paper_link": "https://arxiv.org/abs/2608.20336",
@@ -56,7 +56,7 @@
     {
       "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use",
       "url": "https://huggingface.co/papers/2608.20202",
-      "published": "2026-08-23T02:53:11.034836",
+      "published": "2026-08-23T14:24:18.850917",
       "likes": 31,
       "institution": "ZJUNLP12",
       "paper_link": "https://arxiv.org/abs/2608.20202",
@@ -66,7 +66,7 @@
     {
       "title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback",
       "url": "https://huggingface.co/papers/2608.13120",
-      "published": "2026-08-23T02:53:11.034836",
+      "published": "2026-08-23T14:24:18.850917",
       "likes": 29,
       "institution": "Tencent6",
       "paper_link": "https://arxiv.org/abs/2608.13120",
@@ -76,9 +76,9 @@
     {
       "title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models",
       "url": "https://huggingface.co/papers/2608.14022",
-      "published": "2026-08-23T02:53:11.034836",
+      "published": "2026-08-23T14:24:18.850917",
       "likes": 22,
-      "institution": "ForgeWM932",
+      "institution": "ForgeWM952",
       "paper_link": "https://arxiv.org/abs/2608.14022",
       "code_link": "https://github.com/huggingface",
       "abstract": "Action-conditioned video world models require low-latency causal generation and reliable responses to game-native controls. Although causal distillation enables one- or few-step video synthesis, extending it to interactive world models remains challenging, as discrete keyboard states and continuous mouse motion must remain aligned with temporally compressed latent chunks during causal training and autoregressive rollout. We introduce ForgeWM, a progressive framework that transforms a bidirectional action-conditioned video generator into efficient few-step world models through domain adaptation, teacher-forced causal training, causal consistency distillation, and on-policy distribution matching with a bidirectional teacher. The resulting budget-specialized students operate at steady-state denoising budgets of 1, 2, and 4 steps. ForgeWM further supports a dual-path deployment protocol combining latency-critical interaction with optional replay-time refinement, where the one-step student re-noises and refines its saved draft. On paired Minecraft trajectories, ForgeWM leads the evaluated systems in Imaging Quality, reference-aligned motion-profile agreement, action-sign accuracy, and mouse-control accuracy, while achieving the lowest reference LPIPS; the same four-stage recipe transfers to gamepad-controlled FPS gameplay. Replay-time refinement matches four-step reference quality while remaining roughly three times closer to the experienced trajectory than regeneration from noise. These results demonstrate ForgeWM's effectiveness for controllable few-step video generation."
@@ -86,7 +86,7 @@
     {
       "title": "Repo0: Design-Driven Zero-to-All Code Generation",
       "url": "https://huggingface.co/papers/2608.19854",
-      "published": "2026-08-23T02:53:11.034836",
+      "published": "2026-08-23T14:24:18.850917",
       "likes": 17,
       "institution": "Shanghai Jiao Tong University2",
       "paper_link": "https://arxiv.org/abs/2608.19854",
@@ -96,9 +96,9 @@
     {
       "title": "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving",
       "url": "https://huggingface.co/papers/2608.19758",
-      "published": "2026-08-23T02:53:11.034836",
-      "likes": 14,
-      "institution": "Tencent62",
+      "published": "2026-08-23T14:24:18.850917",
+      "likes": 16,
+      "institution": "Tencent82",
       "paper_link": "https://arxiv.org/abs/2608.19758",
       "code_link": "https://github.com/huggingface",
       "abstract": "Long-context modeling is a pivotal capability for Large Language Models, yet the quadratic complexity of attention remains a critical bottleneck, particularly during the compute-intensive prefilling phase. Our previous work, FlashPrefill, mitigates this cost through instantaneous pattern discovery and max-based dynamic thresholding; however, it remains an algorithmic prototype that is still distant from production deployment. In this paper, we present FlashPrefill V2, which evolves FlashPrefill from a prototype toward practical long-context serving along three dimensions. First, we introduce a mean correction term that effectively suppresses the approximation error, keeping performance degradation manageable even at extreme sparsity levels. Second, we redesign the sparse attention operator with PackGQA memory access, warp specialization, and pingpong pipelining, fully aligning with the latest FlashAttention-3/4 implementations and supporting FP8 inference to meet practical quantization requirements. Third, FlashPrefill V2 natively supports paged KV cache and continuous batching, allowing integration as an attention backend in modern inference frameworks such as SGLang. Extensive evaluations on NVIDIA H20 GPUs---among the most widely deployed inference accelerators---demonstrate that FlashPrefill V2 delivers up to 47.26x and 27.19x speedups over FlashAttention-2 at 128K context length under FP8 and BF16 precision, respectively, and, in FP8, still achieves a 30.49x speedup against an FA3/4-aligned dense baseline."
