@@ -1,14 +1,14 @@
 {
   "date": "2026-08-29",
-  "crawled_at": "2026-08-29T08:24:12.501890",
+  "crawled_at": "2026-08-29T17:32:35.601604",
   "total_papers": 10,
   "papers": [
     {
       "title": "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models",
       "url": "https://huggingface.co/papers/2608.25518",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 129,
-      "institution": "National University of Singapore2",
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 132,
+      "institution": "National University of Singapore3",
       "paper_link": "https://arxiv.org/abs/2608.25518",
       "code_link": "https://github.com/huggingface",
       "abstract": "A common strategy for scaling world models is to train on more crawled video with more compute. We argue that this strategy is inefficient: scaling world models also requires a recursive data engine that offers grounded reward signals. The success of code agents illustrates why this matters. As code is executable, compilers and runtimes can provide high-quality rewards for Reinforcement Learning (RL) post-training of LLMs. By contrast, spatial generation still relies largely on fuzzy proxies such as CLIP scores. These signals are fuzzy and biased, making them hard to support RL post-training. Compared with these, game development provides a missing reward environment for spatial world models. A scene encoded by a game engine is an executable world specification: the engine can efficiently check collision, physics, navigability and bounded playability, while the developer provides the global verification signal by judging whether the scene should be accepted. Game development also provides real-world long-horizon trajectory data for RL post-training. We therefore propose Reinforcement Learning with Human-Engine Verification (RLHEV), a post-training paradigm that combines dense engine signals with implicit human acceptance feedback from the development process."
@@ -16,8 +16,8 @@
     {
       "title": "PAWBench: How Far Are We from Probabilistically Aligned World Modeling?",
       "url": "https://huggingface.co/papers/2608.27345",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 77,
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 82,
       "institution": "·14 authors62",
       "paper_link": "https://arxiv.org/abs/2608.27345",
       "code_link": "https://github.com/huggingface",
@@ -26,9 +26,9 @@
     {
       "title": "UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City",
       "url": "https://huggingface.co/papers/2608.27456",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 71,
-      "institution": "Shanghai Jiao Tong University423",
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 72,
+      "institution": "Shanghai Jiao Tong University703",
       "paper_link": "https://arxiv.org/abs/2608.27456",
       "code_link": "https://github.com/huggingface",
       "abstract": "Multimodal large language models (MLLMs) can interpret a street view, but urban agency depends on whether such local evidence remains useful after the agent starts to move. In this paper, we investigate how far current MLLM agents can turn local urban perception into reliable action in a complicated real-scale city. We propose UrbanGround, the first sandbox to make this question testable in a physically constrained replica of Hong Kong built from territory-wide 3D geospatial data. UrbanGround supports closed-loop interaction from a first-person view and provides an interactive map for navigation. Agents can directly enter the 3D city and explore from a first-person view. Our analysis follows the growth of the spatial problem through three research questions. We first test whether an agent can ground a local scene well enough to answer spatial questions after active observation. Then we ask whether that grounding supports navigation as destinations become farther away and less explicit. Finally, we examine whether the resulting behavior survives changes in route availability and pedestrian motion. Contemporary MLLM agents usually show useful atomic abilities in visual recognition and short-range spatial reasoning, while orientation and pedestrian-aware movement remain unreliable. Their central failure emerges over extended exploration, where local abilities do not compose into sustained goal-directed behavior and errors accumulate without effective correction. We hope UrbanGround will support broader study of how far current MLLM agents can explore reliably in complex, open-ended urban environments."
@@ -36,9 +36,9 @@
     {
       "title": "TTPO: Test-Time Policy Optimization",
       "url": "https://huggingface.co/papers/2608.27448",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 67,
-      "institution": "·11 authors202",
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 69,
+      "institution": "·11 authors242",
       "paper_link": "https://arxiv.org/abs/2608.27448",
       "code_link": "https://github.com/huggingface",
       "abstract": "Recent prominent post-training methods, such as Reinforcement Learning (RL) and On-Policy Self-Distillation (OPSD), have driven rapid progress in mathematical reasoning for large language models, yet their reliance on ground-truth labels precludes test-time training (TTT). Replacing ground truth with majority-vote pseudo-labels is a natural alternative, yet it is fragile: an incorrect vote corrupts the teacher and misleads every token. We observe that this failure mode is asymmetric: rollouts that disagree with the pseudo-label are typically wrong regardless of whether the vote itself is correct. Building on this observation, we propose Test-Time Policy Optimization (TTPO), an asymmetric objective that distills agreeing rollouts via OPSD and penalizes disagreeing rollouts with Grouped RL. Token-level selection further refines both branches: distillation down-weights already-converged positions, while RL penalizes only confident errors. Both updates remain well-grounded even under frequent pseudo-label errors, and majority-vote routing yields tighter self-supervision as the model improves. Without any labels, TTPO matches label-supervised OPSD on five competition-level benchmarks, raises Qwen3-1.7B from 38.0% to 45.2% in TTT, yields +25.2% to +36.4% without thinking, and shows strong cross-task generalization."
@@ -46,8 +46,8 @@
     {
       "title": "Self-OPD: On-Policy Distillation for Flow Matching Models without Teacher",
       "url": "https://huggingface.co/papers/2608.26872",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 66,
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 67,
       "institution": "·11 authors1",
       "paper_link": "https://arxiv.org/abs/2608.26872",
       "code_link": "https://github.com/huggingface",
@@ -56,8 +56,8 @@
     {
       "title": "What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents",
       "url": "https://huggingface.co/papers/2608.27260",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 56,
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 59,
       "institution": "·14 authors2",
       "paper_link": "https://arxiv.org/abs/2608.27260",
       "code_link": "https://github.com/huggingface",
@@ -66,7 +66,7 @@
     {
       "title": "Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report",
       "url": "https://huggingface.co/papers/2608.15763",
-      "published": "2026-08-29T08:24:00.120828",
+      "published": "2026-08-29T17:32:23.225208",
       "likes": 43,
       "institution": "TaoLive AIGC2",
       "paper_link": "https://arxiv.org/abs/2608.15763",
@@ -76,9 +76,9 @@
     {
       "title": "GameWAM: A World Action Model for Video Games",
       "url": "https://huggingface.co/papers/2608.26200",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 38,
-      "institution": "Tencent232",
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 39,
+      "institution": "Tencent252",
       "paper_link": "https://arxiv.org/abs/2608.26200",
       "code_link": "https://github.com/huggingface",
       "abstract": "Modern video games combine first-person perception, rapid visual changes, persistent world state, and heterogeneous native controls. Existing game agents map visual and task context directly to actions but lack explicit world dynamics modeling, whereas interactive game world models predict visual futures from supplied actions but do not serve as task policies. World-Action Models (WAMs) unify these objectives, but remain largely unexplored under the dynamics and open-ended interaction of video games. We introduce GameWAM, to our knowledge the first WAM for native closed-loop gameplay and GUI control. GameWAM jointly generates future visual observations and executable keyboard-mouse trajectories through parallel visual and action generative processes with block-causal conditioning and flow matching. To support joint world-action learning, we construct synchronized gameplay and GUI trajectories. To handle heterogeneous native control, GameWAM predicts a gameplay/GUI mode at each action step and generates actions with mode-specific prediction distributions and continuous-action normalization. For long-horizon interaction, block-cycle control predicts beyond the committed horizon, executes only a short action prefix, and replans from new observations, while fine-grained within-cycle context and hierarchical cross-cycle history preserve temporal continuity. Experiments demonstrate competitive task success with fewer executed native actions than the compared agents. We further uncover Low-Frequency Action Source Imprinting (LASI), in which low-frequency components of the sampled action source systematically steer coarse generated camera motion under fixed conditioning, revealing a source-sensitivity failure mode in generative control. Project page is available at this https URL ."
@@ -86,8 +86,8 @@
     {
       "title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
       "url": "https://huggingface.co/papers/2608.26530",
-      "published": "2026-08-29T08:24:00.120828",
-      "likes": 25,
+      "published": "2026-08-29T17:32:23.225208",
+      "likes": 26,
       "institution": "The Hong Kong Polytechnic University3",
       "paper_link": "https://arxiv.org/abs/2608.26530",
       "code_link": "https://github.com/huggingface",
@@ -96,9 +96,9 @@
     {
       "title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",
       "url": "https://huggingface.co/papers/2608.26103",
-      "published": "2026-08-29T08:24:00.120828",
+      "published": "2026-08-29T17:32:23.225208",
       "likes": 17,
-      "institution": "Robbyant Research1352",
+      "institution": "Robbyant Research1502",
       "paper_link": "https://arxiv.org/abs/2608.26103",
       "code_link": "https://github.com/huggingface",
       "abstract": "Zero-shot cross-task generalization, where a policy must execute manipulation tasks never seen during training, remains a central challenge in robot learning. In large language models, a novel task can be performed simply by specifying it in the context, without any parameter update. This form of in-context learning (ICL) turns generalization into a problem of task specification. To achieve cross-task generalization, we bring this paradigm to robotic manipulation, and argue that the natural task specification for manipulation is a human video: unlike language, it provides rich visual cues about the intended task evolution. We present Zero-WAM, a causal video-action model that executes unseen tasks by following in-context human video guidance. To address the scarcity of task-rich paired human-robot data, we propose an automatic pipeline that converts task-sampled robot trajectories into semantically matched human videos, yielding HumanGen, a dataset of 74.2K human-robot ICL pairs across 8.6K tasks. For model training, we further introduce an in-context future chunk prediction (IFP) objective that suppresses shortcuts learned from seen tasks and forces the policy to draw task information from the video prompt. On seven unseen tasks in RoboTwin 2.0 simulation, Zero-WAM achieves a 47.0% average success rate, an absolute improvement of 29.5 percentage points over the strongest video-action baseline. In real-world evaluations, it follows human video guidance to generalize to unseen task configurations involving multi-object scenes, long-horizon manipulation, and fine-grained insertion."
