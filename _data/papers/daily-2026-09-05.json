@@ -1,14 +1,14 @@
 {
   "date": "2026-09-05",
-  "crawled_at": "2026-09-05T06:29:35.349461",
+  "crawled_at": "2026-09-05T16:36:33.018433",
   "total_papers": 10,
   "papers": [
     {
       "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
       "url": "https://huggingface.co/papers/2609.04199",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 269,
-      "institution": "University of Waterloo33",
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 277,
+      "institution": "University of Waterloo43",
       "paper_link": "https://arxiv.org/abs/2609.04199",
       "code_link": "https://github.com/huggingface",
       "abstract": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator."
@@ -16,8 +16,8 @@
     {
       "title": "Terminal-Universe: Turning Agent Trajectories into Scalable Terminal Environments",
       "url": "https://huggingface.co/papers/2609.04148",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 223,
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 229,
       "institution": "Qwen1",
       "paper_link": "https://arxiv.org/abs/2609.04148",
       "code_link": "https://github.com/huggingface",
@@ -26,8 +26,8 @@
     {
       "title": "LLaDA-Image: Building Strong Image Generators with Fully Open Training Recipes",
       "url": "https://huggingface.co/papers/2609.03796",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 204,
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 209,
       "institution": "inclusionAI3",
       "paper_link": "https://arxiv.org/abs/2609.03796",
       "code_link": "https://github.com/huggingface",
@@ -36,8 +36,8 @@
     {
       "title": "Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning",
       "url": "https://huggingface.co/papers/2609.03430",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 158,
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 159,
       "institution": "Salesforce AI Research272",
       "paper_link": "https://arxiv.org/abs/2609.03430",
       "code_link": "https://github.com/huggingface",
@@ -46,7 +46,7 @@
     {
       "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
       "url": "https://huggingface.co/papers/2608.26730",
-      "published": "2026-09-05T06:29:22.258939",
+      "published": "2026-09-05T16:36:19.327292",
       "likes": 149,
       "institution": "·6 authors2",
       "paper_link": "https://arxiv.org/abs/2608.26730",
@@ -56,9 +56,9 @@
     {
       "title": "LatentPress: Context Compression Beyond Text and Vision",
       "url": "https://huggingface.co/papers/2609.01507",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 107,
-      "institution": "·2 authors2",
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 108,
+      "institution": "·2 authors22",
       "paper_link": "https://arxiv.org/abs/2609.01507",
       "code_link": "https://github.com/huggingface",
       "abstract": "Compressed context is usually carried as human-readable text or as rendered images that must be decoded, even when its consumer is a language model. We introduce LatentPress, which writes conversational histories and long documents into a third representation: continuous memory tokens that a frozen decoder reads directly through its input-embedding interface, with no text reconstruction at inference. A small reader-matched writer compresses $4$-$16\\times$ while training only an adapter (4.2M-26.2M parameters, $\\sim\\!0.1\\%$ of the decoder). On LongMemEval, LatentPress reaches $0.504$ accuracy at $7.70\\times$ compression versus $0.490$ for uncompressed evidence, outperforming text summaries (0.184) and OCR-based compression (0.426 to 0.312). On LongBench-QA, in-domain writers match or exceed raw-context reading at $4$-$8\\times$ compression, while $16\\times$ trails raw. Writing takes 43ms per conversation, roughly an order of magnitude faster than text summarization or OCR reconstruction, and reading is $5$-$9\\times$ faster than raw context or cached OCR. We validate the interface under two transfer settings, zero-shot from UltraChat to LongMemEval memory QA and from LongMemEval-derived QA to unseen LongBench document domains, establishing direct soft tokens as a practical machine-facing context interface beyond text and vision. The implementation of the experiments could be found at: this https URL ."
@@ -66,9 +66,9 @@
     {
       "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
       "url": "https://huggingface.co/papers/2609.04172",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 72,
-      "institution": "Thinking Space302",
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 73,
+      "institution": "Thinking Space362",
       "paper_link": "https://arxiv.org/abs/2609.04172",
       "code_link": "https://github.com/huggingface",
       "abstract": "On-policy distillation (OPD) combines student-generated rollouts with dense token-level supervision from a teacher. Existing work has mainly studied its algorithmic behavior, leaving the role of training data unclear. We examine this role at the data-minimal limit by training on a single query. One-shot OPD keeps improving for hundreds of steps and recovers most of full-data OPD's gain across task domains and model families. We explain this result through the states visited during training and the rate at which the student aligns with the teacher. We measure \\emph{state coverage}, the fraction of the states full-data OPD visits that a query set's rollouts reach. A single query already reaches \\(71.5\\%\\), most of it within the first 100 steps. Adding semantically distinct queries raises coverage and validation accuracy together, until 16 queries reach \\(98.9\\%\\) and match full-data training. Yet alignment slows at a similar pace whether OPD trains on one query or the whole dataset, and even a fixed set of states takes hundreds of steps to absorb. OPD is therefore data-overfed but algorithm-starved. Its rollouts quickly expose broad supervision, while the student absorbs that supervision increasingly slowly. The state-coverage result extends to multi-teacher OPD, where 16 semantically diverse queries per domain match full-data MOPD. As a further stress test, content-light templates and off-domain WildChat queries also approach the real-query baseline. Task content and induced state coverage can therefore come apart. We hope these findings direct future work toward the step efficiency of OPD, and prompt a re-examination of the data and the mechanisms behind its recent successes in frontier post-training."
@@ -76,8 +76,8 @@
     {
       "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM",
       "url": "https://huggingface.co/papers/2609.04098",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 72,
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 73,
       "institution": "Minima AI2",
       "paper_link": "https://arxiv.org/abs/2609.04098",
       "code_link": "https://github.com/huggingface",
@@ -86,7 +86,7 @@
     {
       "title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
       "url": "https://huggingface.co/papers/2609.04196",
-      "published": "2026-09-05T06:29:22.258939",
+      "published": "2026-09-05T16:36:19.327292",
       "likes": 65,
       "institution": "ACE Robotics3",
       "paper_link": "https://arxiv.org/abs/2609.04196",
@@ -94,14 +94,14 @@
       "abstract": "We propose Puffin-World, a unified multimodal architecture that integrates physical understanding, spatial simulation, and 3D world generation and reconstruction without relying on external offline modules. To reliably construct and interact with 3D worlds, our framework jointly models three native world states: physics (gravity field and latitude), geometry (depth), and appearance (image), together with a unified Omni-Camera representation that supports diverse tasks and flexible motions. Beyond modeling these states, we introduce a strategy for propagating physical dynamics across future frames. By grounding absolute camera properties in the real world, Puffin-World enables physically consistent and visually stable world generation. We further couple appearance and geometry within a single generative process, jointly synthesizing each future view and reconstructing its underlying geometry. This unified paradigm enables interleaved closed-loop applications requiring synergy across multiple tasks, including mimic and self-calibrated world exploration. To scale Puffin-World to complex scenarios, we construct Puffin-16M, comprising 15 million vision-language-camera triplets and 1 million trajectories featuring various and challenging motions. To foster further research in this area, we released the code, models, and datasets."
     },
     {
-      "title": "Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction",
-      "url": "https://huggingface.co/papers/2609.04201",
-      "published": "2026-09-05T06:29:22.258939",
-      "likes": 43,
-      "institution": "National Yang Ming Chiao Tung University2",
-      "paper_link": "https://arxiv.org/abs/2609.04201",
+      "title": "RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning",
+      "url": "https://huggingface.co/papers/2609.03199",
+      "published": "2026-09-05T16:36:19.327292",
+      "likes": 51,
+      "institution": "Rice RobotPI Lab152",
+      "paper_link": "https://arxiv.org/abs/2609.03199",
       "code_link": "https://github.com/huggingface",
-      "abstract": "Online 3D reconstruction models perform poorly on long videos. This happens because regressing poses relative to a fixed first-frame anchor forces extrapolation far beyond the training distribution. Small drifts accumulate and amplify into significant geometric collapse. However, we observe that per-frame depth remains stable throughout this failure. The backbone's local geometry remains intact; only the global pose head breaks down. Motivated by this decoupling, we introduce Scal3R. This approach reformulates online reconstruction as multi-reference relative pose querying. We use lightweight learnable tokens, which make up about ~1% of the parameters, and inject them into a completely frozen backbone via asymmetric attention. This setup queries poses relative to multiple past keyframes. An online pose-graph optimization system with loop closure suppresses long-range drift. Scal3R reaches convergence in 8 hours on a single GPU. It reduces the average ATE by over 60% on KITTI compared to the online baseline. It also achieves state-of-the-art performance across Virtual KITTI, Sintel, TUM-Dynamic, ScanNet, and 7-Scenes. Project page: this https URL"
+      "abstract": "Robot learning increasingly depends on broad and diverse demonstrations, yet collecting robot data remains expensive and poorly suited to covering the long tail of real-world tasks. To address this bottleneck, we introduce RoboTok, an internet-scale data engine that, given a query human manipulation video, retrieves manipulation-relevant human demonstrations from web videos for training dexterous robot policies. Specifically, we learn a latent motion space from 3D hand trajectories expressed in estimated actor-centered reference frames. This representation enables manipulation behaviors to be compared across variations in camera viewpoint, scene appearance, and actor occlusions, while remaining compact enough for efficient search and continual indexing over internet-scale video collections. We evaluate RoboTok against existing robot-data retrieval approaches on retrieval benchmarks and downstream robot policy performance. Our results show that RoboTok retrieves more relevant manipulation demonstrations and improves downstream task success, establishing hand-pose trajectory-aware retrieval as a way to make web video a scalable and continuously growing source of supervision for robot learning."
     }
   ]
 }
