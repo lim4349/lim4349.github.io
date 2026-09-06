@@ -1,14 +1,14 @@
 {
   "date": "2026-09-06",
-  "crawled_at": "2026-09-06T06:38:07.854144",
+  "crawled_at": "2026-09-06T16:45:14.640512",
   "total_papers": 10,
   "papers": [
     {
       "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
       "url": "https://huggingface.co/papers/2609.04199",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 313,
-      "institution": "University of Waterloo43",
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 315,
+      "institution": "University of Waterloo54",
       "paper_link": "https://arxiv.org/abs/2609.04199",
       "code_link": "https://github.com/huggingface",
       "abstract": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator."
@@ -16,8 +16,8 @@
     {
       "title": "Terminal-Universe: Turning Agent Trajectories into Scalable Terminal Environments",
       "url": "https://huggingface.co/papers/2609.04148",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 268,
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 271,
       "institution": "Qwen1",
       "paper_link": "https://arxiv.org/abs/2609.04148",
       "code_link": "https://github.com/huggingface",
@@ -26,8 +26,8 @@
     {
       "title": "LLaDA-Image: Building Strong Image Generators with Fully Open Training Recipes",
       "url": "https://huggingface.co/papers/2609.03796",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 225,
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 226,
       "institution": "inclusionAI3",
       "paper_link": "https://arxiv.org/abs/2609.03796",
       "code_link": "https://github.com/huggingface",
@@ -36,7 +36,7 @@
     {
       "title": "Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning",
       "url": "https://huggingface.co/papers/2609.03430",
-      "published": "2026-09-06T06:37:52.580537",
+      "published": "2026-09-06T16:45:01.533985",
       "likes": 161,
       "institution": "Salesforce AI Research314",
       "paper_link": "https://arxiv.org/abs/2609.03430",
@@ -46,7 +46,7 @@
     {
       "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
       "url": "https://huggingface.co/papers/2608.26730",
-      "published": "2026-09-06T06:37:52.580537",
+      "published": "2026-09-06T16:45:01.533985",
       "likes": 149,
       "institution": "·6 authors2",
       "paper_link": "https://arxiv.org/abs/2608.26730",
@@ -54,31 +54,31 @@
       "abstract": "Large language models offer broad capabilities, but adapting them to evolving domains, tools, and requirements often entails repeated post-training. Autonomous systems automate parts of this process by proposing updates, training candidates, and using evaluation feedback to select subsequent proposals. As evidence accumulates, a central problem emerges: which past update evidence remains actionable after subsequent training has changed the parent model? An update's effect depends on its parent, data, and training stage. Treating past success as context-free permission can waste compute. If the resulting child is promoted, it can also degrade the subsequent training trajectory. We formulate this problem as conditional experience transfer and introduce Boundary-Calibrated Intervention Transfer (BCIT), a method that authorizes experience reuse before weight-changing training. BCIT binds an observed effect to its source context, checks applicability conditions, vetoes candidates with named hard conflicts, and obtains current-state evidence through a bounded training trial when needed. Fully trained candidates still face a shared adoption rule, and only observed events extend memory. On one 4B model adapted across finance reasoning, text-to-SQL, and function calling, candidate updates exhibit heterogeneous target and retention effects across the evaluated contexts. Under matched candidates, evidence, and compute, BCIT authorizes fewer harmful updates and attains higher equal-budget final-model quality than the evaluated alternatives. These results support treating experience authorization as a distinct problem in autonomous post-training."
     },
     {
-      "title": "LatentPress: Context Compression Beyond Text and Vision",
-      "url": "https://huggingface.co/papers/2609.01507",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 108,
-      "institution": "·2 authors32",
-      "paper_link": "https://arxiv.org/abs/2609.01507",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Compressed context is usually carried as human-readable text or as rendered images that must be decoded, even when its consumer is a language model. We introduce LatentPress, which writes conversational histories and long documents into a third representation: continuous memory tokens that a frozen decoder reads directly through its input-embedding interface, with no text reconstruction at inference. A small reader-matched writer compresses $4$-$16\\times$ while training only an adapter (4.2M-26.2M parameters, $\\sim\\!0.1\\%$ of the decoder). On LongMemEval, LatentPress reaches $0.504$ accuracy at $7.70\\times$ compression versus $0.490$ for uncompressed evidence, outperforming text summaries (0.184) and OCR-based compression (0.426 to 0.312). On LongBench-QA, in-domain writers match or exceed raw-context reading at $4$-$8\\times$ compression, while $16\\times$ trails raw. Writing takes 43ms per conversation, roughly an order of magnitude faster than text summarization or OCR reconstruction, and reading is $5$-$9\\times$ faster than raw context or cached OCR. We validate the interface under two transfer settings, zero-shot from UltraChat to LongMemEval memory QA and from LongMemEval-derived QA to unseen LongBench document domains, establishing direct soft tokens as a practical machine-facing context interface beyond text and vision. The implementation of the experiments could be found at: this https URL ."
-    },
-    {
       "title": "RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning",
       "url": "https://huggingface.co/papers/2609.03199",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 97,
-      "institution": "Rice RobotPI Lab212",
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 115,
+      "institution": "Rice RobotPI Lab302",
       "paper_link": "https://arxiv.org/abs/2609.03199",
       "code_link": "https://github.com/huggingface",
       "abstract": "Robot learning increasingly depends on broad and diverse demonstrations, yet collecting robot data remains expensive and poorly suited to covering the long tail of real-world tasks. To address this bottleneck, we introduce RoboTok, an internet-scale data engine that, given a query human manipulation video, retrieves manipulation-relevant human demonstrations from web videos for training dexterous robot policies. Specifically, we learn a latent motion space from 3D hand trajectories expressed in estimated actor-centered reference frames. This representation enables manipulation behaviors to be compared across variations in camera viewpoint, scene appearance, and actor occlusions, while remaining compact enough for efficient search and continual indexing over internet-scale video collections. We evaluate RoboTok against existing robot-data retrieval approaches on retrieval benchmarks and downstream robot policy performance. Our results show that RoboTok retrieves more relevant manipulation demonstrations and improves downstream task success, establishing hand-pose trajectory-aware retrieval as a way to make web video a scalable and continuously growing source of supervision for robot learning."
     },
     {
+      "title": "LatentPress: Context Compression Beyond Text and Vision",
+      "url": "https://huggingface.co/papers/2609.01507",
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 109,
+      "institution": "·2 authors42",
+      "paper_link": "https://arxiv.org/abs/2609.01507",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Compressed context is usually carried as human-readable text or as rendered images that must be decoded, even when its consumer is a language model. We introduce LatentPress, which writes conversational histories and long documents into a third representation: continuous memory tokens that a frozen decoder reads directly through its input-embedding interface, with no text reconstruction at inference. A small reader-matched writer compresses $4$-$16\\times$ while training only an adapter (4.2M-26.2M parameters, $\\sim\\!0.1\\%$ of the decoder). On LongMemEval, LatentPress reaches $0.504$ accuracy at $7.70\\times$ compression versus $0.490$ for uncompressed evidence, outperforming text summaries (0.184) and OCR-based compression (0.426 to 0.312). On LongBench-QA, in-domain writers match or exceed raw-context reading at $4$-$8\\times$ compression, while $16\\times$ trails raw. Writing takes 43ms per conversation, roughly an order of magnitude faster than text summarization or OCR reconstruction, and reading is $5$-$9\\times$ faster than raw context or cached OCR. We validate the interface under two transfer settings, zero-shot from UltraChat to LongMemEval memory QA and from LongMemEval-derived QA to unseen LongBench document domains, establishing direct soft tokens as a practical machine-facing context interface beyond text and vision. The implementation of the experiments could be found at: this https URL ."
+    },
+    {
       "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
       "url": "https://huggingface.co/papers/2609.04172",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 74,
-      "institution": "Thinking Space372",
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 77,
+      "institution": "Thinking Space422",
       "paper_link": "https://arxiv.org/abs/2609.04172",
       "code_link": "https://github.com/huggingface",
       "abstract": "On-policy distillation (OPD) combines student-generated rollouts with dense token-level supervision from a teacher. Existing work has mainly studied its algorithmic behavior, leaving the role of training data unclear. We examine this role at the data-minimal limit by training on a single query. One-shot OPD keeps improving for hundreds of steps and recovers most of full-data OPD's gain across task domains and model families. We explain this result through the states visited during training and the rate at which the student aligns with the teacher. We measure \\emph{state coverage}, the fraction of the states full-data OPD visits that a query set's rollouts reach. A single query already reaches \\(71.5\\%\\), most of it within the first 100 steps. Adding semantically distinct queries raises coverage and validation accuracy together, until 16 queries reach \\(98.9\\%\\) and match full-data training. Yet alignment slows at a similar pace whether OPD trains on one query or the whole dataset, and even a fixed set of states takes hundreds of steps to absorb. OPD is therefore data-overfed but algorithm-starved. Its rollouts quickly expose broad supervision, while the student absorbs that supervision increasingly slowly. The state-coverage result extends to multi-teacher OPD, where 16 semantically diverse queries per domain match full-data MOPD. As a further stress test, content-light templates and off-domain WildChat queries also approach the real-query baseline. Task content and induced state coverage can therefore come apart. We hope these findings direct future work toward the step efficiency of OPD, and prompt a re-examination of the data and the mechanisms behind its recent successes in frontier post-training."
@@ -86,7 +86,7 @@
     {
       "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM",
       "url": "https://huggingface.co/papers/2609.04098",
-      "published": "2026-09-06T06:37:52.580537",
+      "published": "2026-09-06T16:45:01.533985",
       "likes": 73,
       "institution": "Minima AI2",
       "paper_link": "https://arxiv.org/abs/2609.04098",
@@ -96,8 +96,8 @@
     {
       "title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
       "url": "https://huggingface.co/papers/2609.04196",
-      "published": "2026-09-06T06:37:52.580537",
-      "likes": 65,
+      "published": "2026-09-06T16:45:01.533985",
+      "likes": 66,
       "institution": "ACE Robotics3",
       "paper_link": "https://arxiv.org/abs/2609.04196",
       "code_link": "https://github.com/huggingface",
