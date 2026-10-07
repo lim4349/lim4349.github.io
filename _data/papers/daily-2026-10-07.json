@@ -1,33 +1,33 @@
 {
   "date": "2026-10-07",
-  "crawled_at": "2026-10-07T07:53:28.656730",
+  "crawled_at": "2026-10-07T19:46:58.080903",
   "total_papers": 10,
   "papers": [
     {
-      "title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
-      "url": "https://huggingface.co/papers/2610.03543",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 46,
-      "institution": "ByteDance41",
-      "paper_link": "https://arxiv.org/abs/2610.03543",
-      "code_link": "https://github.com/huggingface",
-      "abstract": "Streaming video generation has benefited from distribution matching distillation (DMD), which matches the joint distribution of video frames to a video teacher's approximation of the real video distribution. Although this joint matching mitigates drift during autoregressive rollouts, limitations remain in visual quality and semantic alignment. To address these limitations, we propose DuoMatching, a distribution matching framework that approximates the real video distribution through a unified joint-marginal formulation. On top of existing joint matching formulations, the additional marginal matching objective provides dedicated frame-level supervision from an image generator, transferring complementary visual and semantic priors from it. To apply this frame-level supervision in video generation, we introduce LatentBridge to resolve the latent representation mismatch between the video student and the image teacher. Latent Variation Sampling further distributes such frame-level supervision across distinct temporal segments, reducing redundancy. Experiments demonstrate that DuoMatching improves visual quality, composition, and semantic alignment while largely preserving motion dynamics. Human evaluations show overall preference rates above 80% against all evaluated baselines. The project page is available at this https URL ."
-    },
-    {
       "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
       "url": "https://huggingface.co/papers/2610.08448",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 40,
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 153,
       "institution": "·7 authors1",
       "paper_link": "https://arxiv.org/abs/2610.08448",
       "code_link": "https://github.com/huggingface",
       "abstract": "On-Policy Distillation (OPD) trains a student on its own generations using teacher feedback. With different tokenizers, comparing teacher and student predictions requires alignment at both sequence and vocabulary levels. In this paper, we examine whether expanding this alignment coverage improves learning. Across three heterogeneous teacher--student pairs on mathematical reasoning and code generation, strict 1:1 groups already cover most student-generated tokens despite substantial vocabulary mismatch. On responses sampled from the students before distillation, the shared vocabulary retains nearly all teacher and student probability mass at strictly aligned positions on average. Restricting reverse KL to a student-selected top-16 subset of the shared vocabulary at each strict position achieves accuracy comparable to full shared-vocabulary OPD, outperforming the evaluated cross-tokenizer baselines. Adding mean squared error supervision on span log-probabilities in mismatch groups gives complete supervision coverage, yet reduces accuracy. At checkpoints from training with only the strict loss, the span gradients show weak or negative directional agreement with the strict gradients and grow in magnitude relative to them. These diagnostics may help explain the accuracy drop from adding span supervision. Our findings motivate a shift from maximizing alignment coverage to prioritizing supervision reliability: compact supervision at strict positions can be more effective than broader coverage that introduces weakly aligned or conflicting training signals."
     },
     {
+      "title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
+      "url": "https://huggingface.co/papers/2610.03543",
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 67,
+      "institution": "ByteDance231",
+      "paper_link": "https://arxiv.org/abs/2610.03543",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Streaming video generation has benefited from distribution matching distillation (DMD), which matches the joint distribution of video frames to a video teacher's approximation of the real video distribution. Although this joint matching mitigates drift during autoregressive rollouts, limitations remain in visual quality and semantic alignment. To address these limitations, we propose DuoMatching, a distribution matching framework that approximates the real video distribution through a unified joint-marginal formulation. On top of existing joint matching formulations, the additional marginal matching objective provides dedicated frame-level supervision from an image generator, transferring complementary visual and semantic priors from it. To apply this frame-level supervision in video generation, we introduce LatentBridge to resolve the latent representation mismatch between the video student and the image teacher. Latent Variation Sampling further distributes such frame-level supervision across distinct temporal segments, reducing redundancy. Experiments demonstrate that DuoMatching improves visual quality, composition, and semantic alignment while largely preserving motion dynamics. Human evaluations show overall preference rates above 80% against all evaluated baselines. The project page is available at this https URL ."
+    },
+    {
       "title": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models",
       "url": "https://huggingface.co/papers/2610.07767",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 32,
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 61,
       "institution": "Qwen1",
       "paper_link": "https://arxiv.org/abs/2610.07767",
       "code_link": "https://github.com/huggingface",
@@ -36,9 +36,9 @@
     {
       "title": "EVISKILL: Grounding Skill Evolution in Replayable Evidence",
       "url": "https://huggingface.co/papers/2610.05030",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 28,
-      "institution": "DEEP Group at Jilin University81",
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 36,
+      "institution": "DEEP Group at Jilin University261",
       "paper_link": "https://arxiv.org/abs/2610.05030",
       "code_link": "https://github.com/huggingface",
       "abstract": "Continual skill evolution enables LLM agents to accumulate and refine reusable procedural knowledge from interaction experience without updating model parameters. Its effectiveness depends on determining not only what to change, but also why a change is justified and when it should become persistent guidance. However, existing experience-driven methods can lose the behavioral evidence and task contexts supporting edits. Moreover, a global validation outcome provides an incomplete judgment of its constituent changes: locally supported corrections may be discarded with a rejected revision, while evidence may require further experience to inform useful updates. To this end, we introduce EVISKILL, an evidence-driven framework that organizes execution observations into Replayable Evidence Cards and synthesizes edits with explicit links to their supporting contexts. Targeted replay verifies these edits through re-execution and provides feedback for correction. Across epochs, EVISKILL preserves evidence and provisionally retains supported edits for further refinement, while global validation governs their incorporation into the final skill. Experiments on three interactive benchmarks across six LLM backbones demonstrate the effectiveness of this approach."
@@ -46,9 +46,9 @@
     {
       "title": "From Evidence to Action: How Tool-Using Agents Fail",
       "url": "https://huggingface.co/papers/2610.07753",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 26,
-      "institution": "National University of Singapore32",
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 34,
+      "institution": "National University of Singapore62",
       "paper_link": "https://arxiv.org/abs/2610.07753",
       "code_link": "https://github.com/huggingface",
       "abstract": "Tool-using agents make consequential changes to external state, yet correct outcomes do not guarantee that their actions were supported by evidence established beforehand. We study where this evidence-to-action chain breaks as agents move from deciding whether to act to executing single actions and dependent workflows. Across ten model-harness configurations, strong static action assessment can coexist with much weaker interactive execution. Failures often begin before execution: agents stop with incomplete investigation or act before required evidence is established. Once required evidence is obtained, single-action execution is usually reliable, while multi-action workflows additionally expose unresolved prerequisites and incomplete execution. For this analysis, we introduce SafeActBench, comprising 656 cases across six operational domains and five protocols that progress from static action judgment and investigated non-action to single- and multi-action workflows. A provenance-bound Evidence Ledger and deterministic trajectory evaluator track what information was established, when actions occurred, and whether downstream dependencies were satisfied. These results show that failures arise not only from missing information, but also from how agents use established evidence when deciding and executing actions."
@@ -56,8 +56,8 @@
     {
       "title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
       "url": "https://huggingface.co/papers/2610.05140",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 22,
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 25,
       "institution": "Genentech1",
       "paper_link": "https://arxiv.org/abs/2610.05140",
       "code_link": "https://github.com/huggingface",
@@ -66,9 +66,9 @@
     {
       "title": "Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing",
       "url": "https://huggingface.co/papers/2609.37334",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 19,
-      "institution": "Pohang University of Science and Technology1",
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 24,
+      "institution": "Pohang University of Science and Technology2",
       "paper_link": "https://arxiv.org/abs/2609.37334",
       "code_link": "https://github.com/huggingface",
       "abstract": "Vision-language-action (VLA) policies often fail when a robot's executed motion deviates from their commanded action. Such execution errors arise from the robot's mechanics and operating conditions, such as wear and payload changes. We propose self-compensating VLA, a deployment-time adaptation method that enables a VLA policy to pre-compensate for the robot's execution errors when generating commands. Without task rewards or labels, it updates the policy online using the residual between the action commanded by a VLA and the motion executed by the robot. To stress-test VLA robustness across execution conditions that are impractical to cover with physical robots alone, we introduce RoboStress, a controlled simulation benchmark. It combines established joint-level models of friction, backlash, compliance, and gravity-compensation error into seven deployment scenarios whose execution errors depend on the robot's state and motion history. On RoboStress, self-compensating VLA achieves higher average task success than both the base policies and methods that build in robustness during training. On two physical robot arms with different usage histories, it raises the average task success rate by more than 30 percentage points on each arm, and the gains extend to objects not seen in the task demonstrations."
@@ -76,9 +76,9 @@
     {
       "title": "HuatuoGPT-3: RL-Only Domain Adaptation from Base Models",
       "url": "https://huggingface.co/papers/2610.05966",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 16,
-      "institution": "Chinese University of Hong Kong, Shenzhen121",
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 21,
+      "institution": "Chinese University of Hong Kong, Shenzhen161",
       "paper_link": "https://arxiv.org/abs/2610.05966",
       "code_link": "https://github.com/huggingface",
       "abstract": "Domain adaptation aims to turn a general-purpose large language model (LLM) into an expert for a target domain. While the dominant SFT+RL pipeline offers a convenient cold start, it may reduce exploration diversity and introduces additional complexity through multi-stage optimization. These limitations motivate RL-only adaptation. However, pure on-policy RL suffers from a cold-start problem, while mixed-policy RL still falls short: informative tokens in teacher outputs are learned too slowly in early training, and stale teacher outputs can hinder later improvement. We identify these two failure modes as Gradient Starvation and Teacher-Distribution Anchoring. To address them, we propose One-stage Policy Optimization (OnePO), which treats teacher outputs as transient guidance for policy improvement. OnePO combines Adaptive Objective Evolution to strengthen learning on informative low-probability teacher tokens and Teacher Retirement to discard teacher outputs once the current policy can surpass them. On medical adaptation, OnePO achieves 67.2 on HealthBench (Total) with only 20K training samples, outperforming SFT+RL and pure RL by 2.7 and 7.4 points, respectively. We further scale OnePO to produce HuatuoGPT-3, an open-source medical LLM series whose 27B variant reaches 70.1 on HealthBench (Total) and 71.4 on HealthBench Professional, surpassing frontier models such as GPT-6 Astra. Models and code are available at this https URL ."
@@ -86,22 +86,22 @@
     {
       "title": "World Action Learning via Interaction-Centric Spectral Latent Guidance",
       "url": "https://huggingface.co/papers/2610.03607",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 13,
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 16,
       "institution": "The Hong Kong University of Science and Technology1",
       "paper_link": "https://arxiv.org/abs/2610.03607",
       "code_link": "https://github.com/huggingface",
       "abstract": "Learning general-purpose robot policies requires large-scale real-world interaction data, yet collecting robot demonstrations remains expensive and difficult to scale. Egocentric videos offer abundant human interaction experience with task-relevant semantics for robotic manipulation, but direct transfer is challenging for two reasons: latent actions inferred from frame reconstruction can be dominated by nuisance variation such as ego-camera motion, and human and robot behaviors often exhibit different temporal dynamics. We propose WING (World Action Learning via INteraction-Centric Spectral Latent Guidance), a framework for transferring interaction knowledge from egocentric videos to robot policies. WING first separates observer-induced motion from hand-object interaction and distills the interaction-centric component into latent actions. It then exploits the observation that cross-embodiment task semantics are concentrated in slowly varying temporal structures, identifying shared low-frequency components between egocentric latent actions and robot behaviors in the spectral domain and using them to guide action generation. WING achieves average success rates of 99.20% on LIBERO, 93.80% on RoboTwin 2.0, and 57.7% on RoboCasa-GR1, and also performs strongly across four real-world manipulation tasks under diverse generalization settings. These results show that interaction-centric spectral guidance provides an effective and scalable way to transfer physical interaction knowledge from human egocentric video to robot control. Project page: this https URL"
     },
     {
-      "title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
-      "url": "https://huggingface.co/papers/2610.01892",
-      "published": "2026-10-07T07:53:16.179130",
-      "likes": 11,
-      "institution": "Carnegie Mellon University62",
-      "paper_link": "https://arxiv.org/abs/2610.01892",
+      "title": "UNREAL: Unifying Retrieval and Long-Context with a Single Model",
+      "url": "https://huggingface.co/papers/2610.08463",
+      "published": "2026-10-07T19:46:45.023038",
+      "likes": 15,
+      "institution": "NVIDIA1",
+      "paper_link": "https://arxiv.org/abs/2610.08463",
       "code_link": "https://github.com/huggingface",
-      "abstract": "Multimodal agents commonly generate free-form reasoning before each action. For small models, limited model capacity can result in lengthy reasoning that provides little useful guidance for action generation while incurring substantial inference cost. To address this challenge, we introduce Selection-based Structured Reasoning (SSR), a framework that reformulates reasoning as selection instead of open-ended generation. SSR represents recurring high-level reasoning as pre-specified, reusable natural-language candidates. At each turn, the model selects from these reasoning candidates based on their likelihoods given the current context, without requiring an auxiliary task head. Using pre-specified reasoning traces enables parallel scoring, where teacher-forced prefilling computes token likelihoods concurrently within and across candidates using a shared context KV cache. We evaluate SSR on seven multimodal search benchmarks using 2B and 4B models. Across multiple reinforcement learning objectives and supervised fine-tuning, SSR delivers significant efficiency gains without sacrificing task performance. SSR achieves an average success rate competitive with leading search agents of the same scale, while reducing per-turn reasoning latency by over 90% and total per-question model inference latency by 28-54%. Project page: this https URL ."
+      "abstract": "Long-context inference and Retrieval-Augmented Generation (RAG) handle evidence selection at vastly different scales, from a single long prompt to an entire corpus. We ask whether a single model-internal mechanism can select evidence across this range. We introduce UNifying REtrieval And Long-Context with a Single Model (UNREAL), a model-native evidence selection framework to span corpus retrieval and long-context inference. UNREAL encodes chunks and derives retrieval queries directly from the frozen LLM's internal representations. It adds fewer than 500K trainable parameters and leaves the backbone unchanged. On a 3B-token, 21M-chunk Wikipedia index, all four dense and hybrid UNREAL backbones outperform state-of-the-art retriever-reranker systems. The best model raises recall from 49.1% to 73.2% on HotpotQA, from 31.7% to 60.1% on 2WikiMultiHopQA, and from 8.8% to 14.4% on MuSiQue. Applied to long-context tasks, the same selection mechanism removes distractors before generation, raising NoLiMa accuracy from 1.0% to 24.83% at its maximum context length of 128K tokens, and LV-Eval's F1 score from 49.97% to 54.66% at 256K. UNREAL also reduces FLOPs and time-to-first-token relative to full-context inference from roughly 32K tokens onward, with larger gains as context grows. Together, these results establish model-internal evidence selection as a common foundation for corpus retrieval and evidence-sparse long-context inference."
     }
   ]
 }
