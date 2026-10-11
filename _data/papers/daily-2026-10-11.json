@@ -1,14 +1,14 @@
 {
   "date": "2026-10-11",
-  "crawled_at": "2026-10-11T08:00:01.591138",
+  "crawled_at": "2026-10-11T18:40:31.647095",
   "total_papers": 10,
   "papers": [
     {
       "title": "AgentGarten: Code Worlds for Evolving Agents",
       "url": "https://huggingface.co/papers/2610.12374",
-      "published": "2026-10-11T07:59:47.390224",
-      "likes": 149,
-      "institution": "MirroS1453",
+      "published": "2026-10-11T18:40:17.564189",
+      "likes": 202,
+      "institution": "MirroS1533",
       "paper_link": "https://arxiv.org/abs/2610.12374",
       "code_link": "https://github.com/huggingface",
       "abstract": "Interactive virtual worlds allow agents to learn through exploration and interaction. What agents can learn is bounded by the environments they practice in, which must be faithful, with consistent state, rules, and dynamics, and realistic, with observations that follow the real-world visual distributions. Achieving both across diverse worlds remains a bottleneck. We introduce AgentGarten, a framework that couples simulators and game engines with a shared neural renderer to build real-time interactive environments. Its simulation backends maintain persistent world state and execute program-defined interaction rules, while the renderer generates visual observations from structured conditions exported through a common interface. To build the neural renderer, we adapt a pretrained video model to geometry conditions, distill it with our proposed Adversarial Forcing, and optimize inference for real-time interaction. Adversarial Forcing makes history prefilling differentiable through exact replay, so that losses on later predictions update how the renderer encodes prior observations, and adds real-data adversarial supervision to improve its visual quality. In AgentGarten, agents perceive the world through visual observations, interact with it in real time, and improve by distilling each round of experience into playbooks that subsequent agents inherit and refine. Our empirical study demonstrates a substantial gain in learning efficiency, with agents learning from just 4 rounds compared with millions for a conventional reinforcement learning counterpart. As new worlds can be written as code and rendered through the same interface, environments can scale in both number and difficulty alongside their agents, a step toward agents that keep evolving through interactive experience."
@@ -16,9 +16,9 @@
     {
       "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
       "url": "https://huggingface.co/papers/2610.08215",
-      "published": "2026-10-11T07:59:47.390224",
-      "likes": 135,
-      "institution": "National University of Singapore122",
+      "published": "2026-10-11T18:40:17.564189",
+      "likes": 136,
+      "institution": "National University of Singapore123",
       "paper_link": "https://arxiv.org/abs/2610.08215",
       "code_link": "https://github.com/huggingface",
       "abstract": "Learning from experience is essential for LLM agents to adapt to unfamiliar and dynmaic environments. Evaluating this ability is therefore important for understanding how effectively agents acquire and use new knowledge. Existing benchmarks have sought to evaluate this ability, but they primarily evaluate tasks whose rules are provided in the instructions or already familiar to pretrained models, making it difficult to distinguish learning from interactions from reasoning with existing knowledge. To address this, we introduce Learn2Play Bench, a benchmark of newly designed text-based games, whose rules are novel or counterintuitive, requiring agents to acquire knowledge through interaction rather than rely solely on pretrained knowledge. These games provide reproducible feedback and automatic scoring, enabling controlled evaluation of learning across repeated attempts. We also vary game instances to test whether agents can apply what they have learned to new situations. Therefore, we evaluate how backbone models, self-evolving methods, and agent harnesses affect agents' learning ability, revealing three findings: (1) Experience retention: Retaining complete records of actions and feedback can support more effective learning than summarizing these experiences into rules or strategies. (2) Human agent gap: Top-performing human players achieve higher peak scores than the evaluated agents. Human explore more varied strategies, and repeat actions less. (3) Harness matters: With the backbone fixed, changing the harness can improve performance while reducing estimated inference cost. Together, these findings provide insights into how LLM agents learn from experience and suggest directions for future work to improve their learning ability. Project website: this https URL"
@@ -26,9 +26,9 @@
     {
       "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
       "url": "https://huggingface.co/papers/2610.12242",
-      "published": "2026-10-11T07:59:47.390224",
+      "published": "2026-10-11T18:40:17.564189",
       "likes": 129,
-      "institution": "Tsinghua-NICS-EFC302",
+      "institution": "Tsinghua-NICS-EFC382",
       "paper_link": "https://arxiv.org/abs/2610.12242",
       "code_link": "https://github.com/huggingface",
       "abstract": "Large language model (LLM) routing distributes inference work across different models, advancing the cost-quality Pareto frontier of LLM serving. While coarse-grained routing at the session or query level has been widely adopted in production systems, recent algorithmic work shows that fine-grained token-level routing can yield substantial efficiency and quality gains. However, efficiently serving token-level routed inference poses significant challenges to existing systems. Built on single-LLM assumptions, current systems suffer from severe step desynchronization and frequent batch admission delays under token-level routing, and they also impose high implementation complexity on developers. To address these challenges, we design TokenRouter, an efficient and developer-friendly serving system for token-level routed LLM inference. TokenRouter follows the principle of request-centric programming, model-centric execution: developers describe routing logic from the perspective of a single request, while the runtime launches a subserver for each LLM and dispatches requests asynchronously. Each subserver employs a delayed-batching scheduler, whose optimal hyperparameters are derived from a mathematical throughput model of the system. Across diverse routing algorithms, workloads, and model pairs, TokenRouter achieves 2.01-64.15x higher decoding throughput than existing systems, substantially advancing the serving efficiency of token-level LLM routing. Our code is available at this https URL ."
@@ -36,7 +36,7 @@
     {
       "title": "From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation",
       "url": "https://huggingface.co/papers/2610.06100",
-      "published": "2026-10-11T07:59:47.390224",
+      "published": "2026-10-11T18:40:17.564189",
       "likes": 105,
       "institution": "Nanyang Technological University Singapore402",
       "paper_link": "https://arxiv.org/abs/2610.06100",
@@ -46,8 +46,8 @@
     {
       "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement",
       "url": "https://huggingface.co/papers/2610.11959",
-      "published": "2026-10-11T07:59:47.390224",
-      "likes": 71,
+      "published": "2026-10-11T18:40:17.564189",
+      "likes": 73,
       "institution": "Xiaomi MiMo2",
       "paper_link": "https://arxiv.org/abs/2610.11959",
       "code_link": "https://github.com/huggingface",
@@ -56,9 +56,9 @@
     {
       "title": "SuperNav: An Agentic Navigation System for Any Task in Any Scene",
       "url": "https://huggingface.co/papers/2610.12126",
-      "published": "2026-10-11T07:59:47.390224",
-      "likes": 71,
-      "institution": "zju3dv1032",
+      "published": "2026-10-11T18:40:17.564189",
+      "likes": 72,
+      "institution": "zju3dv1102",
       "paper_link": "https://arxiv.org/abs/2610.12126",
       "code_link": "https://github.com/huggingface",
       "abstract": "General-purpose service robots need navigation systems that can handle diverse human requests in unfamiliar environments, combining task generality with scene generality. Some existing methods fine-tune multimodal large language models (MLLMs) to predict navigation actions, making their behavior dependent on the coverage of navigation training data and potentially limiting generalization to new requests and environments. Our key insight is to let the MLLM focus on interpreting requests, understanding scenes, and making decisions while preserving its general-purpose capabilities and delegating motion execution to navigation tools. To realize this idea, we introduce SuperNav, which equips a pretrained MLLM with a specialized agent harness without navigation-specific fine-tuning of the MLLM. Our harness supports these decisions with Navigation Skills, agent-oriented Tools for physical interaction, and task-progress and context management. A unified visual-point interface connects decision-making to motion by allowing the model to specify destinations directly in images and revise its decisions from execution feedback. Together, these components support sustained navigation across different task requirements and environments. SuperNav outperforms four evaluated baselines on instance-level, multi-object, and demand-driven tasks. Category-level evaluation on HM3D and deployment on a real quadruped robot further demonstrate its applicability across environments. Project Page: this https URL"
@@ -66,9 +66,9 @@
     {
       "title": "Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction",
       "url": "https://huggingface.co/papers/2610.12299",
-      "published": "2026-10-11T07:59:47.390224",
+      "published": "2026-10-11T18:40:17.564189",
       "likes": 52,
-      "institution": "KAIST AI162",
+      "institution": "KAIST AI172",
       "paper_link": "https://arxiv.org/abs/2610.12299",
       "code_link": "https://github.com/huggingface",
       "abstract": "Egocentric world models predict first-person observations conditioned on an agent's actions, but most focus on a single agent. Real embodied settings often involve multiple agents that act and interact within a shared environment. Existing multi-agent world models rely on coarse actions like locomotion, camera control, or discrete commands, leaving fine-grained embodied interactions underexplored. We formulate multi-agent egocentric world modeling as synchronized ego-stream generation for multiple agents interacting through fine-grained actions in a shared world. This requires cross-view action consistency, shared-environment consistency, and consistent propagation of interaction-induced state updates. We propose Multi-agent Egocentric World Model (ME-World), which jointly denoises multiple ego streams in a shared token sequence, conditions each stream on all agents' target-view poses, and grounds generation with shared environment memory. We train and evaluate on real and synthetic multi-agent data and introduce shared-world consistency metrics for environment, update, and identity consistency. Experiments show ME-World improves shared-world consistency, action control, identity preservation, and video quality over existing methods."
@@ -76,7 +76,7 @@
     {
       "title": "In-context Robot Learning Made Simple: A Democratized Recipe for Manipulation Tasks",
       "url": "https://huggingface.co/papers/2609.38173",
-      "published": "2026-10-11T07:59:47.390224",
+      "published": "2026-10-11T18:40:17.564189",
       "likes": 47,
       "institution": "·13 authors126",
       "paper_link": "https://arxiv.org/abs/2609.38173",
@@ -86,7 +86,7 @@
     {
       "title": "OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs",
       "url": "https://huggingface.co/papers/2610.12461",
-      "published": "2026-10-11T07:59:47.390224",
+      "published": "2026-10-11T18:40:17.564189",
       "likes": 40,
       "institution": "Alaya Lab412",
       "paper_link": "https://arxiv.org/abs/2610.12461",
@@ -94,14 +94,14 @@
       "abstract": "Recent 3D world models generate photorealistic, explorable scenes that remain frozen in time. OuroWorld is a mask-free framework that turns any static 3D Gaussian Splatting scene into a 3D cinemagraph: a dynamic scene with vivid, diverse motion looping seamlessly from any viewpoint. A vision-language model infers plausible dynamics and guides a video model to synthesize a reference video, which we lift and complete into multi-view videos. To learn from this imperfect supervision, we propose Inconsistency-Robust Periodic 4DGS: a Fourier-series deformation field guarantees looping by construction, while a Grounded Drift Field anchored at the reference view absorbs cross-view inconsistency. Unlike prior Eulerian methods limited to fluid-like motion, we capture general deformation, object motion, and illumination change. We introduce a ground-truth-free evaluation covering vividness, naturalness, loop seam coherence, and scene quality. On 39 reconstructed and generated scenes, OuroWorld outperforms all baselines and wins 70.8%-99.0% of user-study comparisons. Project page: this https URL"
     },
     {
-      "title": "Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching",
-      "url": "https://huggingface.co/papers/2610.12421",
-      "published": "2026-10-11T07:59:47.390224",
-      "likes": 38,
-      "institution": "The University of Hong Kong32",
-      "paper_link": "https://arxiv.org/abs/2610.12421",
+      "title": "U-Space: Uncovering When and Why Uncertainty Arises in Language Models",
+      "url": "https://huggingface.co/papers/2610.09087",
+      "published": "2026-10-11T18:40:17.564189",
+      "likes": 39,
+      "institution": "Multimodal AI Lab - Technical University of Darmstadt76",
+      "paper_link": "https://arxiv.org/abs/2610.09087",
       "code_link": "https://github.com/huggingface",
-      "abstract": "Dense correspondence matching has historically been bounded by simplifying spatio-temporal priors, such as smooth motion and rigid geometry. While effective for classical tasks, these assumptions break down in image editing and reference-guided generation (IEG), where transformations can preserve visual identity while breaking physical continuity. To establish identity-preserving correspondence across such transformations, we introduce FreeMatching, a generalizable framework combining generative and semantic foundation representations with heterogeneous supervision from classical datasets, tracked videos, and synthetic scenes. Teacher-guided iterative refinement further improves correspondence in IEG without dense correspondence annotations. Experimentally, a single FreeMatching model substantially improves correspondence quality on challenging IEG image pairs while retaining competitive performance on classical benchmarks. Furthermore, we demonstrate its utility as a quantitative metric for evaluating identity preservation, with scores that correlate with human judgment. The code is available at this https URL ."
+      "abstract": "Large language models are informing decisions with ever-higher stakes. As the consequences of their errors grow, a central question becomes harder to ignore: how much can we trust an individual answer? Yet recognizing when to defer remains difficult because language models can present incorrect conclusions with fluent explanations and an authoritative tone. Uncertainty quantification seeks to address this disconnect by estimating the reliability of individual predictions. However, many existing methods require repeated generations or separately trained components, and their scalar estimates do not reveal where uncertainty arises or how it evolves during reasoning. Recent work has also shown that generation length can be strongly associated with uncertainty estimates and correctness, raising the question of how much of an estimator's predictive power comes from uncertainty-specific information rather than output length alone. Mechanistic interpretability offers a way to address these limitations by connecting human-interpretable concepts to intermediate model states. Building on this capability, we introduce the U-Space, a low-dimensional subspace that makes a model's evolving uncertainty measurable and interpretable. We identify semantic anchors for doubt and certainty, map their unembedding directions back into the residual space, and combine their contrasts into an orthogonal basis. The U-Lens projects each token state onto these basis vectors, yielding an interpretable token-level uncertainty map that can be inspected directly or aggregated into a scalar uncertainty score. Our approach requires no correctness labels, repeated generations, or training. Across reasoning benchmarks, its confidence score outperforms established baselines under both standard and length-controlled evaluation and transfers more reliably than supervised estimators. Code: this https URL ."
     }
   ]
 }
