@@ -1,13 +1,13 @@
 {
   "date": "2026-10-18",
-  "crawled_at": "2026-10-18T06:46:58.332352",
+  "crawled_at": "2026-10-18T17:07:53.865650",
   "total_papers": 10,
   "papers": [
     {
       "title": "Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation",
       "url": "https://huggingface.co/papers/2610.21601",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 666,
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 667,
       "institution": "·7 authors34",
       "paper_link": "https://arxiv.org/abs/2610.21601",
       "code_link": "https://github.com/huggingface",
@@ -16,9 +16,9 @@
     {
       "title": "OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding",
       "url": "https://huggingface.co/papers/2610.18829",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 577,
-      "institution": "VCLab764",
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 578,
+      "institution": "VCLab834",
       "paper_link": "https://arxiv.org/abs/2610.18829",
       "code_link": "https://github.com/huggingface",
       "abstract": "With the rapid development of multimodal large language models (MLLMs), evaluating their video understanding capabilities has become increasingly important. Existing video understanding benchmarks cover only part of the evaluation dimensions, limiting systematic diagnosis of omni-modal video understanding. We introduce OmniCompass, a holistic benchmark for omni-modal video grounding and understanding. OmniCompass defines two evaluation tracks: OmniCompass-VL assesses vision-language models on tasks requiring visual evidence, while OmniCompass-AV assesses omni-modal models on tasks requiring joint audio-visual evidence. Each track includes three complementary tasks: temporal grounding (TG), spatial grounding (SG), and question answering (QA), assessing when a referenced target appears, where it is, and what happens. QA covers five perception and three reasoning categories in OmniCompass-VL, and three perception and two reasoning categories in OmniCompass-AV. OmniCompass-VL contains 820 videos and 2,460 instances across domains and three duration types: short, medium, and long. A narrative- and audio-rich subset forms OmniCompass-AV with 240 videos and 720 instances. Each instance is evaluated under two paired settings: text-only and text+image, specifying the same target through text and visual-language guidance. All instances are manually annotated with multi-round quality verification. Evaluations of 50 MLLMs show that open-source models still lag behind proprietary counterparts, particularly in audio-visual understanding. Precise temporal and spatial grounding remains challenging even for leading models, and their predictions still exhibit inconsistencies across the paired target specifications."
@@ -26,8 +26,8 @@
     {
       "title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
       "url": "https://huggingface.co/papers/2610.22276",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 352,
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 353,
       "institution": "Mind Lab102",
       "paper_link": "https://arxiv.org/abs/2610.22276",
       "code_link": "https://github.com/huggingface",
@@ -36,8 +36,8 @@
     {
       "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
       "url": "https://huggingface.co/papers/2610.22200",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 315,
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 316,
       "institution": "Tongyi-MAI954",
       "paper_link": "https://arxiv.org/abs/2610.22200",
       "code_link": "https://github.com/huggingface",
@@ -46,9 +46,9 @@
     {
       "title": "FDE-Gym: The Last Mile of AI Delivery",
       "url": "https://huggingface.co/papers/2610.22350",
-      "published": "2026-10-18T06:46:45.483437",
+      "published": "2026-10-18T17:07:41.260942",
       "likes": 284,
-      "institution": "DeepLethe1022",
+      "institution": "DeepLethe1052",
       "paper_link": "https://arxiv.org/abs/2610.22350",
       "code_link": "https://github.com/huggingface",
       "abstract": "Existing agent benchmarks typically evaluate agents on well-specified tasks defined by issue reports, specifications, or task tickets. Real-world customer delivery is different: forward-deployed engineers (FDEs) must clarify ambiguous requirements, work in live systems, and uncover unstated constraints. We introduce FDE-Gym, a benchmark of 95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors, each adapted by industry experts from real-world delivery projects. In simulated customer environments with scripted stakeholders and modifiable customer systems, agents interact with stakeholders and operate on production-like systems to deliver working solutions. FDE-Gym scores a delivery by how much it improves the customer's own success metric, normalized between 0 (unchanged system) and 1 (reference solution), with penalties for stakeholder interactions (messages, trial runs, and waiting time). An online platform lets humans practice FDE skills under the same grading criteria. We evaluate 13 model configurations from seven providers. In the realistic setting, where unstated constraints must be discovered, the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks (a score of at least 0.8 with no incident). Discovering unstated constraints is the primary bottleneck: performance drops sharply when models must uncover them without explicit guidance. Yet information discovery alone does not account for the gap: even on the 23 tasks where the best configuration obtains every key fact from stakeholders, it reaches a normalized business uplift of 0.8 or above on only 10. These results reveal a substantial gap between solving well-specified tasks and delivering effective AI systems for real customers."
@@ -56,8 +56,8 @@
     {
       "title": "RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment",
       "url": "https://huggingface.co/papers/2610.17665",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 201,
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 202,
       "institution": "MAC-AutoML42",
       "paper_link": "https://arxiv.org/abs/2610.17665",
       "code_link": "https://github.com/huggingface",
@@ -66,9 +66,9 @@
     {
       "title": "Self-Evolving Agent Harness",
       "url": "https://huggingface.co/papers/2610.18813",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 198,
-      "institution": "ZGCAGI1737",
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 200,
+      "institution": "ZGCAGI1957",
       "paper_link": "https://arxiv.org/abs/2610.18813",
       "code_link": "https://github.com/huggingface",
       "abstract": "Harness self-evolution revises an agent's software scaffolding, including prompts, memory, workflows, and executable components, while keeping model weights fixed. We formalize a feedback-driven process in which accepted revisions persist across runs. The framework separates update targets from proposal and admission mechanisms. It distinguishes changes to interpreted state from revisions to tools and code, repository-level control logic, and plugin composition. We characterize search through evolutionary optimization and examine its reliability through continual PAC-learning. Under explicit assumptions, the analysis yields an expected generalization bound, a retention bound conditional on historical regression budgets, and a high-probability admission rule using fresh, independent validation data. We examine how persistent harness revisions affect knowledge sharing and organizational workflows, with implications for scientific reliability, physical safety, and institutional accountability. Cases from prior work illustrate model--harness co-design, distributed execution, and plugin reuse. Reliable deployment requires continual validation as task distributions and evaluators change, with independent safeguards for learning, runtime privileges, and consequential actions. We provide a comprehensive 66-page discussion of related work, theory, algorithms, evaluation, applications, and the broader impact of Harness RSI, together with continuously updated code and supplementary materials, at this https URL ."
@@ -76,8 +76,8 @@
     {
       "title": "MAI-Gym: An Open All-in-One Platform for GUI Agent Evaluation and RL Training across Mobile and Computer Environments",
       "url": "https://huggingface.co/papers/2610.20939",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 153,
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 154,
       "institution": "Tongyi-MAI242",
       "paper_link": "https://arxiv.org/abs/2610.20939",
       "code_link": "https://github.com/huggingface",
@@ -86,9 +86,9 @@
     {
       "title": "Learning Where to Split: Dynamic Band Splitting for Audio Source Separation",
       "url": "https://huggingface.co/papers/2610.14993",
-      "published": "2026-10-18T06:46:45.483437",
+      "published": "2026-10-18T17:07:41.260942",
       "likes": 134,
-      "institution": "Tsinghua Machine Learning Group212",
+      "institution": "Tsinghua Machine Learning Group222",
       "paper_link": "https://arxiv.org/abs/2610.14993",
       "code_link": "https://github.com/huggingface",
       "abstract": "Audio source separation models must preserve fine spectral structure while keeping the cost of the separator tractable. Band-split architectures reduce this cost by manually partitioning the spectrum into predefined frequency bands and encoding each band as a token, but the same boundaries are used for every mixture. Because informative spectral structure varies with source content, fixed boundaries can merge discriminative components or spend tokens where little resolution is needed. We introduce Dynamic Band Splitting (DBS), an end-to-end framework that adapts boundary locations and band widths to each mixture under a fixed band-token budget. DBS predicts content-conditioned boundary scores within frequency blocks, selects a prescribed number of boundaries using hard Top-$K$, and applies content-dependent pooling to obtain compact band tokens. After separation, it smooths and expands these tokens to the original STFT grid, refines them along frequency, and decodes complex masks with a frequency-shared head. DBS improved separation over the corresponding static models on DnR v2, MUSDB18-HQ, and EchoSet, with DBS-BSRNN achieving relative gain of 29.0% in average SI-SDR on DnR v2. These results and boundary analyses on DnR v2 show that content-adaptive frequency partitioning benefits multiple separator backbones under a fixed band-token budget. Code and audio demos are available at this https URL"
@@ -96,9 +96,9 @@
     {
       "title": "InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views",
       "url": "https://huggingface.co/papers/2610.20341",
-      "published": "2026-10-18T06:46:45.483437",
-      "likes": 118,
-      "institution": "zju3dv4182",
+      "published": "2026-10-18T17:07:41.260942",
+      "likes": 119,
+      "institution": "zju3dv4522",
       "paper_link": "https://arxiv.org/abs/2610.20341",
       "code_link": "https://github.com/huggingface",
       "abstract": "Feed-forward Gaussian reconstruction builds 3D scenes directly from input images for novel view rendering, but learning Gaussian attributes from predicted geometry for high-quality rendering under large viewpoint changes remains challenging. We analyze limitations in Gaussian attribute learning and introduce InfiniSplat v2, which improves rendering quality through architectural and training changes. Our method decouples geometry and attribute prediction with a frozen geometry branch, aligns predicted Gaussians using ground-truth camera poses during training, and adopts large-angle target view supervision. Across six datasets, the feed-forward outputs of the same trained model achieve state-of-the-art mean LPIPS and DISTS among the evaluated methods in both pose-conditioned and pose-free settings. In the pose-conditioned setting, mean LPIPS and DISTS decrease by 25.8% and 32.9%, respectively, compared with the strongest evaluated baselines. We further find that opacity learned with only image reconstruction supervision suppresses geometrically inconsistent points. Project page: this https URL"
