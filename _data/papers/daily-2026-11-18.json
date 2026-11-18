@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-18",
+  "crawled_at": "2026-11-18T09:27:17.235084",
+  "total_papers": 10,
+  "papers": [
+    {
+      "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
+      "url": "https://huggingface.co/papers/2611.22115",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 140,
+      "institution": "XingChen-AGI2",
+      "paper_link": "https://arxiv.org/abs/2611.22115",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. This report describes the design principles and systems engineering behind the series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. We study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead. Our pretraining infrastructure builds on MindSpore HyperParallel, combining topology-aware hybrid sharding, efficient distributed optimizer execution, and coordinated management of long-sequence workloads and activation memory. CPU affinity and core isolation further reduce host scheduling interference. Together, these mechanisms support the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. For post-training, we introduce TeleGym, a unified agent execution platform that connects execution, evaluation, and trajectory construction to policy optimization. Disaggregated asynchronous execution, bounded oversampling, and partial rollout accommodate heterogeneous task durations while preserving trajectory continuity across policy updates. Together, these advances establish an Ascend-oriented training foundation for the continued development of Xing 4 across model scales and increasingly demanding reasoning and agent workloads."
+    },
+    {
+      "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
+      "url": "https://huggingface.co/papers/2611.17621",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 86,
+      "institution": "SLAI-AITP251",
+      "paper_link": "https://arxiv.org/abs/2611.17621",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs. Existing Ascend kernel benchmarks primarily focus on kernel generation, with less emphasis on the ability of agents to optimize existing implementations under input configurations drawn from real workloads. To address this requirement, we introduce AscendGYM, a benchmark whose initial suite comprises 48 kernels across three difficulty levels. Each kernel is paired with test cases whose data types and tensor shapes are collected from real-world training and inference tasks. Consequently, performance improvements on AscendGYM map directly to the corresponding workloads. In terms of usability, two evaluation modes are supported in AscendGYM: model evaluation and model-harness evaluation. The kernel optimization capabilities of both trained models and custom agents are allowed to be measured. It provides a complete execution environment that closely reproduces how Ascend kernels are invoked in practical pipelines. For model evaluation, it additionally includes a built-in harness equipped with search orchestration and experience accumulation. Finally, we propose a new metric, the Speedup-Token Score (STS), which quantifies performance gains relative to token cost. By jointly considering speedup and cost, STS enables the assessment of practical kernel optimization capability of a model or harness under an acceptable budget. AscendGYM is available at this https URL ."
+    },
+    {
+      "title": "Weight-Space Programming Doesn't Need Transformers",
+      "url": "https://huggingface.co/papers/2611.22055",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 40,
+      "institution": "Pohang University of Science and Technology272",
+      "paper_link": "https://arxiv.org/abs/2611.22055",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights."
+    },
+    {
+      "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
+      "url": "https://huggingface.co/papers/2611.21099",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 39,
+      "institution": "Show Lab242",
+      "paper_link": "https://arxiv.org/abs/2611.21099",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Frontier multimodal models can now control robots zero-shot from images, yet many manipulation tasks depend on contact forces that images cannot show. Bringing force to an API-only frozen model raises two challenges. First, contact evolves much faster than an API model can decide, so the system must close the loop on force beneath the model. Second, a frozen model cannot interpret raw force streams, so force must be returned in a form the model can reason about. Therefore, we present ForceHarness, a harness that lets frozen models use force without demonstrations or finetuning. After calibrating hand force from a wrist sensor or joint torques alone, ForceHarness addresses the first challenge with self-terminating force primitives that regulate force on their own and return at a contact event. To address the second challenge, a physics translation layer turns each force trace into physical quantities with uncertainty as the tool result. To evaluate ForceHarness against expert force controllers and learned policies under identical conditions, we also build HiddenPhys, a seven-task MuJoCo benchmark with hidden physical variables. On a real arm without a wrist force sensor, ForceHarness raises the zero-shot success rate of GPT-6 Astra from 3.3% to 90.0%. In simulation, it adds 17.5 percentage points on the public ForceBench suite and 34.3 percentage points on HiddenPhys, surpassing force-aware policies trained on demonstrations on both benchmarks and matching hand-written expert controllers on HiddenPhys. Ablations further show that smaller models make significantly better decisions when given physical quantities rather than raw force values."
+    },
+    {
+      "title": "Multi-Branch Transformer",
+      "url": "https://huggingface.co/papers/2611.19800",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 31,
+      "institution": "·9 authors31",
+      "paper_link": "https://arxiv.org/abs/2611.19800",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference."
+    },
+    {
+      "title": "TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation",
+      "url": "https://huggingface.co/papers/2611.23143",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 23,
+      "institution": "·8 authors71",
+      "paper_link": "https://arxiv.org/abs/2611.23143",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Robot manipulation videos provide a rich visual experience, yet recovering robot action and gripper-state annotations from RGB observations still remains challenging. Using the embodiment-agnostic tool-center-point (TCP) pose as the action space, we present TCP4D, a unified model in which a shared 4D scene representation both tracks observed TCP motion and generates future TCP trajectories. Given a monocular video and initial 2D TCP queries, the tracker directly recovers metric TCP poses in SE(3) and gripper states alongside scene geometry and camera parameters. The generator samples local features from the same 4D representation along the recovered TCP tracks, then combines them with robot observations and language instructions to predict future TCP states. Our new cross-embodiment augmentation pipeline converts existing RGB videos into demonstrations for alternative embodiments by retargeting the recovered motion and synthesizing the corresponding observations, without recorded source-robot states. Experiments show that the tracker achieves absolute trajectory errors of 7.60 and 16.07 mm on DROID and RoboLab and adapts to a new embodiment with only ten demonstrations. The generator achieves 69.19% mean success on RoboTwin and outperforms well-established policy models on two real-world tasks, while joint training on source and augmented demonstrations improves target-robot success by 41.5% over augmented-only training."
+    },
+    {
+      "title": "Breath-Dx: A Time Series Classification Benchmark for Disease Screening with eNose",
+      "url": "https://huggingface.co/papers/2611.15348",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 23,
+      "institution": "·6 authors21",
+      "paper_link": "https://arxiv.org/abs/2611.15348",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Electronic nose (eNose) technology offers a portable, non-invasive route for disease screening via exhaled breath analysis. However, progress in the field is hindered by the lack of systematic benchmarks that compare machine learning methods under realistic conditions, particularly sensor drift, a known but rarely quantified failure mode. Most existing studies rely on small, private datasets with inconsistent protocols, rendering results non-comparable and slowing progress. We introduce Breath-Dx, the first comprehensive benchmark of time series classification methods for breath-based disease screening. Our work leverages the Scent of Health (S-OH) dataset, the largest public clinical eNose collection to date, comprising 1,234 patients across nine diagnostic groups, each providing a 17-channel multivariate time series with explicit temporal train/test splits that account for sensor drift. We systematically evaluate 10 methods spanning four families: feature-based tabular learners, convolution-based models, graph-based, and time series architectures. All methods degrade significantly under temporal validation (0.05-0.12 AUC drop compared to random cross-validation), confirming that drift embeds a strong temporal signal. Under this realistic evaluation, the best methods achieve ROC AUC of 0.74-0.76 for some lung conditions, though others remain near chance. Recurrent architectures show the most consistent performance across diseases, while specialized time series methods achieve the highest peak results. Demographic confounders matter: breath signals provide independent diagnostic value for some conditions but add little beyond age for others. We release the S-OH dataset, all temporal splits, evaluation protocols, and code to enable reproducible research and accelerate progress in clinical breathomics."
+    },
+    {
+      "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+      "url": "https://huggingface.co/papers/2611.18856",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 21,
+      "institution": "Google2",
+      "paper_link": "https://arxiv.org/abs/2611.18856",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Harness optimization is often studied with a fixed policy model and benchmark. When either changes, the optimizer must decide which parts of an evolved harness to reuse or revise, but the harness alone may not explain why earlier edits were made or how they performed. In this work, we study Continual Recursive Self-Improvement (CRSI), a setting for continuing existing harness-optimization methods across compatible benchmarks or policy models. We propose Self-Improvement Memory (SIM) for the harness optimizer, rather than the task-solving policy. SIM groups edits by recurring harness problem and records their rationale, predicted and observed outcomes, and evaluation context. New attempts extend this history as optimization continues. In our experiments across four domains, SIM achieves higher final scores than harness-only and root-cause-only continuation in cross-dataset and pairwise cross-model comparisons. Across ten independent source runs in coding, paired continuations with SIM improve final scores by an average of 2.36 points over harness-only continuation ($p=0.003$)."
+    },
+    {
+      "title": "FastFrames: Video Generation at Interactive Latency",
+      "url": "https://huggingface.co/papers/2611.23226",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 19,
+      "institution": "Apple141",
+      "paper_link": "https://arxiv.org/abs/2611.23226",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Autoregressive video diffusion models generate frames based on new observations and inputs, making them a promising medium for interactive visual experiences. However, existing models are orders of magnitude too slow for fluid interaction. This paper introduces FastFrames, a family of fast autoregressive video diffusion models that achieves interactive latency without compromising quality. We profile the inference pipeline of state-of-the-art models and find that operations often treated as fixed implementation details, such as VAE decoding and KV cache updates, in fact account for over half of end-to-end inference latency. We challenge the assumption that these components are indispensable and replace them with lightweight alternatives. Our 1.3B variant runs at 36 ms per frame, or 28 responses per second (RPS), on a single B200 GPU while matching the generation quality of a state-of-the-art model that is nearly 8x slower. Our 14B variant runs at 45 ms per frame, or 22 RPS, on an 8x B200 GPU node and yields significantly better visual quality and realism. We show that FastFrames enables real-time interaction in applications such as camera-conditioned and physics-conditioned video generation."
+    },
+    {
+      "title": "VideoNexus: Video Perception Beyond the Reasoning Context",
+      "url": "https://huggingface.co/papers/2611.21392",
+      "published": "2026-11-18T09:27:04.383041",
+      "likes": 16,
+      "institution": "Kling-Keye1",
+      "paper_link": "https://arxiv.org/abs/2611.21392",
+      "code_link": "https://github.com/huggingface",
+      "abstract": "Understanding long videos requires locating evidence, resolving visual details, and integrating observations into an answer. Even when relevant evidence is present, performing these operations within long, dense visual sequences burdens both perception and reasoning. Video agents enable selective inspection, but returning frames to the planner still accumulates visual information in its reasoning context. Delegating perception reduces this burden, yet sparse sampling can miss decisive details, and per-frame descriptions can preserve context growth. We introduce VideoNexus, a training-free framework that separates detailed video perception from evidence-driven planning and reasoning. The planner controls where to inspect, what to resolve, and how densely to sample. Perception sub-agents process native audio-video in independent contexts and return compact, temporally grounded evidence for iterative search and verification. Using Gemini 3.8 Flash for both planning and perception, VideoNexus achieves 88.6% accuracy on full LVBench, exceeding same-backbone static ingestion and built-in agentic processing by 3.6 and 1.1 points, respectively, at 44% of the latter's measured API cost. A paired LVBench subset ablation shows lower planner input and higher accuracy. With Kimi K3 as the shared backbone, VideoNexus improves over the official Video-GAIA ReAct harness by 8.5 points in our evaluation. These results support compact evidence exchange for combining detailed observation with efficient planning and reasoning."
+    }
+  ]
+}
